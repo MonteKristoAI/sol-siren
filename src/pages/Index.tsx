@@ -1,17 +1,17 @@
-import ScrollHero from "@/components/ScrollHero";
-import ScrollSplitGallery from "@/components/ScrollSplitGallery";
+import Hero from "@/components/Hero";
 import FeaturedShop from "@/components/FeaturedShop";
 import AboutSection from "@/components/AboutSection";
+import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <main className="bg-background">
-      <ScrollHero />
-      <ScrollSplitGallery />
+      <Hero />
       <FeaturedShop />
       <AboutSection />
+      <BlogSection />
       <ContactSection />
       <Footer />
     </main>
