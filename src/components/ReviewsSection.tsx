@@ -4,19 +4,19 @@ import { Link } from "react-router-dom";
 const reviews = [
   {
     rating: 5,
-    text: "The fit is incredible — it moves with you, not against you. This is the kind of piece I'll reach for every single week.",
+    text: "Honestly didn't expect this level of quality. The fit is so good I ordered a second one immediately.",
     name: "Camille Laurent",
     location: "Paris, France",
   },
   {
     rating: 5,
-    text: "Finally found vintage-inspired clothing that actually feels modern. The fabric quality alone sets this apart from everything else.",
+    text: "I get compliments every time I wear it. It's got that vintage feel but still looks completely fresh.",
     name: "James Okafor",
     location: "London, UK",
   },
   {
     rating: 5,
-    text: "Worth every cent. I've never received so many compliments on a single piece. It feels luxurious without trying too hard.",
+    text: "Super comfortable, looks amazing, and the fabric feels like it'll last forever. Easily my favorite purchase this year.",
     name: "Sofia Reyes",
     location: "New York, USA",
   },
@@ -51,7 +51,7 @@ const ReviewsSection = () => {
         <div className="mt-5 flex items-center justify-center gap-2">
           <StarRating count={5} />
           <span className="font-body text-sm text-foreground">
-            4.8/5 Average Rating
+            Rated 4.8/5 based on verified customer reviews.
           </span>
         </div>
       </div>
@@ -61,7 +61,7 @@ const ReviewsSection = () => {
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="bg-background border border-border p-8 transition-transform duration-300 hover:-translate-y-1"
+            className="bg-background border border-border rounded-[14px] shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] p-8 transition-transform duration-300 hover:-translate-y-1"
           >
             <StarRating count={review.rating} />
             <p className="mt-5 font-body text-sm text-foreground/80 leading-relaxed">
@@ -85,7 +85,7 @@ const ReviewsSection = () => {
           to="/shop"
           className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground border-b border-muted-foreground/30 hover:border-foreground pb-1 transition-all duration-300"
         >
-          Read More Reviews →
+          ⭐ Leave a Review →
         </Link>
       </div>
     </section>
