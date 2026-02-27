@@ -81,12 +81,14 @@ const ReviewsSection = () => {
 
       {/* Bottom Link */}
       <div className="text-center mt-14">
-        <Link
-          to="/shop"
+        <a
+          href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x641b554a5edae90b:0x71d1045098ba2018!12e1?source=g.page.m.np._&laa=nmx-review-solicitation-promoted-recommendation-card"
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground border-b border-muted-foreground/30 hover:border-foreground pb-1 transition-all duration-300"
         >
           ⭐ Leave a Review →
-        </Link>
+        </a>
       </div>
     </section>
   );
