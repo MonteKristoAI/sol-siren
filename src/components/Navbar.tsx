@@ -46,7 +46,7 @@ const Navbar = () => {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <Link to="/">
+      <Link to="/" onClick={(e) => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }}>
         <img
           src={logo}
           alt="Sol Siren Vintage"
@@ -56,6 +56,15 @@ const Navbar = () => {
       </Link>
 
       <div className="flex items-center gap-8 md:gap-12">
+        {/* Home */}
+        <Link
+          to="/"
+          onClick={(e) => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }}
+          className={linkClass}
+        >
+          Home
+        </Link>
+
         {/* Shop with dropdown */}
         <div
           className="relative"
