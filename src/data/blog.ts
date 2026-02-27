@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Discovering timeless silhouettes that transcend trends and seasons — a guide to building a wardrobe that lasts.",
     image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&q=80&auto=format&fit=crop",
     date: "February 2026",
     content:
       "Vintage dressing is more than nostalgia — it's a conscious choice to invest in quality, craftsmanship, and individuality. The best vintage-inspired pieces carry the elegance of past decades while fitting seamlessly into a modern lifestyle.\n\nStart with foundational pieces: a well-cut blazer, a silk camisole, high-waisted trousers. These are the building blocks of a wardrobe that doesn't rely on fast fashion cycles.\n\nThe key is intentionality. Each piece should feel like it was chosen, not simply bought. When you dress with purpose, confidence follows naturally.",
