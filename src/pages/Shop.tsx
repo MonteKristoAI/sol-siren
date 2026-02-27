@@ -1,19 +1,42 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Eye, X } from "lucide-react";
 import { useCart, type Product } from "@/contexts/CartContext";
 import products from "@/data/products";
+import type { ProductCategory } from "@/data/products";
 import Footer from "@/components/Footer";
+
+const categories: { label: string; value: ProductCategory | "all" }[] = [
+  { label: "All", value: "all" },
+  { label: "Women", value: "women" },
+  { label: "Men", value: "men" },
+  { label: "Outerwear", value: "outerwear" },
+  { label: "Accessories", value: "accessories" },
+];
 
 const Shop = () => {
   const [quickView, setQuickView] = useState<Product | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
+
+  const filtered = activeCategory === "all"
+    ? products
+    : products.filter((p) => p.category === activeCategory);
+
+  const setCategory = (value: string) => {
+    if (value === "all") {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category: value });
+    }
+  };
 
   return (
     <>
       <main className="bg-background pt-28 md:pt-32">
         {/* Hero */}
-        <div className="mx-auto max-w-7xl text-center px-6 md:px-16 mb-16 md:mb-20">
+        <div className="mx-auto max-w-7xl text-center px-6 md:px-16 mb-10 md:mb-14">
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-foreground">
             Shop
           </h1>
@@ -22,9 +45,28 @@ const Shop = () => {
           </p>
         </div>
 
+        {/* Filter Bar */}
+        <div className="mx-auto max-w-7xl px-6 md:px-16 mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-6 md:gap-10">
+            {categories.map((cat) => (
+              <button
+                key={cat.value}
+                onClick={() => setCategory(cat.value)}
+                className={`font-body text-[11px] tracking-ultra-wide uppercase transition-colors duration-300 pb-1 border-b ${
+                  activeCategory === cat.value
+                    ? "text-foreground border-foreground"
+                    : "text-muted-foreground border-transparent hover:text-foreground"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Grid */}
         <div className="mx-auto max-w-7xl px-6 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8">
-          {products.map((p, i) => (
+          {filtered.map((p, i) => (
             <ProductCard key={p.id} product={p} index={i} onQuickView={() => setQuickView(p)} />
           ))}
         </div>
@@ -105,7 +147,6 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
   );
 };
 
-/* ================================================================== */
 const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () => void }) => {
   const { addItem } = useCart();
 
