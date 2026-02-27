@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import FeaturedShop from "@/components/FeaturedShop";
+import ReviewsSection from "@/components/ReviewsSection";
 import AboutSection from "@/components/AboutSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
@@ -10,6 +11,7 @@ const Index = () => {
     <main className="bg-background">
       <Hero />
       <FeaturedShop />
+      <ReviewsSection />
       <AboutSection />
       <BlogSection />
       <ContactSection />
