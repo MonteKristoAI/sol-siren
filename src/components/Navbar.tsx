@@ -98,20 +98,28 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
 
-        {/* About & Contact */}
+        {/* About, Blog & Contact */}
         {[
           { label: "About", to: "/#about" },
+          { label: "Blog", to: "/blog" },
           { label: "Contact", to: "/#contact" },
         ].map((item) => {
-          const sectionId = item.to.slice(2);
-          const handleClick = (e: React.MouseEvent) => {
-            if (isHome) {
-              e.preventDefault();
-              document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-            }
-          };
+          if (item.to.startsWith("/#")) {
+            const sectionId = item.to.slice(2);
+            const handleClick = (e: React.MouseEvent) => {
+              if (isHome) {
+                e.preventDefault();
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+              }
+            };
+            return (
+              <Link key={item.label} to={`/${item.to.slice(1)}`} onClick={handleClick} className={linkClass}>
+                {item.label}
+              </Link>
+            );
+          }
           return (
-            <Link key={item.label} to={`/${item.to.slice(1)}`} onClick={handleClick} className={linkClass}>
+            <Link key={item.label} to={item.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={linkClass}>
               {item.label}
             </Link>
           );
