@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 const categories = [
   {
     name: "Women",
-    image: "https://images.unsplash.com/photo-1487222477894-f702f52210d0?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
     link: "/shop?category=women",
   },
   {
     name: "Men",
-    image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop",
     link: "/shop?category=men",
   },
   {
     name: "Accessories",
-    image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80&auto=format&fit=crop",
     link: "/shop?category=accessories",
   },
 ];
