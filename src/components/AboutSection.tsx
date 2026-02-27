@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1000&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1000&q=80&auto=format&fit=crop";
 
 const AboutSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
