@@ -1,10 +1,13 @@
 import type { Product } from "@/contexts/CartContext";
 
+export type ProductCategory = "women" | "men" | "outerwear" | "accessories";
+
 export interface ProductWithSlug extends Product {
   slug: string;
   description: string;
   images: string[];
   sizes: string[];
+  category: ProductCategory;
 }
 
 function toSlug(name: string) {
@@ -26,6 +29,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L"],
+    category: "women",
   },
   {
     id: "2",
@@ -41,6 +45,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M"],
+    category: "men",
   },
   {
     id: "3",
@@ -56,6 +61,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["One Size"],
+    category: "women",
   },
   {
     id: "4",
@@ -71,6 +77,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L", "XL"],
+    category: "men",
   },
   {
     id: "5",
@@ -86,6 +93,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M", "L"],
+    category: "women",
   },
   {
     id: "6",
@@ -101,6 +109,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M"],
+    category: "outerwear",
   },
   {
     id: "7",
@@ -116,6 +125,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M", "L"],
+    category: "men",
   },
   {
     id: "8",
@@ -131,6 +141,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L", "XL"],
+    category: "accessories",
   },
   {
     id: "9",
@@ -146,6 +157,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L"],
+    category: "outerwear",
   },
   {
     id: "10",
@@ -161,6 +173,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M"],
+    category: "outerwear",
   },
   {
     id: "11",
@@ -176,6 +189,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L"],
+    category: "accessories",
   },
   {
     id: "12",
@@ -191,6 +205,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M", "L", "XL"],
+    category: "accessories",
   },
 ];
 
