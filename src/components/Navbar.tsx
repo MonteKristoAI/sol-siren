@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/contexts/CartContext";
@@ -15,8 +15,8 @@ const shopCategories = [
 
 const Navbar = () => {
   const { count, openCart } = useCart();
-  const [scrolled, setScrolled] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -29,44 +29,131 @@ const Navbar = () => {
     }
   }, [isHome, location.hash]);
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    setMobileOpen(false);
+  }, [location]);
 
-  const linkClass = "relative font-body text-xs tracking-ultra-wide uppercase text-foreground/80 hover:text-foreground transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1px] after:bottom-[-2px] after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left";
+  const linkClass =
+    "relative font-body text-xs tracking-ultra-wide uppercase text-foreground/80 hover:text-foreground transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1px] after:bottom-[-2px] after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left";
+
+  const mobileLinkClass =
+    "block font-body text-sm tracking-ultra-wide uppercase text-foreground/80 hover:text-foreground transition-colors duration-300 py-3";
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
+    if (isHome) {
+      e.preventDefault();
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileOpen(false);
+  };
 
   return (
-    <nav
-      className={`fixed top-[28px] left-0 right-0 z-[60] flex items-center justify-between px-6 md:px-16 py-4 transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-sm`}
-    >
-      <Link to="/" onClick={(e) => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }}>
-        <img
-          src={logo}
-          alt="Sol Siren Vintage"
-          className="h-14 md:h-16 ml-2 md:ml-6 select-none"
-          draggable={false}
-        />
-      </Link>
-
-      <div className="flex items-center gap-8 md:gap-12">
-        {/* Home */}
-        <Link
-          to="/"
-          onClick={(e) => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }}
-          className={linkClass}
-        >
-          Home
+    <>
+      <nav className="fixed top-[28px] left-0 right-0 z-[60] flex items-center justify-between px-6 md:px-16 py-4 transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-sm">
+        {/* Logo */}
+        <Link to="/" onClick={handleHomeClick}>
+          <img
+            src={logo}
+            alt="Sol Siren Vintage"
+            className="h-14 md:h-16 ml-2 md:ml-6 select-none"
+            draggable={false}
+          />
         </Link>
 
-        {/* Shop with dropdown */}
-        <div
-          className="relative"
-          onMouseEnter={() => setShopOpen(true)}
-          onMouseLeave={() => setShopOpen(false)}
-        >
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8 md:gap-12">
+          <Link to="/" onClick={handleHomeClick} className={linkClass}>
+            Home
+          </Link>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setShopOpen(true)}
+            onMouseLeave={() => setShopOpen(false)}
+          >
+            <Link
+              to="/shop"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className={linkClass}
+            >
+              Shop
+            </Link>
+            <AnimatePresence>
+              {shopOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                >
+                  <div className="bg-background border border-border shadow-sm min-w-[180px] py-2">
+                    {shopCategories.map((cat) => (
+                      <Link
+                        key={cat.to}
+                        to={cat.to}
+                        onClick={() => {
+                          setShopOpen(false);
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="block px-5 py-2.5 font-body text-[11px] tracking-wide uppercase text-foreground/70 hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                      >
+                        {cat.label}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {[
+            { label: "About", to: "/#about" },
+            { label: "Blog", to: "/blog" },
+            { label: "Contact", to: "/#contact" },
+          ].map((item) => {
+            if (item.to.startsWith("/#")) {
+              const sectionId = item.to.slice(2);
+              return (
+                <Link key={item.label} to={`/${item.to.slice(1)}`} onClick={handleSectionClick(sectionId)} className={linkClass}>
+                  {item.label}
+                </Link>
+              );
+            }
+            return (
+              <Link key={item.label} to={item.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={linkClass}>
+                {item.label}
+              </Link>
+            );
+          })}
+
+          <button
+            onClick={openCart}
+            className="relative text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
+            <ShoppingBag size={18} />
+            {count > 0 && (
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-foreground text-primary-foreground font-body text-[9px] font-medium rounded-full"
+              >
+                {count}
+              </motion.span>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile: Shop + Cart + Hamburger */}
+        <div className="flex md:hidden items-center gap-5">
           <Link
             to="/shop"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -74,79 +161,70 @@ const Navbar = () => {
           >
             Shop
           </Link>
-          <AnimatePresence>
-            {shopOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 6 }}
-                transition={{ duration: 0.2 }}
-                className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+
+          <button
+            onClick={openCart}
+            className="relative text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
+            <ShoppingBag size={18} />
+            {count > 0 && (
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-foreground text-primary-foreground font-body text-[9px] font-medium rounded-full"
               >
-                <div className="bg-background border border-border shadow-sm min-w-[180px] py-2">
-                  {shopCategories.map((cat) => (
-                    <Link
-                      key={cat.to}
-                      to={cat.to}
-                      onClick={() => {
-                        setShopOpen(false);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                      className="block px-5 py-2.5 font-body text-[11px] tracking-wide uppercase text-foreground/70 hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
-                    >
-                      {cat.label}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
+                {count}
+              </motion.span>
             )}
-          </AnimatePresence>
+          </button>
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+      </nav>
 
-        {/* About, Blog & Contact */}
-        {[
-          { label: "About", to: "/#about" },
-          { label: "Blog", to: "/blog" },
-          { label: "Contact", to: "/#contact" },
-        ].map((item) => {
-          if (item.to.startsWith("/#")) {
-            const sectionId = item.to.slice(2);
-            const handleClick = (e: React.MouseEvent) => {
-              if (isHome) {
-                e.preventDefault();
-                document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-              }
-            };
-            return (
-              <Link key={item.label} to={`/${item.to.slice(1)}`} onClick={handleClick} className={linkClass}>
-                {item.label}
-              </Link>
-            );
-          }
-          return (
-            <Link key={item.label} to={item.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={linkClass}>
-              {item.label}
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="fixed top-[100px] left-0 right-0 z-[55] bg-background border-b border-border shadow-md px-8 py-6 md:hidden"
+          >
+            <Link to="/" onClick={(e) => { handleHomeClick(e); setMobileOpen(false); }} className={mobileLinkClass}>
+              Home
             </Link>
-          );
-        })}
 
-        <button
-          onClick={openCart}
-          className="relative text-foreground/80 hover:text-foreground transition-colors duration-300"
-        >
-          <ShoppingBag size={18} />
-          {count > 0 && (
-            <motion.span
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-foreground text-primary-foreground font-body text-[9px] font-medium rounded-full"
-            >
-              {count}
-            </motion.span>
-          )}
-        </button>
-      </div>
-    </nav>
+            {shopCategories.map((cat) => (
+              <Link
+                key={cat.to}
+                to={cat.to}
+                onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className={`${mobileLinkClass} pl-4 text-xs`}
+              >
+                {cat.label}
+              </Link>
+            ))}
+
+            <Link to="/#about" onClick={handleSectionClick("about")} className={mobileLinkClass}>
+              About
+            </Link>
+            <Link to="/blog" onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} className={mobileLinkClass}>
+              Blog
+            </Link>
+            <Link to="/#contact" onClick={handleSectionClick("contact")} className={mobileLinkClass}>
+              Contact
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
