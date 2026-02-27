@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const categories = [
   {
     name: "Women",
-    image: "https://images.unsplash.com/photo-1487222477894-f702f52210d0?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
     link: "/shop?category=women",
   },
   {
