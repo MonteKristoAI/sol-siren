@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1800&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1800&q=80&auto=format&fit=crop";
 
 const Hero = () => {
   return (
