@@ -16,19 +16,20 @@ const Hero = () => {
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 md:py-0 md:w-1/2"
         >
           <p className="font-body text-[10px] tracking-ultra-wide uppercase text-background/50 mb-6">
-            New Drop
+            New Collection
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
-            The Future of Timeless Design.
+            Past Decades.<br />
+            Present Energy.
           </h1>
           <p className="mt-5 font-body text-sm md:text-base text-background/60 max-w-md leading-relaxed">
-            A refined piece built for movement, comfort, and lasting presence.
+            Vintage-inspired essentials crafted for confidence, movement, and individuality.
           </p>
           <Link
             to="/shop"
             className="mt-8 inline-block font-body text-[11px] tracking-ultra-wide uppercase text-background/80 hover:text-background border-b border-background/30 hover:border-background pb-1 transition-all duration-300 w-fit"
           >
-            Shop Now →
+            Explore the Collection →
           </Link>
         </motion.div>
 
