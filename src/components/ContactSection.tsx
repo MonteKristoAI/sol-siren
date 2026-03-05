@@ -47,6 +47,10 @@ const ContactSection = () => {
           </h2>
 
           <p className="mt-6 font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
+            When something feels meant for you, it's worth asking about.
+          </p>
+
+          <p className="mt-4 font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
             Whether it's a collaboration, a question about an order, or simply
             to say hello — we'd love to hear from you. Reach out and we'll get
             back to you as soon as we can.
