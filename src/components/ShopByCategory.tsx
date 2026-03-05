@@ -2,24 +2,29 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    name: "Women",
+    name: "Fur",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
-    link: "/shop?category=women",
+    link: "/shop?category=fur",
   },
   {
-    name: "Men",
+    name: "Leather",
     image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop",
-    link: "/shop?category=men",
+    link: "/shop?category=leather",
   },
   {
-    name: "Outerwear",
+    name: "Penny Lane",
     image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
-    link: "/shop?category=outerwear",
+    link: "/shop?category=penny-lane",
   },
   {
-    name: "Accessories",
+    name: "Trench Coats",
     image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
-    link: "/shop?category=accessories",
+    link: "/shop?category=trench-coats",
+  },
+  {
+    name: "Après Ski",
+    image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
+    link: "/shop?category=apres-ski",
   },
 ];
 
@@ -38,7 +43,7 @@ const ShopByCategory = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 max-w-7xl mx-auto">
         {categories.map((cat) => (
           <Link
             key={cat.name}
