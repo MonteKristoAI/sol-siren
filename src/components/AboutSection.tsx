@@ -64,7 +64,7 @@ Worn as they were always meant to be<br />
           </p>
 
           <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
-            Each coat is chosen for its presence as much as its construction — For the way it holds a shoulder. For the weight of its fabric. For the quiet confidence stitched into its seams.
+            Each coat is chosen for its presence as much as its construction For the way it holds a shoulder. For the weight of its fabric. For the quiet confidence stitched into its seams.
           </p>
 
           <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
@@ -84,7 +84,7 @@ Worn as they were always meant to be<br />
           </p>
 
           <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
-            Sol Siren Vintage believes that a coat should feel familiar — as though it had been waiting for you and only you all along.
+            Sol Siren Vintage believes that a coat should feel familiar as though it had been waiting for you and only you all along.
           </p>
 
           <p className="mt-5 font-body text-sm font-medium text-foreground leading-relaxed max-w-md">
