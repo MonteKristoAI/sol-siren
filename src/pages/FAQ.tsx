@@ -181,10 +181,10 @@ const FAQ = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mx-auto max-w-[750px] mt-20 pt-10 border-t border-border"
         >
-          <h2 className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+          <h2 className="font-display text-sm uppercase tracking-[0.15em] text-foreground/70 mb-3">
             Legal Disclaimer
           </h2>
-          <p className="font-body text-xs text-muted-foreground/70 leading-relaxed">
+          <p className="font-body text-sm text-muted-foreground leading-relaxed">
             Materials are identified to the best of our knowledge. Due to the nature of vintage garments, exact composition cannot be guaranteed.
           </p>
         </motion.div>
