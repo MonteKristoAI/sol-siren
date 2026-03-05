@@ -81,7 +81,6 @@ const Navbar = () => {
           >
             <Link
               to="/shop"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className={linkClass}
             >
               Shop
@@ -102,7 +101,6 @@ const Navbar = () => {
                         to={cat.to}
                         onClick={() => {
                           setShopOpen(false);
-                          window.scrollTo({ top: 0, behavior: "smooth" });
                         }}
                         className="block px-5 py-2.5 font-body text-[11px] tracking-wide uppercase text-foreground/70 hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
                       >
@@ -129,7 +127,7 @@ const Navbar = () => {
               );
             }
             return (
-              <Link key={item.label} to={item.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={linkClass}>
+              <Link key={item.label} to={item.to} className={linkClass}>
                 {item.label}
               </Link>
             );
@@ -156,7 +154,6 @@ const Navbar = () => {
         <div className="flex md:hidden items-center gap-5">
           <Link
             to="/shop"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={linkClass}
           >
             Shop
@@ -205,7 +202,7 @@ const Navbar = () => {
               <Link
                 key={cat.to}
                 to={cat.to}
-                onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                onClick={() => { setMobileOpen(false); }}
                 className={`${mobileLinkClass} pl-4 text-xs`}
               >
                 {cat.label}
@@ -215,7 +212,7 @@ const Navbar = () => {
             <Link to="/#about" onClick={handleSectionClick("about")} className={mobileLinkClass}>
               About
             </Link>
-            <Link to="/blog" onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} className={mobileLinkClass}>
+            <Link to="/blog" onClick={() => { setMobileOpen(false); }} className={mobileLinkClass}>
               Blog
             </Link>
             <Link to="/#contact" onClick={handleSectionClick("contact")} className={mobileLinkClass}>
