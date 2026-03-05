@@ -19,26 +19,47 @@ const Footer = () => {
           </div>
 
           {/* Middle: Links */}
-          <div className="space-y-4">
-            <h4 className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground">
-              Quick Links
-            </h4>
-            <nav className="flex flex-col gap-3">
-              {[
-                { label: "Shop", to: "/shop" },
-                { label: "About", to: "#" },
-                { label: "Contact", to: "#" },
-                { label: "Shipping & Returns", to: "/shipping-returns" },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  className="font-body text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+          <div className="grid grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h4 className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground">
+                Quick Links
+              </h4>
+              <nav className="flex flex-col gap-3">
+                {[
+                  { label: "Shop", to: "/shop" },
+                  { label: "About", to: "#" },
+                  { label: "Contact", to: "#" },
+                ].map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    className="font-body text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground">
+                Customer Care
+              </h4>
+              <nav className="flex flex-col gap-3">
+                {[
+                  { label: "Shipping & Returns", to: "/shipping-returns" },
+                  { label: "FAQ", to: "/faq" },
+                ].map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    className="font-body text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
 
           {/* Right: Social + Contact */}
