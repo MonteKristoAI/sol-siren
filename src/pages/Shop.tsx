@@ -13,7 +13,7 @@ const categories: { label: string; value: ProductCategory | "all" }[] = [
   { label: "Leather", value: "leather" },
   { label: "Penny Lane", value: "penny-lane" },
   { label: "Trench Coats", value: "trench-coats" },
-  { label: "Après Ski", value: "apres-ski" },
+  { label: "Apres Ski", value: "apres-ski" },
 ];
 
 const Shop = () => {
