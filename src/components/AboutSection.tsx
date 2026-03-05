@@ -47,23 +47,46 @@ const AboutSection = () => {
           </p>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-foreground">
-            Timeless pieces.
+            Timeless Pieces.
             <br />
-            Modern attitude.
+            Modern Attitude.
           </h2>
 
           <div className="w-12 h-[1px] bg-border my-8" />
 
           <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
-            Born from a love of vintage silhouettes and an eye for the
-            contemporary, Sol Siren Vintage is a celebration of confidence,
-            individuality, and the quiet power of dressing with intention. Every
-            piece is curated to feel both familiar and entirely new.
+            Not relics.<br />
+            Not replicas.<br />
+            But garments with memory —<br />
+            Worn as they were always meant to be
           </p>
 
           <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
-            We believe in fewer, better things — garments that carry a story and
-            grow more beautiful with time.
+            Each coat is chosen for its presence as much as its construction — For the way it holds a shoulder. For the weight of its fabric. For the quiet confidence stitched into its seams.
+          </p>
+
+          <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
+            These pieces are not costumes of another decade. These pieces have lived. They are pieces built to outlast it.
+          </p>
+
+          <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
+            Vintage, here, is not about nostalgia. It's about honoring craftsmanship from an era that no longer exists.
+          </p>
+
+          <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
+            Each garment is gathered slowly, preserved with reverence, and then released when it is ready be found again.
+          </p>
+
+          <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
+            This is not about trends.
+          </p>
+
+          <p className="mt-5 font-body text-sm text-muted-foreground leading-relaxed max-w-md">
+            Sol Siren Vintage believes that a coat should feel familiar — as though it had been waiting for you and only you all along.
+          </p>
+
+          <p className="mt-5 font-body text-sm font-medium text-foreground leading-relaxed max-w-md">
+            This is about what lasts.
           </p>
 
           <Link
