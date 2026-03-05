@@ -43,10 +43,10 @@ const ReviewsSection = () => {
           Customer Reviews
         </p>
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
-          Worn. Loved. Repeated.
+          It was meant to be.
         </h2>
         <p className="mt-4 font-body text-sm text-muted-foreground">
-          Over 2,000 customers worldwide.
+          Some pieces wait quietly for the woman who feels like home.
         </p>
         <div className="mt-5 flex items-center justify-center gap-2">
           <StarRating count={5} />
