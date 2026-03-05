@@ -3,13 +3,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format&fit=crop";
+"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format&fit=crop";
 
 const AboutSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: imgRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"]
   });
   const imgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
@@ -23,15 +23,15 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative aspect-[3/4] overflow-hidden"
-        >
+          className="relative aspect-[3/4] overflow-hidden">
+          
           <motion.img
             src={ABOUT_IMAGE}
             alt="Editorial fashion lifestyle"
             className="h-full w-full object-cover"
             style={{ y: imgY }}
-            loading="lazy"
-          />
+            loading="lazy" />
+          
         </motion.div>
 
         {/* Text */}
@@ -40,8 +40,8 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="flex flex-col justify-center"
-        >
+          className="flex flex-col justify-center">
+          
           <p className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground mb-4">
             About
           </p>
@@ -54,8 +54,10 @@ const AboutSection = () => {
 
           <div className="w-12 h-[1px] bg-border my-8" />
 
-          <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
-            Not relics.<br />
+          <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">Not relics.
+Not replicas.
+But garments with memory 
+Worn as they were always meant to be<br />
             Not replicas.<br />
             But garments with memory —<br />
             Worn as they were always meant to be
@@ -89,16 +91,14 @@ const AboutSection = () => {
             This is about what lasts.
           </p>
 
-          <Link
-            to="/shop"
-            className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start"
-          >
+          <Link to="/shop" className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start">
+            
             Explore the Collection →
           </Link>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AboutSection;
