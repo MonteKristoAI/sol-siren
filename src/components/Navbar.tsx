@@ -6,11 +6,11 @@ import logo from "@/assets/logo.png";
 import { useCart } from "@/contexts/CartContext";
 
 const shopCategories = [
-  { label: "All Products", to: "/shop" },
-  { label: "Women", to: "/shop?category=women" },
-  { label: "Men", to: "/shop?category=men" },
-  { label: "Outerwear", to: "/shop?category=outerwear" },
-  { label: "Accessories", to: "/shop?category=accessories" },
+  { label: "Fur", to: "/shop?category=fur" },
+  { label: "Leather", to: "/shop?category=leather" },
+  { label: "Penny Lane", to: "/shop?category=penny-lane" },
+  { label: "Trench Coats", to: "/shop?category=trench-coats" },
+  { label: "Après Ski", to: "/shop?category=apres-ski" },
 ];
 
 const Navbar = () => {
