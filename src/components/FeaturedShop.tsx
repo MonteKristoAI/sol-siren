@@ -32,12 +32,12 @@ const FeaturedShop = () => {
 
       {/* View All */}
       <div className="mx-auto max-w-7xl text-center mt-14">
-        <a
-          href="/shop"
+        <Link
+          to="/shop"
           className="inline-block border border-foreground bg-transparent text-foreground px-10 py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground hover:text-primary-foreground transition-colors duration-300"
         >
           View All Products
-        </a>
+        </Link>
       </div>
 
       {/* Quick View Modal */}
