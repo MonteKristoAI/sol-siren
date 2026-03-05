@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-[28px] left-0 right-0 z-[60] flex items-center justify-between px-6 md:px-16 py-4 transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between px-6 md:px-16 py-4 transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-sm">
         {/* Logo */}
         <Link to="/" onClick={handleHomeClick}>
           <img
@@ -195,7 +195,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-[100px] left-0 right-0 z-[55] bg-background border-b border-border shadow-md px-8 py-6 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-[55] bg-background border-b border-border shadow-md px-8 py-6 md:hidden"
           >
             <Link to="/" onClick={(e) => { handleHomeClick(e); setMobileOpen(false); }} className={mobileLinkClass}>
               Home
