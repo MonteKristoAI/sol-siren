@@ -1,6 +1,6 @@
 import type { Product } from "@/contexts/CartContext";
 
-export type ProductCategory = "women" | "men" | "outerwear" | "accessories";
+export type ProductCategory = "fur" | "leather" | "penny-lane" | "trench-coats" | "apres-ski";
 
 export interface ProductWithSlug extends Product {
   slug: string;
@@ -29,7 +29,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L"],
-    category: "women",
+    category: "penny-lane",
   },
   {
     id: "2",
@@ -45,7 +45,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M"],
-    category: "men",
+    category: "leather",
   },
   {
     id: "3",
@@ -61,7 +61,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["One Size"],
-    category: "women",
+    category: "fur",
   },
   {
     id: "4",
@@ -77,7 +77,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L", "XL"],
-    category: "men",
+    category: "trench-coats",
   },
   {
     id: "5",
@@ -93,7 +93,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M", "L"],
-    category: "women",
+    category: "penny-lane",
   },
   {
     id: "6",
@@ -109,7 +109,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M"],
-    category: "outerwear",
+    category: "apres-ski",
   },
   {
     id: "7",
@@ -125,7 +125,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M", "L"],
-    category: "men",
+    category: "leather",
   },
   {
     id: "8",
@@ -141,7 +141,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["One Size"],
-    category: "accessories",
+    category: "fur",
   },
   {
     id: "9",
@@ -157,7 +157,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["S", "M", "L"],
-    category: "outerwear",
+    category: "leather",
   },
   {
     id: "10",
@@ -173,7 +173,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["XS", "S", "M"],
-    category: "outerwear",
+    category: "apres-ski",
   },
   {
     id: "11",
@@ -189,7 +189,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["One Size"],
-    category: "accessories",
+    category: "trench-coats",
   },
   {
     id: "12",
@@ -205,7 +205,7 @@ const products: ProductWithSlug[] = [
       "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80&auto=format&fit=crop&blur=2",
     ],
     sizes: ["One Size"],
-    category: "accessories",
+    category: "fur",
   },
 ];
 

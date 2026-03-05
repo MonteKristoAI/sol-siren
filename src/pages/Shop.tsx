@@ -9,10 +9,11 @@ import Footer from "@/components/Footer";
 
 const categories: { label: string; value: ProductCategory | "all" }[] = [
   { label: "All", value: "all" },
-  { label: "Women", value: "women" },
-  { label: "Men", value: "men" },
-  { label: "Outerwear", value: "outerwear" },
-  { label: "Accessories", value: "accessories" },
+  { label: "Fur", value: "fur" },
+  { label: "Leather", value: "leather" },
+  { label: "Penny Lane", value: "penny-lane" },
+  { label: "Trench Coats", value: "trench-coats" },
+  { label: "Après Ski", value: "apres-ski" },
 ];
 
 const Shop = () => {
