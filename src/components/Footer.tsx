@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="space-y-4">
             <img src={logo} alt="Sol Siren Vintage" className="h-12 select-none" draggable={false} />
             <p className="font-body text-xs tracking-wide text-muted-foreground max-w-[240px]">
-              Refined vintage-inspired pieces for the modern wardrobe.
+              Intentionally curated, soulful vintage outerwear.
             </p>
           </div>
 
