@@ -22,7 +22,7 @@ const categories = [
     link: "/shop?category=trench-coats",
   },
   {
-    name: "Après Ski",
+    name: "Apres Ski",
     image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
     link: "/shop?category=apres-ski",
   },
