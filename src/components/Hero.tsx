@@ -15,15 +15,11 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 md:py-0 md:w-1/2"
         >
-          <p className="font-body text-[10px] tracking-ultra-wide uppercase text-background/50 mb-6">
-            New Collection
-          </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
-            Past Decades.<br />
-            Present Energy.
+            She's Been Here Before.
           </h1>
           <p className="mt-5 font-body text-sm md:text-base text-background/60 max-w-md leading-relaxed">
-            Vintage-inspired essentials crafted for confidence, movement, and individuality.
+            Intentionally curated, soulful vintage outerwear.
           </p>
           <Link
             to="/shop"
