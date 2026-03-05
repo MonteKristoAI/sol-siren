@@ -19,7 +19,7 @@ const FeaturedShop = () => {
           Featured Pieces
         </h2>
         <p className="mt-4 font-body text-xs md:text-sm tracking-ultra-wide uppercase text-muted-foreground">
-          Curated vintage-inspired essentials.
+          Curated Vintage Essentials
         </p>
       </div>
 
@@ -137,7 +137,7 @@ const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () =>
           <p className="mt-4 font-body text-lg font-medium text-foreground">${product.price}.00</p>
 
           <p className="mt-6 font-body text-sm text-muted-foreground leading-relaxed">
-            A timeless piece from our curated vintage-inspired collection. Designed for effortless elegance.
+            A timeless piece from our curated vintage collection. Designed for effortless elegance.
           </p>
 
           <button
