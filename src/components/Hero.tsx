@@ -15,10 +15,9 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 md:py-0 md:w-1/2">
           
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">She's Been 
-Here Before.
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">She's Been<br /> Here Before.</h1>
 
-          </h1>
+
           <p className="mt-5 font-body text-sm md:text-base text-background/60 max-w-md leading-relaxed">
             Intentionally curated, soulful vintage outerwear.
           </p>
