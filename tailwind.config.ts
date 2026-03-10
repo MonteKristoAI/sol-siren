@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        body: ['Montserrat', 'sans-serif'],
+        display: ['Cinzel', 'serif'],
+        body: ['Cormorant Garamond', 'serif'],
       },
       letterSpacing: {
         'ultra-wide': '0.25em',
