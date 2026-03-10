@@ -32,14 +32,11 @@ const ShopByCategory = () => {
   return (
     <section className="bg-background py-20 md:py-28 px-6 md:px-16 lg:px-24">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          Shop by Category
-        </p>
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
           Find Your Style
         </h2>
-        <p className="mt-4 font-body text-sm text-muted-foreground">Explore curated vintage pieces by category.
-
+        <p className="mt-4 font-body text-lg md:text-xl tracking-wide text-muted-foreground">
+          Vintage, arranged by category
         </p>
       </div>
 
