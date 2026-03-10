@@ -87,7 +87,7 @@ const Shop = () => {
               className="flex-1 border border-border bg-transparent px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
             />
             <button className="bg-foreground text-primary-foreground px-6 py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors">
-              Get Updates
+              Stay Connected
             </button>
           </div>
         </div>
