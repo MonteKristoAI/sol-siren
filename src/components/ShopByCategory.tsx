@@ -54,7 +54,7 @@ const ShopByCategory = () => {
           
             <div className="absolute inset-0 bg-foreground/30 transition-colors duration-500 group-hover:bg-foreground/45" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-body text-xs tracking-[0.3em] uppercase text-background">
+              <span className="font-display text-xs tracking-[0.3em] uppercase text-background">
                 {cat.name}
               </span>
             </div>
