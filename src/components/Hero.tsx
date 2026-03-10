@@ -15,16 +15,22 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 md:py-0 md:w-1/2">
           
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">She's Been<br /> Here Before.</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
+            She's Been Here Before
+          </h1>
 
+          <div className="mt-4 font-body text-sm md:text-base text-background/80 max-w-md leading-relaxed">
+            <p>Clothing with a past.</p>
+            <p>Ready for its new chapter.</p>
+          </div>
 
-          <p className="mt-5 font-body text-sm md:text-base text-background/60 max-w-md leading-relaxed">
+          <p className="mt-4 font-body italic text-sm md:text-base text-background/60 max-w-md leading-relaxed">
             Intentionally curated, soulful vintage outerwear.
           </p>
+
           <Link to="/shop"
-          className="mt-8 inline-block font-body text-[11px] tracking-ultra-wide uppercase text-background/80 hover:text-background border-b border-background/30 hover:border-background pb-1 transition-all duration-300 w-fit">
-            
-            Explore the Collection →
+            className="mt-8 inline-block font-body text-[11px] tracking-ultra-wide uppercase text-background/80 hover:text-background border-b border-background/30 hover:border-background pb-1 transition-all duration-300 w-fit">
+            Discover the collection
           </Link>
         </motion.div>
 
