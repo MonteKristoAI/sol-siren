@@ -75,10 +75,10 @@ const Shop = () => {
         {/* Coming Soon */}
         <div className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-32 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-light text-foreground">
-            More coming soon.
+            More to discover soon
           </h2>
-          <p className="mt-3 font-body text-xs tracking-ultra-wide uppercase text-muted-foreground">
-            New pieces drop regularly.
+          <p className="mt-3 font-body text-lg md:text-xl tracking-wide text-muted-foreground">
+            New pieces released regularly
           </p>
           <div className="mt-8 flex items-center justify-center gap-3 max-w-sm mx-auto">
             <input
