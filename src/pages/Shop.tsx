@@ -41,7 +41,7 @@ const Shop = () => {
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-foreground">
             Shop
           </h1>
-          <p className="mt-4 font-body text-xs md:text-sm tracking-ultra-wide uppercase text-muted-foreground">
+          <p className="mt-4 font-body text-sm md:text-base tracking-wide uppercase text-[#2A2A2A]/70">
             Curated pieces. Limited drops.
           </p>
         </div>
@@ -53,10 +53,10 @@ const Shop = () => {
               <button
                 key={cat.value}
                 onClick={() => setCategory(cat.value)}
-                className={`font-body text-[11px] tracking-ultra-wide uppercase transition-colors duration-300 pb-1 border-b ${
+                className={`font-display text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 pb-1 border-b ${
                   activeCategory === cat.value
-                    ? "text-foreground border-foreground"
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    ? "text-[#2A2A2A] border-[#2A2A2A]"
+                    : "text-[#2A2A2A]/50 border-transparent hover:text-[#2A2A2A]"
                 }`}
               >
                 {cat.label}
