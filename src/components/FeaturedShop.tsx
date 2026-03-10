@@ -18,8 +18,8 @@ const FeaturedShop = () => {
         <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground">
           Featured Pieces
         </h2>
-        <p className="mt-4 font-body text-xs md:text-sm tracking-ultra-wide uppercase text-muted-foreground">
-          Curated Vintage Essentials
+        <p className="mt-4 font-body text-lg md:text-xl tracking-wide text-muted-foreground">
+          Vintage worth remembering
         </p>
       </div>
 
