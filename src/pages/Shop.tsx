@@ -41,7 +41,7 @@ const Shop = () => {
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-foreground">
             Shop
           </h1>
-          <p className="mt-4 font-body text-xs md:text-sm tracking-ultra-wide uppercase text-muted-foreground">
+          <p className="mt-4 font-body text-sm md:text-base tracking-wide uppercase text-[#2A2A2A]/70">
             Curated pieces. Limited drops.
           </p>
         </div>
