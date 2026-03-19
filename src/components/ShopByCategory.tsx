@@ -12,14 +12,14 @@ const categories = [
   link: "/shop?category=leather"
 },
 {
-  name: "Penny Lane",
+  name: "Penny Lane / Afghan",
   image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
-  link: "/shop?category=penny-lane"
+  link: "/shop?category=penny-lane-afghan"
 },
 {
-  name: "Trench Coats",
+  name: "Overcoat",
   image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
-  link: "/shop?category=trench-coats"
+  link: "/shop?category=overcoat"
 },
 {
   name: "Apres Ski",
