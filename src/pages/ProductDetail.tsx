@@ -226,9 +226,11 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
           </div>
         </Accordion>
         <Accordion title="Care Instructions">
-          <p className="font-body text-sm text-muted-foreground leading-relaxed">
-            Dry clean recommended. If hand washing, use cold water and lay flat to dry. Store folded or on padded hangers.
-          </p>
+          <ul className="font-body text-sm text-muted-foreground leading-relaxed list-disc list-inside space-y-1 pl-1">
+            {product.careInstructions.map((instruction, i) => (
+              <li key={i}>{instruction}</li>
+            ))}
+          </ul>
         </Accordion>
       </div>
     </motion.div>
