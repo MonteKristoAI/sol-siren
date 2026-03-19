@@ -13,6 +13,16 @@ export interface SizeFit {
   fitDescription: string;
 }
 
+export interface ProductDetails {
+  material?: string;
+  color?: string;
+  lining?: string;
+  closure?: string;
+  length?: string;
+  era?: string;
+  fit?: string;
+}
+
 export interface ProductWithSlug extends Product {
   slug: string;
   description: string;
@@ -21,6 +31,7 @@ export interface ProductWithSlug extends Product {
   category: ProductCategory;
   sizeFit: SizeFit;
   careInstructions: string[];
+  productDetails: ProductDetails;
 }
 
 function toSlug(name: string) {
