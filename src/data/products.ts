@@ -545,6 +545,180 @@ Vintage items may show wear consistent with age.`,
     sizes: ["XS", "S", "M", "L"],
     category: "penny-lane-afghan",
   },
+  {
+    id: "emmylou",
+    name: "EMMYLOU",
+    variant: "Vintage 1970s Suede Leather Coat – The Emmylou",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("emmylou"),
+    description: `A beautifully tailored vintage suede leather coat from Split End Ltd., capturing the rich textures and Western-inspired styling that defined late-1970s fashion.
+
+Crafted from soft saddle-tan suede, the coat is framed with deep chocolate leather trim along the collar, front placket, cuffs, and pockets. A sculpted Western-style yoke sweeps across the shoulders and chest.
+
+The wide collar creates a dramatic neckline, while the original self belt allows the waist to be cinched or worn loose.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1970s 
+
+• Material: 100% leather 
+
+• Color: Saddle tan with chocolate trim 
+
+• Lining: Satin 
+
+• Closure: Belt 
+
+• Length: Hip-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "leather",
+  },
+  {
+    id: "stevie",
+    name: "STEVIE",
+    variant: "Vintage 1990s Black Leather Fringe Jacket – The Stevie",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("stevie"),
+    description: `A striking black leather fringe jacket by Wilsons Leather Maxima, designed with dramatic movement and unmistakable western spirit.
+
+Crafted from soft suede leather, the jacket features sweeping fringe that cascades from the collar and along the front opening.
+
+Additional fringe at the hem and sleeves enhances the silhouette, giving the piece a bold vintage presence.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1990s 
+
+• Material: Genuine leather 
+
+• Color: Black 
+
+• Lining: Satin 
+
+• Closure: Hidden hook closure 
+
+• Length: Hip-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "leather",
+  },
+  {
+    id: "sierra",
+    name: "SIERRA",
+    variant: "Vintage 1970s Frontier Fringe Suede Jacket – The Sierra",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("sierra"),
+    description: `A true piece of classic American Western style.
+
+This vintage suede jacket by Sears Western Wear captures the rugged frontier spirit of the 1970s.
+
+Crafted from rich brown suede and trimmed with dramatic fringe across the chest, back, sleeves, and hem.
+
+Features a removable faux shearling lining for added warmth.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1970s 
+
+• Material: Genuine leather 
+
+• Color: Medium brown 
+
+• Lining: Removable shearling lining 
+
+• Closure: Button 
+
+• Length: Hip-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "leather",
+  },
+  {
+    id: "vixen",
+    name: "VIXEN",
+    variant: "Vintage 1980s Bearskin Fringe Leather Jacket – The Vixen",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("vixen"),
+    description: `A striking vintage leather jacket crafted from sueded boarskin, featuring bold black-on-black design and dramatic fringe along the sleeves.
+
+The sculptural leather panels create strong visual impact, while long fringe adds movement and texture.
+
+Finished with a zip front closure and elasticized waistband.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1980s 
+
+• Material: Leather 
+
+• Color: Black 
+
+• Lining: Unlined 
+
+• Closure: Zip 
+
+• Length: Hip-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "leather",
+  },
+  {
+    id: "cleo",
+    name: "CLEO",
+    variant: "Vintage 1970s Long Leather Wrap Coat – The Cleo",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("cleo"),
+    description: `A striking vintage 1970s leather wrap coat in a rich shade of golden caramel.
+
+Crafted from supple leather that drapes beautifully, this piece ties at the waist with its original belt.
+
+A wide shawl collar frames the neckline, while oversized curved patch pockets add both function and style.
+
+The leather has developed a beautiful patina over time.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1970s 
+
+• Material: Genuine leather 
+
+• Color: Golden caramel 
+
+• Lining: Satin 
+
+• Closure: Wrap belt 
+
+• Length: Full-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "leather",
+  },
 ];
 
 export default products;
