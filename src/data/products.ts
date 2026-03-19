@@ -193,6 +193,178 @@ Vintage items may show wear consistent with age.`,
     sizes: ["XS", "S", "M", "L"],
     category: "fur",
   },
+  {
+    id: "madge",
+    name: "MADGE",
+    variant: "Vintage 1960s Monterey Ridge White Faux Fur Coat - The Madge",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("madge"),
+    description: `A dreamy vintage faux fur coat in the softest icy silver tone, made by Intrigue for Monterey Mills. This piece has all the drama of classic fur styling with the practicality of a luxury synthetic fabric, creating a look that feels both glamorous and easy to wear.
+
+The faux fur has beautiful tonal variation throughout, blending pale silver, dove gray, and soft pearl hues for a dimensional finish. Cut in a hip-length silhouette, it features a plush, sculptural shape with a full, cozy feel through the body and sleeves. The front is finished with hidden closures for a clean, seamless look, while the interior is lined in a silky branded satin.
+
+A striking vintage statement coat that feels equal parts après-ski, old Hollywood, and 1970s winter glamour.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s-Early 1970s 
+
+• Material: Faux fur 
+
+• Color: Icy silver tone/white. 
+
+• Lining: Satin 
+
+• Length: Hip
+
+• Closure: Hidden eye-hook closures along front
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
+  {
+    id: "lucy",
+    name: "LUCY",
+    variant: "Vintage 1960s London Faux Fur & Suede Swing Coat by Lilli Ann – The Lucy",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("lucy"),
+    description: `A striking vintage coat from the London line of the iconic Lilli Ann label, crafted in England during the late 1960s.
+
+This piece combines supple suede with plush faux fur panels that run vertically through the body, creating a beautiful texture and movement when worn. The wide fur collar frames the neckline while the soft swing silhouette gives the coat an effortless drape.
+
+A coordinating suede belt threads through metal ring hardware, allowing the coat to be worn open and relaxed or softly cinched at the waist. The interior is finished with a smooth satin lining for comfortable layering.
+
+A perfect example of the mod-influenced London outerwear that defined the era.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1960s 
+
+• Material: Suede leather 
+
+• Color: Camel suede with honey faux suede
+
+• Lining: Satin 
+
+• Length: Above the knee
+
+• Closure: Metal ring belt closures.
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
+  {
+    id: "roberta",
+    name: "ROBERTA",
+    variant: "Vintage 1960s Ivory Mink Fur Coat with Leather Belt – The Roberta",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("roberta"),
+    description: `A luminous vintage mink coat in a soft ivory hue, featuring a sweeping shawl collar and elegant belted silhouette. The coat is crafted from supple mink pelts that create a smooth, velvety surface and graceful drape through the body.
+
+An original leather belt cinches the waist, allowing the coat to be worn tied for a more defined shape or left open for an effortless, relaxed look. The dramatic shawl collar frames the neckline beautifully and adds a touch of classic mid-century glamour.
+
+Inside, the satin lining carries a delicate embroidery reading Roberta Rossi, the name of the coat's original owner — a charming detail that reflects the tradition of custom fur salon pieces.
+
+A timeless winter coat that captures the elegance of vintage luxury.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1960s
+
+• Material: Mink 
+
+• Color: Ivory
+
+• Lining: Satin lining with custom monogram for the original owner, Roberta Rossi. 
+
+• Closure: Multiple hidden classic hook-and-eye closures along the front as well as original removable ivory leather belt.
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
+  {
+    id: "nk",
+    name: "N.K.",
+    variant: "Vintage 1960s Ivory Curly Lamb Fur Jacket – The Nova",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("nk"),
+    description: `A striking piece from the late 1960s, this vintage jacket is crafted from soft ivory curly lamb fur, known for its romantic ringlet texture and cloud-like movement. The dense curls create beautiful natural volume, giving the coat an unmistakably glamorous silhouette.
+
+The silhouette falls at an easy hip length, making it a versatile piece that pairs effortlessly with denim, dresses or tailored trousers.
+
+At the front, the coat fastens with faux horn toggle closures, subtly tucked within the curls of the lamb fur.
+
+Inside, the coat is finished with a satin lining and retains its original label.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1960s
+
+• Material: Ivory curly lamb fur 
+
+• Lining: Satin 
+
+• Closure: Faux horn toggles 
+
+• Length: Mid-thigh
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
+  {
+    id: "carol",
+    name: "CAROL",
+    variant: "Vintage 1970s Blonde Fox Fur & Leather Panel Coat – The Carol",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("carol"),
+    description: `A striking vintage fox fur coat in a soft blonde champagne tone, designed with leather panel construction that adds beautiful movement and shape to the silhouette. The plush shawl collar frames the neckline, while the wrap-style leather waist tie allows the coat to be worn loosely draped or cinched for a more defined look.
+
+Alternating fur and leather panels create subtle vertical texture and fluidity, resulting in a piece that feels both glamorous and effortless.
+
+Inside, the satin lining is embroidered with the name Carol, a charming detail from the coat's original owner.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1970s
+
+• Material: Fox fur, leather panel construction 
+
+• Color: Blonde/champagne fur, saddle brown leather paneling 
+
+• Lining: Satin lining with custom monogram 
+
+• Length: Above the knee 
+
+• Closure: Removable leather wrap-style waist tie
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
 ];
 
 export default products;
