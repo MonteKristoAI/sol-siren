@@ -8,8 +8,8 @@ import { useCart } from "@/contexts/CartContext";
 const shopCategories = [
   { label: "Fur", to: "/shop?category=fur" },
   { label: "Leather", to: "/shop?category=leather" },
-  { label: "Penny Lane", to: "/shop?category=penny-lane" },
-  { label: "Trench Coats", to: "/shop?category=trench-coats" },
+  { label: "Penny Lane / Afghan", to: "/shop?category=penny-lane-afghan" },
+  { label: "Overcoat", to: "/shop?category=overcoat" },
   { label: "Apres Ski", to: "/shop?category=apres-ski" },
 ];
 

@@ -11,8 +11,8 @@ const categories: { label: string; value: ProductCategory | "all" }[] = [
   { label: "All", value: "all" },
   { label: "Fur", value: "fur" },
   { label: "Leather", value: "leather" },
-  { label: "Penny Lane", value: "penny-lane" },
-  { label: "Trench Coats", value: "trench-coats" },
+  { label: "Penny Lane / Afghan", value: "penny-lane-afghan" },
+  { label: "Overcoat", value: "overcoat" },
   { label: "Apres Ski", value: "apres-ski" },
 ];
 
