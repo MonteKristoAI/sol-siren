@@ -127,6 +127,10 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
         {product.description}
       </p>
 
+      <p className="mt-4 font-body text-[11px] italic text-muted-foreground/70 max-w-md">
+        Vintage items may show minor wear consistent with age. Each piece is one-of-one and carries its own history.
+      </p>
+
       <div className="w-full h-[1px] bg-border my-8" />
 
       {/* Size selector */}
