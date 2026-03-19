@@ -2,12 +2,24 @@ import type { Product } from "@/contexts/CartContext";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
+export interface SizeFit {
+  modernSize: string;
+  measurements: {
+    shoulder: string;
+    bust: string;
+    sleeve: string;
+    length: string;
+  };
+  fitDescription: string;
+}
+
 export interface ProductWithSlug extends Product {
   slug: string;
   description: string;
   images: string[];
   sizes: string[];
   category: ProductCategory;
+  sizeFit: SizeFit;
 }
 
 function toSlug(name: string) {

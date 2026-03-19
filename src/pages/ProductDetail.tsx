@@ -211,9 +211,19 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
           </p>
         </Accordion>
         <Accordion title="Size & Fit">
-          <p className="font-body text-sm text-muted-foreground leading-relaxed">
-            Model is 5'9" and wears size S. This piece runs true to size. For a relaxed fit, we recommend sizing up.
-          </p>
+          <div className="font-body text-sm text-muted-foreground leading-relaxed space-y-3">
+            <p><span className="text-foreground font-medium">Estimated Modern Size:</span> {product.sizeFit.modernSize}</p>
+            <div>
+              <p className="text-foreground font-medium mb-1">Measurements:</p>
+              <ul className="list-disc list-inside space-y-1 pl-1">
+                <li>Shoulder: {product.sizeFit.measurements.shoulder}</li>
+                <li>Bust: {product.sizeFit.measurements.bust}</li>
+                <li>Sleeve: {product.sizeFit.measurements.sleeve}</li>
+                <li>Length: {product.sizeFit.measurements.length}</li>
+              </ul>
+            </div>
+            <p>{product.sizeFit.fitDescription}</p>
+          </div>
         </Accordion>
         <Accordion title="Care Instructions">
           <p className="font-body text-sm text-muted-foreground leading-relaxed">
