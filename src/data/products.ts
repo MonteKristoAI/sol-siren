@@ -20,6 +20,7 @@ export interface ProductWithSlug extends Product {
   sizes: string[];
   category: ProductCategory;
   sizeFit: SizeFit;
+  careInstructions: string[];
 }
 
 function toSlug(name: string) {
