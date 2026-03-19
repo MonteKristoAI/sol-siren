@@ -61,6 +61,16 @@ A garment with a past—ready for its next chapter.
 Vintage items show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -97,6 +107,16 @@ A garment with a past—ready for its next chapter.
 Vintage garments may show minor wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -131,6 +151,16 @@ A garment with a past—ready for its next chapter.
 Vintage items show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -167,6 +197,16 @@ A garment with a past—ready for its next chapter.
 Vintage garments show minor wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -203,6 +243,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -237,6 +287,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -273,6 +333,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -307,6 +377,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -341,6 +421,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -375,6 +465,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -411,6 +511,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -447,6 +557,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -483,6 +603,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -519,6 +649,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -555,6 +695,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -589,6 +739,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "leather",
   },
   {
@@ -623,6 +783,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "leather",
   },
   {
@@ -659,6 +829,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "leather",
   },
   {
@@ -693,6 +873,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "leather",
   },
   {
@@ -729,6 +919,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "leather",
   },
   {
@@ -763,6 +963,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "overcoat",
   },
   {
@@ -799,6 +1009,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "penny-lane-afghan",
   },
   {
@@ -831,6 +1051,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -867,6 +1097,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
   {
@@ -903,6 +1143,16 @@ A garment with a past—ready for its next chapter.
 Vintage items may show wear consistent with age.`,
     images: ["/placeholder.svg"],
     sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
     category: "fur",
   },
 ];
