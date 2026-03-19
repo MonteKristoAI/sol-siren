@@ -365,6 +365,186 @@ Vintage items may show wear consistent with age.`,
     sizes: ["XS", "S", "M", "L"],
     category: "fur",
   },
+  {
+    id: "roxanne",
+    name: "ROXANNE",
+    variant: "Vintage 1970s Suede & Fur Belted Penny Lane Coat – The Roxanne",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("roxanne"),
+    description: `A striking 1970s suede coat by Dan Di Modes, designed with a sculpted silhouette and dramatic fur trim that captures the effortless glamour of the era.
+
+Cut from supple tobacco brown suede, the coat features an oversized shawl collar and hem trimmed in plush fur that adds warmth, movement, and texture. The tailored body is shaped with princess seams for a flattering fit, while a matching suede belt cinches the waist.
+
+Suede-covered buttons run down the front beneath the sweeping collar, maintaining the coat's clean lines.
+
+A timeless vintage coat with unmistakable seventies attitude.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Fur trim shawl collar & hem trim. Suede outer shell 
+
+• Color: Tobacco brown 
+
+• Lining: Satin 
+
+• Closure: Buttons + waist belt 
+
+• Length: Mid-thigh-knee length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "sybil",
+    name: "SYBIL",
+    variant: "Vintage Penny Lane Style Faux Suede Shearling Coat – The Sybil",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("sybil"),
+    description: `A modern revival of an iconic 1970s silhouette.
+
+This Penny Lane–inspired coat is crafted in soft camel microfiber faux suede and finished with plush cream faux shearling trim along the oversized shawl collar and hem.
+
+Princess seams shape the body, while the original belt cinches the waist.
+
+Inspired by the legendary coats worn by rock-and-roll muses of the 1970s.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Faux suede + faux shearling 
+
+• Color: Camel with cream shearling 
+
+• Lining: Satin 
+
+• Closure: Belt 
+
+• Length: Mid-thigh
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "frankie",
+    name: "FRANKIE",
+    variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim – The Frankie",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("frankie"),
+    description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
+
+The exterior is crafted from supple suede with curly lamb shearling trim along the front opening and hemline.
+
+The front closes with corded loop closures, a classic vintage detail.
+
+Simple, timeless, and endlessly wearable.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Suede + shearling trim 
+
+• Color: Tobacco brown 
+
+• Lining: Satin 
+
+• Closure: Loop closures 
+
+• Length: Knee length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "kate",
+    name: "KATE",
+    variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Kate",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("kate"),
+    description: `A striking vintage suede coat inspired by iconic Penny Lane silhouettes.
+
+Crafted in warm golden suede and framed with plush shearling trim.
+
+The dramatic shawl collar flows into a full shearling front panel, creating texture and warmth.
+
+A true statement coat.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Suede + shearling 
+
+• Color: Golden suede with cream shearling 
+
+• Lining: Satin 
+
+• Closure: Hook-and-eye 
+
+• Length: Knee length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "topanga",
+    name: "TOPANGA",
+    variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Topanga",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("topanga"),
+    description: `A striking vintage suede coat inspired by the iconic Penny Lane silhouettes of the late 1960s and early 1970s.
+
+The dramatic shawl collar flows into a full shearling front panel.
+
+The coat is designed to wear open or lightly closed with hidden hook and eye closures.
+
+A true statement vintage piece.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Suede + shearling 
+
+• Color: Golden suede 
+
+• Lining: Satin 
+
+• Closure: Hook closures 
+
+• Length: Knee length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
 ];
 
 export default products;
