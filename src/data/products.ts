@@ -719,6 +719,180 @@ Vintage items may show wear consistent with age.`,
     sizes: ["XS", "S", "M", "L"],
     category: "leather",
   },
+  {
+    id: "candace",
+    name: "CANDACE",
+    variant: "Vintage 1970s Short Plaid Fur Trim Coat – The Candace",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("candace"),
+    description: `A beautiful hooded vintage plaid coat that captures the cozy spirit of 1970s winter style.
+
+Crafted in a rich earth-tone plaid of camel, rust, navy, and chocolate, this piece blends classic American outerwear with dramatic faux fur trim along the hood and cuffs.
+
+The coat offers warmth while maintaining a bold vintage aesthetic, making it a standout winter layering piece.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1970s 
+
+• Material: Wool blend with faux fur trim 
+
+• Color: Multi-tone earth plaid 
+
+• Lining: Satin 
+
+• Closure: Front button 
+
+• Length: Short coat
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "overcoat",
+  },
+  {
+    id: "aspen",
+    name: "ASPEN",
+    variant: "Vintage 1970s Suede & Shearling Ranch Coat – The Aspen",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("aspen"),
+    description: `A striking vintage suede Ranch Coat from the late 1960s to early 1970s, featuring a dramatic shearling-style collar and plush interior lining.
+
+Crafted in rich chocolate brown suede, this full-length coat features an oversized shawl collar trimmed in thick shearling-style pile.
+
+The interior is lined in dense mouton-style faux fur, creating a soft and cozy feel.
+
+Western-inspired detailing adds contrast and character.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s-Early 1970s 
+
+• Material: Suede leather exterior, faux fur lining 
+
+• Color: Chocolate brown 
+
+• Lining: Faux fur 
+
+• Closure: Belt 
+
+• Length: Full-length
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "simone",
+    name: "SIMONE",
+    variant: "Vintage 1940s Silver Fox Evening Stole – The Simone",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("simone"),
+    description: `A striking vintage fox fur stole from the late 1940s-early 1950s, crafted in beautifully full silver fox fur.
+
+Designed to drape elegantly around the shoulders, this piece creates a sculptural silhouette with incredible softness and volume.
+
+Originally intended for evening wear, it can also be layered over coats for added drama and warmth.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: 1950s 
+
+• Material: Silver fox 
+
+• Color: Silver taupe 
+
+• Closure: Hook 
+
+• Fit: One size
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["One Size"],
+    category: "fur",
+  },
+  {
+    id: "margaux",
+    name: "MARGAUX",
+    variant: "Vintage 1950s Mink Capelet – The Margaux",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("margaux"),
+    description: `A luminous vintage mink capelet crafted by Leafgren Fine Furs.
+
+Cut in a graceful shoulder-length silhouette, this piece drapes elegantly across the upper body.
+
+The mink is arranged in classic horizontal pelts, producing a soft, tiered texture.
+
+A timeless vintage accessory that elevates any look.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1950s 
+
+• Material: Mink 
+
+• Color: Golden honey 
+
+• Lining: Satin 
+
+• Closure: Hook 
+
+• Fit: One size
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["One Size"],
+    category: "fur",
+  },
+  {
+    id: "janis",
+    name: "JANIS",
+    variant: "Vintage 1970s Tibetan Lamb Fur Jacket – The Janis",
+    price: 0,
+    image: "/placeholder.svg",
+    slug: toSlug("janis"),
+    description: `A dreamy 1970s curly Tibetan/Mongolian lamb jacket in a beautiful natural tonal variation.
+
+The airy corkscrew curls create softness and dramatic texture, while the cropped silhouette gives it a modern feel.
+
+The open front design allows the curls to frame the body naturally.
+
+A timeless vintage piece that feels both bohemian and luxurious.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage 
+
+• Estimated era: Late 1960s – Early 1970s 
+
+• Material: Tibetan/Mongolian lamb 
+
+• Color: Ivory with champagne tones 
+
+• Lining: Satin 
+
+• Closure: Hook closures 
+
+• Length: Cropped
+
+Vintage items may show wear consistent with age.`,
+    images: ["/placeholder.svg"],
+    sizes: ["XS", "S", "M", "L"],
+    category: "fur",
+  },
 ];
 
 export default products;
