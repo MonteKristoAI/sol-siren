@@ -30,8 +30,6 @@ export interface ProductWithSlug extends Product {
   sizes: string[];
   category: ProductCategory;
   sizeFit: SizeFit;
-    productDetails: {
-    },
   careInstructions: string[];
   productDetails: ProductDetails;
 }
