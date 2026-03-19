@@ -206,9 +206,15 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
       {/* Accordions */}
       <div className="mt-10 border-t border-border">
         <Accordion title="Product Details">
-          <p className="font-body text-sm text-muted-foreground leading-relaxed">
-            Thoughtfully crafted from premium materials. Each piece is designed to feel luxurious while remaining effortlessly wearable day after day.
-          </p>
+          <ul className="font-body text-sm text-muted-foreground leading-relaxed list-disc list-inside space-y-1 pl-1">
+            {product.productDetails.era && <li><span className="text-foreground font-medium">Era:</span> {product.productDetails.era}</li>}
+            {product.productDetails.material && <li><span className="text-foreground font-medium">Material:</span> {product.productDetails.material}</li>}
+            {product.productDetails.color && <li><span className="text-foreground font-medium">Color:</span> {product.productDetails.color}</li>}
+            {product.productDetails.lining && <li><span className="text-foreground font-medium">Lining:</span> {product.productDetails.lining}</li>}
+            {product.productDetails.closure && <li><span className="text-foreground font-medium">Closure:</span> {product.productDetails.closure}</li>}
+            {product.productDetails.length && <li><span className="text-foreground font-medium">Length:</span> {product.productDetails.length}</li>}
+            {product.productDetails.fit && <li><span className="text-foreground font-medium">Fit:</span> {product.productDetails.fit}</li>}
+          </ul>
         </Accordion>
         <Accordion title="Size & Fit">
           <div className="font-body text-sm text-muted-foreground leading-relaxed space-y-3">
