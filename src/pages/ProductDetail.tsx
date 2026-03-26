@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, Check } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import products from "@/data/products";
 import Footer from "@/components/Footer";
@@ -52,11 +52,15 @@ const ProductDetail = () => {
 /* ================================================================== */
 const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
   const [active, setActive] = useState(0);
+  const hasMultiple = images.length > 1;
+
+  const prevImage = () => setActive((prev) => (prev - 1 + images.length) % images.length);
+  const nextImage = () => setActive((prev) => (prev + 1) % images.length);
 
   return (
     <div>
       {/* Main image */}
-      <div className="relative aspect-[3/4] overflow-hidden border border-border bg-muted">
+      <div className="group relative aspect-[4/5] max-h-[70vh] overflow-hidden border border-border bg-muted">
         <AnimatePresence mode="wait">
           <motion.img
             key={active}
@@ -69,6 +73,26 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
             className="h-full w-full object-cover"
           />
         </AnimatePresence>
+
+        {/* Navigation arrows */}
+        {hasMultiple && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-label="Next image"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </>
+        )}
       </div>
 
       {/* Thumbnails */}
