@@ -7,6 +7,10 @@ import rocco5 from "@/assets/products/rocco-5.jpg";
 import sloaneFront from "@/assets/products/sloane-front.png";
 import sloaneDetails from "@/assets/products/sloane-details.png";
 import sloaneHanger from "@/assets/products/sloane-hanger.png";
+import romyFront from "@/assets/products/romy-front.png";
+import romyDetails from "@/assets/products/romy-details.png";
+import romyBack from "@/assets/products/romy-back.png";
+import romyPocket from "@/assets/products/romy-pocket.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2545,7 +2549,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROMY",
     variant: "Vintage 1980s Convertible Colorblock Ski Jacket — Zip-Off Sleeves / Pastel Chevron – The Romy",
     price: 0,
-    image: "/placeholder.svg",
+    image: romyFront,
     slug: toSlug("romy"),
     description: `A standout vintage ski jacket with a playful, graphic edge — designed with zip-off sleeves that transform it effortlessly into a vest. The bold chevron colorblocking across the chest and back gives it that unmistakable retro alpine feel, softened by a pastel palette that reads fresh and modern.
 
@@ -2572,7 +2576,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Made in Korea
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [romyFront, romyDetails, romyBack, romyPocket],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
