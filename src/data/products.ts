@@ -203,7 +203,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage garments may show minor wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [maggieFront, maggieBack, maggieAngleLeft, maggieAngleRight, maggieShoulderDetail, maggieFrontDetail],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
