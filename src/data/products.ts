@@ -497,7 +497,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Metal ring belt closures.
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [lucyFront, lucyBack, lucyCollar, lucyBackDetail, lucyBeltDetail, lucyAltFront],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
