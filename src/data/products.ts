@@ -22,6 +22,12 @@ import moniqueSideVest from "@/assets/products/monique-side-vest.png";
 import moniqueBackJacket from "@/assets/products/monique-back-jacket.png";
 import moniqueSideJacketClose from "@/assets/products/monique-side-jacket-close.png";
 import moniqueAngleJacket from "@/assets/products/monique-angle-jacket.png";
+import madelineFront from "@/assets/products/madeline/madeline-front.png";
+import madelineBack from "@/assets/products/madeline/madeline-back.png";
+import madelineBack2 from "@/assets/products/madeline/madeline-back-2.png";
+import madelineCollar from "@/assets/products/madeline/madeline-collar.png";
+import madelineLabel from "@/assets/products/madeline/madeline-label.png";
+import madelineTag from "@/assets/products/madeline/madeline-tag.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2792,7 +2798,7 @@ Vintage items may show wear consistent with age.`,
     name: "MADELINE",
     variant: "Vintage 1970s Red Quilted Puffer Vest by Roffe – Sculpted Chevron Stitch / 70s Ski Style – The Madeline",
     price: 0,
-    image: "/placeholder.svg",
+    image: madelineFront,
     slug: toSlug("madeline"),
     description: `A vivid cherry red puffer vest by Roffe with sculpted diagonal quilting that curves across the body in a soft chevron rhythm — giving shape to something traditionally utilitarian. The oversized padded shawl collar rises gently at the neck, creating a cocooned silhouette that feels both protective and quietly dramatic.
 
@@ -2821,7 +2827,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name of previous owner on tag (Madeline)
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [madelineFront, madelineBack, madelineBack2, madelineCollar, madelineLabel, madelineTag],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S-M",
