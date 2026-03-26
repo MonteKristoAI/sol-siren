@@ -48,6 +48,12 @@ import robertaShoulderDetail from "@/assets/products/roberta/roberta-shoulder-de
 import robertaBeltDetail from "@/assets/products/roberta/roberta-belt-detail.png";
 import robertaBack from "@/assets/products/roberta/roberta-back.png";
 import robertaAltBelt from "@/assets/products/roberta/roberta-alt-belt.png";
+import maggieFront from "@/assets/products/maggie/maggie-front.png";
+import maggieBack from "@/assets/products/maggie/maggie-back.png";
+import maggieAngleLeft from "@/assets/products/maggie/maggie-angle-left.png";
+import maggieAngleRight from "@/assets/products/maggie/maggie-angle-right.png";
+import maggieShoulderDetail from "@/assets/products/maggie/maggie-shoulder-detail.png";
+import maggieFrontDetail from "@/assets/products/maggie/maggie-front-detail.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
