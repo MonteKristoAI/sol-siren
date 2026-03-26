@@ -22,6 +22,12 @@ import moniqueSideVest from "@/assets/products/monique-side-vest.png";
 import moniqueBackJacket from "@/assets/products/monique-back-jacket.png";
 import moniqueSideJacketClose from "@/assets/products/monique-side-jacket-close.png";
 import moniqueAngleJacket from "@/assets/products/monique-angle-jacket.png";
+import madelineFront from "@/assets/products/madeline/madeline-front.png";
+import madelineBack from "@/assets/products/madeline/madeline-back.png";
+import madelineBack2 from "@/assets/products/madeline/madeline-back-2.png";
+import madelineCollar from "@/assets/products/madeline/madeline-collar.png";
+import madelineLabel from "@/assets/products/madeline/madeline-label.png";
+import madelineTag from "@/assets/products/madeline/madeline-tag.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
