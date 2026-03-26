@@ -2416,7 +2416,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROCCO",
     variant: "Vintage 1970s Topher Down Alpine Ski Jacket — Red White Blue Colorblock Puffer – The Rocco",
     price: 0,
-    image: "/placeholder.svg",
+    image: roccoFront,
     slug: toSlug("rocco"),
     description: `A vintage alpine ski jacket by Topher Down, made in Canada during the golden era of mountain wear. Cut in a bold red, white, and cobalt blue colorblock, this piece carries the unmistakable energy of late-70s to early-80s ski culture — functional, graphic, and built for cold air and motion.
 
