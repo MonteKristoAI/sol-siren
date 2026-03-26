@@ -64,6 +64,12 @@ import moniqueSideVest from "@/assets/products/monique-side-vest.webp";
 import moniqueBackJacket from "@/assets/products/monique-back-jacket.webp";
 import moniqueSideJacketClose from "@/assets/products/monique-side-jacket-close.webp";
 import moniqueAngleJacket from "@/assets/products/monique-angle-jacket.webp";
+import auroraVest from "@/assets/products/aurora-vest.webp";
+import auroraLining from "@/assets/products/aurora-lining.webp";
+import auroraDetails from "@/assets/products/aurora-details.webp";
+import auroraJacket from "@/assets/products/aurora-jacket.webp";
+import auroraFront from "@/assets/products/aurora-front.webp";
+import auroraCollar from "@/assets/products/aurora-collar.webp";
 import madelineFront from "@/assets/products/madeline/madeline-front.png";
 import madelineBack from "@/assets/products/madeline/madeline-back.png";
 import madelineBack2 from "@/assets/products/madeline/madeline-back-2.png";
@@ -2785,7 +2791,7 @@ Vintage items may show wear consistent with age.`,
     name: "AURORA",
     variant: "Vintage 1970s Burnt Orange Sherpa-Lined Colorblock Puffer Bomber Jacket – The Aurora",
     price: 0,
-    image: "/placeholder.svg",
+    image: auroraVest,
     slug: toSlug("aurora"),
     description: `A standout vintage puffer bomber with a warm, retro palette and an easy off-duty feel. This piece features a dusty blush quilted body, a rich rust-toned yoke with slim contrast piping, and a plush cream sherpa lining that carries through the collar and interior for extra warmth and texture.
 
@@ -2808,7 +2814,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [auroraVest, auroraLining, auroraDetails, auroraJacket, auroraFront, auroraCollar],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M",
