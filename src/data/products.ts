@@ -271,7 +271,7 @@ Vintage items show wear consistent with age.`,
     name: "RENATE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Renate",
     price: 0,
-    image: "/placeholder.svg",
+    image: renateFront,
     slug: toSlug("renate"),
     description: `A beautifully tailored vintage faux mink coat crafted from luxurious Tissavel material. Designed in New York and made in the USA, this piece reflects the elegance of late-1960s outerwear with its soft swing silhouette and sculptural shawl collar.
 
