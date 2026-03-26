@@ -1,33 +1,26 @@
 
 
-## Add 20 Missing Products — Total: 45 Products
+## Plan: Improve Product Detail Image Gallery
 
-### Current State
-The site has **25 products**. After adding all missing products from both spreadsheets, there will be **45 products** total.
+### Problem
+The main product image uses a 3:4 aspect ratio which is too tall -- users must scroll to see the full image. Also, there's no way to navigate between images without clicking thumbnails below.
 
-### Missing Products (20)
+### Changes (single file: `src/pages/ProductDetail.tsx`)
 
-**From Part 1 — 3 products:**
-- ELVIRA (Fur)
-- COLLETTE (Penny Lane / Afghan)
-- RHIANNON (Penny Lane / Afghan)
+**1. Reduce image size**
+- Change the main image aspect ratio from `aspect-[3/4]` to `aspect-[4/5]` and cap its max height with `max-h-[70vh]` so the image always fits within the viewport without scrolling.
 
-**From Part 2 — Overcoats — 8 products:**
-- DIANA, BIANCA, NICO, ROAN, VALENTINA, PENELOPE, VIVIENNE, KENDRA
+**2. Add prev/next arrow buttons on the main image**
+- Add left/right `ChevronLeft` / `ChevronRight` buttons overlaid on the main image (centered vertically, semi-transparent background, appear on hover).
+- Clicking them cycles through the images array (wrapping around).
+- Only show arrows when there are 2+ images.
 
-**From Part 2 — Apres Ski — 9 products:**
-- BLAIR, SUNNY, ROCCO, SLOANE, ROMY, ANDIE, MONIQUE, MADELINE, + unnamed orange puffer (will use "AURORA" as placeholder name)
+**3. Keep thumbnails as-is**
+- The thumbnail strip below remains unchanged for direct selection.
 
-### What Changes
-
-**`src/data/products.ts`**
-- Add 20 new product entries with full data from the spreadsheets (descriptions, product details, size & fit measurements, care instructions)
-- Update `sizeFit` measurements for 5 existing products (STEVIE, SIERRA, VIXEN, CLEO, CANDACE) where the spreadsheet has richer data than current TBD placeholders
-
-No other files need changes — the shop page filters and product detail page already support all categories dynamically.
-
-### Summary
-- **Before:** 25 products
-- **After:** 45 products
-- **Categories after:** Fur (14), Penny Lane/Afghan (8), Leather (5), Overcoat (9), Apres Ski (9)
+### Technical Details
+- Import `ChevronLeft`, `ChevronRight` from `lucide-react`.
+- Add `prevImage` / `nextImage` handlers that update the `active` state index.
+- Arrow buttons: absolute positioned inside the existing relative container, styled with `bg-black/30 hover:bg-black/50 text-white rounded-full p-2`.
+- The `max-h-[70vh]` ensures the image + some product info are visible without scrolling on standard viewports.
 
