@@ -20,9 +20,10 @@ import romyBack from "@/assets/products/romy-back.webp";
 import romyPocket from "@/assets/products/romy-pocket.webp";
 import andieFront from "@/assets/products/andie-front.webp";
 import andieLabel from "@/assets/products/andie-label.webp";
-import annetteFront from "@/assets/products/annette/annette-front.png";
-import annetteBack from "@/assets/products/annette/annette-back.png";
-import annetteCollar from "@/assets/products/annette/annette-collar.png";
+import annetteFront from "@/assets/products/annette-front.webp";
+import annetteBack from "@/assets/products/annette-back.webp";
+import annetteCollar from "@/assets/products/annette-collar.webp";
+import annetteAngle from "@/assets/products/annette-angle.webp";
 import renateFront from "@/assets/products/renate/renate-front.png";
 import renateBack from "@/assets/products/renate/renate-back.png";
 import renateCollar from "@/assets/products/renate/renate-collar.png";
@@ -269,7 +270,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items show wear consistent with age.`,
-    images: [annetteFront, annetteBack, annetteCollar],
+    images: [annetteFront, annetteBack, annetteCollar, annetteAngle],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
