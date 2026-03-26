@@ -11,6 +11,11 @@ import romyFront from "@/assets/products/romy-front.png";
 import romyDetails from "@/assets/products/romy-details.png";
 import romyBack from "@/assets/products/romy-back.png";
 import romyPocket from "@/assets/products/romy-pocket.png";
+import andieFront from "@/assets/products/andie-front.png";
+import andieDetails from "@/assets/products/andie-details.png";
+import andieBack from "@/assets/products/andie-back.png";
+import andieVest from "@/assets/products/andie-vest.png";
+import andieVestDetails from "@/assets/products/andie-vest-details.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
