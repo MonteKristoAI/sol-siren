@@ -18,6 +18,9 @@ import romyDetails from "@/assets/products/romy-details.png";
 import romyBack from "@/assets/products/romy-back.png";
 import romyPocket from "@/assets/products/romy-pocket.png";
 import andieFront from "@/assets/products/andie-front.png";
+import annetteFront from "@/assets/products/annette/annette-front.png";
+import annetteBack from "@/assets/products/annette/annette-back.png";
+import annetteCollar from "@/assets/products/annette/annette-collar.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -202,7 +205,7 @@ Vintage garments may show minor wear consistent with age.`,
     name: "ANNETTE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Annette",
     price: 0,
-    image: "/placeholder.svg",
+    image: annetteFront,
     slug: toSlug("annette"),
     description: `A striking vintage luxury faux fur coat by Tissavel, the renowned French maker celebrated for producing some of the finest faux furs of the late 1960s and early 1970s. Crafted in a deep espresso faux mink with a soft, luminous pile, this piece captures the effortless glamour of the era.
 
@@ -227,7 +230,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [annetteFront, annetteBack, annetteCollar],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
