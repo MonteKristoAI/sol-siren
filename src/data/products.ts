@@ -48,6 +48,12 @@ import robertaShoulderDetail from "@/assets/products/roberta/roberta-shoulder-de
 import robertaBeltDetail from "@/assets/products/roberta/roberta-belt-detail.png";
 import robertaBack from "@/assets/products/roberta/roberta-back.png";
 import robertaAltBelt from "@/assets/products/roberta/roberta-alt-belt.png";
+import maggieFront from "@/assets/products/maggie/maggie-front.png";
+import maggieBack from "@/assets/products/maggie/maggie-back.png";
+import maggieAngleLeft from "@/assets/products/maggie/maggie-angle-left.png";
+import maggieAngleRight from "@/assets/products/maggie/maggie-angle-right.png";
+import maggieShoulderDetail from "@/assets/products/maggie/maggie-shoulder-detail.png";
+import maggieFrontDetail from "@/assets/products/maggie/maggie-front-detail.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -170,7 +176,7 @@ Vintage items show wear consistent with age.`,
     name: "MAGGIE",
     variant: "Vintage 1980s Faux Fur Coat – The Maggie",
     price: 0,
-    image: "/placeholder.svg",
+    image: maggieFront,
     slug: toSlug("maggie"),
     description: `A beautifully textured vintage faux fur jacket in a luminous ivory tone with soft silver tipping throughout the pile, creating a subtle frosted effect that catches the light. The plush faux fur has a smooth, mink-like finish while remaining lightweight and easy to wear.
 
@@ -197,7 +203,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage garments may show minor wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [maggieFront, maggieBack, maggieAngleLeft, maggieAngleRight, maggieShoulderDetail, maggieFrontDetail],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
