@@ -454,7 +454,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Hidden eye-hook closures along front
 
 Vintage items may show wear consistent with age.`,
-    images: [madgeFront, madgeBack],
+    images: [madgeFront, madgeBack, madgeLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
