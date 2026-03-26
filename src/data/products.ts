@@ -5,11 +5,11 @@ import fayeClosure from "@/assets/products/faye/faye-closure.png";
 import fayeDetail from "@/assets/products/faye/faye-detail.png";
 import fayeBack from "@/assets/products/faye/faye-back.png";
 import fayeShoulder from "@/assets/products/faye/faye-shoulder.png";
-import roccoFront from "@/assets/products/rocco-front.png";
-import roccoBack from "@/assets/products/rocco-back.png";
-import roccoDetails from "@/assets/products/rocco-details.png";
-import rocco4 from "@/assets/products/rocco-4.jpg";
-import rocco5 from "@/assets/products/rocco-5.jpg";
+import roccoFront from "@/assets/products/rocco-front.webp";
+import roccoBack from "@/assets/products/rocco-back.webp";
+import roccoDetails from "@/assets/products/rocco-details.webp";
+import roccoLogo from "@/assets/products/rocco-logo.webp";
+import roccoLabel from "@/assets/products/rocco-label.webp";
 import sloaneFront from "@/assets/products/sloane-front.png";
 import sloaneDetails from "@/assets/products/sloane-details.png";
 import sloaneHanger from "@/assets/products/sloane-hanger.png";
@@ -2516,7 +2516,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name/number of previous owner on tag (R. Massey)
 
 Vintage items may show wear consistent with age.`,
-    images: [roccoFront, roccoBack, roccoDetails, rocco4, rocco5],
+    images: [roccoFront, roccoBack, roccoDetails, roccoLogo, roccoLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Men's S or Women's M (relaxed, slightly oversized fit)",
