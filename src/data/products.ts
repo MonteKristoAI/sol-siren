@@ -402,7 +402,7 @@ Vintage items may show wear consistent with age.`,
     name: "MADGE",
     variant: "Vintage 1960s Monterey Ridge White Faux Fur Coat - The Madge",
     price: 0,
-    image: "/placeholder.svg",
+    image: madgeFront,
     slug: toSlug("madge"),
     description: `A dreamy vintage faux fur coat in the softest icy silver tone, made by Intrigue for Monterey Mills. This piece has all the drama of classic fur styling with the practicality of a luxury synthetic fabric, creating a look that feels both glamorous and easy to wear.
 
