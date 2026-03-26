@@ -563,7 +563,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Multiple hidden classic hook-and-eye closures along the front as well as original removable ivory leather belt.
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [robertaFront, robertaAngle, robertaShoulderDetail, robertaBeltDetail, robertaBack, robertaAltBelt],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
