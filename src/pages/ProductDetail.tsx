@@ -1,7 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import products from "@/data/products";
 import Footer from "@/components/Footer";
@@ -52,34 +52,11 @@ const ProductDetail = () => {
 /* ================================================================== */
 const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
   const [active, setActive] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-
-  const goNext = useCallback(() => setActive((prev) => (prev + 1) % images.length), [images.length]);
-  const goPrev = useCallback(() => setActive((prev) => (prev - 1 + images.length) % images.length), [images.length]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") goNext();
-      else if (e.key === "ArrowLeft") goPrev();
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [goNext, goPrev]);
 
   return (
     <div>
       {/* Main image */}
-      <div
-        className="relative max-h-[75vh] overflow-hidden border border-border bg-muted flex items-center justify-center p-2"
-        onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
-        onTouchEnd={(e) => {
-          if (touchStart === null) return;
-          const diff = e.changedTouches[0].clientX - touchStart;
-          if (Math.abs(diff) > 50) diff > 0 ? goPrev() : goNext();
-          setTouchStart(null);
-        }}
-      >
+      <div className="relative aspect-[3/4] overflow-hidden border border-border bg-muted">
         <AnimatePresence mode="wait">
           <motion.img
             key={active}
@@ -89,29 +66,9 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="max-h-[calc(75vh-1rem)] w-full object-contain"
+            className="h-full w-full object-cover"
           />
         </AnimatePresence>
-
-        {/* Arrow controls */}
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={goPrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 backdrop-blur-sm border border-border rounded-full p-2 transition-all duration-200 text-foreground"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={goNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 backdrop-blur-sm border border-border rounded-full p-2 transition-all duration-200 text-foreground"
-              aria-label="Next image"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </>
-        )}
       </div>
 
       {/* Thumbnails */}
