@@ -1,10 +1,11 @@
 import type { Product } from "@/contexts/CartContext";
-import fayeFront from "@/assets/products/faye/faye-front.png";
-import fayeCollar from "@/assets/products/faye/faye-collar.png";
-import fayeClosure from "@/assets/products/faye/faye-closure.png";
-import fayeDetail from "@/assets/products/faye/faye-detail.png";
-import fayeBack from "@/assets/products/faye/faye-back.png";
-import fayeShoulder from "@/assets/products/faye/faye-shoulder.png";
+import fayeFront from "@/assets/products/faye-front.webp";
+import fayeCollar from "@/assets/products/faye-collar.webp";
+import fayeClosure from "@/assets/products/faye-closure.webp";
+import fayeDetail from "@/assets/products/faye-detail.webp";
+import fayeBack from "@/assets/products/faye-back.webp";
+import fayeShoulder from "@/assets/products/faye-shoulder.webp";
+import fayeLabel from "@/assets/products/faye-label.webp";
 import roccoFront from "@/assets/products/rocco-front.webp";
 import roccoBack from "@/assets/products/rocco-back.webp";
 import roccoDetails from "@/assets/products/rocco-details.webp";
@@ -147,7 +148,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items show wear consistent with age.`,
-    images: [fayeFront, fayeBack, fayeCollar, fayeDetail, fayeClosure, fayeShoulder],
+    images: [fayeFront, fayeBack, fayeCollar, fayeDetail, fayeClosure, fayeShoulder, fayeLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
