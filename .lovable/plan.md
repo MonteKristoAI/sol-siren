@@ -1,26 +1,22 @@
 
 
-## Plan: Improve Product Detail Image Gallery
+## Plan: Add MADELINE Product Photos
 
-### Problem
-The main product image uses a 3:4 aspect ratio which is too tall -- users must scroll to see the full image. Also, there's no way to navigate between images without clicking thumbnails below.
+### Summary
+Replace placeholder images for the MADELINE (Apres Ski) product with the 6 uploaded photos.
 
-### Changes (single file: `src/pages/ProductDetail.tsx`)
+### Changes
 
-**1. Reduce image size**
-- Change the main image aspect ratio from `aspect-[3/4]` to `aspect-[4/5]` and cap its max height with `max-h-[70vh]` so the image always fits within the viewport without scrolling.
+**1. Copy 6 images to `src/assets/products/madeline/`**
+- `madeline-front.png` (full front view on mannequin)
+- `madeline-back.png` (back view, higher angle)
+- `madeline-back-2.png` (back view, lower angle)
+- `madeline-collar.png` (close-up of collar/buttons)
+- `madeline-label.png` (Roffe brand label)
+- `madeline-tag.png` (handwritten "Madeline" name tag)
 
-**2. Add prev/next arrow buttons on the main image**
-- Add left/right `ChevronLeft` / `ChevronRight` buttons overlaid on the main image (centered vertically, semi-transparent background, appear on hover).
-- Clicking them cycles through the images array (wrapping around).
-- Only show arrows when there are 2+ images.
-
-**3. Keep thumbnails as-is**
-- The thumbnail strip below remains unchanged for direct selection.
-
-### Technical Details
-- Import `ChevronLeft`, `ChevronRight` from `lucide-react`.
-- Add `prevImage` / `nextImage` handlers that update the `active` state index.
-- Arrow buttons: absolute positioned inside the existing relative container, styled with `bg-black/30 hover:bg-black/50 text-white rounded-full p-2`.
-- The `max-h-[70vh]` ensures the image + some product info are visible without scrolling on standard viewports.
+**2. Update `src/data/products.ts`**
+- Change `image` from `"/placeholder.svg"` to the front view import
+- Replace `images` array with all 6 photos (front, back, back-2, collar, label, tag)
+- Add ES6 imports at top of file for all 6 images
 
