@@ -70,12 +70,11 @@ import auroraDetails from "@/assets/products/aurora-details.webp";
 import auroraJacket from "@/assets/products/aurora-jacket.webp";
 import auroraFront from "@/assets/products/aurora-front.webp";
 import auroraCollar from "@/assets/products/aurora-collar.webp";
-import madelineFront from "@/assets/products/madeline/madeline-front.png";
-import madelineBack from "@/assets/products/madeline/madeline-back.png";
-import madelineBack2 from "@/assets/products/madeline/madeline-back-2.png";
-import madelineCollar from "@/assets/products/madeline/madeline-collar.png";
-import madelineLabel from "@/assets/products/madeline/madeline-label.png";
-import madelineTag from "@/assets/products/madeline/madeline-tag.png";
+import madelineFront from "@/assets/products/madeline-front.webp";
+import madelineBack from "@/assets/products/madeline-back.webp";
+import madelineCollar from "@/assets/products/madeline-collar.webp";
+import madelineNametag from "@/assets/products/madeline-nametag.webp";
+import madelineLabel from "@/assets/products/madeline-label.webp";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2875,7 +2874,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name of previous owner on tag (Madeline)
 
 Vintage items may show wear consistent with age.`,
-    images: [madelineFront, madelineBack, madelineBack2, madelineCollar, madelineLabel, madelineTag],
+    images: [madelineFront, madelineBack, madelineCollar, madelineNametag, madelineLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S-M",
