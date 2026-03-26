@@ -7,6 +7,7 @@ export interface Product {
   image: string;
   variant: string;
   selectedSize?: string;
+  sold?: boolean;
 }
 
 export interface CartItem extends Product {

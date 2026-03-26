@@ -4,6 +4,9 @@ import roccoBack from "@/assets/products/rocco-back.png";
 import roccoDetails from "@/assets/products/rocco-details.png";
 import rocco4 from "@/assets/products/rocco-4.jpg";
 import rocco5 from "@/assets/products/rocco-5.jpg";
+import sloaneFront from "@/assets/products/sloane-front.png";
+import sloaneDetails from "@/assets/products/sloane-details.png";
+import sloaneHanger from "@/assets/products/sloane-hanger.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2482,8 +2485,9 @@ Vintage items may show wear consistent with age.`,
     name: "SLOANE",
     variant: "Vintage 1970s Nalley Colorblock Ski Puffer Jacket – The Sloane",
     price: 0,
-    image: "/placeholder.svg",
+    image: sloaneFront,
     slug: toSlug("sloane"),
+    sold: true,
     description: `A striking vintage ski jacket by Nalley, a Pacific Northwest outdoor label based in Seattle. This piece captures the bold alpine style of late-70s and early-80s ski culture with its sculptural color blocking and cropped bomber silhouette.
 
 The nylon shell features dynamic panels of khaki, navy, and burnt orange that sweep across the body and sleeves, creating a graphic, sporty look that feels just as modern today. A tall stand collar and insulated construction were designed for mountain weather, while the elastic ribbed waistband gives the jacket its classic ski-bomber shape.
@@ -2509,7 +2513,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [sloaneFront, sloaneDetails, sloaneHanger],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS-S",

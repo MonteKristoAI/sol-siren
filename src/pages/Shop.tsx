@@ -114,21 +114,28 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
       transition={{ duration: 0.5, ease: "easeOut", delay: (index % 4) * 0.08 }}
       className="group"
     >
-      <Link to={`/product/${slug}`} className="relative aspect-[3/4] overflow-hidden border border-border bg-muted block">
+      <Link to={`/product/${slug}`} className={`relative aspect-[3/4] overflow-hidden border border-border bg-muted block ${product.sold ? "opacity-75" : ""}`}>
         <img
           src={product.image}
           alt={product.name}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
         />
+        {product.sold && (
+          <div className="absolute top-4 left-4 bg-foreground text-primary-foreground font-body text-[10px] tracking-ultra-wide uppercase px-3 py-1.5 z-10">
+            Sold
+          </div>
+        )}
         <div className="pointer-events-none absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-500" />
-        <button
-          onClick={(e) => { e.preventDefault(); e.stopPropagation(); onQuickView(); }}
-          className="pointer-events-auto absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-background/90 backdrop-blur-sm px-5 py-2.5 font-body text-[10px] tracking-ultra-wide uppercase text-foreground opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 border border-border"
-        >
-          <Eye size={14} />
-          Quick View
-        </button>
+        {!product.sold && (
+          <button
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onQuickView(); }}
+            className="pointer-events-auto absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-background/90 backdrop-blur-sm px-5 py-2.5 font-body text-[10px] tracking-ultra-wide uppercase text-foreground opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 border border-border"
+          >
+            <Eye size={14} />
+            Quick View
+          </button>
+        )}
       </Link>
 
       <Link to={`/product/${slug}`} className="block mt-4 space-y-1">
@@ -137,13 +144,19 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
         <p className="font-body text-sm font-medium text-foreground">${product.price}.00</p>
       </Link>
 
-      <Link
-        to={`/product/${slug}`}
-        className="mt-4 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
-      >
-        <ShoppingBag size={14} />
-        Select Options
-      </Link>
+      {product.sold ? (
+        <div className="mt-4 w-full flex items-center justify-center gap-2 border border-muted-foreground/30 bg-muted text-muted-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase cursor-not-allowed">
+          Sold Out
+        </div>
+      ) : (
+        <Link
+          to={`/product/${slug}`}
+          className="mt-4 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
+        >
+          <ShoppingBag size={14} />
+          Select Options
+        </Link>
+      )}
     </motion.div>
   );
 };

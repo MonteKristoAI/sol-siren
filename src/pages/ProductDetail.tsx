@@ -185,15 +185,29 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
       </div>
 
       {/* Add to Cart */}
-      <button
-        onClick={handleAdd}
-        className={`mt-8 w-full flex items-center justify-center gap-2 bg-foreground text-primary-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase transition-all duration-300 ${
-          selectedSize ? "hover:bg-foreground/90" : "opacity-75 hover:opacity-85"
-        }`}
-      >
-        <ShoppingBag size={14} />
-        {added ? "Added ✓" : "Add to Cart"}
-      </button>
+      {product.sold ? (
+        <div className="mt-8 space-y-2">
+          <button
+            disabled
+            className="w-full flex items-center justify-center gap-2 bg-muted text-muted-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase cursor-not-allowed border border-muted-foreground/30"
+          >
+            Sold Out
+          </button>
+          <p className="font-body text-[11px] text-muted-foreground/70 text-center italic">
+            This piece has been sold and is no longer available.
+          </p>
+        </div>
+      ) : (
+        <button
+          onClick={handleAdd}
+          className={`mt-8 w-full flex items-center justify-center gap-2 bg-foreground text-primary-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase transition-all duration-300 ${
+            selectedSize ? "hover:bg-foreground/90" : "opacity-75 hover:opacity-85"
+          }`}
+        >
+          <ShoppingBag size={14} />
+          {added ? "Added ✓" : "Add to Cart"}
+        </button>
+      )}
 
       {/* Shipping notes */}
       <div className="mt-6 space-y-2">
