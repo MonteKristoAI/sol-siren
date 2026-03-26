@@ -2694,7 +2694,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: JC Penny, Size L
 
 Vintage items may show wear consistent with age.`,
-    images: [andieFront, andieDetails, andieBack, andieVest, andieVestDetails],
+    images: [andieFront, andieDetails, andieBack, andieVest, andieVestDetails, andieLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
