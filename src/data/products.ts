@@ -21,6 +21,12 @@ import andieFront from "@/assets/products/andie-front.png";
 import annetteFront from "@/assets/products/annette/annette-front.png";
 import annetteBack from "@/assets/products/annette/annette-back.png";
 import annetteCollar from "@/assets/products/annette/annette-collar.png";
+import renateFront from "@/assets/products/renate/renate-front.png";
+import renateBack from "@/assets/products/renate/renate-back.png";
+import renateCollar from "@/assets/products/renate/renate-collar.png";
+import renateShoulder from "@/assets/products/renate/renate-shoulder.png";
+import renateLining from "@/assets/products/renate/renate-lining.png";
+import renateLabel from "@/assets/products/renate/renate-label.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -265,7 +271,7 @@ Vintage items show wear consistent with age.`,
     name: "RENATE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Renate",
     price: 0,
-    image: "/placeholder.svg",
+    image: renateFront,
     slug: toSlug("renate"),
     description: `A beautifully tailored vintage faux mink coat crafted from luxurious Tissavel material. Designed in New York and made in the USA, this piece reflects the elegance of late-1960s outerwear with its soft swing silhouette and sculptural shawl collar.
 
@@ -292,7 +298,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage garments show minor wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [renateFront, renateBack, renateCollar, renateShoulder, renateLining, renateLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
