@@ -2814,7 +2814,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [auroraVest, auroraLining, auroraDetails, auroraJacket, auroraFront, auroraCollar],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M",
