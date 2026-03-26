@@ -144,13 +144,19 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
         <p className="font-body text-sm font-medium text-foreground">${product.price}.00</p>
       </Link>
 
-      <Link
-        to={`/product/${slug}`}
-        className="mt-4 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
-      >
-        <ShoppingBag size={14} />
-        Select Options
-      </Link>
+      {product.sold ? (
+        <div className="mt-4 w-full flex items-center justify-center gap-2 border border-muted-foreground/30 bg-muted text-muted-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase cursor-not-allowed">
+          Sold Out
+        </div>
+      ) : (
+        <Link
+          to={`/product/${slug}`}
+          className="mt-4 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
+        >
+          <ShoppingBag size={14} />
+          Select Options
+        </Link>
+      )}
     </motion.div>
   );
 };
