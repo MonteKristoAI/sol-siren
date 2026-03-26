@@ -36,6 +36,12 @@ import madgeFront from "@/assets/products/madge/madge-front.png";
 import madgeBack from "@/assets/products/madge/madge-back.jpeg";
 import carolFront from "@/assets/products/carol/carol-front.png";
 import carolCollar from "@/assets/products/carol/carol-collar.png";
+import lucyFront from "@/assets/products/lucy/lucy-front.png";
+import lucyBack from "@/assets/products/lucy/lucy-back.png";
+import lucyCollar from "@/assets/products/lucy/lucy-collar.png";
+import lucyBackDetail from "@/assets/products/lucy/lucy-back-detail.png";
+import lucyBeltDetail from "@/assets/products/lucy/lucy-belt-detail.png";
+import lucyAltFront from "@/assets/products/lucy/lucy-alt-front.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -464,7 +470,7 @@ Vintage items may show wear consistent with age.`,
     name: "LUCY",
     variant: "Vintage 1960s London Faux Fur & Suede Swing Coat by Lilli Ann – The Lucy",
     price: 0,
-    image: "/placeholder.svg",
+    image: lucyFront,
     slug: toSlug("lucy"),
     description: `A striking vintage coat from the London line of the iconic Lilli Ann label, crafted in England during the late 1960s.
 
@@ -491,7 +497,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Metal ring belt closures.
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [lucyFront, lucyBack, lucyCollar, lucyBackDetail, lucyBeltDetail, lucyAltFront],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
