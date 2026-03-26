@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, Check } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import products from "@/data/products";
 import Footer from "@/components/Footer";
