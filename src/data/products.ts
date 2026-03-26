@@ -46,7 +46,6 @@ import robertaFront from "@/assets/products/roberta/roberta-front.png";
 import robertaAngle from "@/assets/products/roberta/roberta-angle.png";
 import robertaShoulderDetail from "@/assets/products/roberta/roberta-shoulder-detail.png";
 import robertaBeltDetail from "@/assets/products/roberta/roberta-belt-detail.png";
-import robertaBack from "@/assets/products/roberta/roberta-back.png";
 import robertaAltBelt from "@/assets/products/roberta/roberta-alt-belt.png";
 import maggieFront from "@/assets/products/maggie/maggie-front.png";
 import maggieBack from "@/assets/products/maggie/maggie-back.png";
@@ -569,7 +568,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Multiple hidden classic hook-and-eye closures along the front as well as original removable ivory leather belt.
 
 Vintage items may show wear consistent with age.`,
-    images: [robertaFront, robertaAngle, robertaShoulderDetail, robertaBeltDetail, robertaBack, robertaAltBelt],
+    images: [robertaFront, robertaAngle, robertaShoulderDetail, robertaBeltDetail, robertaAltBelt],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
