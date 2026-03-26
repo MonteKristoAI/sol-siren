@@ -2516,7 +2516,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name/number of previous owner on tag (R. Massey)
 
 Vintage items may show wear consistent with age.`,
-    images: [roccoFront, roccoBack, roccoDetails, rocco4, rocco5],
+    images: [roccoFront, roccoBack, roccoDetails, roccoLogo, roccoLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Men's S or Women's M (relaxed, slightly oversized fit)",
