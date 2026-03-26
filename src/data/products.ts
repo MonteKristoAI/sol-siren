@@ -30,11 +30,10 @@ import renateCollar from "@/assets/products/renate-collar.webp";
 import renateShoulder from "@/assets/products/renate-shoulder.webp";
 import renateLining from "@/assets/products/renate-lining.webp";
 import renateLabel from "@/assets/products/renate-label.webp";
-import margaretFront from "@/assets/products/margaret/margaret-front.png";
-import margaretBack from "@/assets/products/margaret/margaret-back.png";
-import margaretCollar from "@/assets/products/margaret/margaret-collar.png";
-import margaretLabel from "@/assets/products/margaret/margaret-label.png";
-import margaretLining from "@/assets/products/margaret/margaret-lining.png";
+import margaretFront from "@/assets/products/margaret-front.webp";
+import margaretBack from "@/assets/products/margaret-back.webp";
+import margaretCollar from "@/assets/products/margaret-collar.webp";
+import margaretLining from "@/assets/products/margaret-lining.webp";
 import madgeFront from "@/assets/products/madge/madge-front.png";
 import madgeBack from "@/assets/products/madge/madge-back.jpeg";
 import carolFront from "@/assets/products/carol/carol-front.png";
@@ -394,7 +393,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage items may show wear consistent with age.`,
-    images: [margaretFront, margaretBack, margaretCollar, margaretLabel, margaretLining],
+    images: [margaretFront, margaretBack, margaretCollar, margaretLining],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
