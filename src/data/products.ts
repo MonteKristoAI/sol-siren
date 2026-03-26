@@ -16,6 +16,12 @@ import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
 import andieVestDetails from "@/assets/products/andie-vest-details.png";
+import moniqueFrontJacket from "@/assets/products/monique-front-jacket.png";
+import moniqueBackVest from "@/assets/products/monique-back-vest.png";
+import moniqueSideVest from "@/assets/products/monique-side-vest.png";
+import moniqueBackJacket from "@/assets/products/monique-back-jacket.png";
+import moniqueSideJacketClose from "@/assets/products/monique-side-jacket-close.png";
+import moniqueAngleJacket from "@/assets/products/monique-angle-jacket.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2672,7 +2678,7 @@ Vintage items may show wear consistent with age.`,
     name: "MONIQUE",
     variant: "Vintage 1970s Changing Scene Cream Convertible Puffer/Ski Vest/Jacket – The Monique",
     price: 0,
-    image: "/placeholder.svg",
+    image: moniqueFrontJacket,
     slug: toSlug("monique"),
     description: `A sculptural, convertible puffer from Changing Scene, a late 1970s–80s label known for accessible, trend-driven womenswear. This piece reflects a shift in that era toward more experimental, sport-influenced design — blending utility with a more directional silhouette.
 
@@ -2699,7 +2705,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Changing Scene Size M
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [moniqueFrontJacket, moniqueAngleJacket, moniqueBackJacket, moniqueSideJacketClose, moniqueSideVest, moniqueBackVest],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M",
