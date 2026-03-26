@@ -2513,7 +2513,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [sloaneFront, sloaneDetails, sloaneHanger],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS-S",
