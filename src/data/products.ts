@@ -2791,7 +2791,7 @@ Vintage items may show wear consistent with age.`,
     name: "AURORA",
     variant: "Vintage 1970s Burnt Orange Sherpa-Lined Colorblock Puffer Bomber Jacket – The Aurora",
     price: 0,
-    image: "/placeholder.svg",
+    image: auroraVest,
     slug: toSlug("aurora"),
     description: `A standout vintage puffer bomber with a warm, retro palette and an easy off-duty feel. This piece features a dusty blush quilted body, a rich rust-toned yoke with slim contrast piping, and a plush cream sherpa lining that carries through the collar and interior for extra warmth and texture.
 
