@@ -7,6 +7,10 @@ import rocco5 from "@/assets/products/rocco-5.jpg";
 import sloaneFront from "@/assets/products/sloane-front.png";
 import sloaneDetails from "@/assets/products/sloane-details.png";
 import sloaneHanger from "@/assets/products/sloane-hanger.png";
+import romyFront from "@/assets/products/romy-front.png";
+import romyDetails from "@/assets/products/romy-details.png";
+import romyBack from "@/assets/products/romy-back.png";
+import romyPocket from "@/assets/products/romy-pocket.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
