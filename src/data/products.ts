@@ -34,6 +34,8 @@ import margaretLabel from "@/assets/products/margaret/margaret-label.png";
 import margaretLining from "@/assets/products/margaret/margaret-lining.png";
 import madgeFront from "@/assets/products/madge/madge-front.png";
 import madgeBack from "@/assets/products/madge/madge-back.jpeg";
+import carolFront from "@/assets/products/carol/carol-front.png";
+import carolCollar from "@/assets/products/carol/carol-collar.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -642,7 +644,7 @@ Vintage items may show wear consistent with age.`,
     name: "CAROL",
     variant: "Vintage 1970s Blonde Fox Fur & Leather Panel Coat – The Carol",
     price: 0,
-    image: "/placeholder.svg",
+    image: carolFront,
     slug: toSlug("carol"),
     description: `A striking vintage fox fur coat in a soft blonde champagne tone, designed with leather panel construction that adds beautiful movement and shape to the silhouette. The plush shawl collar frames the neckline, while the wrap-style leather waist tie allows the coat to be worn loosely draped or cinched for a more defined look.
 
@@ -667,7 +669,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Removable leather wrap-style waist tie
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [carolFront, carolCollar],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
