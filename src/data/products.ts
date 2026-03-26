@@ -338,7 +338,7 @@ Vintage garments show minor wear consistent with age.`,
     name: "MARGARET",
     variant: "Vintage 1970s Tissavel Luxury Faux Fur Shawl Collar Coat – The Margaret",
     price: 0,
-    image: "/placeholder.svg",
+    image: margaretFront,
     slug: toSlug("margaret"),
     description: `A luxurious faux fur coat crafted with Tissavel fabric, one of France's most renowned producers of high quality synthetic fur.
 
