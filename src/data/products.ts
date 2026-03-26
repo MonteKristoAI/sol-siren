@@ -16,6 +16,12 @@ import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
 import andieVestDetails from "@/assets/products/andie-vest-details.png";
+import moniqueFrontJacket from "@/assets/products/monique-front-jacket.png";
+import moniqueBackVest from "@/assets/products/monique-back-vest.png";
+import moniqueSideVest from "@/assets/products/monique-side-vest.png";
+import moniqueBackJacket from "@/assets/products/monique-back-jacket.png";
+import moniqueSideJacketClose from "@/assets/products/monique-side-jacket-close.png";
+import moniqueAngleJacket from "@/assets/products/monique-angle-jacket.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
