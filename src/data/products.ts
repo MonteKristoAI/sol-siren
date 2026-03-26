@@ -538,7 +538,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROBERTA",
     variant: "Vintage 1960s Ivory Mink Fur Coat with Leather Belt – The Roberta",
     price: 0,
-    image: "/placeholder.svg",
+    image: robertaFront,
     slug: toSlug("roberta"),
     description: `A luminous vintage mink coat in a soft ivory hue, featuring a sweeping shawl collar and elegant belted silhouette. The coat is crafted from supple mink pelts that create a smooth, velvety surface and graceful drape through the body.
 
