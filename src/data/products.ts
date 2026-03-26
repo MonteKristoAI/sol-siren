@@ -27,6 +27,11 @@ import renateCollar from "@/assets/products/renate/renate-collar.png";
 import renateShoulder from "@/assets/products/renate/renate-shoulder.png";
 import renateLining from "@/assets/products/renate/renate-lining.png";
 import renateLabel from "@/assets/products/renate/renate-label.png";
+import margaretFront from "@/assets/products/margaret/margaret-front.png";
+import margaretBack from "@/assets/products/margaret/margaret-back.png";
+import margaretCollar from "@/assets/products/margaret/margaret-collar.png";
+import margaretLabel from "@/assets/products/margaret/margaret-label.png";
+import margaretLining from "@/assets/products/margaret/margaret-lining.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -333,7 +338,7 @@ Vintage garments show minor wear consistent with age.`,
     name: "MARGARET",
     variant: "Vintage 1970s Tissavel Luxury Faux Fur Shawl Collar Coat – The Margaret",
     price: 0,
-    image: "/placeholder.svg",
+    image: margaretFront,
     slug: toSlug("margaret"),
     description: `A luxurious faux fur coat crafted with Tissavel fabric, one of France's most renowned producers of high quality synthetic fur.
 
@@ -360,7 +365,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [margaretFront, margaretBack, margaretCollar, margaretLabel, margaretLining],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
