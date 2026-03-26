@@ -148,7 +148,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items show wear consistent with age.`,
-    images: [fayeFront, fayeBack, fayeCollar, fayeDetail, fayeClosure, fayeShoulder],
+    images: [fayeFront, fayeBack, fayeCollar, fayeDetail, fayeClosure, fayeShoulder, fayeLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
