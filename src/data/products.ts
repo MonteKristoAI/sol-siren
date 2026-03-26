@@ -34,8 +34,9 @@ import margaretFront from "@/assets/products/margaret-front.webp";
 import margaretBack from "@/assets/products/margaret-back.webp";
 import margaretCollar from "@/assets/products/margaret-collar.webp";
 import margaretLining from "@/assets/products/margaret-lining.webp";
-import madgeFront from "@/assets/products/madge/madge-front.png";
-import madgeBack from "@/assets/products/madge/madge-back.jpeg";
+import madgeFront from "@/assets/products/madge-front.webp";
+import madgeBack from "@/assets/products/madge-back.webp";
+import madgeLabel from "@/assets/products/madge-label.webp";
 import carolFront from "@/assets/products/carol/carol-front.png";
 import carolCollar from "@/assets/products/carol/carol-collar.png";
 import lucyFront from "@/assets/products/lucy/lucy-front.png";
@@ -453,7 +454,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Hidden eye-hook closures along front
 
 Vintage items may show wear consistent with age.`,
-    images: [madgeFront, madgeBack],
+    images: [madgeFront, madgeBack, madgeLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
