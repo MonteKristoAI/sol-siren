@@ -470,7 +470,7 @@ Vintage items may show wear consistent with age.`,
     name: "LUCY",
     variant: "Vintage 1960s London Faux Fur & Suede Swing Coat by Lilli Ann – The Lucy",
     price: 0,
-    image: "/placeholder.svg",
+    image: lucyFront,
     slug: toSlug("lucy"),
     description: `A striking vintage coat from the London line of the iconic Lilli Ann label, crafted in England during the late 1960s.
 
