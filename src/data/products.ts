@@ -230,7 +230,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [annetteFront, annetteBack, annetteCollar],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
