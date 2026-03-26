@@ -2613,7 +2613,7 @@ Vintage items may show wear consistent with age.`,
     name: "ANDIE",
     variant: "Vintage 1990s Navy Blue Zip-Off Sleeve Puffer Convertible Vest Ski Jacket – The Andie",
     price: 0,
-    image: "/placeholder.svg",
+    image: andieFront,
     slug: toSlug("andie"),
     description: `A true transform piece with that quiet, functional cool. This vintage JCPenney puffer is built with zip-off sleeves, shifting effortlessly from a full insulated jacket into a sculptural vest.
 
