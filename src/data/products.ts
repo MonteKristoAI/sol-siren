@@ -1,4 +1,10 @@
 import type { Product } from "@/contexts/CartContext";
+import fayeFront from "@/assets/products/faye/faye-front.png";
+import fayeCollar from "@/assets/products/faye/faye-collar.png";
+import fayeClosure from "@/assets/products/faye/faye-closure.png";
+import fayeDetail from "@/assets/products/faye/faye-detail.png";
+import fayeBack from "@/assets/products/faye/faye-back.png";
+import fayeShoulder from "@/assets/products/faye/faye-shoulder.png";
 import roccoFront from "@/assets/products/rocco-front.png";
 import roccoBack from "@/assets/products/rocco-back.png";
 import roccoDetails from "@/assets/products/rocco-details.png";
