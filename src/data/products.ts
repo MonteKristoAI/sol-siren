@@ -176,7 +176,7 @@ Vintage items show wear consistent with age.`,
     name: "MAGGIE",
     variant: "Vintage 1980s Faux Fur Coat – The Maggie",
     price: 0,
-    image: "/placeholder.svg",
+    image: maggieFront,
     slug: toSlug("maggie"),
     description: `A beautifully textured vintage faux fur jacket in a luminous ivory tone with soft silver tipping throughout the pile, creating a subtle frosted effect that catches the light. The plush faux fur has a smooth, mink-like finish while remaining lightweight and easy to wear.
 
