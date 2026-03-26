@@ -42,6 +42,12 @@ import lucyCollar from "@/assets/products/lucy/lucy-collar.png";
 import lucyBackDetail from "@/assets/products/lucy/lucy-back-detail.png";
 import lucyBeltDetail from "@/assets/products/lucy/lucy-belt-detail.png";
 import lucyAltFront from "@/assets/products/lucy/lucy-alt-front.png";
+import robertaFront from "@/assets/products/roberta/roberta-front.png";
+import robertaAngle from "@/assets/products/roberta/roberta-angle.png";
+import robertaShoulderDetail from "@/assets/products/roberta/roberta-shoulder-detail.png";
+import robertaBeltDetail from "@/assets/products/roberta/roberta-belt-detail.png";
+import robertaBack from "@/assets/products/roberta/roberta-back.png";
+import robertaAltBelt from "@/assets/products/roberta/roberta-alt-belt.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
@@ -532,7 +538,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROBERTA",
     variant: "Vintage 1960s Ivory Mink Fur Coat with Leather Belt – The Roberta",
     price: 0,
-    image: "/placeholder.svg",
+    image: robertaFront,
     slug: toSlug("roberta"),
     description: `A luminous vintage mink coat in a soft ivory hue, featuring a sweeping shawl collar and elegant belted silhouette. The coat is crafted from supple mink pelts that create a smooth, velvety surface and graceful drape through the body.
 
@@ -557,7 +563,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Multiple hidden classic hook-and-eye closures along the front as well as original removable ivory leather belt.
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [robertaFront, robertaAngle, robertaShoulderDetail, robertaBeltDetail, robertaBack, robertaAltBelt],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
