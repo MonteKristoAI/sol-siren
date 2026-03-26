@@ -34,6 +34,8 @@ import margaretLabel from "@/assets/products/margaret/margaret-label.png";
 import margaretLining from "@/assets/products/margaret/margaret-lining.png";
 import madgeFront from "@/assets/products/madge/madge-front.png";
 import madgeBack from "@/assets/products/madge/madge-back.jpeg";
+import carolFront from "@/assets/products/carol/carol-front.png";
+import carolCollar from "@/assets/products/carol/carol-collar.png";
 import andieDetails from "@/assets/products/andie-details.png";
 import andieBack from "@/assets/products/andie-back.png";
 import andieVest from "@/assets/products/andie-vest.png";
