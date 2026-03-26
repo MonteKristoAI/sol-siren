@@ -1,22 +1,20 @@
 
 
-## Plan: Add MADELINE Product Photos
+## Plan: Replace Sloane images with WebP versions
 
-### Summary
-Replace placeholder images for the MADELINE (Apres Ski) product with the 6 uploaded photos.
+### What's changing
+Swap the 3 existing Sloane PNG images with the 3 new WebP uploads.
 
-### Changes
+### Image mapping
+| Upload | New file | Description |
+|--------|----------|-------------|
+| `ChatGPT_Image_Mar_22_2026_07_40_56_PM.webp` | `sloane-front.webp` | Front/angle view on mannequin |
+| `ChatGPT_Image_Mar_22_2026_07_41_00_PM.webp` | `sloane-details.webp` | Zipper/pocket detail |
+| `ChatGPT_Image_Mar_22_2026_07_41_15_PM.webp` | `sloane-hanger.webp` | Branded hanger |
 
-**1. Copy 6 images to `src/assets/products/madeline/`**
-- `madeline-front.png` (full front view on mannequin)
-- `madeline-back.png` (back view, higher angle)
-- `madeline-back-2.png` (back view, lower angle)
-- `madeline-collar.png` (close-up of collar/buttons)
-- `madeline-label.png` (Roffe brand label)
-- `madeline-tag.png` (handwritten "Madeline" name tag)
-
-**2. Update `src/data/products.ts`**
-- Change `image` from `"/placeholder.svg"` to the front view import
-- Replace `images` array with all 6 photos (front, back, back-2, collar, label, tag)
-- Add ES6 imports at top of file for all 6 images
+### Steps
+1. Copy 3 uploaded WebP files to `src/assets/products/` with new names
+2. Delete old files: `sloane-front.png`, `sloane-details.png`, `sloane-hanger.png`
+3. Update imports in `src/data/products.ts` from `.png` to `.webp`
+4. Verify build succeeds
 
