@@ -11,6 +11,11 @@ import romyFront from "@/assets/products/romy-front.png";
 import romyDetails from "@/assets/products/romy-details.png";
 import romyBack from "@/assets/products/romy-back.png";
 import romyPocket from "@/assets/products/romy-pocket.png";
+import andieFront from "@/assets/products/andie-front.png";
+import andieDetails from "@/assets/products/andie-details.png";
+import andieBack from "@/assets/products/andie-back.png";
+import andieVest from "@/assets/products/andie-vest.png";
+import andieVestDetails from "@/assets/products/andie-vest-details.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -2608,7 +2613,7 @@ Vintage items may show wear consistent with age.`,
     name: "ANDIE",
     variant: "Vintage 1990s Navy Blue Zip-Off Sleeve Puffer Convertible Vest Ski Jacket – The Andie",
     price: 0,
-    image: "/placeholder.svg",
+    image: andieFront,
     slug: toSlug("andie"),
     description: `A true transform piece with that quiet, functional cool. This vintage JCPenney puffer is built with zip-off sleeves, shifting effortlessly from a full insulated jacket into a sculptural vest.
 
@@ -2635,7 +2640,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: JC Penny, Size L
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [andieFront, andieDetails, andieBack, andieVest, andieVestDetails],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
