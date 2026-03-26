@@ -4,6 +4,9 @@ import roccoBack from "@/assets/products/rocco-back.png";
 import roccoDetails from "@/assets/products/rocco-details.png";
 import rocco4 from "@/assets/products/rocco-4.jpg";
 import rocco5 from "@/assets/products/rocco-5.jpg";
+import sloaneFront from "@/assets/products/sloane-front.png";
+import sloaneDetails from "@/assets/products/sloane-details.png";
+import sloaneHanger from "@/assets/products/sloane-hanger.png";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
