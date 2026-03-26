@@ -2874,7 +2874,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name of previous owner on tag (Madeline)
 
 Vintage items may show wear consistent with age.`,
-    images: [madelineFront, madelineBack, madelineBack2, madelineCollar, madelineLabel, madelineTag],
+    images: [madelineFront, madelineBack, madelineCollar, madelineNametag, madelineLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S-M",
