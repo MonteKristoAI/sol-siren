@@ -2549,7 +2549,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROMY",
     variant: "Vintage 1980s Convertible Colorblock Ski Jacket — Zip-Off Sleeves / Pastel Chevron – The Romy",
     price: 0,
-    image: "/placeholder.svg",
+    image: romyFront,
     slug: toSlug("romy"),
     description: `A standout vintage ski jacket with a playful, graphic edge — designed with zip-off sleeves that transform it effortlessly into a vest. The bold chevron colorblocking across the chest and back gives it that unmistakable retro alpine feel, softened by a pastel palette that reads fresh and modern.
 
