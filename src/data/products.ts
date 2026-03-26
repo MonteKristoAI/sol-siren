@@ -2576,7 +2576,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Made in Korea
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [romyFront, romyDetails, romyBack, romyPocket],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
