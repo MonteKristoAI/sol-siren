@@ -77,6 +77,210 @@ import madelineBack from "@/assets/products/madeline-back.webp";
 import madelineCollar from "@/assets/products/madeline-collar.webp";
 import madelineNametag from "@/assets/products/madeline-nametag.webp";
 import madelineLabel from "@/assets/products/madeline-label.webp";
+import novaImg1 from "@/assets/products/nova/nova-1.webp";
+import novaImg2 from "@/assets/products/nova/nova-2.webp";
+import novaImg3 from "@/assets/products/nova/nova-3.webp";
+import novaImg4 from "@/assets/products/nova/nova-4.webp";
+import novaImg5 from "@/assets/products/nova/nova-5.webp";
+import carolImg1 from "@/assets/products/carol/carol-collar.webp";
+import carolImg2 from "@/assets/products/carol/carol-front.webp";
+import roxanneImg1 from "@/assets/products/roxanne/roxanne-1.webp";
+import roxanneImg2 from "@/assets/products/roxanne/roxanne-2.webp";
+import roxanneImg3 from "@/assets/products/roxanne/roxanne-3.webp";
+import roxanneImg4 from "@/assets/products/roxanne/roxanne-4.webp";
+import roxanneImg5 from "@/assets/products/roxanne/roxanne-5.webp";
+import roxanneImg6 from "@/assets/products/roxanne/roxanne-6.webp";
+import roxanneImg7 from "@/assets/products/roxanne/roxanne-7.webp";
+import sybilImg1 from "@/assets/products/sybil/sybil-1.webp";
+import sybilImg2 from "@/assets/products/sybil/sybil-2.webp";
+import sybilImg3 from "@/assets/products/sybil/sybil-3.webp";
+import saffronImg1 from "@/assets/products/saffron/saffron-1.webp";
+import saffronImg2 from "@/assets/products/saffron/saffron-10.webp";
+import saffronImg3 from "@/assets/products/saffron/saffron-2.webp";
+import saffronImg4 from "@/assets/products/saffron/saffron-3.webp";
+import saffronImg5 from "@/assets/products/saffron/saffron-4.webp";
+import saffronImg6 from "@/assets/products/saffron/saffron-5.webp";
+import saffronImg7 from "@/assets/products/saffron/saffron-6.webp";
+import saffronImg8 from "@/assets/products/saffron/saffron-7.webp";
+import saffronImg9 from "@/assets/products/saffron/saffron-8.webp";
+import saffronImg10 from "@/assets/products/saffron/saffron-9.webp";
+import kateImg1 from "@/assets/products/kate/kate-1.webp";
+import kateImg2 from "@/assets/products/kate/kate-2.webp";
+import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
+import topangaImg2 from "@/assets/products/topanga/topanga-2.webp";
+import topangaImg3 from "@/assets/products/topanga/topanga-3.webp";
+import topangaImg4 from "@/assets/products/topanga/topanga-4.webp";
+import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
+import emmylouImg2 from "@/assets/products/emmylou/emmylou-2.webp";
+import emmylouImg3 from "@/assets/products/emmylou/emmylou-3.webp";
+import emmylouImg4 from "@/assets/products/emmylou/emmylou-4.webp";
+import emmylouImg5 from "@/assets/products/emmylou/emmylou-5.webp";
+import stevieImg1 from "@/assets/products/stevie/stevie-1.webp";
+import stevieImg2 from "@/assets/products/stevie/stevie-2.webp";
+import tallulahImg1 from "@/assets/products/tallulah/tallulah-1.webp";
+import tallulahImg2 from "@/assets/products/tallulah/tallulah-10.webp";
+import tallulahImg3 from "@/assets/products/tallulah/tallulah-11.webp";
+import tallulahImg4 from "@/assets/products/tallulah/tallulah-12.webp";
+import tallulahImg5 from "@/assets/products/tallulah/tallulah-2.webp";
+import tallulahImg6 from "@/assets/products/tallulah/tallulah-3.webp";
+import tallulahImg7 from "@/assets/products/tallulah/tallulah-4.webp";
+import tallulahImg8 from "@/assets/products/tallulah/tallulah-5.webp";
+import tallulahImg9 from "@/assets/products/tallulah/tallulah-6.webp";
+import tallulahImg10 from "@/assets/products/tallulah/tallulah-7.webp";
+import tallulahImg11 from "@/assets/products/tallulah/tallulah-8.webp";
+import tallulahImg12 from "@/assets/products/tallulah/tallulah-9.webp";
+import vixenImg1 from "@/assets/products/vixen/vixen-1.webp";
+import vixenImg2 from "@/assets/products/vixen/vixen-10.webp";
+import vixenImg3 from "@/assets/products/vixen/vixen-2.webp";
+import vixenImg4 from "@/assets/products/vixen/vixen-3.webp";
+import vixenImg5 from "@/assets/products/vixen/vixen-4.webp";
+import vixenImg6 from "@/assets/products/vixen/vixen-5.webp";
+import vixenImg7 from "@/assets/products/vixen/vixen-6.webp";
+import vixenImg8 from "@/assets/products/vixen/vixen-7.webp";
+import vixenImg9 from "@/assets/products/vixen/vixen-8.webp";
+import vixenImg10 from "@/assets/products/vixen/vixen-9.webp";
+import cleoImg1 from "@/assets/products/cleo/cleo-1.webp";
+import cleoImg2 from "@/assets/products/cleo/cleo-2.webp";
+import cleoImg3 from "@/assets/products/cleo/skin-gear-sienna-wrap-back.webp";
+import cleoImg4 from "@/assets/products/cleo/skin-gear-sienna-wrap-detail.webp";
+import cleoImg5 from "@/assets/products/cleo/skin-gear-sienna-wrap-front.webp";
+import candaceImg1 from "@/assets/products/candace/candace-1.webp";
+import candaceImg2 from "@/assets/products/candace/candace-2.webp";
+import candaceImg3 from "@/assets/products/candace/candace-3.webp";
+import candaceImg4 from "@/assets/products/candace/candace-4.webp";
+import candaceImg5 from "@/assets/products/candace/candace-5.webp";
+import candaceImg6 from "@/assets/products/candace/candace-6.webp";
+import candaceImg7 from "@/assets/products/candace/candace-7.webp";
+import candaceImg8 from "@/assets/products/candace/candace-8.webp";
+import aspenImg1 from "@/assets/products/aspen/aspen-1.webp";
+import aspenImg2 from "@/assets/products/aspen/aspen-10.webp";
+import aspenImg3 from "@/assets/products/aspen/aspen-11.webp";
+import aspenImg4 from "@/assets/products/aspen/aspen-2.webp";
+import aspenImg5 from "@/assets/products/aspen/aspen-3.webp";
+import aspenImg6 from "@/assets/products/aspen/aspen-4.webp";
+import aspenImg7 from "@/assets/products/aspen/aspen-5.webp";
+import aspenImg8 from "@/assets/products/aspen/aspen-6.webp";
+import aspenImg9 from "@/assets/products/aspen/aspen-7.webp";
+import aspenImg10 from "@/assets/products/aspen/aspen-8.webp";
+import aspenImg11 from "@/assets/products/aspen/aspen-9.webp";
+import simoneImg1 from "@/assets/products/simone/simone-1.webp";
+import simoneImg2 from "@/assets/products/simone/simone-2.webp";
+import simoneImg3 from "@/assets/products/simone/simone-3.webp";
+import margauxImg1 from "@/assets/products/margaux/margaux-1.webp";
+import margauxImg2 from "@/assets/products/margaux/margaux-2.webp";
+import margauxImg3 from "@/assets/products/margaux/margaux-3.webp";
+import margauxImg4 from "@/assets/products/margaux/margaux-4.webp";
+import margauxImg5 from "@/assets/products/margaux/margaux-5.webp";
+import janisImg1 from "@/assets/products/janis/janis-1.webp";
+import janisImg2 from "@/assets/products/janis/janis-2.webp";
+import janisImg3 from "@/assets/products/janis/janis-3.webp";
+import janisImg4 from "@/assets/products/janis/janis-4.webp";
+import janisImg5 from "@/assets/products/janis/janis-5.webp";
+import janisImg6 from "@/assets/products/janis/janis-6.webp";
+import elviraImg1 from "@/assets/products/elvira/elvira-1.webp";
+import elviraImg2 from "@/assets/products/elvira/elvira-2.webp";
+import elviraImg3 from "@/assets/products/elvira/elvira-3.webp";
+import elviraImg4 from "@/assets/products/elvira/elvira-4.webp";
+import elviraImg5 from "@/assets/products/elvira/elvira-5.webp";
+import elviraImg6 from "@/assets/products/elvira/elvira-6.webp";
+import colletteImg1 from "@/assets/products/collette/collette-1.webp";
+import colletteImg2 from "@/assets/products/collette/collette-10.webp";
+import colletteImg3 from "@/assets/products/collette/collette-2.webp";
+import colletteImg4 from "@/assets/products/collette/collette-3.webp";
+import colletteImg5 from "@/assets/products/collette/collette-4.webp";
+import colletteImg6 from "@/assets/products/collette/collette-5.webp";
+import colletteImg7 from "@/assets/products/collette/collette-6.webp";
+import colletteImg8 from "@/assets/products/collette/collette-7.webp";
+import colletteImg9 from "@/assets/products/collette/collette-8.webp";
+import colletteImg10 from "@/assets/products/collette/collette-9.webp";
+import rhiannonImg1 from "@/assets/products/rhiannon/rhiannon-1.webp";
+import rhiannonImg2 from "@/assets/products/rhiannon/rhiannon-2.webp";
+import rhiannonImg3 from "@/assets/products/rhiannon/rhiannon-3.webp";
+import rhiannonImg4 from "@/assets/products/rhiannon/rhiannon-4.webp";
+import rhiannonImg5 from "@/assets/products/rhiannon/rhiannon-5.webp";
+import rhiannonImg6 from "@/assets/products/rhiannon/rhiannon-6.webp";
+import rhiannonImg7 from "@/assets/products/rhiannon/rhiannon-7.webp";
+import dianaImg1 from "@/assets/products/diana/diana-1.webp";
+import dianaImg2 from "@/assets/products/diana/diana-10.webp";
+import dianaImg3 from "@/assets/products/diana/diana-2.webp";
+import dianaImg4 from "@/assets/products/diana/diana-3.webp";
+import dianaImg5 from "@/assets/products/diana/diana-4.webp";
+import dianaImg6 from "@/assets/products/diana/diana-5.webp";
+import dianaImg7 from "@/assets/products/diana/diana-6.webp";
+import dianaImg8 from "@/assets/products/diana/diana-7.webp";
+import dianaImg9 from "@/assets/products/diana/diana-8.webp";
+import dianaImg10 from "@/assets/products/diana/diana-9.webp";
+import biancaImg1 from "@/assets/products/bianca/bianca-1.webp";
+import biancaImg2 from "@/assets/products/bianca/bianca-10.webp";
+import biancaImg3 from "@/assets/products/bianca/bianca-2.webp";
+import biancaImg4 from "@/assets/products/bianca/bianca-3.webp";
+import biancaImg5 from "@/assets/products/bianca/bianca-4.webp";
+import biancaImg6 from "@/assets/products/bianca/bianca-5.webp";
+import biancaImg7 from "@/assets/products/bianca/bianca-6.webp";
+import biancaImg8 from "@/assets/products/bianca/bianca-7.webp";
+import biancaImg9 from "@/assets/products/bianca/bianca-8.webp";
+import biancaImg10 from "@/assets/products/bianca/bianca-9.webp";
+import nicoImg1 from "@/assets/products/nico/nico-1.webp";
+import nicoImg2 from "@/assets/products/nico/nico-10.webp";
+import nicoImg3 from "@/assets/products/nico/nico-11.webp";
+import nicoImg4 from "@/assets/products/nico/nico-12.webp";
+import nicoImg5 from "@/assets/products/nico/nico-2.webp";
+import nicoImg6 from "@/assets/products/nico/nico-3.webp";
+import nicoImg7 from "@/assets/products/nico/nico-4.webp";
+import nicoImg8 from "@/assets/products/nico/nico-5.webp";
+import nicoImg9 from "@/assets/products/nico/nico-6.webp";
+import nicoImg10 from "@/assets/products/nico/nico-7.webp";
+import nicoImg11 from "@/assets/products/nico/nico-8.webp";
+import nicoImg12 from "@/assets/products/nico/nico-9.webp";
+import penelopeImg1 from "@/assets/products/penelope/penelope-1.webp";
+import penelopeImg2 from "@/assets/products/penelope/penelope-10.webp";
+import penelopeImg3 from "@/assets/products/penelope/penelope-11.webp";
+import penelopeImg4 from "@/assets/products/penelope/penelope-2.webp";
+import penelopeImg5 from "@/assets/products/penelope/penelope-3.webp";
+import penelopeImg6 from "@/assets/products/penelope/penelope-4.webp";
+import penelopeImg7 from "@/assets/products/penelope/penelope-5.webp";
+import penelopeImg8 from "@/assets/products/penelope/penelope-6.webp";
+import penelopeImg9 from "@/assets/products/penelope/penelope-7.webp";
+import penelopeImg10 from "@/assets/products/penelope/penelope-8.webp";
+import penelopeImg11 from "@/assets/products/penelope/penelope-9.webp";
+import vivienneImg1 from "@/assets/products/vivienne/vivienne-1.webp";
+import vivienneImg2 from "@/assets/products/vivienne/vivienne-2.webp";
+import vivienneImg3 from "@/assets/products/vivienne/vivienne-3.webp";
+import vivienneImg4 from "@/assets/products/vivienne/vivienne-4.webp";
+import vivienneImg5 from "@/assets/products/vivienne/vivienne-5.webp";
+import vivienneImg6 from "@/assets/products/vivienne/vivienne-6.webp";
+import vivienneImg7 from "@/assets/products/vivienne/vivienne-7.webp";
+import kendraImg1 from "@/assets/products/kendra/kendra-1.webp";
+import kendraImg2 from "@/assets/products/kendra/kendra-2.webp";
+import kendraImg3 from "@/assets/products/kendra/kendra-3.webp";
+import kendraImg4 from "@/assets/products/kendra/kendra-4.webp";
+import kendraImg5 from "@/assets/products/kendra/kendra-5.webp";
+import kendraImg6 from "@/assets/products/kendra/kendra-6.webp";
+import kendraImg7 from "@/assets/products/kendra/kendra-7.webp";
+import kendraImg8 from "@/assets/products/kendra/kendra-8.webp";
+import kendraImg9 from "@/assets/products/kendra/kendra-9.webp";
+import blairImg1 from "@/assets/products/blair/blair-1.webp";
+import blairImg2 from "@/assets/products/blair/blair-2.webp";
+import blairImg3 from "@/assets/products/blair/blair-3.webp";
+import blairImg4 from "@/assets/products/blair/blair-4.webp";
+import blairImg5 from "@/assets/products/blair/blair-5.webp";
+import blairImg6 from "@/assets/products/blair/blair-6.webp";
+import sunnyImg1 from "@/assets/products/sunny/sunny-1.webp";
+import sunnyImg2 from "@/assets/products/sunny/sunny-2.webp";
+import sunnyImg3 from "@/assets/products/sunny/sunny-3.webp";
+import sunnyImg4 from "@/assets/products/sunny/sunny-4.webp";
+import sunnyImg5 from "@/assets/products/sunny/sunny-5.webp";
+import sunnyImg6 from "@/assets/products/sunny/sunny-6.webp";
+import tillyImg1 from "@/assets/products/tilly/tilly-1.webp";
+import tillyImg2 from "@/assets/products/tilly/tilly-2.webp";
+import tillyImg3 from "@/assets/products/tilly/tilly-3.webp";
+import tillyImg4 from "@/assets/products/tilly/tilly-4.webp";
+import tillyImg5 from "@/assets/products/tilly/tilly-5.webp";
+import tillyImg6 from "@/assets/products/tilly/tilly-6.webp";
+import romyImg1 from "@/assets/products/romy/romy-1.webp";
+import romyImg2 from "@/assets/products/romy/romy-2.webp";
+import romyImg3 from "@/assets/products/romy/romy-3.webp";
+import romyImg4 from "@/assets/products/romy/romy-4.webp";
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
 
@@ -610,7 +814,7 @@ Vintage items may show wear consistent with age.`,
     name: "N.K.",
     variant: "Vintage 1960s Ivory Curly Lamb Fur Jacket – The Nova",
     price: 0,
-    image: "/placeholder.svg",
+    image: novaImg1,
     slug: toSlug("nk"),
     description: `A striking piece from the late 1960s, this vintage jacket is crafted from soft ivory curly lamb fur, known for its romantic ringlet texture and cloud-like movement. The dense curls create beautiful natural volume, giving the coat an unmistakably glamorous silhouette.
 
@@ -635,7 +839,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [novaImg1, novaImg2, novaImg3, novaImg4, novaImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -729,7 +933,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROXANNE",
     variant: "Vintage 1970s Suede & Fur Belted Penny Lane Coat – The Roxanne",
     price: 0,
-    image: "/placeholder.svg",
+    image: carolImg1,
     slug: toSlug("roxanne"),
     description: `A striking 1970s suede coat by Dan Di Modes, designed with a sculpted silhouette and dramatic fur trim that captures the effortless glamour of the era.
 
@@ -756,7 +960,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh-knee length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [carolImg1, carolImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -791,7 +995,7 @@ Vintage items may show wear consistent with age.`,
     name: "SYBIL",
     variant: "Vintage Penny Lane Style Faux Suede Shearling Coat – The Sybil",
     price: 0,
-    image: "/placeholder.svg",
+    image: roxanneImg1,
     slug: toSlug("sybil"),
     description: `A modern revival of an iconic 1970s silhouette.
 
@@ -818,7 +1022,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [roxanneImg1, roxanneImg2, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -853,7 +1057,7 @@ Vintage items may show wear consistent with age.`,
     name: "FRANKIE",
     variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim – The Frankie",
     price: 0,
-    image: "/placeholder.svg",
+    image: sybilImg1,
     slug: toSlug("frankie"),
     description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
 
@@ -880,7 +1084,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [sybilImg1, sybilImg2, sybilImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -915,7 +1119,7 @@ Vintage items may show wear consistent with age.`,
     name: "KATE",
     variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Kate",
     price: 0,
-    image: "/placeholder.svg",
+    image: saffronImg1,
     slug: toSlug("kate"),
     description: `A striking vintage suede coat inspired by iconic Penny Lane silhouettes.
 
@@ -942,7 +1146,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -977,7 +1181,7 @@ Vintage items may show wear consistent with age.`,
     name: "TOPANGA",
     variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Topanga",
     price: 0,
-    image: "/placeholder.svg",
+    image: kateImg1,
     slug: toSlug("topanga"),
     description: `A striking vintage suede coat inspired by the iconic Penny Lane silhouettes of the late 1960s and early 1970s.
 
@@ -1004,7 +1208,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [kateImg1, kateImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1039,7 +1243,7 @@ Vintage items may show wear consistent with age.`,
     name: "EMMYLOU",
     variant: "Vintage 1970s Suede Leather Coat – The Emmylou",
     price: 0,
-    image: "/placeholder.svg",
+    image: topangaImg1,
     slug: toSlug("emmylou"),
     description: `A beautifully tailored vintage suede leather coat from Split End Ltd., capturing the rich textures and Western-inspired styling that defined late-1970s fashion.
 
@@ -1064,7 +1268,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [topangaImg1, topangaImg2, topangaImg3, topangaImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1099,7 +1303,7 @@ Vintage items may show wear consistent with age.`,
     name: "STEVIE",
     variant: "Vintage 1990s Black Leather Fringe Jacket – The Stevie",
     price: 0,
-    image: "/placeholder.svg",
+    image: emmylouImg1,
     slug: toSlug("stevie"),
     description: `A striking black leather fringe jacket by Wilsons Leather Maxima, designed with dramatic movement and unmistakable western spirit.
 
@@ -1124,7 +1328,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [emmylouImg1, emmylouImg2, emmylouImg3, emmylouImg4, emmylouImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
@@ -1159,7 +1363,7 @@ Vintage items may show wear consistent with age.`,
     name: "SIERRA",
     variant: "Vintage 1970s Frontier Fringe Suede Jacket – The Sierra",
     price: 0,
-    image: "/placeholder.svg",
+    image: stevieImg1,
     slug: toSlug("sierra"),
     description: `A true piece of classic American Western style.
 
@@ -1186,7 +1390,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [stevieImg1, stevieImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L (oversized fit) / Men's M",
@@ -1221,7 +1425,7 @@ Vintage items may show wear consistent with age.`,
     name: "VIXEN",
     variant: "Vintage 1980s Bearskin Fringe Leather Jacket – The Vixen",
     price: 0,
-    image: "/placeholder.svg",
+    image: tallulahImg1,
     slug: toSlug("vixen"),
     description: `A striking vintage leather jacket crafted from sueded boarskin, featuring bold black-on-black design and dramatic fringe along the sleeves.
 
@@ -1246,7 +1450,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [tallulahImg1, tallulahImg2, tallulahImg3, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L (oversized fit) / Men's M",
@@ -1281,7 +1485,7 @@ Vintage items may show wear consistent with age.`,
     name: "CLEO",
     variant: "Vintage 1970s Long Leather Wrap Coat – The Cleo",
     price: 0,
-    image: "/placeholder.svg",
+    image: vixenImg1,
     slug: toSlug("cleo"),
     description: `A striking vintage 1970s leather wrap coat in a rich shade of golden caramel.
 
@@ -1308,7 +1512,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [vixenImg1, vixenImg2, vixenImg3, vixenImg4, vixenImg5, vixenImg6, vixenImg7, vixenImg8, vixenImg9, vixenImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L/XL",
@@ -1343,7 +1547,7 @@ Vintage items may show wear consistent with age.`,
     name: "CANDACE",
     variant: "Vintage 1970s Short Plaid Fur Trim Coat – The Candace",
     price: 0,
-    image: "/placeholder.svg",
+    image: cleoImg1,
     slug: toSlug("candace"),
     description: `A beautiful hooded vintage plaid coat that captures the cozy spirit of 1970s winter style.
 
@@ -1368,7 +1572,7 @@ A garment with a past—ready for its next chapter.
 • Length: Short coat
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [cleoImg1, cleoImg2, cleoImg3, cleoImg4, cleoImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -1403,7 +1607,7 @@ Vintage items may show wear consistent with age.`,
     name: "ASPEN",
     variant: "Vintage 1970s Suede & Shearling Ranch Coat – The Aspen",
     price: 0,
-    image: "/placeholder.svg",
+    image: candaceImg1,
     slug: toSlug("aspen"),
     description: `A striking vintage suede Ranch Coat from the late 1960s to early 1970s, featuring a dramatic shearling-style collar and plush interior lining.
 
@@ -1430,7 +1634,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [candaceImg1, candaceImg2, candaceImg3, candaceImg4, candaceImg5, candaceImg6, candaceImg7, candaceImg8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1465,7 +1669,7 @@ Vintage items may show wear consistent with age.`,
     name: "SIMONE",
     variant: "Vintage 1940s Silver Fox Evening Stole – The Simone",
     price: 0,
-    image: "/placeholder.svg",
+    image: aspenImg1,
     slug: toSlug("simone"),
     description: `A striking vintage fox fur stole from the late 1940s-early 1950s, crafted in beautifully full silver fox fur.
 
@@ -1488,7 +1692,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [aspenImg1, aspenImg2, aspenImg3, aspenImg4, aspenImg5, aspenImg6, aspenImg7, aspenImg8, aspenImg9, aspenImg10, aspenImg11],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
@@ -1522,7 +1726,7 @@ Vintage items may show wear consistent with age.`,
     name: "MARGAUX",
     variant: "Vintage 1950s Mink Capelet – The Margaux",
     price: 0,
-    image: "/placeholder.svg",
+    image: simoneImg1,
     slug: toSlug("margaux"),
     description: `A luminous vintage mink capelet crafted by Leafgren Fine Furs.
 
@@ -1549,7 +1753,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [simoneImg1, simoneImg2, simoneImg3],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
@@ -1584,7 +1788,7 @@ Vintage items may show wear consistent with age.`,
     name: "JANIS",
     variant: "Vintage 1970s Tibetan Lamb Fur Jacket – The Janis",
     price: 0,
-    image: "/placeholder.svg",
+    image: margauxImg1,
     slug: toSlug("janis"),
     description: `A dreamy 1970s curly Tibetan/Mongolian lamb jacket in a beautiful natural tonal variation.
 
@@ -1611,7 +1815,7 @@ A garment with a past—ready for its next chapter.
 • Length: Cropped
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [margauxImg1, margauxImg2, margauxImg3, margauxImg4, margauxImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1646,7 +1850,7 @@ Vintage items may show wear consistent with age.`,
     name: "ELVIRA",
     variant: "Vintage 1970s Lilli Ann Faux Fur & Leather Belted Coat – The Elvira",
     price: 0,
-    image: "/placeholder.svg",
+    image: janisImg1,
     slug: toSlug("elvira"),
     description: `A striking vintage coat from legendary San Francisco fashion house Lilli Ann, known for producing some of the most beautifully tailored outerwear of the mid-century era.
 
@@ -1677,7 +1881,7 @@ A garment with a past—ready for its next chapter.
 • Made in England
 
 Vintage items may show minor wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [janisImg1, janisImg2, janisImg3, janisImg4, janisImg5, janisImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S (US 2-4)",
@@ -1711,7 +1915,7 @@ Vintage items may show minor wear consistent with age.`,
     name: "COLLETTE",
     variant: "Vintage 1970s English Suede & Lamb Fur Penny Lane Belted Coat – The Collette",
     price: 0,
-    image: "/placeholder.svg",
+    image: elviraImg1,
     slug: toSlug("collette"),
     description: `A beautifully tailored vintage suede coat crafted in England, featuring a dramatic oversized lamb fur collar that frames the neckline with soft volume and warmth. The body is cut from supple dyed suede in a warm sand-taupe tone, accented with subtle honey-toned leather piping that traces the seams and pockets for a refined, textural contrast.
 
@@ -1742,7 +1946,7 @@ A garment with a past—ready for its next chapter.
 • Made in England
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [elviraImg1, elviraImg2, elviraImg3, elviraImg4, elviraImg5, elviraImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Small (US 4-6)",
@@ -1777,7 +1981,7 @@ Vintage items may show wear consistent with age.`,
     name: "RHIANNON",
     variant: "Vintage 1970s Short Suede Coat with Afghan Fur Collar – The Rhiannon",
     price: 0,
-    image: "/placeholder.svg",
+    image: colletteImg1,
     slug: toSlug("rhiannon"),
     description: `A warm desert-toned suede coat with unmistakable 1970s spirit.
 
@@ -1806,7 +2010,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: The original belt and loops have been removed, creating a clean open-front silhouette that drapes effortlessly when worn.
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [colletteImg1, colletteImg2, colletteImg3, colletteImg4, colletteImg5, colletteImg6, colletteImg7, colletteImg8, colletteImg9, colletteImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S",
@@ -1840,7 +2044,7 @@ Vintage items may show wear consistent with age.`,
     name: "DIANA",
     variant: "Vintage 1970s Hooded Long Plaid Fur Trim Coat – The Diana",
     price: 0,
-    image: "/placeholder.svg",
+    image: rhiannonImg1,
     slug: toSlug("diana"),
     description: `A dramatic vintage hooded plaid coat that feels straight out of a winter lodge in the 1970s.
 
@@ -1871,7 +2075,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [rhiannonImg1, rhiannonImg2, rhiannonImg3, rhiannonImg4, rhiannonImg5, rhiannonImg6, rhiannonImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -1906,7 +2110,7 @@ Vintage items may show wear consistent with age.`,
     name: "BIANCA",
     variant: "Vintage 1970s Long Wool Overcoat with Oversized Plush Faux Fur Collar – The Bianca",
     price: 0,
-    image: "/placeholder.svg",
+    image: dianaImg1,
     slug: toSlug("bianca"),
     description: `The Bianca winter coat is a beautifully dramatic vintage piece that captures the quiet glamour of cold-weather dressing in decades past.
 
@@ -1939,7 +2143,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Youthcraft
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [dianaImg1, dianaImg2, dianaImg3, dianaImg4, dianaImg5, dianaImg6, dianaImg7, dianaImg8, dianaImg9, dianaImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -1974,7 +2178,7 @@ Vintage items may show wear consistent with age.`,
     name: "NICO",
     variant: "Vintage 1970s Burnt Orange Fur Trim Wool Coat – August Maxx – The Nico",
     price: 0,
-    image: "/placeholder.svg",
+    image: biancaImg1,
     slug: toSlug("nico"),
     description: `A striking vintage wool coat by August Max, rendered in a rich burnt orange tone reminiscent of autumn leaves and alpine sunsets. This beautifully tailored piece blends classic American wool craftsmanship with dramatic winter styling.
 
@@ -2007,7 +2211,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [biancaImg1, biancaImg2, biancaImg3, biancaImg4, biancaImg5, biancaImg6, biancaImg7, biancaImg8, biancaImg9, biancaImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -2042,7 +2246,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROAN",
     variant: "Vintage 1950s Oversized Wool Overcoat by Scot Isle – The Roan",
     price: 0,
-    image: "/placeholder.svg",
+    image: nicoImg1,
     slug: toSlug("roan"),
     description: `A beautifully tailored vintage overcoat crafted from 100% virgin wool by Scot-Isle. The fabric features a refined salt-and-pepper weave in charcoal and cream with subtle blue flecks, creating depth and texture while remaining timeless and versatile.
 
@@ -2071,7 +2275,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Scot-Isle
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [nicoImg1, nicoImg2, nicoImg3, nicoImg4, nicoImg5, nicoImg6, nicoImg7, nicoImg8, nicoImg9, nicoImg10, nicoImg11, nicoImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XL / Oversized fit (12-14) / Men's Large",
@@ -2172,7 +2376,7 @@ Vintage items may show wear consistent with age.`,
     name: "PENELOPE",
     variant: "Vintage 1960s Purple Velvet Opera Coat – The Penelope",
     price: 0,
-    image: "/placeholder.svg",
+    image: penelopeImg1,
     slug: toSlug("penelope"),
     description: `A striking vintage velvet coat from Dublin boutique Christine, Duke Street, rendered in a rich violet tone that feels both regal and quietly dramatic. The coat features a sculptural high collar and a line of delicate hand-covered velvet buttons cascading down the front, creating a soft, elegant opening.
 
@@ -2205,7 +2409,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Christine, Duke Street
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [penelopeImg1, penelopeImg2, penelopeImg3, penelopeImg4, penelopeImg5, penelopeImg6, penelopeImg7, penelopeImg8, penelopeImg9, penelopeImg10, penelopeImg11],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS/S (US 0-2)",
@@ -2240,7 +2444,7 @@ Vintage items may show wear consistent with age.`,
     name: "VIVIENNE",
     variant: "Vintage 1960s Scarlet Red Wool Leopard Calf Hair Collar Coat – The Vivienne",
     price: 0,
-    image: "/placeholder.svg",
+    image: vivienneImg1,
     slug: toSlug("vivienne"),
     description: `A striking mid-century wool coat from New York department store label Franklin Simon, likely dating to the early–mid 1960s.
 
@@ -2271,7 +2475,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Franklin Simon New York
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [vivienneImg1, vivienneImg2, vivienneImg3, vivienneImg4, vivienneImg5, vivienneImg6, vivienneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
@@ -2306,7 +2510,7 @@ Vintage items may show wear consistent with age.`,
     name: "KENDRA",
     variant: "Vintage 1950s Kenny for Sportowne Long Leopard Coat – The Kendra",
     price: 0,
-    image: "/placeholder.svg",
+    image: kendraImg1,
     slug: toSlug("kendra"),
     description: `A bold mid-century statement piece, this coat channels the effortless glamour of late 1950s and early 1960s fashion. Crafted in plush leopard print faux fur, this coat delivers that iconic vintage leopard look — dramatic, playful, and unmistakably chic.
 
@@ -2337,7 +2541,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Kenny for Sportowne
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [kendraImg1, kendraImg2, kendraImg3, kendraImg4, kendraImg5, kendraImg6, kendraImg7, kendraImg8, kendraImg9],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L-XL (also fits well oversized on smaller frames)",
@@ -2372,7 +2576,7 @@ Vintage items may show wear consistent with age.`,
     name: "BLAIR",
     variant: "Vintage White Stag Action Sports Navy Ski Puffer Jacket – The Blair",
     price: 0,
-    image: "/placeholder.svg",
+    image: blairImg1,
     slug: toSlug("blair"),
     description: `A striking vintage White Stag Action Sports ski puffer with unmistakable retro alpine energy. Done in deep navy with cream piping and bold red sleeve stripes, this jacket captures the graphic, athletic look of late-1970s and early-1980s winter sport design.
 
@@ -2399,7 +2603,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: White Stag Action Sports, Size M
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [blairImg1, blairImg2, blairImg3, blairImg4, blairImg5, blairImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
@@ -2432,7 +2636,7 @@ Vintage items may show wear consistent with age.`,
     name: "SUNNY",
     variant: "Vintage 1970s Ski West Cobalt Blue with Rainbow Stripe Alpine Puffer – The Sunny",
     price: 0,
-    image: "/placeholder.svg",
+    image: sunnyImg1,
     slug: toSlug("sunny"),
     description: `A joyful burst of retro alpine energy. This vintage Ski West puffer jacket captures the playful spirit of late-70s ski culture with its bold cobalt blue shell and vibrant rainbow racing stripes sweeping across the shoulders.
 
@@ -2461,7 +2665,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Ski West
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [sunnyImg1, sunnyImg2, sunnyImg3, sunnyImg4, sunnyImg5, sunnyImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
