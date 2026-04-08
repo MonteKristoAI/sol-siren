@@ -101,6 +101,31 @@ import herkimerCable2 from "@/assets/products/jewelry/herkimer-cable/herkimer-ca
 import herkimerCable3 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-3.webp";
 import herkimerCable4 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-4.webp";
 import herkimerCable5 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-5.webp";
+import valentina1 from "@/assets/products/valentina/valentina-1.webp";
+import valentina2 from "@/assets/products/valentina/valentina-2.webp";
+import valentina3 from "@/assets/products/valentina/valentina-3.webp";
+import valentina4 from "@/assets/products/valentina/valentina-4.webp";
+import valentina5 from "@/assets/products/valentina/valentina-5.webp";
+import valentina6 from "@/assets/products/valentina/valentina-6.webp";
+import valentina7 from "@/assets/products/valentina/valentina-7.webp";
+import valentina8 from "@/assets/products/valentina/valentina-8.webp";
+import roan1 from "@/assets/products/roan/roan-1.webp";
+import roan2 from "@/assets/products/roan/roan-2.webp";
+import roan3 from "@/assets/products/roan/roan-3.webp";
+import roan4 from "@/assets/products/roan/roan-4.webp";
+import roan5 from "@/assets/products/roan/roan-5.webp";
+import roan6 from "@/assets/products/roan/roan-6.webp";
+import roan7 from "@/assets/products/roan/roan-7.webp";
+import roan8 from "@/assets/products/roan/roan-8.webp";
+import clover1 from "@/assets/products/clover/clover-1.webp";
+import clover2 from "@/assets/products/clover/clover-2.webp";
+import clover3 from "@/assets/products/clover/clover-3.webp";
+import clover4 from "@/assets/products/clover/clover-4.webp";
+import clover5 from "@/assets/products/clover/clover-5.webp";
+import clover6 from "@/assets/products/clover/clover-6.webp";
+import clover7 from "@/assets/products/clover/clover-7.webp";
+import clover8 from "@/assets/products/clover/clover-8.webp";
+import clover9 from "@/assets/products/clover/clover-9.webp";
 
 import novaImg1 from "@/assets/products/nova/nova-1.webp";
 import novaImg2 from "@/assets/products/nova/nova-2.webp";
@@ -1448,7 +1473,7 @@ Vintage items may show wear consistent with age.`,
   {
     id: "vixen",
     name: "VIXEN",
-    variant: "Vintage 1980s Bearskin Fringe Leather Jacket – The Vixen",
+    variant: "Vintage 1980s Boarskin Fringe Leather Jacket – The Vixen",
     price: 0,
     image: tallulahImg1,
     slug: toSlug("vixen"),
@@ -2335,7 +2360,7 @@ Vintage items may show wear consistent with age.`,
     name: "VALENTINA",
     variant: "Vintage 1970s Brittany Bay Red Velvet Long Overcoat – The Valentina",
     price: 0,
-    image: "/placeholder.svg",
+    image: valentina1,
     slug: toSlug("valentina"),
     description: `A striking vintage 1970s velvet coat in a saturated ruby red, designed for dramatic entrances and unforgettable color.
 
@@ -2366,7 +2391,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Brittany Bay all weather coats by Bernarch Casuals, Vancouver Canada
 
 Vintage items may show wear consistent with age.`,
-    images: ["/placeholder.svg"],
+    images: [valentina1, valentina2, valentina3, valentina4, valentina5, valentina6, valentina7, valentina8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S (US 4-6)",
@@ -3131,6 +3156,54 @@ Vintage items may show wear consistent with age.`,
       "Avoid direct sunlight, heat, and moisture",
     ],
     category: "apres-ski",
+  },
+  // ─── LEATHER (new) ───
+  {
+    id: "clover",
+    name: "CLOVER",
+    variant: "Vintage 1970s Suede Cape with Floral Applique - The Clover",
+    price: 0,
+    image: clover1,
+    slug: toSlug("clover"),
+    description: `Clover is a beautifully expressive suede cape from the 1970s, crafted in rich earth-toned leather with hand-cut floral applique blooming across the front. Warm shades of chocolate and sand suede create depth and texture, while the organic shapes of the floral motifs give the piece its signature bohemian character.
+
+The silhouette is relaxed and open, designed to drape naturally over the shoulders with easy, flowing movement. A metal front zipper allows the cape to be worn closed for warmth or left open for a more dramatic layered effect.
+
+Pieces like this were often one-of-a-kind or produced in very small quantities, reflecting the era's love of handcrafted, artisan-influenced outerwear.
+
+A garment with a past -- ready for its next chapter.
+
+\u2022 Authentic vintage
+\u2022 Estimated era: 1970s
+\u2022 Material: Genuine suede leather
+\u2022 Color: Chocolate brown with warm sand applique
+\u2022 Lining: Unlined
+\u2022 Closure: Metal front zipper
+\u2022 Length: Mid-thigh (28 inches)
+
+Vintage items may show wear consistent with age.`,
+    images: [clover1, clover2, clover3, clover4, clover5, clover6, clover7, clover8, clover9],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "Open cape", bust: "Open cape", sleeve: "N/A", length: "28\"" },
+      fitDescription: "Relaxed cape silhouette with open arm openings. Cape construction allows for flexible sizing.",
+    },
+    productDetails: {
+      era: "1970s",
+      material: "Genuine suede leather",
+      color: "Chocolate brown with warm sand applique",
+      closure: "Metal front zipper",
+      length: "Mid-thigh (28 inches)",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a cool, dark place in a breathable garment bag",
+      "Hang on a padded hanger to maintain shape",
+      "Avoid direct sunlight, heat, and moisture",
+      "Specialist leather cleaning only",
+    ],
+    category: "leather",
   },
   // ─── JEWELRY ───
   {
