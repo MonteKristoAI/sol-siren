@@ -77,6 +77,31 @@ import madelineBack from "@/assets/products/madeline-back.webp";
 import madelineCollar from "@/assets/products/madeline-collar.webp";
 import madelineNametag from "@/assets/products/madeline-nametag.webp";
 import madelineLabel from "@/assets/products/madeline-label.webp";
+// Jewelry imports
+import fuCancer1 from "@/assets/products/jewelry/fu-cancer/fu-cancer-1.webp";
+import fuCancer2 from "@/assets/products/jewelry/fu-cancer/fu-cancer-2.webp";
+import fuCancer3 from "@/assets/products/jewelry/fu-cancer/fu-cancer-3.webp";
+import fuckCancer1 from "@/assets/products/jewelry/fuck-cancer/fuck-cancer-1.webp";
+import fuckCancer2 from "@/assets/products/jewelry/fuck-cancer/fuck-cancer-2.webp";
+import fuckCancer3 from "@/assets/products/jewelry/fuck-cancer/fuck-cancer-3.webp";
+import fuckCancer4 from "@/assets/products/jewelry/fuck-cancer/fuck-cancer-4.webp";
+import fuckCancer5 from "@/assets/products/jewelry/fuck-cancer/fuck-cancer-5.webp";
+import leCancerRound1 from "@/assets/products/jewelry/le-cancer-round/le-cancer-round-1.webp";
+import leCancerRect1 from "@/assets/products/jewelry/le-cancer-rect/le-cancer-rect-1.webp";
+import leCancerRect2 from "@/assets/products/jewelry/le-cancer-rect/le-cancer-rect-2.webp";
+import leCancerRect3 from "@/assets/products/jewelry/le-cancer-rect/le-cancer-rect-3.webp";
+import leCancerRect4 from "@/assets/products/jewelry/le-cancer-rect/le-cancer-rect-4.webp";
+import leCancerRect5 from "@/assets/products/jewelry/le-cancer-rect/le-cancer-rect-5.webp";
+import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
+import herkimerFloat2 from "@/assets/products/jewelry/herkimer-float/herkimer-float-2.webp";
+import herkimerFloat3 from "@/assets/products/jewelry/herkimer-float/herkimer-float-3.webp";
+import herkimerFloat4 from "@/assets/products/jewelry/herkimer-float/herkimer-float-4.webp";
+import herkimerCable1 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-1.webp";
+import herkimerCable2 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-2.webp";
+import herkimerCable3 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-3.webp";
+import herkimerCable4 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-4.webp";
+import herkimerCable5 from "@/assets/products/jewelry/herkimer-cable/herkimer-cable-5.webp";
+
 import novaImg1 from "@/assets/products/nova/nova-1.webp";
 import novaImg2 from "@/assets/products/nova/nova-2.webp";
 import novaImg3 from "@/assets/products/nova/nova-3.webp";
@@ -282,7 +307,7 @@ import romyImg2 from "@/assets/products/romy/romy-2.webp";
 import romyImg3 from "@/assets/products/romy/romy-3.webp";
 import romyImg4 from "@/assets/products/romy/romy-4.webp";
 
-export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski";
+export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
 
 export interface SizeFit {
   modernSize: string;
@@ -3106,6 +3131,209 @@ Vintage items may show wear consistent with age.`,
       "Avoid direct sunlight, heat, and moisture",
     ],
     category: "apres-ski",
+  },
+  // ─── JEWELRY ───
+  {
+    id: "fuck-cancer-necklace",
+    name: "FUCK CANCER",
+    variant: "14K Gold-Filled Engraved Round Disc Necklace",
+    price: 55,
+    image: fuckCancer1,
+    slug: toSlug("fuck-cancer-necklace"),
+    description: `19 years ago my mom died of cancer. A brutally random, generally pediatric form of bone cancer called Ewings sarcoma. My stomach still turns after saying those two ugly words.
+
+Over the past 19 years, I have experienced every imaginable emotion. I have been left lonely from the loss of my best friend; devastated over the loss that my children are experiencing yet are unaware of and pissed off that I now have to cook Christmas dinner.
+
+I miss my mom. Maybe you miss yours too, or have someone in your life who could use some support, but you don't quite know what to do, gift her this necklace. Then give her a hug and just listen... don't try to fill the silence. Just be there for her.
+
+"FUCK CANCER" laser engraved on a 14K gold-filled 10mm round disc. 14K gold-filled 16-18 inch adjustable chain. Free shipping.`,
+    images: [fuckCancer1, fuckCancer2, fuckCancer3, fuckCancer4, fuckCancer5],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16-18 inch adjustable" },
+      fitDescription: "14K gold-filled 16-18 inch adjustable chain with 10mm round disc pendant.",
+    },
+    productDetails: {
+      material: "14K gold-filled",
+      color: "Gold",
+      closure: "Adjustable chain clasp",
+      length: "16-18 inches",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish with a soft cloth to maintain shine",
+    ],
+    category: "jewelry",
+  },
+  {
+    id: "fu-cancer-necklace",
+    name: "F.U. CANCER",
+    variant: "14K Gold-Filled Engraved Round Disc Necklace",
+    price: 55,
+    image: fuCancer1,
+    slug: toSlug("fu-cancer-necklace"),
+    description: `19 years ago my mom died of cancer. A brutally random, generally pediatric form of bone cancer called Ewings sarcoma.
+
+Aside from sadness, anger and loneliness, my latest emotion is shame. I am so deeply ashamed that I have hidden behind this veil of sadness and have not done one thing to honor my mom's memory. She deserves better than that, because she was awesome.
+
+Gift her this necklace. Then give her a hug and just listen.
+
+"F.U. CANCER" laser engraved on a 14K gold-filled 10mm round disc. 14K gold-filled 16-18 inch adjustable chain. Free shipping.`,
+    images: [fuCancer1, fuCancer2, fuCancer3],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16-18 inch adjustable" },
+      fitDescription: "14K gold-filled 16-18 inch adjustable chain with 10mm round disc pendant.",
+    },
+    productDetails: {
+      material: "14K gold-filled",
+      color: "Gold",
+      closure: "Adjustable chain clasp",
+      length: "16-18 inches",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish with a soft cloth to maintain shine",
+    ],
+    category: "jewelry",
+  },
+  {
+    id: "le-cancer-ca-craint-round",
+    name: "LE CANCER CA CRAINT",
+    variant: "French \"Fuck Cancer\" - 14K Gold-Filled Round Disc Necklace",
+    price: 55,
+    image: leCancerRound1,
+    slug: toSlug("le-cancer-ca-craint-round"),
+    description: `Le Cancer Ca Craint -- French slang for "Fuck Cancer."
+
+For those who carry their strength in a second language. For the quiet rebels. For the ones who know that defiance doesn't always need to be loud to be felt.
+
+"Le Cancer Ca Craint" laser engraved on a 14K gold-filled 10mm round disc. 14K gold-filled 16-18 inch adjustable chain. Free shipping.`,
+    images: [leCancerRound1],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16-18 inch adjustable" },
+      fitDescription: "14K gold-filled 16-18 inch adjustable chain with 10mm round disc pendant.",
+    },
+    productDetails: {
+      material: "14K gold-filled",
+      color: "Gold",
+      closure: "Adjustable chain clasp",
+      length: "16-18 inches",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish with a soft cloth to maintain shine",
+    ],
+    category: "jewelry",
+  },
+  {
+    id: "le-cancer-ca-craint-rect",
+    name: "LE CANCER CA CRAINT",
+    variant: "French \"Fuck Cancer\" - 14K Gold-Filled Rectangle Tag Necklace",
+    price: 55,
+    image: leCancerRect1,
+    slug: toSlug("le-cancer-ca-craint-rect"),
+    description: `Le Cancer Ca Craint -- French slang for "Fuck Cancer."
+
+The rectangle tag version. Bolder. More visible. A quiet statement piece that says everything without saying a word.
+
+"F.U. CANCER" laser engraved on a 14K gold-filled 21x14mm rectangular tag. 14K gold-filled 16-18 inch adjustable chain. Free shipping.`,
+    images: [leCancerRect1, leCancerRect2, leCancerRect3, leCancerRect4, leCancerRect5],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16-18 inch adjustable" },
+      fitDescription: "14K gold-filled 16-18 inch adjustable chain with 21x14mm rectangular tag pendant.",
+    },
+    productDetails: {
+      material: "14K gold-filled",
+      color: "Gold",
+      closure: "Adjustable chain clasp",
+      length: "16-18 inches",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish with a soft cloth to maintain shine",
+    ],
+    category: "jewelry",
+  },
+  {
+    id: "herkimer-diamond-floating",
+    name: "HERKIMER DIAMOND",
+    variant: "Genuine Herkimer Diamond on 14K Gold-Filled Floating Bead Chain",
+    price: 50,
+    image: herkimerFloat1,
+    slug: toSlug("herkimer-diamond-floating"),
+    description: `Herkimer Diamond: "The Stone of Attunement" -- encourages unity of physical, mental, emotional, spiritual states. In other words, it encourages WHOLENESS.
+
+Your floating Herkimer Diamond necklace will be custom made for YOU and only YOU. Please note that you will not be receiving the exact necklace displayed. Each Herkimer Diamond is completely unique which makes your necklace truly one of a kind.
+
+Your necklace will be made with a genuine Herkimer Diamond sourced from Herkimer, New York. Each diamond will be 8-10mm and will rest on 14K gold-filled beading chain featuring our signature sliding adjuster.
+
+If you would like to approve your stone before shipment, please reach out. Each necklace adjusts between 16-18 inches. If you prefer a different length, please reach out. We are happy to customize your necklace for you. Free shipping.`,
+    images: [herkimerFloat1, herkimerFloat2, herkimerFloat3, herkimerFloat4],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16-18 inch adjustable" },
+      fitDescription: "14K gold-filled floating bead chain with signature sliding adjuster. Custom length available on request.",
+    },
+    productDetails: {
+      material: "14K gold-filled chain, genuine Herkimer Diamond (8-10mm)",
+      color: "Gold chain, clear crystal",
+      closure: "Signature sliding adjuster",
+      length: "16-18 inches (custom length available)",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish chain with a soft cloth to maintain shine",
+      "Handle crystal with care to preserve natural clarity",
+    ],
+    category: "jewelry",
+  },
+  {
+    id: "herkimer-diamond-cable",
+    name: "HERKIMER DIAMOND",
+    variant: "Genuine Herkimer Diamond on 14K Gold-Filled Cable Chain",
+    price: 50,
+    image: herkimerCable1,
+    slug: toSlug("herkimer-diamond-cable"),
+    description: `Herkimer Diamond: "The Stone of Attunement" -- encourages unity of physical, mental, emotional, spiritual states. In other words, it encourages WHOLENESS.
+
+Your dainty Herkimer Diamond necklace will be custom made for YOU and only YOU. Each Herkimer Diamond is completely unique which makes your necklace truly one of a kind.
+
+Your necklace will be made with a genuine Herkimer Diamond sourced from Herkimer, New York. Each diamond will be 8-10mm and will rest between 16 inches of 14K gold-filled cable chain with a two inch adjuster.
+
+If you would like to approve your stone or would like a different length, please reach out before shipment. We are happy to customize your necklace for you. Free shipping.`,
+    images: [herkimerCable1, herkimerCable2, herkimerCable3, herkimerCable4, herkimerCable5],
+    sizes: ["One Size"],
+    sizeFit: {
+      modernSize: "One Size",
+      measurements: { shoulder: "N/A", bust: "N/A", sleeve: "N/A", length: "16\" + 2\" extender" },
+      fitDescription: "16 inches of 14K gold-filled cable chain with a two-inch adjuster. Custom length available on request.",
+    },
+    productDetails: {
+      material: "14K gold-filled cable chain, genuine Herkimer Diamond (8-10mm)",
+      color: "Gold chain, clear crystal",
+      closure: "Lobster clasp with 2-inch extender",
+      length: "16-18 inches",
+    },
+    careInstructions: [
+      "Avoid contact with water, lotions, and perfumes",
+      "Store in a dry, cool place when not wearing",
+      "Gently polish chain with a soft cloth to maintain shine",
+      "Handle crystal with care to preserve natural clarity",
+    ],
+    category: "jewelry",
   },
 ];
 

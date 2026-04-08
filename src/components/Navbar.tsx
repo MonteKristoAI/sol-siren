@@ -11,6 +11,7 @@ const shopCategories = [
   { label: "Penny Lane / Afghan", to: "/shop?category=penny-lane-afghan" },
   { label: "Overcoat", to: "/shop?category=overcoat" },
   { label: "Apres Ski", to: "/shop?category=apres-ski" },
+  { label: "Jewelry", to: "/jewelry" },
 ];
 
 const Navbar = () => {

@@ -14,6 +14,7 @@ const categories: { label: string; value: ProductCategory | "all" }[] = [
   { label: "Penny Lane / Afghan", value: "penny-lane-afghan" },
   { label: "Overcoat", value: "overcoat" },
   { label: "Apres Ski", value: "apres-ski" },
+  { label: "Jewelry", value: "jewelry" },
 ];
 
 const Shop = () => {

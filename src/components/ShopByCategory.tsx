@@ -25,6 +25,11 @@ const categories = [
   name: "Apres Ski",
   image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=apres-ski"
+},
+{
+  name: "Jewelry",
+  image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6c4?w=800&q=80&auto=format&fit=crop",
+  link: "/jewelry"
 }];
 
 
@@ -40,7 +45,7 @@ const ShopByCategory = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-7xl mx-auto">
         {categories.map((cat) =>
         <Link
           key={cat.name}

@@ -14,6 +14,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import ShippingReturns from "./pages/ShippingReturns";
 import FAQ from "./pages/FAQ";
+import Jewelry from "./pages/Jewelry";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/jewelry" element={<Jewelry />} />
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/shipping-returns" element={<ShippingReturns />} />
