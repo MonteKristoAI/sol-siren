@@ -860,12 +860,12 @@ Vintage items may show wear consistent with age.`,
     category: "fur",
   },
   {
-    id: "nk",
-    name: "N.K.",
+    id: "nova",
+    name: "NOVA",
     variant: "Vintage 1960s Ivory Curly Lamb Fur Jacket – The Nova",
     price: 0,
     image: novaImg1,
-    slug: toSlug("nk"),
+    slug: toSlug("nova"),
     description: `A striking piece from the late 1960s, this vintage jacket is crafted from soft ivory curly lamb fur, known for its romantic ringlet texture and cloud-like movement. The dense curls create beautiful natural volume, giving the coat an unmistakably glamorous silhouette.
 
 The silhouette falls at an easy hip length, making it a versatile piece that pairs effortlessly with denim, dresses or tailored trousers.
@@ -1103,12 +1103,12 @@ Vintage items may show wear consistent with age.`,
     category: "penny-lane-afghan",
   },
   {
-    id: "frankie",
-    name: "FRANKIE",
-    variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim – The Frankie",
+    id: "saffron",
+    name: "SAFFRON",
+    variant: "Vintage 1970s Embroidered Suede Penny Lane Coat with Shearling Trim Hood - The Saffron",
     price: 0,
     image: sybilImg1,
-    slug: toSlug("frankie"),
+    slug: toSlug("saffron"),
     description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
 
 The exterior is crafted from supple suede with curly lamb shearling trim along the front opening and hemline.
@@ -1409,12 +1409,12 @@ Vintage items may show wear consistent with age.`,
     category: "leather",
   },
   {
-    id: "sierra",
-    name: "SIERRA",
-    variant: "Vintage 1970s Frontier Fringe Suede Jacket – The Sierra",
+    id: "tallulah",
+    name: "TALLULAH",
+    variant: "1970s Suede Shag Fur Trim Poncho, The Tallulah",
     price: 0,
     image: stevieImg1,
-    slug: toSlug("sierra"),
+    slug: toSlug("tallulah"),
     description: `A true piece of classic American Western style.
 
 This vintage suede jacket by Sears Western Wear captures the rugged frontier spirit of the 1970s.
@@ -3042,12 +3042,12 @@ Vintage items may show wear consistent with age.`,
     category: "apres-ski",
   },
   {
-    id: "aurora",
-    name: "AURORA",
-    variant: "Vintage 1970s Burnt Orange Sherpa-Lined Colorblock Puffer Bomber Jacket – The Aurora",
+    id: "tilly-bomber",
+    name: "TILLY",
+    variant: "Vintage 1970s Burnt Orange Sherpa-Lined Colorblock Puffer Bomber Jacket – The Tilly",
     price: 0,
     image: auroraVest,
-    slug: toSlug("aurora"),
+    slug: toSlug("tilly-bomber"),
     description: `A standout vintage puffer bomber with a warm, retro palette and an easy off-duty feel. This piece features a dusty blush quilted body, a rich rust-toned yoke with slim contrast piping, and a plush cream sherpa lining that carries through the collar and interior for extra warmth and texture.
 
 The chunky ribbed knit hem in a coordinating rust tone gives it that classic bomber shape, while the oversized zip front and angled front pockets keep it practical and easy to wear.
@@ -3156,6 +3156,153 @@ Vintage items may show wear consistent with age.`,
       "Avoid direct sunlight, heat, and moisture",
     ],
     category: "apres-ski",
+  },
+  // ─── PENDING PRODUCTS (waiting for images/arrival) ───
+  {
+    id: "celeste",
+    name: "CELESTE",
+    variant: "Vintage 1970s Dan Di Modes Fur Collar Leather Wrap Coat - Dove Grey Belted Coat",
+    price: 0,
+    image: clover1,
+    slug: toSlug("celeste"),
+    description: `Celeste carries the quiet glamour of late-1970s outerwear. Crafted from supple sage-grey leather and finished with a plush natural fur collar, the coat reflects the era's love for relaxed tailoring paired with statement texture.
+
+The wrap silhouette ties gently at the waist, allowing the leather to fall into a flattering, softly structured shape. Large patch pockets and clean lines give the coat a practical ease, while the dramatic fur collar frames the face with warm tonal variation that contrasts beautifully against the cool grey leather.
+
+Inside, a blush satin lining adds a subtle romantic detail -- a small surprise that feels distinctly of its time.
+
+The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Modes was a vintage label known for producing fabulous leather and fur outerwear throughout the mid-20th century.
+
+A garment with a past -- ready for its next chapter.`,
+    images: [clover1],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "S/M (estimated)",
+      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
+      fitDescription: "Wrap design allows flexibility in fit. Best worn slightly relaxed with the belt defining the waist. Measurements coming soon.",
+    },
+    productDetails: {
+      era: "1969-1973",
+      material: "100% leather, acetate lining. Genuine fur collar.",
+      color: "Dove grey leather exterior. Blush synthetic satin interior.",
+      closure: "Belted waist with original leather tie",
+      length: "Knee-length",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a breathable garment bag",
+      "Hang on a structured hanger to maintain shape",
+      "Avoid prolonged exposure to direct sunlight or moisture",
+      "Specialist leather and fur cleaning only",
+    ],
+    category: "leather",
+  },
+  {
+    id: "farrah",
+    name: "FARRAH",
+    variant: "Vintage 1960s-1970s Leather Coat with Fur Collar and Cuffs - The Farrah",
+    price: 0,
+    image: clover1,
+    slug: toSlug("farrah"),
+    description: `She feels like something from another decade -- and she is. The Farrah coat is a beautifully tailored piece from the late 1960s to early 1970s, crafted from supple leather and finished with long-pile fur collar and cuffs.
+
+A garment with a past -- ready for its next chapter.
+
+Photos coming soon.`,
+    images: [clover1],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "M/L (estimated)",
+      measurements: { shoulder: "16\"", bust: "38\"", sleeve: "21\"", length: "30\"" },
+      fitDescription: "Tailored through the shoulders with a relaxed body.",
+    },
+    productDetails: {
+      era: "Late 1960s-1970s",
+      material: "Leather with genuine fur collar and cuffs",
+      color: "Dove grey leather exterior. Blush synthetic satin interior.",
+      closure: "Double breasted button front with matching suede belt",
+      length: "Mid-thigh",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a breathable garment bag",
+      "Hang on a structured hanger to maintain shape",
+      "Specialist leather and fur cleaning only",
+    ],
+    category: "leather",
+  },
+  {
+    id: "goldie",
+    name: "GOLDIE",
+    variant: "1970s Penny Lane Suede & Shearling Fur Trim Vest - The Goldie",
+    price: 0,
+    image: clover1,
+    slug: toSlug("goldie"),
+    description: `Goldie is a vintage suede vest cut from rich caramel suede and framed with dramatic long-hair shearling trim at the collar and hem. The silhouette is open and effortless, designed to layer easily while allowing the texture and movement of the fur to take center stage.
+
+The shaggy trim gives the piece its signature Penny Lane energy -- a little wild, a little glamorous, and entirely unforgettable.
+
+Not relics. Not replicas.
+But a garment with a past -- ready for its next chapter.
+
+Photos coming soon.`,
+    images: [clover1],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "S/M",
+      measurements: { shoulder: "Open", bust: "35\"", sleeve: "N/A", length: "28\"" },
+      fitDescription: "Open vest silhouette. Tagged S.",
+    },
+    productDetails: {
+      era: "1970s",
+      material: "Suede body. Mongolian/Tibetan fur trim.",
+      color: "Caramel tan suede with white fur trim",
+      closure: "Open vest",
+      length: "Hip-length",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a breathable garment bag",
+      "Hang on a structured hanger",
+      "Specialist leather and fur cleaning only",
+    ],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "ali",
+    name: "ALI",
+    variant: "Vintage Short Penny Lane Shearling Jacket by Navy Ann - The Ali",
+    price: 0,
+    image: clover1,
+    slug: toSlug("ali"),
+    description: `Some coats feel like they belong somewhere between a mountain town and a long road trip -- warm, worn-in, and quietly unforgettable. Ali is one of those pieces.
+
+Crafted by Navy Ann, this vintage jacket channels the unmistakable spirit of the classic Penny Lane silhouette. Rich chocolate faux suede forms the body, while plush golden shearling frames the coat from collar to hem.
+
+A garment with a past -- ready for its next chapter.
+
+Photos coming soon.`,
+    images: [clover1],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
+      fitDescription: "Measurements coming when item arrives.",
+    },
+    productDetails: {
+      era: "1990s",
+      material: "Suede body. Shearling trim.",
+      color: "Chocolate brown with honey shearling trim",
+      closure: "Open",
+      length: "Hip-length",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a breathable garment bag",
+      "Hang on a structured hanger",
+      "Specialist leather and fur cleaning only",
+    ],
+    category: "penny-lane-afghan",
   },
   // ─── LEATHER (new) ───
   {
