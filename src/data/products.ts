@@ -403,7 +403,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items show wear consistent with age.`,
-    images: [fayeFront, fayeBack, fayeCollar, fayeDetail, fayeClosure, fayeShoulder, fayeLabel],
+    images: [fayeFront, fayeCollar, fayeClosure, fayeDetail, fayeBack, fayeShoulder, fayeLabel],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -923,7 +923,7 @@ Vintage items may show wear consistent with age.`,
     name: "CAROL",
     variant: "Vintage 1970s Blonde Fox Fur & Leather Panel Coat – The Carol",
     price: 0,
-    image: carolFront,
+    image: carolImg1,
     slug: toSlug("carol"),
     description: `A striking vintage fox fur coat in a soft blonde champagne tone, designed with leather panel construction that adds beautiful movement and shape to the silhouette. The plush shawl collar frames the neckline, while the wrap-style leather waist tie allows the coat to be worn loosely draped or cinched for a more defined look.
 
@@ -948,7 +948,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Removable leather wrap-style waist tie
 
 Vintage items may show wear consistent with age.`,
-    images: [carolFront, carolCollar],
+    images: [carolImg1, carolImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -983,7 +983,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROXANNE",
     variant: "Vintage 1970s Suede & Fur Belted Penny Lane Coat – The Roxanne",
     price: 0,
-    image: carolImg1,
+    image: roxanneImg1,
     slug: toSlug("roxanne"),
     description: `A striking 1970s suede coat by Dan Di Modes, designed with a sculpted silhouette and dramatic fur trim that captures the effortless glamour of the era.
 
@@ -1010,7 +1010,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh-knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [carolImg1, carolImg2],
+    images: [roxanneImg1, roxanneImg2, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1045,7 +1045,7 @@ Vintage items may show wear consistent with age.`,
     name: "SYBIL",
     variant: "Vintage Penny Lane Style Faux Suede Shearling Coat – The Sybil",
     price: 0,
-    image: roxanneImg1,
+    image: sybilImg1,
     slug: toSlug("sybil"),
     description: `A modern revival of an iconic 1970s silhouette.
 
@@ -1072,7 +1072,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items may show wear consistent with age.`,
-    images: [roxanneImg1, roxanneImg2, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
+    images: [sybilImg1, sybilImg2, sybilImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1107,7 +1107,7 @@ Vintage items may show wear consistent with age.`,
     name: "SAFFRON",
     variant: "Vintage 1970s Embroidered Suede Penny Lane Coat with Shearling Trim Hood - The Saffron",
     price: 0,
-    image: sybilImg1,
+    image: saffronImg1,
     slug: toSlug("saffron"),
     description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
 
@@ -1134,7 +1134,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [sybilImg1, sybilImg2, sybilImg3],
+    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1169,7 +1169,7 @@ Vintage items may show wear consistent with age.`,
     name: "KATE",
     variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Kate",
     price: 0,
-    image: saffronImg1,
+    image: kateImg1,
     slug: toSlug("kate"),
     description: `A striking vintage suede coat inspired by iconic Penny Lane silhouettes.
 
@@ -1196,7 +1196,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
+    images: [kateImg1, kateImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1231,7 +1231,7 @@ Vintage items may show wear consistent with age.`,
     name: "TOPANGA",
     variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Topanga",
     price: 0,
-    image: kateImg1,
+    image: topangaImg1,
     slug: toSlug("topanga"),
     description: `A striking vintage suede coat inspired by the iconic Penny Lane silhouettes of the late 1960s and early 1970s.
 
@@ -1258,7 +1258,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [kateImg1, kateImg2],
+    images: [topangaImg1, topangaImg2, topangaImg3, topangaImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1293,7 +1293,7 @@ Vintage items may show wear consistent with age.`,
     name: "EMMYLOU",
     variant: "Vintage 1970s Suede Leather Coat – The Emmylou",
     price: 0,
-    image: topangaImg1,
+    image: emmylouImg1,
     slug: toSlug("emmylou"),
     description: `A beautifully tailored vintage suede leather coat from Split End Ltd., capturing the rich textures and Western-inspired styling that defined late-1970s fashion.
 
@@ -1318,7 +1318,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [topangaImg1, topangaImg2, topangaImg3, topangaImg4],
+    images: [emmylouImg1, emmylouImg2, emmylouImg3, emmylouImg4, emmylouImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1353,7 +1353,7 @@ Vintage items may show wear consistent with age.`,
     name: "STEVIE",
     variant: "Vintage 1990s Black Leather Fringe Jacket – The Stevie",
     price: 0,
-    image: emmylouImg1,
+    image: stevieImg1,
     slug: toSlug("stevie"),
     description: `A striking black leather fringe jacket by Wilsons Leather Maxima, designed with dramatic movement and unmistakable western spirit.
 
@@ -1378,7 +1378,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [emmylouImg1, emmylouImg2, emmylouImg3, emmylouImg4, emmylouImg5],
+    images: [stevieImg1, stevieImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
@@ -1413,7 +1413,7 @@ Vintage items may show wear consistent with age.`,
     name: "TALLULAH",
     variant: "1970s Suede Shag Fur Trim Poncho, The Tallulah",
     price: 0,
-    image: stevieImg1,
+    image: tallulahImg1,
     slug: toSlug("tallulah"),
     description: `A true piece of classic American Western style.
 
@@ -1440,7 +1440,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [stevieImg1, stevieImg2],
+    images: [tallulahImg1, tallulahImg2, tallulahImg3, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L (oversized fit) / Men's M",
@@ -1475,7 +1475,7 @@ Vintage items may show wear consistent with age.`,
     name: "VIXEN",
     variant: "Vintage 1980s Boarskin Fringe Leather Jacket – The Vixen",
     price: 0,
-    image: tallulahImg1,
+    image: vixenImg1,
     slug: toSlug("vixen"),
     description: `A striking vintage leather jacket crafted from sueded boarskin, featuring bold black-on-black design and dramatic fringe along the sleeves.
 
@@ -1500,7 +1500,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [tallulahImg1, tallulahImg2, tallulahImg3, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
+    images: [vixenImg1, vixenImg2, vixenImg3, vixenImg4, vixenImg5, vixenImg6, vixenImg7, vixenImg8, vixenImg9, vixenImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L (oversized fit) / Men's M",
@@ -1535,7 +1535,7 @@ Vintage items may show wear consistent with age.`,
     name: "CLEO",
     variant: "Vintage 1970s Long Leather Wrap Coat – The Cleo",
     price: 0,
-    image: vixenImg1,
+    image: cleoImg1,
     slug: toSlug("cleo"),
     description: `A striking vintage 1970s leather wrap coat in a rich shade of golden caramel.
 
@@ -1562,7 +1562,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: [vixenImg1, vixenImg2, vixenImg3, vixenImg4, vixenImg5, vixenImg6, vixenImg7, vixenImg8, vixenImg9, vixenImg10],
+    images: [cleoImg1, cleoImg2, cleoImg3, cleoImg4, cleoImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L/XL",
@@ -1597,7 +1597,7 @@ Vintage items may show wear consistent with age.`,
     name: "CANDACE",
     variant: "Vintage 1970s Short Plaid Fur Trim Coat – The Candace",
     price: 0,
-    image: cleoImg1,
+    image: candaceImg1,
     slug: toSlug("candace"),
     description: `A beautiful hooded vintage plaid coat that captures the cozy spirit of 1970s winter style.
 
@@ -1622,7 +1622,7 @@ A garment with a past—ready for its next chapter.
 • Length: Short coat
 
 Vintage items may show wear consistent with age.`,
-    images: [cleoImg1, cleoImg2, cleoImg3, cleoImg4, cleoImg5],
+    images: [candaceImg1, candaceImg2, candaceImg3, candaceImg4, candaceImg5, candaceImg6, candaceImg7, candaceImg8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -1657,7 +1657,7 @@ Vintage items may show wear consistent with age.`,
     name: "ASPEN",
     variant: "Vintage 1970s Suede & Shearling Ranch Coat – The Aspen",
     price: 0,
-    image: candaceImg1,
+    image: aspenImg1,
     slug: toSlug("aspen"),
     description: `A striking vintage suede Ranch Coat from the late 1960s to early 1970s, featuring a dramatic shearling-style collar and plush interior lining.
 
@@ -1684,7 +1684,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: [candaceImg1, candaceImg2, candaceImg3, candaceImg4, candaceImg5, candaceImg6, candaceImg7, candaceImg8],
+    images: [aspenImg1, aspenImg2, aspenImg3, aspenImg4, aspenImg5, aspenImg6, aspenImg7, aspenImg8, aspenImg9, aspenImg10, aspenImg11],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1719,7 +1719,7 @@ Vintage items may show wear consistent with age.`,
     name: "SIMONE",
     variant: "Vintage 1940s Silver Fox Evening Stole – The Simone",
     price: 0,
-    image: aspenImg1,
+    image: simoneImg1,
     slug: toSlug("simone"),
     description: `A striking vintage fox fur stole from the late 1940s-early 1950s, crafted in beautifully full silver fox fur.
 
@@ -1742,7 +1742,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: [aspenImg1, aspenImg2, aspenImg3, aspenImg4, aspenImg5, aspenImg6, aspenImg7, aspenImg8, aspenImg9, aspenImg10, aspenImg11],
+    images: [simoneImg1, simoneImg2, simoneImg3],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
@@ -1776,7 +1776,7 @@ Vintage items may show wear consistent with age.`,
     name: "MARGAUX",
     variant: "Vintage 1950s Mink Capelet – The Margaux",
     price: 0,
-    image: simoneImg1,
+    image: margauxImg1,
     slug: toSlug("margaux"),
     description: `A luminous vintage mink capelet crafted by Leafgren Fine Furs.
 
@@ -1803,7 +1803,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: [simoneImg1, simoneImg2, simoneImg3],
+    images: [margauxImg1, margauxImg2, margauxImg3, margauxImg4, margauxImg5],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
@@ -1838,7 +1838,8 @@ Vintage items may show wear consistent with age.`,
     name: "JANIS",
     variant: "Vintage 1970s Tibetan Lamb Fur Jacket – The Janis",
     price: 0,
-    image: margauxImg1,
+    sold: true,
+    image: janisImg1,
     slug: toSlug("janis"),
     description: `A dreamy 1970s curly Tibetan/Mongolian lamb jacket in a beautiful natural tonal variation.
 
@@ -1865,7 +1866,7 @@ A garment with a past—ready for its next chapter.
 • Length: Cropped
 
 Vintage items may show wear consistent with age.`,
-    images: [margauxImg1, margauxImg2, margauxImg3, margauxImg4, margauxImg5],
+    images: [janisImg1, janisImg2, janisImg3, janisImg4, janisImg5, janisImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1900,7 +1901,7 @@ Vintage items may show wear consistent with age.`,
     name: "ELVIRA",
     variant: "Vintage 1970s Lilli Ann Faux Fur & Leather Belted Coat – The Elvira",
     price: 0,
-    image: janisImg1,
+    image: elviraImg1,
     slug: toSlug("elvira"),
     description: `A striking vintage coat from legendary San Francisco fashion house Lilli Ann, known for producing some of the most beautifully tailored outerwear of the mid-century era.
 
@@ -1931,7 +1932,7 @@ A garment with a past—ready for its next chapter.
 • Made in England
 
 Vintage items may show minor wear consistent with age.`,
-    images: [janisImg1, janisImg2, janisImg3, janisImg4, janisImg5, janisImg6],
+    images: [elviraImg1, elviraImg2, elviraImg3, elviraImg4, elviraImg5, elviraImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S (US 2-4)",
@@ -1965,7 +1966,7 @@ Vintage items may show minor wear consistent with age.`,
     name: "COLLETTE",
     variant: "Vintage 1970s English Suede & Lamb Fur Penny Lane Belted Coat – The Collette",
     price: 0,
-    image: elviraImg1,
+    image: colletteImg1,
     slug: toSlug("collette"),
     description: `A beautifully tailored vintage suede coat crafted in England, featuring a dramatic oversized lamb fur collar that frames the neckline with soft volume and warmth. The body is cut from supple dyed suede in a warm sand-taupe tone, accented with subtle honey-toned leather piping that traces the seams and pockets for a refined, textural contrast.
 
@@ -1996,7 +1997,7 @@ A garment with a past—ready for its next chapter.
 • Made in England
 
 Vintage items may show wear consistent with age.`,
-    images: [elviraImg1, elviraImg2, elviraImg3, elviraImg4, elviraImg5, elviraImg6],
+    images: [colletteImg1, colletteImg2, colletteImg3, colletteImg4, colletteImg5, colletteImg6, colletteImg7, colletteImg8, colletteImg9, colletteImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Small (US 4-6)",
@@ -2031,7 +2032,7 @@ Vintage items may show wear consistent with age.`,
     name: "RHIANNON",
     variant: "Vintage 1970s Short Suede Coat with Afghan Fur Collar – The Rhiannon",
     price: 0,
-    image: colletteImg1,
+    image: rhiannonImg1,
     slug: toSlug("rhiannon"),
     description: `A warm desert-toned suede coat with unmistakable 1970s spirit.
 
@@ -2060,7 +2061,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: The original belt and loops have been removed, creating a clean open-front silhouette that drapes effortlessly when worn.
 
 Vintage items may show wear consistent with age.`,
-    images: [colletteImg1, colletteImg2, colletteImg3, colletteImg4, colletteImg5, colletteImg6, colletteImg7, colletteImg8, colletteImg9, colletteImg10],
+    images: [rhiannonImg1, rhiannonImg2, rhiannonImg3, rhiannonImg4, rhiannonImg5, rhiannonImg6, rhiannonImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S",
@@ -2094,7 +2095,7 @@ Vintage items may show wear consistent with age.`,
     name: "DIANA",
     variant: "Vintage 1970s Hooded Long Plaid Fur Trim Coat – The Diana",
     price: 0,
-    image: rhiannonImg1,
+    image: dianaImg1,
     slug: toSlug("diana"),
     description: `A dramatic vintage hooded plaid coat that feels straight out of a winter lodge in the 1970s.
 
@@ -2125,7 +2126,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: [rhiannonImg1, rhiannonImg2, rhiannonImg3, rhiannonImg4, rhiannonImg5, rhiannonImg6, rhiannonImg7],
+    images: [dianaImg1, dianaImg2, dianaImg3, dianaImg4, dianaImg5, dianaImg6, dianaImg7, dianaImg8, dianaImg9, dianaImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -2160,7 +2161,7 @@ Vintage items may show wear consistent with age.`,
     name: "BIANCA",
     variant: "Vintage 1970s Long Wool Overcoat with Oversized Plush Faux Fur Collar – The Bianca",
     price: 0,
-    image: dianaImg1,
+    image: biancaImg1,
     slug: toSlug("bianca"),
     description: `The Bianca winter coat is a beautifully dramatic vintage piece that captures the quiet glamour of cold-weather dressing in decades past.
 
@@ -2193,7 +2194,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Youthcraft
 
 Vintage items may show wear consistent with age.`,
-    images: [dianaImg1, dianaImg2, dianaImg3, dianaImg4, dianaImg5, dianaImg6, dianaImg7, dianaImg8, dianaImg9, dianaImg10],
+    images: [biancaImg1, biancaImg2, biancaImg3, biancaImg4, biancaImg5, biancaImg6, biancaImg7, biancaImg8, biancaImg9, biancaImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -2228,7 +2229,7 @@ Vintage items may show wear consistent with age.`,
     name: "NICO",
     variant: "Vintage 1970s Burnt Orange Fur Trim Wool Coat – August Maxx – The Nico",
     price: 0,
-    image: biancaImg1,
+    image: nicoImg1,
     slug: toSlug("nico"),
     description: `A striking vintage wool coat by August Max, rendered in a rich burnt orange tone reminiscent of autumn leaves and alpine sunsets. This beautifully tailored piece blends classic American wool craftsmanship with dramatic winter styling.
 
@@ -2261,7 +2262,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: [biancaImg1, biancaImg2, biancaImg3, biancaImg4, biancaImg5, biancaImg6, biancaImg7, biancaImg8, biancaImg9, biancaImg10],
+    images: [nicoImg1, nicoImg2, nicoImg3, nicoImg4, nicoImg5, nicoImg6, nicoImg7, nicoImg8, nicoImg9, nicoImg10, nicoImg11, nicoImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
@@ -2296,7 +2297,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROAN",
     variant: "Vintage 1950s Oversized Wool Overcoat by Scot Isle – The Roan",
     price: 0,
-    image: nicoImg1,
+    image: roan1,
     slug: toSlug("roan"),
     description: `A beautifully tailored vintage overcoat crafted from 100% virgin wool by Scot-Isle. The fabric features a refined salt-and-pepper weave in charcoal and cream with subtle blue flecks, creating depth and texture while remaining timeless and versatile.
 
@@ -2325,7 +2326,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Scot-Isle
 
 Vintage items may show wear consistent with age.`,
-    images: [nicoImg1, nicoImg2, nicoImg3, nicoImg4, nicoImg5, nicoImg6, nicoImg7, nicoImg8, nicoImg9, nicoImg10, nicoImg11, nicoImg12],
+    images: [roan1, roan2, roan3, roan4, roan5, roan6, roan7, roan8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XL / Oversized fit (12-14) / Men's Large",
@@ -3014,7 +3015,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Changing Scene Size M
 
 Vintage items may show wear consistent with age.`,
-    images: [moniqueFrontJacket, moniqueAngleJacket, moniqueBackJacket, moniqueSideJacketClose, moniqueSideVest, moniqueBackVest],
+    images: [moniqueFrontJacket, moniqueBackVest, moniqueSideVest, moniqueBackJacket, moniqueSideJacketClose, moniqueAngleJacket],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M",
