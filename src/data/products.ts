@@ -126,6 +126,65 @@ import clover6 from "@/assets/products/clover/clover-6.webp";
 import clover7 from "@/assets/products/clover/clover-7.webp";
 import clover8 from "@/assets/products/clover/clover-8.webp";
 import clover9 from "@/assets/products/clover/clover-9.webp";
+import fayeImg1 from "@/assets/products/faye/faye-1.webp";
+import fayeImg2 from "@/assets/products/faye/faye-2.webp";
+import fayeImg3 from "@/assets/products/faye/faye-3.webp";
+import fayeImg4 from "@/assets/products/faye/faye-4.webp";
+import fayeImg5 from "@/assets/products/faye/faye-5.webp";
+import fayeImg6 from "@/assets/products/faye/faye-6.webp";
+import fayeImg7 from "@/assets/products/faye/faye-7.webp";
+import annetteImg1 from "@/assets/products/annette/annette-1.webp";
+import annetteImg2 from "@/assets/products/annette/annette-2.webp";
+import annetteImg3 from "@/assets/products/annette/annette-3.webp";
+import annetteImg4 from "@/assets/products/annette/annette-4.webp";
+import renateImg1 from "@/assets/products/renate/renate-1.webp";
+import renateImg2 from "@/assets/products/renate/renate-2.webp";
+import renateImg3 from "@/assets/products/renate/renate-3.webp";
+import renateImg4 from "@/assets/products/renate/renate-4.webp";
+import margaretImg1 from "@/assets/products/margaret/margaret-20.webp";
+import margaretImg2 from "@/assets/products/margaret/margaret-1.webp";
+import margaretImg3 from "@/assets/products/margaret/margaret-2.webp";
+import margaretImg4 from "@/assets/products/margaret/margaret-3.webp";
+import margaretImg5 from "@/assets/products/margaret/margaret-4.webp";
+import madgeImg1 from "@/assets/products/madge/madge-1.webp";
+import madgeImg2 from "@/assets/products/madge/madge-2.webp";
+import madgeImg3 from "@/assets/products/madge/madge-3.webp";
+import roccoImg1 from "@/assets/products/rocco/rocco-1.webp";
+import roccoImg2 from "@/assets/products/rocco/rocco-2.webp";
+import roccoImg3 from "@/assets/products/rocco/rocco-3.webp";
+import roccoImg4 from "@/assets/products/rocco/rocco-4.webp";
+import roccoImg5 from "@/assets/products/rocco/rocco-5.webp";
+import sloaneImg1 from "@/assets/products/sloane/sloane-1.webp";
+import sloaneImg2 from "@/assets/products/sloane/sloane-2.webp";
+import sloaneImg3 from "@/assets/products/sloane/sloane-3.webp";
+import romyImg1 from "@/assets/products/romy/romy-1.webp";
+import romyImg2 from "@/assets/products/romy/romy-2.webp";
+import romyImg3 from "@/assets/products/romy/romy-3.webp";
+import romyImg4 from "@/assets/products/romy/romy-4.webp";
+import andieImg1 from "@/assets/products/andie/andie-1.webp";
+import andieImg2 from "@/assets/products/andie/andie-2.webp";
+import andieImg3 from "@/assets/products/andie/andie-3.webp";
+import andieImg4 from "@/assets/products/andie/andie-4.webp";
+import andieImg5 from "@/assets/products/andie/andie-5.webp";
+import andieImg6 from "@/assets/products/andie/andie-6.webp";
+import moniqueImg1 from "@/assets/products/monique/monique-1.webp";
+import moniqueImg2 from "@/assets/products/monique/monique-2.webp";
+import moniqueImg3 from "@/assets/products/monique/monique-3.webp";
+import moniqueImg4 from "@/assets/products/monique/monique-4.webp";
+import moniqueImg5 from "@/assets/products/monique/monique-5.webp";
+import moniqueImg6 from "@/assets/products/monique/monique-6.webp";
+import madelineImg1 from "@/assets/products/madeline/madeline-1.webp";
+import madelineImg2 from "@/assets/products/madeline/madeline-2.webp";
+import madelineImg3 from "@/assets/products/madeline/madeline-3.webp";
+import madelineImg4 from "@/assets/products/madeline/madeline-4.webp";
+import madelineImg5 from "@/assets/products/madeline/madeline-5.webp";
+import madelineImg6 from "@/assets/products/madeline/madeline-6.webp";
+import tillyImg1 from "@/assets/products/tilly/tilly-1.webp";
+import tillyImg2 from "@/assets/products/tilly/tilly-2.webp";
+import tillyImg3 from "@/assets/products/tilly/tilly-3.webp";
+import tillyImg4 from "@/assets/products/tilly/tilly-4.webp";
+import tillyImg5 from "@/assets/products/tilly/tilly-5.webp";
+import tillyImg6 from "@/assets/products/tilly/tilly-6.webp";
 
 import novaImg1 from "@/assets/products/nova/nova-1.webp";
 import novaImg2 from "@/assets/products/nova/nova-2.webp";
@@ -376,7 +435,7 @@ const products: ProductWithSlug[] = [
     name: "FAYE",
     variant: "Vintage 1970s Blonde Fox Fur Coat – The Faye",
     price: 0,
-    image: fayeFront,
+    image: fayeImg1,
     slug: toSlug("faye"),
     description: `A striking vintage fox fur coat from the 1970s in soft blonde tones with subtle darker tipping throughout the guard hairs. Designed with a dramatic shawl collar and full vertical pelts, the coat has a beautiful natural movement and plush texture that captures the glamour of the era.
 
@@ -403,7 +462,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items show wear consistent with age.`,
-    images: [fayeFront, fayeCollar, fayeClosure, fayeDetail, fayeBack, fayeShoulder, fayeLabel],
+    images: [fayeImg1, fayeImg2, fayeImg3, fayeImg4, fayeImg5, fayeImg6, fayeImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -499,7 +558,7 @@ Vintage garments may show minor wear consistent with age.`,
     name: "ANNETTE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Annette",
     price: 0,
-    image: annetteFront,
+    image: annetteImg1,
     slug: toSlug("annette"),
     description: `A striking vintage luxury faux fur coat by Tissavel, the renowned French maker celebrated for producing some of the finest faux furs of the late 1960s and early 1970s. Crafted in a deep espresso faux mink with a soft, luminous pile, this piece captures the effortless glamour of the era.
 
@@ -524,7 +583,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items show wear consistent with age.`,
-    images: [annetteFront, annetteBack, annetteCollar, annetteAngle],
+    images: [annetteImg1, annetteImg2, annetteImg3, annetteImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -559,7 +618,7 @@ Vintage items show wear consistent with age.`,
     name: "RENATE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Renate",
     price: 0,
-    image: renateFront,
+    image: renateImg1,
     slug: toSlug("renate"),
     description: `A beautifully tailored vintage faux mink coat crafted from luxurious Tissavel material. Designed in New York and made in the USA, this piece reflects the elegance of late-1960s outerwear with its soft swing silhouette and sculptural shawl collar.
 
@@ -586,7 +645,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage garments show minor wear consistent with age.`,
-    images: [renateFront, renateBack, renateCollar, renateShoulder, renateLining, renateLabel],
+    images: [renateImg1, renateImg2, renateImg3, renateImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -621,7 +680,7 @@ Vintage garments show minor wear consistent with age.`,
     name: "MARGARET",
     variant: "Vintage 1970s Tissavel Luxury Faux Fur Shawl Collar Coat – The Margaret",
     price: 0,
-    image: margaretFront,
+    image: margaretImg1,
     slug: toSlug("margaret"),
     description: `A luxurious faux fur coat crafted with Tissavel fabric, one of France's most renowned producers of high quality synthetic fur.
 
@@ -648,7 +707,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage items may show wear consistent with age.`,
-    images: [margaretFront, margaretBack, margaretCollar, margaretLining],
+    images: [margaretImg1, margaretImg2, margaretImg3, margaretImg4, margaretImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -683,7 +742,7 @@ Vintage items may show wear consistent with age.`,
     name: "MADGE",
     variant: "Vintage 1960s Monterey Ridge White Faux Fur Coat - The Madge",
     price: 0,
-    image: madgeFront,
+    image: madgeImg1,
     slug: toSlug("madge"),
     description: `A dreamy vintage faux fur coat in the softest icy silver tone, made by Intrigue for Monterey Mills. This piece has all the drama of classic fur styling with the practicality of a luxury synthetic fabric, creating a look that feels both glamorous and easy to wear.
 
@@ -708,7 +767,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Hidden eye-hook closures along front
 
 Vintage items may show wear consistent with age.`,
-    images: [madgeFront, madgeBack, madgeLabel],
+    images: [madgeImg1, madgeImg2, madgeImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -2749,7 +2808,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROCCO",
     variant: "Vintage 1970s Topher Down Alpine Ski Jacket — Red White Blue Colorblock Puffer – The Rocco",
     price: 0,
-    image: roccoFront,
+    image: roccoImg1,
     slug: toSlug("rocco"),
     description: `A vintage alpine ski jacket by Topher Down, made in Canada during the golden era of mountain wear. Cut in a bold red, white, and cobalt blue colorblock, this piece carries the unmistakable energy of late-70s to early-80s ski culture — functional, graphic, and built for cold air and motion.
 
@@ -2778,7 +2837,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name/number of previous owner on tag (R. Massey)
 
 Vintage items may show wear consistent with age.`,
-    images: [roccoFront, roccoBack, roccoDetails, roccoLogo, roccoLabel],
+    images: [roccoImg1, roccoImg2, roccoImg3, roccoImg4, roccoImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Men's S or Women's M (relaxed, slightly oversized fit)",
@@ -2810,7 +2869,7 @@ Vintage items may show wear consistent with age.`,
     name: "SLOANE",
     variant: "Vintage 1970s Nalley Colorblock Ski Puffer Jacket – The Sloane",
     price: 0,
-    image: sloaneFront,
+    image: sloaneImg1,
     slug: toSlug("sloane"),
     sold: true,
     description: `A striking vintage ski jacket by Nalley, a Pacific Northwest outdoor label based in Seattle. This piece captures the bold alpine style of late-70s and early-80s ski culture with its sculptural color blocking and cropped bomber silhouette.
@@ -2838,7 +2897,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: [sloaneFront, sloaneDetails, sloaneHanger],
+    images: [sloaneImg1, sloaneImg2, sloaneImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS-S",
@@ -2870,7 +2929,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROMY",
     variant: "Vintage 1980s Convertible Colorblock Ski Jacket — Zip-Off Sleeves / Pastel Chevron – The Romy",
     price: 0,
-    image: romyFront,
+    image: romyImg1,
     slug: toSlug("romy"),
     description: `A standout vintage ski jacket with a playful, graphic edge — designed with zip-off sleeves that transform it effortlessly into a vest. The bold chevron colorblocking across the chest and back gives it that unmistakable retro alpine feel, softened by a pastel palette that reads fresh and modern.
 
@@ -2897,7 +2956,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Made in Korea
 
 Vintage items may show wear consistent with age.`,
-    images: [romyFront, romyDetails, romyBack, romyPocket],
+    images: [romyImg1, romyImg2, romyImg3, romyImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
@@ -2929,7 +2988,7 @@ Vintage items may show wear consistent with age.`,
     name: "ANDIE",
     variant: "Vintage 1990s Navy Blue Zip-Off Sleeve Puffer Convertible Vest Ski Jacket – The Andie",
     price: 0,
-    image: andieFront,
+    image: andieImg1,
     slug: toSlug("andie"),
     description: `A true transform piece with that quiet, functional cool. This vintage JCPenney puffer is built with zip-off sleeves, shifting effortlessly from a full insulated jacket into a sculptural vest.
 
@@ -2956,7 +3015,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: JC Penny, Size L
 
 Vintage items may show wear consistent with age.`,
-    images: [andieFront, andieDetails, andieBack, andieVest, andieVestDetails, andieLabel],
+    images: [andieImg1, andieImg2, andieImg3, andieImg4, andieImg5, andieImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
@@ -2988,7 +3047,7 @@ Vintage items may show wear consistent with age.`,
     name: "MONIQUE",
     variant: "Vintage 1970s Changing Scene Cream Convertible Puffer/Ski Vest/Jacket – The Monique",
     price: 0,
-    image: moniqueFrontJacket,
+    image: moniqueImg1,
     slug: toSlug("monique"),
     description: `A sculptural, convertible puffer from Changing Scene, a late 1970s–80s label known for accessible, trend-driven womenswear. This piece reflects a shift in that era toward more experimental, sport-influenced design — blending utility with a more directional silhouette.
 
@@ -3015,7 +3074,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Changing Scene Size M
 
 Vintage items may show wear consistent with age.`,
-    images: [moniqueFrontJacket, moniqueBackVest, moniqueSideVest, moniqueBackJacket, moniqueSideJacketClose, moniqueAngleJacket],
+    images: [moniqueImg1, moniqueImg2, moniqueImg3, moniqueImg4, moniqueImg5, moniqueImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M",
@@ -3102,7 +3161,7 @@ Vintage items may show wear consistent with age.`,
     name: "MADELINE",
     variant: "Vintage 1970s Red Quilted Puffer Vest by Roffe – Sculpted Chevron Stitch / 70s Ski Style – The Madeline",
     price: 0,
-    image: madelineFront,
+    image: madelineImg1,
     slug: toSlug("madeline"),
     description: `A vivid cherry red puffer vest by Roffe with sculpted diagonal quilting that curves across the body in a soft chevron rhythm — giving shape to something traditionally utilitarian. The oversized padded shawl collar rises gently at the neck, creating a cocooned silhouette that feels both protective and quietly dramatic.
 
@@ -3131,7 +3190,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name of previous owner on tag (Madeline)
 
 Vintage items may show wear consistent with age.`,
-    images: [madelineFront, madelineBack, madelineCollar, madelineNametag, madelineLabel],
+    images: [madelineImg1, madelineImg2, madelineImg3, madelineImg4, madelineImg5, madelineImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S-M",
@@ -3155,6 +3214,37 @@ Vintage items may show wear consistent with age.`,
       "Store in a cool, dark place in a breathable garment bag — avoid plastic",
       "Hang on a padded or broad-shouldered hanger to maintain shape",
       "Avoid direct sunlight, heat, and moisture",
+    ],
+    category: "apres-ski",
+  },
+  {
+    id: "tilly",
+    name: "TILLY",
+    variant: "Vintage Orange Puffer Apres Ski Jacket - The Tilly",
+    price: 0,
+    image: tillyImg1,
+    slug: toSlug("tilly"),
+    description: `A vivid apres-ski puffer in warm orange tones -- the kind of piece that lights up a snowy afternoon. Tilly channels classic 1970s ski resort energy with bright color and cozy structure.
+
+A garment with a past -- ready for its next chapter.`,
+    images: [tillyImg1, tillyImg2, tillyImg3, tillyImg4, tillyImg5, tillyImg6],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
+      fitDescription: "Relaxed apres-ski silhouette.",
+    },
+    productDetails: {
+      era: "1970s",
+      color: "Orange",
+      closure: "Front zipper",
+      length: "Hip-length",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in a breathable garment bag",
+      "Hang on a padded hanger",
+      "Avoid direct sunlight and moisture",
     ],
     category: "apres-ski",
   },
