@@ -2683,7 +2683,7 @@ Vintage items may show wear consistent with age.`,
     name: "BLAIR",
     variant: "Vintage White Stag Action Sports Navy Ski Puffer Jacket – The Blair",
     price: 0,
-    image: blairImg1,
+    image: blairImg6,
     slug: toSlug("blair"),
     description: `A striking vintage White Stag Action Sports ski puffer with unmistakable retro alpine energy. Done in deep navy with cream piping and bold red sleeve stripes, this jacket captures the graphic, athletic look of late-1970s and early-1980s winter sport design.
 
@@ -2710,7 +2710,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: White Stag Action Sports, Size M
 
 Vintage items may show wear consistent with age.`,
-    images: [blairImg1, blairImg2, blairImg3, blairImg4, blairImg5, blairImg6],
+    images: [blairImg6, blairImg1, blairImg2, blairImg3, blairImg4, blairImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
