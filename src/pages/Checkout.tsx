@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Gift } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import Footer from "@/components/Footer";
+
+const isGiftCard = (id: string) => id.startsWith("gift-card-");
 
 const Checkout = () => {
   const { items, subtotal, removeItem, updateQty } = useCart();
@@ -124,10 +126,18 @@ const Checkout = () => {
                 <div className="space-y-4 border border-border p-6">
                   {items.map((item) => (
                     <div key={item.id} className="flex gap-3">
-                      <img src={item.image} alt={item.name} className="w-14 h-16 object-cover border border-border flex-shrink-0" />
+                      {isGiftCard(item.id) ? (
+                        <div className="w-14 h-16 flex items-center justify-center bg-foreground/5 border border-border flex-shrink-0">
+                          <Gift size={18} className="text-foreground/60" />
+                        </div>
+                      ) : (
+                        <img src={item.image} alt={item.name} className="w-14 h-16 object-cover border border-border flex-shrink-0" />
+                      )}
                       <div className="flex-1 min-w-0">
                         <h4 className="font-body text-sm text-foreground truncate">{item.name}</h4>
-                        <p className="font-body text-xs text-muted-foreground">Qty: {item.qty}</p>
+                        <p className="font-body text-xs text-muted-foreground truncate">
+                          {isGiftCard(item.id) ? "Digital delivery" : `Qty: ${item.qty}`}
+                        </p>
                       </div>
                       <p className="font-body text-sm text-foreground">${(item.price * item.qty).toFixed(2)}</p>
                     </div>

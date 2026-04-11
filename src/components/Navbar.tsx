@@ -12,6 +12,8 @@ const shopCategories = [
   { label: "Overcoat", to: "/shop?category=overcoat" },
   { label: "Apres Ski", to: "/shop?category=apres-ski" },
   { label: "Jewelry", to: "/jewelry" },
+  { label: "Gift Cards", to: "/gift-cards" },
+  { label: "Archive", to: "/archive" },
 ];
 
 const Navbar = () => {

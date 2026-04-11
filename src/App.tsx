@@ -15,6 +15,8 @@ import Checkout from "./pages/Checkout";
 import ShippingReturns from "./pages/ShippingReturns";
 import FAQ from "./pages/FAQ";
 import Jewelry from "./pages/Jewelry";
+import Archive from "./pages/Archive";
+import GiftCards from "./pages/GiftCards";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -35,6 +37,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/jewelry" element={<Jewelry />} />
+            <Route path="/archive" element={<Archive />} />
+            <Route path="/gift-cards" element={<GiftCards />} />
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/shipping-returns" element={<ShippingReturns />} />

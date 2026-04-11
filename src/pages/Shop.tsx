@@ -22,9 +22,10 @@ const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
 
+  const available = products.filter((p) => !p.sold);
   const filtered = activeCategory === "all"
-    ? products
-    : products.filter((p) => p.category === activeCategory);
+    ? available
+    : available.filter((p) => p.category === activeCategory);
 
   const setCategory = (value: string) => {
     if (value === "all") {

@@ -27,6 +27,9 @@ const Footer = () => {
               <nav className="flex flex-col gap-3">
                 {[
                   { label: "Shop", to: "/shop" },
+                  { label: "Jewelry", to: "/jewelry" },
+                  { label: "Gift Cards", to: "/gift-cards" },
+                  { label: "Archive", to: "/archive" },
                   { label: "About", to: "/#about" },
                   { label: "Contact", to: "/#contact" },
                 ].map((item) => (
