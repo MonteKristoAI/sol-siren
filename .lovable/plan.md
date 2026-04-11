@@ -1,11 +1,17 @@
 
 
-## Plan: Remove duplicate Tilly product
+## Plan: Update Madeline product photos
 
-### Change
-**File: `src/data/products.ts`** (lines 3211-3241)
-- Delete the entire Tilly product entry with `id: "tilly"` (the one with description "A vivid apres-ski puffer in warm orange tones..."). This is ~31 lines.
-- The other Tilly (`id: "tilly-bomber"`, line 3096) remains untouched.
+### Changes in `src/data/products.ts`
 
-One file, one deletion.
+**Line 3155** — Change main shop image from `madelineImg1` to `madelineImg6`
+
+**Line 3184** — Update the images array:
+- Remove `madelineImg4` (the 4th photo)
+- Move `madelineImg6` to first position
+
+From: `[madelineImg1, madelineImg2, madelineImg3, madelineImg4, madelineImg5, madelineImg6]`
+To: `[madelineImg6, madelineImg1, madelineImg2, madelineImg3, madelineImg5]`
+
+One file, two line changes.
 
