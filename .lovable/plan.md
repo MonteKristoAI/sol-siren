@@ -1,17 +1,21 @@
 
 
-## Plan
+## Plan: Make Sloane visible on Shop page
 
-### 1. Bigger logo in Footer
-In `src/components/Footer.tsx` line 15, change `h-12` to `h-20` (or similar) to make the footer logo larger.
+The Shop page (line 25) filters out all sold products with `products.filter((p) => !p.sold)`. This is why Sloane doesn't appear.
 
-### 2. Fix Gift Cards background logo
-In `src/pages/GiftCards.tsx` lines 127-133, the logo is rendered as an `<img>` inside the gift card buttons. The SVG likely has complex artwork that doesn't work well at small sizes with low opacity. Fix by:
-- Increasing size slightly and adjusting opacity
-- Adding `object-contain` to prevent distortion
-- Potentially switching to a simpler visual treatment (e.g., a subtle border pattern or just the Gift icon) if the SVG still looks odd at that size
+### Change
+**File: `src/pages/Shop.tsx`** (line 25-28)
+- Remove the `!p.sold` filter so ALL products show, including sold ones
+- Change from:
+  ```js
+  const available = products.filter((p) => !p.sold);
+  const filtered = activeCategory === "all" ? available : available.filter(...);
+  ```
+- To:
+  ```js
+  const filtered = activeCategory === "all" ? products : products.filter((p) => p.category === activeCategory);
+  ```
 
-### Files to edit
-- `src/components/Footer.tsx` — increase logo height
-- `src/pages/GiftCards.tsx` — fix background logo rendering in gift card tiles
+This will show all products (including sold ones like Sloane) on the Shop page. Sold items already have proper UI treatment (opacity reduction, "Sold" badge, disabled button).
 
