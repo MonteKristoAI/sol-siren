@@ -1531,7 +1531,7 @@ Vintage items may show wear consistent with age.`,
     name: "VIXEN",
     variant: "Vintage 1980s Boarskin Fringe Leather Jacket – The Vixen",
     price: 0,
-    image: vixenImg1,
+    image: vixenImg2,
     slug: toSlug("vixen"),
     description: `A striking vintage leather jacket crafted from sueded boarskin, featuring bold black-on-black design and dramatic fringe along the sleeves.
 
@@ -1556,7 +1556,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [vixenImg1, vixenImg2, vixenImg3, vixenImg4, vixenImg5, vixenImg6, vixenImg7, vixenImg8, vixenImg9, vixenImg10],
+    images: [vixenImg2, vixenImg1, vixenImg3, vixenImg4, vixenImg5, vixenImg6, vixenImg7, vixenImg8, vixenImg9, vixenImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L (oversized fit) / Men's M",
