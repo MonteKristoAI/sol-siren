@@ -232,6 +232,12 @@ import emmylouImg4 from "@/assets/products/emmylou/emmylou-4.webp";
 import emmylouImg5 from "@/assets/products/emmylou/emmylou-5.webp";
 import stevieImg1 from "@/assets/products/stevie/stevie-1.webp";
 import stevieImg2 from "@/assets/products/stevie/stevie-2.webp";
+import sierraImg1 from "@/assets/products/sierra/sierra-1.jpg";
+import sierraImg2 from "@/assets/products/sierra/sierra-2.jpg";
+import sierraImg3 from "@/assets/products/sierra/sierra-3.jpg";
+import sierraImg4 from "@/assets/products/sierra/sierra-4.jpg";
+import sierraImg5 from "@/assets/products/sierra/sierra-5.jpg";
+import sierraImg6 from "@/assets/products/sierra/sierra-6.jpg";
 import tallulahImg1 from "@/assets/products/tallulah/tallulah-1.webp";
 import tallulahImg2 from "@/assets/products/tallulah/tallulah-10.webp";
 import tallulahImg3 from "@/assets/products/tallulah/tallulah-11.webp";
@@ -1525,6 +1531,85 @@ Vintage items may show wear consistent with age.`,
       "Avoid direct sunlight, heat, and moisture",
       "Condition leather periodically with a quality leather conditioner",
       "Specialist leather cleaning recommended for stains or wear",
+    ],
+    category: "leather",
+  },
+  {
+    id: "sierra",
+    name: "SIERRA",
+    variant: "1970s Frontier Fringe Suede Jacket – Sears Western Wear, The Sierra",
+    price: 0,
+    image: sierraImg1,
+    slug: toSlug("sierra"),
+    description: `A true piece of classic American Western style.
+
+This vintage suede jacket by Sears Western Wear captures the rugged frontier spirit of the 1970s. Crafted from rich brown suede and trimmed with dramatic fringe across the chest, back, sleeves, and hem, it carries the unmistakable silhouette of vintage rodeo and Western fashion.
+
+The jacket features a removable faux shearling zip-out lining, designed for warmth during colder months while allowing the jacket to be worn lighter in milder weather. With the lining removed, the suede shell becomes an easy transitional layer; zipped in, it transforms into a cozy winter jacket.
+
+Classic Western details include a pointed collar, traditional domed front buttons with a naturally weathered patina that compliments the vintage suede and angled front pockets finished with fringe trim. The sweeping fringe across the yoke and hem gives the jacket beautiful movement and unmistakable vintage character.
+
+Originally designed as a men's Western jacket, it wears beautifully today as an effortlessly relaxed women's piece.
+
+A standout collectible for anyone drawn to classic Americana, rodeo style, and 1970s Western fashion.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage
+
+• Estimated era: 1970s
+
+• Material: Genuine leather
+
+• Color: Warm medium brown with reddish undertones
+
+• Lining: Removable faux shearling zip-out lining
+
+• Closure: Traditional shank-style buttons
+
+• Length: Hip-length
+
+• Tags read: Sears Western Wear
+
+Vintage items may show wear consistent with age.`,
+    images: [sierraImg1, sierraImg2, sierraImg3, sierraImg4, sierraImg5, sierraImg6],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "Women's M-L (oversized fit) / Men's M",
+      measurements: {
+        shoulder: `24"`,
+        bust: `44"`,
+        sleeve: `24"`,
+        length: `24"`,
+      },
+      fitDescription: `Originally designed as a men's Western jacket, this piece translates beautifully today as a relaxed, slightly oversized silhouette when worn by women.
+
+Cut with a classic Western shape, the jacket features a structured shoulder, straight body, and enough room through the sleeves to comfortably layer over sweaters or heavier knits. The removable shearling lining adds warmth and volume, while removing it creates a lighter fit for transitional seasons.
+
+The fringe along the yoke, pockets, and hem adds movement without affecting the overall drape of the jacket.
+
+Vintage tagged 42 Regular.
+
+Estimated modern size:
+• Women's M-L (oversized fit)
+• Men's M
+
+Vintage sizing differs from modern sizing. Please compare measurements for the best fit.`,
+    },
+    productDetails: {
+      era: `1970s`,
+      material: `Genuine leather`,
+      color: `Warm medium brown with reddish undertones`,
+      lining: `Removable faux shearling zip-out lining`,
+      closure: `Traditional shank-style buttons`,
+      length: `Hip-length`,
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in the breathable garment bag provided with purchase",
+      "Hang on a structured hanger to maintain the coat's shape",
+      "Avoid prolonged exposure to direct sunlight or moisture",
+      "Specialist leather and fur cleaning only",
     ],
     category: "leather",
   },
