@@ -1775,7 +1775,7 @@ Vintage items may show wear consistent with age.`,
     name: "SIMONE",
     variant: "Vintage 1940s Silver Fox Evening Stole – The Simone",
     price: 0,
-    image: simoneImg1,
+    image: simoneImg2,
     slug: toSlug("simone"),
     description: `A striking vintage fox fur stole from the late 1940s-early 1950s, crafted in beautifully full silver fox fur.
 
@@ -1798,7 +1798,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: [simoneImg1, simoneImg2, simoneImg3],
+    images: [simoneImg2, simoneImg3, simoneImg1],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
