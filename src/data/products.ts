@@ -3152,7 +3152,7 @@ Vintage items may show wear consistent with age.`,
     name: "MADELINE",
     variant: "Vintage 1970s Red Quilted Puffer Vest by Roffe – Sculpted Chevron Stitch / 70s Ski Style – The Madeline",
     price: 0,
-    image: madelineImg1,
+    image: madelineImg6,
     slug: toSlug("madeline"),
     description: `A vivid cherry red puffer vest by Roffe with sculpted diagonal quilting that curves across the body in a soft chevron rhythm — giving shape to something traditionally utilitarian. The oversized padded shawl collar rises gently at the neck, creating a cocooned silhouette that feels both protective and quietly dramatic.
 
@@ -3181,7 +3181,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: Handwritten name of previous owner on tag (Madeline)
 
 Vintage items may show wear consistent with age.`,
-    images: [madelineImg1, madelineImg2, madelineImg3, madelineImg4, madelineImg5, madelineImg6],
+    images: [madelineImg6, madelineImg1, madelineImg2, madelineImg3, madelineImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's S-M",
