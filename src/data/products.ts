@@ -380,16 +380,7 @@ import sunnyImg3 from "@/assets/products/sunny/sunny-3.webp";
 import sunnyImg4 from "@/assets/products/sunny/sunny-4.webp";
 import sunnyImg5 from "@/assets/products/sunny/sunny-5.webp";
 import sunnyImg6 from "@/assets/products/sunny/sunny-6.webp";
-import tillyImg1 from "@/assets/products/tilly/tilly-1.webp";
-import tillyImg2 from "@/assets/products/tilly/tilly-2.webp";
-import tillyImg3 from "@/assets/products/tilly/tilly-3.webp";
-import tillyImg4 from "@/assets/products/tilly/tilly-4.webp";
-import tillyImg5 from "@/assets/products/tilly/tilly-5.webp";
-import tillyImg6 from "@/assets/products/tilly/tilly-6.webp";
-import romyImg1 from "@/assets/products/romy/romy-1.webp";
-import romyImg2 from "@/assets/products/romy/romy-2.webp";
-import romyImg3 from "@/assets/products/romy/romy-3.webp";
-import romyImg4 from "@/assets/products/romy/romy-4.webp";
+// tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
 
