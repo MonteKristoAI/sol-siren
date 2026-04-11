@@ -69,7 +69,7 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
             initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }}
             className="absolute inset-0 h-full w-full object-cover"
           />
         </AnimatePresence>

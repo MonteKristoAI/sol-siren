@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Gift, X, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import Footer from "@/components/Footer";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.svg";
 
 const amounts = [50, 100, 150, 200] as const;
 type Amount = (typeof amounts)[number];
@@ -13,7 +13,7 @@ const fadeUp = {
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: i * 0.1 },
   }),
 };
 
@@ -93,7 +93,7 @@ const GiftCards = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.5 }}
             className="mt-14 w-20 h-[1px] bg-foreground/20 origin-center"
           />
         </section>

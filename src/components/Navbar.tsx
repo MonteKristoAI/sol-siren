@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.svg";
 import { useCart } from "@/contexts/CartContext";
 
 const shopCategories = [
