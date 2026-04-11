@@ -232,6 +232,10 @@ import emmylouImg4 from "@/assets/products/emmylou/emmylou-4.webp";
 import emmylouImg5 from "@/assets/products/emmylou/emmylou-5.webp";
 import stevieImg1 from "@/assets/products/stevie/stevie-1.webp";
 import stevieImg2 from "@/assets/products/stevie/stevie-2.webp";
+import stevieImg3 from "@/assets/products/stevie/stevie-new-1.jpg";
+import stevieImg4 from "@/assets/products/stevie/stevie-new-2.jpg";
+import stevieImg5 from "@/assets/products/stevie/stevie-new-3.jpg";
+import stevieImg6 from "@/assets/products/stevie/stevie-new-4.jpg";
 import sierraImg1 from "@/assets/products/sierra/sierra-1.jpg";
 import sierraImg2 from "@/assets/products/sierra/sierra-2.jpg";
 import sierraImg3 from "@/assets/products/sierra/sierra-3.jpg";
@@ -1442,7 +1446,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [stevieImg1, stevieImg2],
+    images: [stevieImg1, stevieImg2, stevieImg3, stevieImg4, stevieImg5, stevieImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
