@@ -45,6 +45,8 @@ import lucyCollar from "@/assets/products/lucy/lucy-collar.webp";
 import lucyBackDetail from "@/assets/products/lucy/lucy-back-detail.webp";
 import lucyBeltDetail from "@/assets/products/lucy/lucy-belt-detail.webp";
 import lucyAltFront from "@/assets/products/lucy/lucy-alt-front.webp";
+import lucyLabel1 from "@/assets/products/lucy/lucy-label1.webp";
+import lucyLabel2 from "@/assets/products/lucy/lucy-label2.webp";
 import robertaFront from "@/assets/products/roberta/roberta-front.webp";
 import robertaAngle from "@/assets/products/roberta/roberta-angle.webp";
 import robertaShoulderDetail from "@/assets/products/roberta/roberta-shoulder-detail.webp";
@@ -822,7 +824,7 @@ A garment with a past—ready for its next chapter.
 • Closure: Metal ring belt closures.
 
 Vintage items may show wear consistent with age.`,
-    images: [lucyFront, lucyBack, lucyCollar, lucyBackDetail, lucyBeltDetail, lucyAltFront],
+    images: [lucyFront, lucyBack, lucyBackDetail, lucyBeltDetail, lucyLabel1, lucyLabel2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
