@@ -60,7 +60,7 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
   return (
     <div>
       {/* Main image */}
-      <div className="group relative aspect-[5/6] overflow-hidden border border-border bg-muted">
+      <div className="group relative h-[52vh] overflow-hidden border border-border bg-muted sm:h-[56vh]">
         <AnimatePresence mode="popLayout">
           <motion.img
             key={active}
