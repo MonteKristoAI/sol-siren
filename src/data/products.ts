@@ -1351,7 +1351,7 @@ Vintage items may show wear consistent with age.`,
     name: "EMMYLOU",
     variant: "Vintage 1970s Suede Leather Coat – The Emmylou",
     price: 0,
-    image: emmylouImg1,
+    image: emmylouImg5,
     slug: toSlug("emmylou"),
     description: `A beautifully tailored vintage suede leather coat from Split End Ltd., capturing the rich textures and Western-inspired styling that defined late-1970s fashion.
 
@@ -1376,7 +1376,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items may show wear consistent with age.`,
-    images: [emmylouImg1, emmylouImg2, emmylouImg3, emmylouImg4, emmylouImg5],
+    images: [emmylouImg5, emmylouImg1, emmylouImg2, emmylouImg3, emmylouImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
