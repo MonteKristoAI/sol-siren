@@ -1,20 +1,17 @@
 
 
-## Plan: Replace Sloane images with WebP versions
+## Plan
 
-### What's changing
-Swap the 3 existing Sloane PNG images with the 3 new WebP uploads.
+### 1. Bigger logo in Footer
+In `src/components/Footer.tsx` line 15, change `h-12` to `h-20` (or similar) to make the footer logo larger.
 
-### Image mapping
-| Upload | New file | Description |
-|--------|----------|-------------|
-| `ChatGPT_Image_Mar_22_2026_07_40_56_PM.webp` | `sloane-front.webp` | Front/angle view on mannequin |
-| `ChatGPT_Image_Mar_22_2026_07_41_00_PM.webp` | `sloane-details.webp` | Zipper/pocket detail |
-| `ChatGPT_Image_Mar_22_2026_07_41_15_PM.webp` | `sloane-hanger.webp` | Branded hanger |
+### 2. Fix Gift Cards background logo
+In `src/pages/GiftCards.tsx` lines 127-133, the logo is rendered as an `<img>` inside the gift card buttons. The SVG likely has complex artwork that doesn't work well at small sizes with low opacity. Fix by:
+- Increasing size slightly and adjusting opacity
+- Adding `object-contain` to prevent distortion
+- Potentially switching to a simpler visual treatment (e.g., a subtle border pattern or just the Gift icon) if the SVG still looks odd at that size
 
-### Steps
-1. Copy 3 uploaded WebP files to `src/assets/products/` with new names
-2. Delete old files: `sloane-front.png`, `sloane-details.png`, `sloane-hanger.png`
-3. Update imports in `src/data/products.ts` from `.png` to `.webp`
-4. Verify build succeeds
+### Files to edit
+- `src/components/Footer.tsx` — increase logo height
+- `src/pages/GiftCards.tsx` — fix background logo rendering in gift card tiles
 
