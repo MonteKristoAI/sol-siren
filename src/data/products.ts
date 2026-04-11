@@ -1957,7 +1957,7 @@ Vintage items may show wear consistent with age.`,
     name: "ELVIRA",
     variant: "Vintage 1970s Lilli Ann Faux Fur & Leather Belted Coat – The Elvira",
     price: 0,
-    image: elviraImg1,
+    image: elviraImg3,
     slug: toSlug("elvira"),
     description: `A striking vintage coat from legendary San Francisco fashion house Lilli Ann, known for producing some of the most beautifully tailored outerwear of the mid-century era.
 
@@ -1988,7 +1988,7 @@ A garment with a past—ready for its next chapter.
 • Made in England
 
 Vintage items may show minor wear consistent with age.`,
-    images: [elviraImg1, elviraImg2, elviraImg3, elviraImg4, elviraImg5, elviraImg6],
+    images: [elviraImg3, elviraImg1, elviraImg2, elviraImg4, elviraImg5, elviraImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S (US 2-4)",
