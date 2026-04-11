@@ -124,11 +124,11 @@ const GiftCards = () => {
                   className="group relative aspect-[4/5] overflow-hidden border border-border bg-muted/30 hover:border-foreground transition-colors duration-300"
                 >
                   {/* Background pattern */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <img
                       src={logo}
                       alt=""
-                      className="w-20 h-20 md:w-24 md:h-24 opacity-[0.07] group-hover:opacity-[0.12] transition-opacity duration-500"
+                      className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500"
                     />
                   </div>
 
