@@ -3208,37 +3208,6 @@ Vintage items may show wear consistent with age.`,
     ],
     category: "apres-ski",
   },
-  {
-    id: "tilly",
-    name: "TILLY",
-    variant: "Vintage Orange Puffer Apres Ski Jacket - The Tilly",
-    price: 0,
-    image: tillyImg1,
-    slug: toSlug("tilly"),
-    description: `A vivid apres-ski puffer in warm orange tones -- the kind of piece that lights up a snowy afternoon. Tilly channels classic 1970s ski resort energy with bright color and cozy structure.
-
-A garment with a past -- ready for its next chapter.`,
-    images: [tillyImg1, tillyImg2, tillyImg3, tillyImg4, tillyImg5, tillyImg6],
-    sizes: ["XS", "S", "M", "L"],
-    sizeFit: {
-      modernSize: "TBD",
-      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
-      fitDescription: "Relaxed apres-ski silhouette.",
-    },
-    productDetails: {
-      era: "1970s",
-      color: "Orange",
-      closure: "Front zipper",
-      length: "Hip-length",
-    },
-    careInstructions: [
-      "Professional dry clean only",
-      "Store in a breathable garment bag",
-      "Hang on a padded hanger",
-      "Avoid direct sunlight and moisture",
-    ],
-    category: "apres-ski",
-  },
   // ─── PENDING PRODUCTS (waiting for images/arrival) ───
   {
     id: "celeste",
