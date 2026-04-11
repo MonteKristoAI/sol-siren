@@ -1,21 +1,11 @@
 
 
-## Plan: Make Sloane visible on Shop page
-
-The Shop page (line 25) filters out all sold products with `products.filter((p) => !p.sold)`. This is why Sloane doesn't appear.
+## Plan: Remove duplicate Tilly product
 
 ### Change
-**File: `src/pages/Shop.tsx`** (line 25-28)
-- Remove the `!p.sold` filter so ALL products show, including sold ones
-- Change from:
-  ```js
-  const available = products.filter((p) => !p.sold);
-  const filtered = activeCategory === "all" ? available : available.filter(...);
-  ```
-- To:
-  ```js
-  const filtered = activeCategory === "all" ? products : products.filter((p) => p.category === activeCategory);
-  ```
+**File: `src/data/products.ts`** (lines 3211-3241)
+- Delete the entire Tilly product entry with `id: "tilly"` (the one with description "A vivid apres-ski puffer in warm orange tones..."). This is ~31 lines.
+- The other Tilly (`id: "tilly-bomber"`, line 3096) remains untouched.
 
-This will show all products (including sold ones like Sloane) on the Shop page. Sold items already have proper UI treatment (opacity reduction, "Sold" badge, disabled button).
+One file, one deletion.
 
