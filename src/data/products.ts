@@ -2376,7 +2376,7 @@ Vintage items may show wear consistent with age.`,
     name: "NICO",
     variant: "Vintage 1970s Burnt Orange Fur Trim Wool Coat – August Maxx – The Nico",
     price: 0,
-    image: nicoImg1,
+    image: nicoImg4,
     slug: toSlug("nico"),
     description: `A striking vintage wool coat by August Max, rendered in a rich burnt orange tone reminiscent of autumn leaves and alpine sunsets. This beautifully tailored piece blends classic American wool craftsmanship with dramatic winter styling.
 
@@ -2409,7 +2409,7 @@ A garment with a past—ready for its next chapter.
 • Made in USA
 
 Vintage items may show wear consistent with age.`,
-    images: [nicoImg1, nicoImg2, nicoImg3, nicoImg4, nicoImg5, nicoImg6, nicoImg7, nicoImg8, nicoImg9, nicoImg10, nicoImg11, nicoImg12],
+    images: [nicoImg4, nicoImg1, nicoImg2, nicoImg3, nicoImg5, nicoImg6, nicoImg7, nicoImg8, nicoImg9, nicoImg10, nicoImg11, nicoImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
