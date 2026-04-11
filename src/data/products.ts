@@ -1289,7 +1289,7 @@ Vintage items may show wear consistent with age.`,
     name: "TOPANGA",
     variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Topanga",
     price: 0,
-    image: topangaImg1,
+    image: topangaImg2,
     slug: toSlug("topanga"),
     description: `A striking vintage suede coat inspired by the iconic Penny Lane silhouettes of the late 1960s and early 1970s.
 
@@ -1316,7 +1316,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [topangaImg1, topangaImg2, topangaImg3, topangaImg4],
+    images: [topangaImg2, topangaImg1, topangaImg3, topangaImg4],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
