@@ -141,6 +141,7 @@ import renateImg1 from "@/assets/products/renate/renate-1.webp";
 import renateImg2 from "@/assets/products/renate/renate-2.webp";
 import renateImg3 from "@/assets/products/renate/renate-3.webp";
 import renateImg4 from "@/assets/products/renate/renate-4.webp";
+import renateImg5 from "@/assets/products/renate/renate-5.webp";
 import margaretImg1 from "@/assets/products/margaret/margaret-20.webp";
 import margaretImg2 from "@/assets/products/margaret/margaret-1.webp";
 import margaretImg3 from "@/assets/products/margaret/margaret-2.webp";
@@ -636,7 +637,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage garments show minor wear consistent with age.`,
-    images: [renateImg1, renateImg2, renateImg3, renateImg4],
+    images: [renateImg1, renateImg2, renateImg3, renateImg4, renateImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
