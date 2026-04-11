@@ -2355,7 +2355,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROAN",
     variant: "Vintage 1950s Oversized Wool Overcoat by Scot Isle – The Roan",
     price: 0,
-    image: roan1,
+    image: roan8,
     slug: toSlug("roan"),
     description: `A beautifully tailored vintage overcoat crafted from 100% virgin wool by Scot-Isle. The fabric features a refined salt-and-pepper weave in charcoal and cream with subtle blue flecks, creating depth and texture while remaining timeless and versatile.
 
@@ -2384,7 +2384,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Scot-Isle
 
 Vintage items may show wear consistent with age.`,
-    images: [roan1, roan2, roan3, roan4, roan5, roan6, roan7, roan8],
+    images: [roan8, roan1, roan2, roan3, roan4, roan5, roan6, roan7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XL / Oversized fit (12-14) / Men's Large",
