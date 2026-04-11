@@ -426,7 +426,7 @@ const products: ProductWithSlug[] = [
     name: "FAYE",
     variant: "Vintage 1970s Blonde Fox Fur Coat – The Faye",
     price: 0,
-    image: fayeImg1,
+    image: fayeImg4,
     slug: toSlug("faye"),
     description: `A striking vintage fox fur coat from the 1970s in soft blonde tones with subtle darker tipping throughout the guard hairs. Designed with a dramatic shawl collar and full vertical pelts, the coat has a beautiful natural movement and plush texture that captures the glamour of the era.
 
@@ -453,7 +453,7 @@ A garment with a past—ready for its next chapter.
 • Length: Hip-length
 
 Vintage items show wear consistent with age.`,
-    images: [fayeImg1, fayeImg2, fayeImg3, fayeImg4, fayeImg5, fayeImg6, fayeImg7],
+    images: [fayeImg4, fayeImg1, fayeImg2, fayeImg3, fayeImg5, fayeImg6, fayeImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
