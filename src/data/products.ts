@@ -1832,7 +1832,7 @@ Vintage items may show wear consistent with age.`,
     name: "MARGAUX",
     variant: "Vintage 1950s Mink Capelet – The Margaux",
     price: 0,
-    image: margauxImg1,
+    image: margauxImg3,
     slug: toSlug("margaux"),
     description: `A luminous vintage mink capelet crafted by Leafgren Fine Furs.
 
@@ -1859,7 +1859,7 @@ A garment with a past—ready for its next chapter.
 • Fit: One size
 
 Vintage items may show wear consistent with age.`,
-    images: [margauxImg1, margauxImg2, margauxImg3, margauxImg4, margauxImg5],
+    images: [margauxImg3, margauxImg1, margauxImg2, margauxImg4, margauxImg5],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "TBD",
