@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Gift, X, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import Footer from "@/components/Footer";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.svg";
 
 const amounts = [50, 100, 150, 200] as const;
 type Amount = (typeof amounts)[number];
