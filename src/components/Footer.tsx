@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Left: Logo + tagline */}
           <div className="space-y-4">
-            <img src={logo} alt="Sol Siren Vintage" className="h-12 select-none" draggable={false} />
+            <img src={logo} alt="Sol Siren Vintage" className="h-20 select-none" draggable={false} />
             <p className="font-body text-xs tracking-wide text-muted-foreground max-w-[240px]">
               Intentionally curated, soulful vintage outerwear.
             </p>
