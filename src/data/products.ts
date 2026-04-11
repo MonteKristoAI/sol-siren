@@ -2553,7 +2553,7 @@ Vintage items may show wear consistent with age.`,
     name: "VIVIENNE",
     variant: "Vintage 1960s Scarlet Red Wool Leopard Calf Hair Collar Coat – The Vivienne",
     price: 0,
-    image: vivienneImg1,
+    image: vivienneImg5,
     slug: toSlug("vivienne"),
     description: `A striking mid-century wool coat from New York department store label Franklin Simon, likely dating to the early–mid 1960s.
 
@@ -2584,7 +2584,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Franklin Simon New York
 
 Vintage items may show wear consistent with age.`,
-    images: [vivienneImg1, vivienneImg2, vivienneImg3, vivienneImg4, vivienneImg5, vivienneImg6, vivienneImg7],
+    images: [vivienneImg5, vivienneImg1, vivienneImg2, vivienneImg3, vivienneImg4, vivienneImg6, vivienneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's M-L",
