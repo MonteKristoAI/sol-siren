@@ -60,7 +60,7 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
   return (
     <div>
       {/* Main image */}
-      <div className="group relative aspect-[4/5] overflow-hidden border border-border bg-muted">
+      <div className="group relative overflow-hidden border border-border bg-muted flex items-center justify-center">
         <AnimatePresence mode="popLayout">
           <motion.img
             key={active}
@@ -70,7 +70,7 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }}
-            className="absolute inset-0 h-full w-full object-contain"
+            className="w-full h-auto max-h-[85vh] object-contain"
           />
         </AnimatePresence>
 
