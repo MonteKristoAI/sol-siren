@@ -1039,7 +1039,7 @@ Vintage items may show wear consistent with age.`,
     name: "ROXANNE",
     variant: "Vintage 1970s Suede & Fur Belted Penny Lane Coat – The Roxanne",
     price: 0,
-    image: roxanneImg1,
+    image: roxanneImg2,
     slug: toSlug("roxanne"),
     description: `A striking 1970s suede coat by Dan Di Modes, designed with a sculpted silhouette and dramatic fur trim that captures the effortless glamour of the era.
 
@@ -1066,7 +1066,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh-knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [roxanneImg1, roxanneImg2, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
+    images: [roxanneImg2, roxanneImg1, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
