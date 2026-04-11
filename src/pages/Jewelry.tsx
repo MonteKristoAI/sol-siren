@@ -9,7 +9,7 @@ const fadeUp = {
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.12 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: i * 0.12 },
   }),
 };
 
@@ -80,7 +80,7 @@ const Jewelry = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.5 }}
             className="mt-16 w-24 h-[1px] bg-foreground/20 origin-center"
           />
         </section>
@@ -140,7 +140,7 @@ const Jewelry = () => {
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.3 }}
               className="mt-10 w-12 h-[1px] bg-foreground/15 mx-auto origin-center"
             />
           </div>

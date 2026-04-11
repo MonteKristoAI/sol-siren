@@ -93,7 +93,7 @@ const GiftCards = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.5 }}
             className="mt-14 w-20 h-[1px] bg-foreground/20 origin-center"
           />
         </section>
