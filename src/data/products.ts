@@ -699,7 +699,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-calf
 
 Vintage items may show wear consistent with age.`,
-    images: [margaretImg1, margaretImg2, margaretImg3, margaretImg4, margaretImg5],
+    images: [margaretImg1, margaretImg3, margaretImg4, margaretImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
