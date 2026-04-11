@@ -259,6 +259,8 @@ import cleoImg2 from "@/assets/products/cleo/cleo-2.webp";
 import cleoImg3 from "@/assets/products/cleo/skin-gear-sienna-wrap-back.webp";
 import cleoImg4 from "@/assets/products/cleo/skin-gear-sienna-wrap-detail.webp";
 import cleoImg5 from "@/assets/products/cleo/skin-gear-sienna-wrap-front.webp";
+import cleoFrontNew from "@/assets/products/cleo/cleo-front-new.jpg";
+import cleoBackNew from "@/assets/products/cleo/cleo-back-new.jpg";
 import candaceImg1 from "@/assets/products/candace/candace-1.webp";
 import candaceImg2 from "@/assets/products/candace/candace-2.webp";
 import candaceImg3 from "@/assets/products/candace/candace-3.webp";
@@ -1591,7 +1593,7 @@ Vintage items may show wear consistent with age.`,
     name: "CLEO",
     variant: "Vintage 1970s Long Leather Wrap Coat – The Cleo",
     price: 0,
-    image: cleoImg1,
+    image: cleoFrontNew,
     slug: toSlug("cleo"),
     description: `A striking vintage 1970s leather wrap coat in a rich shade of golden caramel.
 
@@ -1618,7 +1620,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: [cleoImg1, cleoImg2, cleoImg3, cleoImg4, cleoImg5],
+    images: [cleoFrontNew, cleoImg1, cleoBackNew, cleoImg4, cleoImg2],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's L/XL",
