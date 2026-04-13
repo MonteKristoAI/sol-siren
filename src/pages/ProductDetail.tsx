@@ -53,26 +53,31 @@ const ProductDetail = () => {
 const ImageGallery = ({ images, name, containIndices = [] }: { images: string[]; name: string; containIndices?: number[] }) => {
   const [active, setActive] = useState(0);
   const hasMultiple = images.length > 1;
-
-  const prevImage = () => setActive((prev) => (prev - 1 + images.length) % images.length);
-  const nextImage = () => setActive((prev) => (prev + 1) % images.length);
+  const hasImages = images.length > 0;
 
   return (
     <div>
       {/* Main image */}
       <div className="group relative aspect-[4/5] max-h-[70vh] overflow-hidden border border-border bg-muted">
-        <AnimatePresence mode="popLayout">
-          <motion.img
-            key={active}
-            src={images[active]}
-            alt={`${name} – view ${active + 1}`}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }}
-            className={`absolute inset-0 h-full w-full ${containIndices.includes(active) ? 'object-contain' : 'object-cover'}`}
-          />
-        </AnimatePresence>
+        {hasImages ? (
+          <AnimatePresence mode="popLayout">
+            <motion.img
+              key={active}
+              src={images[active]}
+              alt={`${name} – view ${active + 1}`}
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }}
+              className={`absolute inset-0 h-full w-full ${containIndices.includes(active) ? 'object-contain' : 'object-cover'}`}
+            />
+          </AnimatePresence>
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="font-display text-2xl text-muted-foreground/50 tracking-wide">Photos</p>
+            <p className="font-display text-2xl text-muted-foreground/50 tracking-wide">Coming Soon</p>
+          </div>
+        )}
 
         {/* Navigation arrows */}
         {hasMultiple && (
@@ -96,19 +101,21 @@ const ImageGallery = ({ images, name, containIndices = [] }: { images: string[];
       </div>
 
       {/* Thumbnails */}
-      <div className="mt-4 flex gap-3">
-        {images.map((src, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`w-20 h-24 border overflow-hidden transition-all duration-200 ${
-              active === i ? "border-foreground" : "border-border opacity-60 hover:opacity-100"
-            }`}
-          >
-            <img src={src} alt={`Thumbnail ${i + 1}`} className="h-full w-full object-cover" />
-          </button>
-        ))}
-      </div>
+      {hasImages && (
+        <div className="mt-4 flex gap-3">
+          {images.map((src, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`w-20 h-24 border overflow-hidden transition-all duration-200 ${
+                active === i ? "border-foreground" : "border-border opacity-60 hover:opacity-100"
+              }`}
+            >
+              <img src={src} alt={`Thumbnail ${i + 1}`} className="h-full w-full object-cover" />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

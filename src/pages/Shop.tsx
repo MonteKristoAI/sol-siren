@@ -116,12 +116,19 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
       className="group"
     >
       <Link to={`/product/${slug}`} className={`relative aspect-[3/4] overflow-hidden border border-border bg-muted block ${product.sold ? "opacity-75" : ""}`}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          loading="lazy"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div className="h-full w-full flex flex-col items-center justify-center bg-muted">
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Photos</p>
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Coming Soon</p>
+          </div>
+        )}
         {product.sold && (
           <div className="absolute top-4 left-4 bg-foreground text-primary-foreground font-body text-[10px] tracking-ultra-wide uppercase px-3 py-1.5 z-10">
             Sold

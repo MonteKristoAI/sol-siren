@@ -63,12 +63,19 @@ const ProductCard = ({ product, onQuickView }: { product: Product; onQuickView: 
       className="group"
     >
       <Link to={`/product/${slug}`} className="relative aspect-[3/4] overflow-hidden border border-border bg-muted block">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          loading="lazy"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div className="h-full w-full flex flex-col items-center justify-center bg-muted">
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Photos</p>
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Coming Soon</p>
+          </div>
+        )}
         <div className="pointer-events-none absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-500" />
         <button
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); onQuickView(); }}
