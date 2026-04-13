@@ -2309,7 +2309,7 @@ Vintage items may show wear consistent with age.`,
     name: "BIANCA",
     variant: "Vintage 1970s Long Wool Overcoat with Oversized Plush Faux Fur Collar – The Bianca",
     price: 0,
-    image: biancaImg1,
+    image: biancaImg6,
     slug: toSlug("bianca"),
     description: `The Bianca winter coat is a beautifully dramatic vintage piece that captures the quiet glamour of cold-weather dressing in decades past.
 
@@ -2342,7 +2342,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Youthcraft
 
 Vintage items may show wear consistent with age.`,
-    images: [biancaImg1, biancaImg2, biancaImg3, biancaImg4, biancaImg5, biancaImg6, biancaImg7, biancaImg8, biancaImg9, biancaImg10],
+    images: [biancaImg6, biancaImg1, biancaImg2, biancaImg3, biancaImg4, biancaImg5, biancaImg7, biancaImg8, biancaImg9, biancaImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
