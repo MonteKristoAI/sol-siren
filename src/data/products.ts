@@ -1220,6 +1220,26 @@ Authentic vintage
 • Made in England
 
 Vintage items may show wear consistent with age.`,
+    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
+    sizes: ["XS", "S", "M", "L"],
+    sizeFit: {
+      modernSize: "TBD",
+      measurements: {
+        shoulder: "TBD",
+        bust: "TBD",
+        sleeve: "TBD",
+        length: "TBD",
+      },
+      fitDescription: "TBD",
+    },
+    productDetails: {
+      era: `1970s`,
+      material: `100% suede leather, satin lining`,
+      color: `Burnt Orange`,
+      lining: `Quilted satin`,
+      closure: `Four leather buttons down the front`,
+      length: `Full-length`,
+    },
     careInstructions: [
       "Professional suede specialist dry clean only",
       "Store in a cool, dark place in a breathable garment bag — avoid plastic",
