@@ -1501,58 +1501,65 @@ Vintage items may show wear consistent with age.`,
     price: 0,
     image: tallulahImg1,
     slug: toSlug("tallulah"),
-    description: `A true piece of classic American Western style.
+    description: `Tallulah carries the unmistakable spirit of 1970s bohemian outerwear — bold, textural, and effortlessly expressive. Crafted in a rich chocolate suede-finish fabric and framed with sweeping ivory shag trim, this piece captures the iconic Penny Lane silhouette that defined an era of free-spirited style.
 
-This vintage suede jacket by Sears Western Wear captures the rugged frontier spirit of the 1970s.
+Designed with a relaxed cape-style cut, Tallulah drapes softly over the shoulders, creating movement and an easy, dramatic silhouette. Wide suede tabs with brass snap closures run down the front, allowing the long shag trim to fall naturally along the opening.
 
-Crafted from rich brown suede and trimmed with dramatic fringe across the chest, back, sleeves, and hem.
+The contrast between the deep brown exterior and flowing ivory trim gives Tallulah her striking presence — equal parts alpine, western, and vintage rock-and-roll. Pieces like this were often produced in small boutique runs during the late 1960s and early 1970s, reflecting the era's love of texture, warmth, and individuality.
 
-Features a removable faux shearling lining for added warmth.
+The suede finish shows more visible wear on the left side of the coat, where the nap has softened and is slightly more textured compared to the right side. This variation is only noticeable in certain lighting and reflects the natural patina that develops in suede-finish garments over time.
+
+The long shag trim has a slightly wild, naturally worn texture, consistent with age and the dramatic pile of this style. It remains full and expressive, contributing to the coat's distinctive vintage character.
+
+As with all vintage garments, subtle signs of age are part of the story and add to the individuality that makes each piece unique.
+
+Tallulah feels both nostalgic and timeless — a coat that seems to carry the memory of winters long past while remaining effortlessly wearable today.
 
 A garment with a past—ready for its next chapter.
 
-• Authentic vintage 
+Authentic vintage
 
-• Estimated era: 1970s 
+• Estimated era: 1970s
 
-• Material: Genuine leather 
+• Material: Suede-finish fabric. Long shag faux fur trim.
 
-• Color: Medium brown 
+• Color: Chocolate suede fabric. Ivory trim.
 
-• Lining: Removable shearling lining 
+• Lining: Unlined
 
-• Closure: Button 
+• Closure: Brass snap closures run down the front
 
-• Length: Hip-length
+• Length: Above the knee
+
+• Tags read: Dry clean only
 
 Vintage items may show wear consistent with age.`,
     images: [tallulahImg1, tallulahImg2, tallulahImg3, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
-      modernSize: "Women's M-L (oversized fit) / Men's M",
+      modernSize: "Flexible — cape silhouette",
       measurements: {
-        shoulder: `24"`,
-        bust: `44"`,
-        sleeve: `24"`,
-        length: `24"`,
+        shoulder: `Open`,
+        bust: `Open`,
+        sleeve: `Open arm openings`,
+        length: `28"`,
       },
-      fitDescription: "Originally designed as a men's Western jacket, this piece translates beautifully today as a relaxed, slightly oversized silhouette when worn by women. Vintage tagged 42 Regular.",
+      fitDescription: "Relaxed cape silhouette with open arm openings. Cape construction allows for flexible sizing.",
     },
     productDetails: {
       era: `1970s`,
-      material: `Genuine leather`,
-      color: `Medium brown`,
-      lining: `Removable shearling lining`,
-      closure: `Button`,
-      length: `Hip-length`,
+      material: `Suede-finish fabric. Long shag faux fur trim.`,
+      color: `Chocolate suede fabric. Ivory trim.`,
+      lining: `Unlined`,
+      closure: `Brass snap closures run down the front`,
+      length: `Above the knee`,
     },
     careInstructions: [
-      "Professional leather specialist dry clean only",
-      "Store in a cool, dark place in a breathable garment bag — avoid plastic",
-      "Hang on a padded or broad-shouldered hanger to maintain shape",
-      "Avoid direct sunlight, heat, and moisture",
-      "Condition leather periodically with a quality leather conditioner",
-      "Specialist leather cleaning recommended for stains or wear",
+      "Professional dry clean only",
+      "Store in the breathable garment bag provided with purchase",
+      "Hang on a structured hanger to maintain the coat's shape",
+      "Avoid prolonged exposure to direct sunlight or moisture",
+      "Specialist leather and fur cleaning only",
     ],
     category: "leather",
   },
