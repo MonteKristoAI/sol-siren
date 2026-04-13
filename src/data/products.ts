@@ -1645,15 +1645,17 @@ Vintage sizing differs from modern sizing. Please compare measurements for the b
   {
     id: "vixen",
     name: "VIXEN",
-    variant: "Vintage 1980s Boarskin Fringe Leather Jacket – The Vixen",
+    variant: "1980s Boar Skin and Fringe Leather Jacket - The Vixen",
     price: 0,
     image: vixenImg2,
     slug: toSlug("vixen"),
-    description: `A striking vintage leather jacket crafted from sueded boarskin, featuring bold black-on-black design and dramatic fringe along the sleeves.
+    description: `A striking vintage leather jacket crafted from double-buffed sueded boar skin featuring bold black-on-black Southwestern appliqué and dramatic fringe along the sleeves.
 
-The sculptural leather panels create strong visual impact, while long fringe adds movement and texture.
+The jacket's sculptural leather panels create a striking graphic effect across both the front and back, giving the piece strong visual impact from every angle. The tonal design allows the natural textures of the boarskin to stand out — smooth, pebbled, and suede finishes working together to create depth and dimension.
 
-Finished with a zip front closure and elasticized waistband.
+Long leather fringe cascades from the sleeves, adding movement and unmistakable Western character. The jacket is finished with a full front zipper closure, snap at the hem, and an elasticized waistband that creates a relaxed blouson silhouette.
+
+Crafted from durable boar skin leather — prized for its strength and unique grain — this piece blends classic Western influence with a bold 1980s Southwestern aesthetic.
 
 A garment with a past—ready for its next chapter.
 
@@ -1661,13 +1663,13 @@ A garment with a past—ready for its next chapter.
 
 • Estimated era: 1980s 
 
-• Material: Leather 
+• Material: Double-buffed sueded boar skin leather 
 
 • Color: Black 
 
 • Lining: Unlined 
 
-• Closure: Zip 
+• Closure: Full front zipper, snap at hem 
 
 • Length: Hip-length
 
@@ -1686,10 +1688,10 @@ Vintage items may show wear consistent with age.`,
     },
     productDetails: {
       era: `1980s`,
-      material: `Leather`,
+      material: `Double-buffed sueded boar skin leather`,
       color: `Black`,
       lining: `Unlined`,
-      closure: `Zip`,
+      closure: `Full front zipper, snap at hem`,
       length: `Hip-length`,
     },
     careInstructions: [
