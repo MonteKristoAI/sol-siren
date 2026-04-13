@@ -221,6 +221,9 @@ import saffronImg9 from "@/assets/products/saffron/saffron-8.webp";
 import saffronImg10 from "@/assets/products/saffron/saffron-9.webp";
 import kateImg1 from "@/assets/products/kate/kate-1.webp";
 import kateImg2 from "@/assets/products/kate/kate-2.webp";
+import kateImg3 from "@/assets/products/kate/kate-3.jpg";
+import kateImg4 from "@/assets/products/kate/kate-4.jpg";
+import kateImg5 from "@/assets/products/kate/kate-5.jpg";
 import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
 import topangaImg2 from "@/assets/products/topanga/topanga-2.webp";
 import topangaImg3 from "@/assets/products/topanga/topanga-3.webp";
@@ -1265,7 +1268,7 @@ A garment with a past—ready for its next chapter.
 • Length: Knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [kateImg1, kateImg2],
+    images: [kateImg1, kateImg2, kateImg3, kateImg4, kateImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
