@@ -1179,7 +1179,7 @@ Vintage items may show wear consistent with age.`,
     name: "SAFFRON",
     variant: "Vintage 1970s Embroidered Suede Penny Lane Coat with Shearling Trim Hood - The Saffron",
     price: 0,
-    image: saffronImg1,
+    image: saffronImg6,
     slug: toSlug("saffron"),
     description: `There are coats that simply belong to a season, and others that feel tied to an entire era.
 
@@ -1220,7 +1220,7 @@ Authentic vintage
 • Made in England
 
 Vintage items may show wear consistent with age.`,
-    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
+    images: [saffronImg6, saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
