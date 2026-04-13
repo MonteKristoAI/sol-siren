@@ -1497,7 +1497,7 @@ Vintage items may show wear consistent with age.`,
     name: "TALLULAH",
     variant: "1970s Suede Shag Fur Trim Poncho, The TALLULAH",
     price: 0,
-    image: tallulahImg1,
+    image: tallulahImg3,
     slug: toSlug("tallulah"),
     description: `Tallulah carries the unmistakable spirit of 1970s bohemian outerwear — bold, textural, and effortlessly expressive. Crafted in a rich chocolate suede and framed with sweeping ivory shag trim, this piece captures the iconic Penny Lane silhouette that defined an era of free-spirited style.
 
@@ -1532,7 +1532,7 @@ Authentic vintage
 • Tags read: Dry clean only
 
 Vintage items may show wear consistent with age.`,
-    images: [tallulahImg1, tallulahImg2, tallulahImg3, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
+    images: [tallulahImg3, tallulahImg1, tallulahImg2, tallulahImg4, tallulahImg5, tallulahImg6, tallulahImg7, tallulahImg8, tallulahImg9, tallulahImg10, tallulahImg11, tallulahImg12],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Flexible — cape silhouette",
