@@ -194,8 +194,6 @@ import tillyImg6 from "@/assets/products/tilly/tilly-6.webp";
 import novaImg1 from "@/assets/products/nova/nova-1.webp";
 import novaImg2 from "@/assets/products/nova/nova-2.webp";
 import novaImg3 from "@/assets/products/nova/nova-3.webp";
-import novaImg4 from "@/assets/products/nova/nova-4.webp";
-import novaImg5 from "@/assets/products/nova/nova-5.webp";
 import carolImg1 from "@/assets/products/carol/carol-collar.webp";
 import carolImg2 from "@/assets/products/carol/carol-front.webp";
 import carolImg3 from "@/assets/products/carol/carol-3.webp";
