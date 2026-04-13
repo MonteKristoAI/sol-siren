@@ -1745,7 +1745,7 @@ Vintage items may show wear consistent with age.`,
     name: "CANDACE",
     variant: "Vintage 1970s Short Plaid Fur Trim Coat – The Candace",
     price: 0,
-    image: candaceImg1,
+    image: candaceImg8,
     slug: toSlug("candace"),
     description: `A beautiful hooded vintage plaid coat that captures the cozy spirit of 1970s winter style.
 
@@ -1770,7 +1770,7 @@ A garment with a past—ready for its next chapter.
 • Length: Short coat
 
 Vintage items may show wear consistent with age.`,
-    images: [candaceImg1, candaceImg2, candaceImg3, candaceImg4, candaceImg5, candaceImg6, candaceImg7, candaceImg8],
+    images: [candaceImg8, candaceImg1, candaceImg2, candaceImg3, candaceImg4, candaceImg5, candaceImg6, candaceImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S (US 4-6)",
