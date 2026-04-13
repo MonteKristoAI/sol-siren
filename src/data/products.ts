@@ -1181,51 +1181,45 @@ Vintage items may show wear consistent with age.`,
     price: 0,
     image: saffronImg1,
     slug: toSlug("saffron"),
-    description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
+    description: `There are coats that simply belong to a season, and others that feel tied to an entire era.
 
-The exterior is crafted from supple suede with curly lamb shearling trim along the front opening and hemline.
+Saffron is the latter.
 
-The front closes with corded loop closures, a classic vintage detail.
+Produced in England in the early 1970s by Gloria Super Suede, styled by Victoria, this coat reflects the moment when European folk influences reshaped fashion — when embroidery, suede, and rich textures became signatures of the decade.
 
-Simple, timeless, and endlessly wearable.
+The coat is crafted from golden saffron suede, soft and supple with the natural depth that only vintage suede develops over time. Across the surface of the garment, delicate embroidered motifs appear like scattered handwork. Along the hem runs an intricate folk-inspired embroidered border, reminiscent of traditional Alpine and Eastern European textile designs that influenced British fashion during the early 1970s.
+
+The silhouette is gently tailored through the waist before falling into a clean, straight line. A softly structured hood frames the face, while plush shearling trim at the hood and hem adds warmth and texture. Large leather buttons close the coat at the front.
+
+Inside, the coat reveals a warm quilted satin lining, beautifully finished and designed to provide insulation without adding weight.
+
+British suede coats like this were often produced for boutique retailers and specialty department stores, and today they remain among the most beloved pieces of vintage outerwear — celebrated for their craftsmanship, materials, and unmistakable character.
+
+This piece carries the spirit of the early 1970s: romantic, textured, and quietly bold. It feels less like a coat and more like something discovered.
 
 A garment with a past—ready for its next chapter.
 
-• Authentic vintage 
+Authentic vintage
 
-• Estimated era: Late 1960s – Early 1970s 
+• Estimated era: 1970s
 
-• Material: Suede + shearling trim 
+• Material: 100% suede leather, satin lining
 
-• Color: Tobacco brown 
+• Color: Burnt Orange
 
-• Lining: Satin 
+• Lining: Quilted satin
 
-• Closure: Loop closures 
+• Closure: Four leather buttons down the front
 
-• Length: Knee length
+• Length: Full-length
+
+• Tags read: Gloria Super Suede – Styled by Victoria
+
+• Notable Wear: Impeccable condition
+
+• Made in England
 
 Vintage items may show wear consistent with age.`,
-    images: [saffronImg1, saffronImg2, saffronImg3, saffronImg4, saffronImg5, saffronImg6, saffronImg7, saffronImg8, saffronImg9, saffronImg10],
-    sizes: ["XS", "S", "M", "L"],
-    sizeFit: {
-      modernSize: "TBD",
-      measurements: {
-        shoulder: "TBD",
-        bust: "TBD",
-        sleeve: "TBD",
-        length: "TBD",
-      },
-      fitDescription: "TBD",
-    },
-    productDetails: {
-      era: `Late 1960s – Early 1970s`,
-      material: `Suede + shearling trim`,
-      color: `Tobacco brown`,
-      lining: `Satin`,
-      closure: `Loop closures`,
-      length: `Knee length`,
-    },
     careInstructions: [
       "Professional suede specialist dry clean only",
       "Store in a cool, dark place in a breathable garment bag — avoid plastic",
