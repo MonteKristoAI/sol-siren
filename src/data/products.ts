@@ -432,6 +432,7 @@ export interface ProductWithSlug extends Product {
   sizeFit: SizeFit;
   careInstructions: string[];
   productDetails: ProductDetails;
+  containIndices?: number[];
 }
 
 function toSlug(name: string) {
@@ -2608,6 +2609,7 @@ A garment with a past—ready for its next chapter.
 
 Vintage items may show wear consistent with age.`,
     images: [penelopeImg1, penelopeImg2, penelopeImg3, penelopeImg4, penelopeImg5, penelopeImg6, penelopeImg7, penelopeImg8, penelopeImg9, penelopeImg10, penelopeImg11],
+    containIndices: [1],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS/S (US 0-2)",
