@@ -1497,17 +1497,17 @@ Vintage items may show wear consistent with age.`,
   {
     id: "tallulah",
     name: "TALLULAH",
-    variant: "1970s Suede Shag Fur Trim Poncho, The Tallulah",
+    variant: "1970s Suede Shag Fur Trim Poncho, The TALLULAH",
     price: 0,
     image: tallulahImg1,
     slug: toSlug("tallulah"),
-    description: `Tallulah carries the unmistakable spirit of 1970s bohemian outerwear — bold, textural, and effortlessly expressive. Crafted in a rich chocolate suede-finish fabric and framed with sweeping ivory shag trim, this piece captures the iconic Penny Lane silhouette that defined an era of free-spirited style.
+    description: `Tallulah carries the unmistakable spirit of 1970s bohemian outerwear — bold, textural, and effortlessly expressive. Crafted in a rich chocolate suede and framed with sweeping ivory shag trim, this piece captures the iconic Penny Lane silhouette that defined an era of free-spirited style.
 
 Designed with a relaxed cape-style cut, Tallulah drapes softly over the shoulders, creating movement and an easy, dramatic silhouette. Wide suede tabs with brass snap closures run down the front, allowing the long shag trim to fall naturally along the opening.
 
 The contrast between the deep brown exterior and flowing ivory trim gives Tallulah her striking presence — equal parts alpine, western, and vintage rock-and-roll. Pieces like this were often produced in small boutique runs during the late 1960s and early 1970s, reflecting the era's love of texture, warmth, and individuality.
 
-The suede finish shows more visible wear on the left side of the coat, where the nap has softened and is slightly more textured compared to the right side. This variation is only noticeable in certain lighting and reflects the natural patina that develops in suede-finish garments over time.
+The suede finish shows more visible wear on the left side of the coat, where the nap has softened and is slightly more textured compared to the right side. This variation is only noticeable in certain lighting and reflects the natural patina that develops in suede garments over time.
 
 The long shag trim has a slightly wild, naturally worn texture, consistent with age and the dramatic pile of this style. It remains full and expressive, contributing to the coat's distinctive vintage character.
 
@@ -1521,9 +1521,9 @@ Authentic vintage
 
 • Estimated era: 1970s
 
-• Material: Suede-finish fabric. Long shag faux fur trim.
+• Material: Suede. Long shag faux fur trim.
 
-• Color: Chocolate suede fabric. Ivory trim.
+• Color: Chocolate suede. Ivory trim.
 
 • Lining: Unlined
 
@@ -1548,8 +1548,8 @@ Vintage items may show wear consistent with age.`,
     },
     productDetails: {
       era: `1970s`,
-      material: `Suede-finish fabric. Long shag faux fur trim.`,
-      color: `Chocolate suede fabric. Ivory trim.`,
+      material: `Suede. Long shag faux fur trim.`,
+      color: `Chocolate suede. Ivory trim.`,
       lining: `Unlined`,
       closure: `Brass snap closures run down the front`,
       length: `Above the knee`,
