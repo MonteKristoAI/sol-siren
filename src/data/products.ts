@@ -2180,7 +2180,7 @@ Vintage items may show wear consistent with age.`,
     name: "RHIANNON",
     variant: "Vintage 1970s Short Suede Coat with Afghan Fur Collar – The Rhiannon",
     price: 0,
-    image: rhiannonImg1,
+    image: rhiannonImg6,
     slug: toSlug("rhiannon"),
     description: `A warm desert-toned suede coat with unmistakable 1970s spirit.
 
@@ -2209,7 +2209,7 @@ A garment with a past—ready for its next chapter.
 • Notable Wear: The original belt and loops have been removed, creating a clean open-front silhouette that drapes effortlessly when worn.
 
 Vintage items may show wear consistent with age.`,
-    images: [rhiannonImg1, rhiannonImg2, rhiannonImg3, rhiannonImg4, rhiannonImg5, rhiannonImg6, rhiannonImg7],
+    images: [rhiannonImg6, rhiannonImg1, rhiannonImg2, rhiannonImg3, rhiannonImg4, rhiannonImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "XS/S",
