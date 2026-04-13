@@ -2575,7 +2575,7 @@ Vintage items may show wear consistent with age.`,
     name: "PENELOPE",
     variant: "Vintage 1960s Purple Velvet Opera Coat – The Penelope",
     price: 0,
-    image: penelopeImg1,
+    image: penelopeImg2,
     slug: toSlug("penelope"),
     description: `A striking vintage velvet coat from Dublin boutique Christine, Duke Street, rendered in a rich violet tone that feels both regal and quietly dramatic. The coat features a sculptural high collar and a line of delicate hand-covered velvet buttons cascading down the front, creating a soft, elegant opening.
 
@@ -2608,8 +2608,8 @@ A garment with a past—ready for its next chapter.
 • Tags read: Christine, Duke Street
 
 Vintage items may show wear consistent with age.`,
-    images: [penelopeImg1, penelopeImg2, penelopeImg3, penelopeImg4, penelopeImg5, penelopeImg6, penelopeImg7, penelopeImg8, penelopeImg9, penelopeImg10, penelopeImg11],
-    containIndices: [1],
+    images: [penelopeImg2, penelopeImg1, penelopeImg3, penelopeImg4, penelopeImg5, penelopeImg6, penelopeImg7, penelopeImg8, penelopeImg9, penelopeImg10, penelopeImg11],
+    containIndices: [0],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "Women's XS/S (US 0-2)",
