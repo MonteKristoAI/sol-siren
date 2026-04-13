@@ -3337,7 +3337,7 @@ Vintage items may show wear consistent with age.`,
     name: "CELESTE",
     variant: "Vintage 1970s Dan Di Modes Fur Collar Leather Wrap Coat - Dove Grey Belted Coat",
     price: 0,
-    image: clover1,
+    image: "",
     slug: toSlug("celeste"),
     description: `Celeste carries the quiet glamour of late-1970s outerwear. Crafted from supple sage-grey leather and finished with a plush natural fur collar, the coat reflects the era's love for relaxed tailoring paired with statement texture.
 
@@ -3348,7 +3348,7 @@ Inside, a blush satin lining adds a subtle romantic detail -- a small surprise t
 The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Modes was a vintage label known for producing fabulous leather and fur outerwear throughout the mid-20th century.
 
 A garment with a past -- ready for its next chapter.`,
-    images: [clover1],
+    images: [],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M (estimated)",
@@ -3410,7 +3410,7 @@ Photos coming soon.`,
     name: "GOLDIE",
     variant: "1970s Penny Lane Suede & Shearling Fur Trim Vest - The Goldie",
     price: 0,
-    image: clover1,
+    image: "",
     slug: toSlug("goldie"),
     description: `Goldie is a vintage suede vest cut from rich caramel suede and framed with dramatic long-hair shearling trim at the collar and hem. The silhouette is open and effortless, designed to layer easily while allowing the texture and movement of the fur to take center stage.
 
@@ -3420,7 +3420,7 @@ Not relics. Not replicas.
 But a garment with a past -- ready for its next chapter.
 
 Photos coming soon.`,
-    images: [clover1],
+    images: [],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
@@ -3447,7 +3447,7 @@ Photos coming soon.`,
     name: "ALI",
     variant: "Vintage Short Penny Lane Shearling Jacket by Navy Ann - The Ali",
     price: 0,
-    image: clover1,
+    image: "",
     slug: toSlug("ali"),
     description: `Some coats feel like they belong somewhere between a mountain town and a long road trip -- warm, worn-in, and quietly unforgettable. Ali is one of those pieces.
 
@@ -3456,7 +3456,7 @@ Crafted by Navy Ann, this vintage jacket channels the unmistakable spirit of the
 A garment with a past -- ready for its next chapter.
 
 Photos coming soon.`,
-    images: [clover1],
+    images: [],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
