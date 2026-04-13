@@ -55,7 +55,9 @@ const ImageGallery = ({ images, name, containIndices = [] }: { images: string[];
   const hasMultiple = images.length > 1;
   const hasImages = images.length > 0;
 
-  return (
+  const prevImage = () => setActive((prev) => (prev - 1 + images.length) % images.length);
+  const nextImage = () => setActive((prev) => (prev + 1) % images.length);
+
     <div>
       {/* Main image */}
       <div className="group relative aspect-[4/5] max-h-[70vh] overflow-hidden border border-border bg-muted">
