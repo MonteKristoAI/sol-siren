@@ -40,7 +40,7 @@ const ProductDetail = () => {
         </div>
 
         <div className="mx-auto max-w-7xl px-6 md:px-16 grid grid-cols-1 md:grid-cols-[60%_40%] gap-10 md:gap-16">
-          <ImageGallery images={product.images} name={product.name} />
+          <ImageGallery images={product.images} name={product.name} containIndices={product.containIndices} />
           <ProductInfo product={product} />
         </div>
       </main>
@@ -50,7 +50,7 @@ const ProductDetail = () => {
 };
 
 /* ================================================================== */
-const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
+const ImageGallery = ({ images, name, containIndices = [] }: { images: string[]; name: string; containIndices?: number[] }) => {
   const [active, setActive] = useState(0);
   const hasMultiple = images.length > 1;
 
@@ -70,7 +70,7 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }}
-            className="absolute inset-0 h-full w-full object-cover"
+            className={`absolute inset-0 h-full w-full ${containIndices.includes(active) ? 'object-contain' : 'object-cover'}`}
           />
         </AnimatePresence>
 
