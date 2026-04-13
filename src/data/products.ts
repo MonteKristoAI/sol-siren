@@ -202,7 +202,7 @@ import roxanneImg2 from "@/assets/products/roxanne/roxanne-2.webp";
 import roxanneImg3 from "@/assets/products/roxanne/roxanne-3.webp";
 import roxanneImg4 from "@/assets/products/roxanne/roxanne-4.webp";
 import roxanneImg5 from "@/assets/products/roxanne/roxanne-5.webp";
-import roxanneImg6 from "@/assets/products/roxanne/roxanne-6.webp";
+
 import roxanneImg7 from "@/assets/products/roxanne/roxanne-7.webp";
 import sybilImg1 from "@/assets/products/sybil/sybil-1.webp";
 import sybilImg2 from "@/assets/products/sybil/sybil-2.webp";
@@ -1080,7 +1080,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh-knee length
 
 Vintage items may show wear consistent with age.`,
-    images: [roxanneImg2, roxanneImg1, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg6, roxanneImg7],
+    images: [roxanneImg2, roxanneImg1, roxanneImg3, roxanneImg4, roxanneImg5, roxanneImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
