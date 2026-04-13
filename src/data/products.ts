@@ -3349,13 +3349,15 @@ Inside, a blush satin lining adds a subtle romantic detail -- a small surprise t
 
 The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Modes was a vintage label known for producing fabulous leather and fur outerwear throughout the mid-20th century.
 
+Notable wear: Minor inks mark on right sleeve and back right shoulder.
+
 A garment with a past -- ready for its next chapter.`,
     images: [],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
-      modernSize: "S/M (estimated)",
-      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
-      fitDescription: "Wrap design allows flexibility in fit. Best worn slightly relaxed with the belt defining the waist. Measurements coming soon.",
+      modernSize: "M/L",
+      measurements: { shoulder: `18"`, bust: `34-40"`, sleeve: `21"`, length: `33"` },
+      fitDescription: "Wrap design allows flexibility in fit. Best worn slightly relaxed with the belt defining the waist. Vintage sizing differs from modern sizing. Please compare measurements for the best fit.",
     },
     productDetails: {
       era: "1969-1973",
