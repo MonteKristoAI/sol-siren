@@ -959,7 +959,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items may show wear consistent with age.`,
-    images: [novaImg1, novaImg2, novaImg3, novaImg4, novaImg5],
+    images: [novaImg1, novaImg2, novaImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
