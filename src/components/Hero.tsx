@@ -16,7 +16,7 @@ const Hero = () => {
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-28 pb-12 md:py-0 md:w-1/2">
           
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
-            She's Been<br />Here Before
+            She's been<br />here before
           </h1>
 
           <div className="mt-4 font-body text-sm md:text-base text-background/80 max-w-md leading-relaxed">
