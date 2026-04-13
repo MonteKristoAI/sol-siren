@@ -1805,7 +1805,7 @@ Vintage items may show wear consistent with age.`,
     name: "ASPEN",
     variant: "Vintage 1970s Suede & Shearling Ranch Coat – The Aspen",
     price: 0,
-    image: aspenImg1,
+    image: aspenImg4,
     slug: toSlug("aspen"),
     description: `A striking vintage suede Ranch Coat from the late 1960s to early 1970s, featuring a dramatic shearling-style collar and plush interior lining.
 
@@ -1832,7 +1832,7 @@ A garment with a past—ready for its next chapter.
 • Length: Full-length
 
 Vintage items may show wear consistent with age.`,
-    images: [aspenImg1, aspenImg2, aspenImg3, aspenImg4, aspenImg5, aspenImg6, aspenImg7, aspenImg8, aspenImg9, aspenImg10, aspenImg11],
+    images: [aspenImg4, aspenImg1, aspenImg2, aspenImg3, aspenImg5, aspenImg6, aspenImg7, aspenImg8, aspenImg9, aspenImg10, aspenImg11],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
