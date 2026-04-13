@@ -120,7 +120,7 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
           <img
             src={product.image}
             alt={product.name}
-            className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-105 ${product.containIndices?.includes(0) ? 'object-contain' : 'object-cover'}`}
+            className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-105 ${(product as any).containIndices?.includes(0) ? 'object-contain' : 'object-cover'}`}
             loading="lazy"
           />
         ) : (
