@@ -569,7 +569,7 @@ Vintage garments may show minor wear consistent with age.`,
     name: "ANNETTE",
     variant: "Vintage 1970s Tissavel Luxury Faux Mink Coat – The Annette",
     price: 0,
-    image: annetteImg1,
+    image: annetteImg4,
     slug: toSlug("annette"),
     description: `A striking vintage luxury faux fur coat by Tissavel, the renowned French maker celebrated for producing some of the finest faux furs of the late 1960s and early 1970s. Crafted in a deep espresso faux mink with a soft, luminous pile, this piece captures the effortless glamour of the era.
 
@@ -594,7 +594,7 @@ A garment with a past—ready for its next chapter.
 • Length: Mid-thigh
 
 Vintage items show wear consistent with age.`,
-    images: [annetteImg1, annetteImg2, annetteImg3, annetteImg4],
+    images: [annetteImg4, annetteImg1, annetteImg2, annetteImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
