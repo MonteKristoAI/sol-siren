@@ -3161,7 +3161,7 @@ Vintage items may show wear consistent with age.`,
     name: "MONIQUE",
     variant: "Vintage 1970s Changing Scene Cream Convertible Puffer/Ski Vest/Jacket – The Monique",
     price: 0,
-    image: moniqueImg1,
+    image: moniqueImg6,
     slug: toSlug("monique"),
     description: `A sculptural, convertible puffer from Changing Scene, a late 1970s–80s label known for accessible, trend-driven womenswear. This piece reflects a shift in that era toward more experimental, sport-influenced design — blending utility with a more directional silhouette.
 
@@ -3188,7 +3188,7 @@ A garment with a past—ready for its next chapter.
 • Tags read: Changing Scene Size M
 
 Vintage items may show wear consistent with age.`,
-    images: [moniqueImg1, moniqueImg2, moniqueImg3, moniqueImg4, moniqueImg5, moniqueImg6],
+    images: [moniqueImg6, moniqueImg1, moniqueImg2, moniqueImg3, moniqueImg4, moniqueImg5],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M",
