@@ -222,10 +222,17 @@ import kateImg2 from "@/assets/products/kate/kate-2.webp";
 import kateImg3 from "@/assets/products/kate/kate-3.jpg";
 import kateImg4 from "@/assets/products/kate/kate-4.jpg";
 import kateImg5 from "@/assets/products/kate/kate-5.jpg";
-import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
-import topangaImg2 from "@/assets/products/topanga/topanga-2.webp";
-import topangaImg3 from "@/assets/products/topanga/topanga-3.webp";
-import topangaImg4 from "@/assets/products/topanga/topanga-4.webp";
+import topangaImg1 from "@/assets/products/topanga-new/topanga-new-1.webp";
+import topangaImg2 from "@/assets/products/topanga-new/topanga-new-2.webp";
+import topangaImg3 from "@/assets/products/topanga-new/topanga-new-3.webp";
+import topangaImg4 from "@/assets/products/topanga-new/topanga-new-4.webp";
+import topangaImg5 from "@/assets/products/topanga-new/topanga-new-5.webp";
+import topangaImg6 from "@/assets/products/topanga-new/topanga-new-6.webp";
+import topangaImg7 from "@/assets/products/topanga-new/topanga-new-7.webp";
+import topangaImg8 from "@/assets/products/topanga-new/topanga-new-8.webp";
+import topangaImg9 from "@/assets/products/topanga-new/topanga-new-9.webp";
+import topangaImg10 from "@/assets/products/topanga-new/topanga-new-10.webp";
+import topangaImg11 from "@/assets/products/topanga-new/topanga-new-11.webp";
 import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
 import emmylouImg2 from "@/assets/products/emmylou/emmylou-2.webp";
 import emmylouImg3 from "@/assets/products/emmylou/emmylou-3.webp";
@@ -1320,36 +1327,39 @@ Vintage items may show wear consistent with age.`,
   {
     id: "topanga",
     name: "TOPANGA",
-    variant: "Vintage 1960s Penny Lane Coat with Shearling Trim – The Topanga",
+    variant: "Vintage 1960s-1970s Short Suede Penny Lane Coat with Shearling Trim, The Topanga",
     price: 0,
-    image: topangaImg2,
+    image: topangaImg1,
     slug: toSlug("topanga"),
-    description: `A striking vintage suede coat inspired by the iconic Penny Lane silhouettes of the late 1960s and early 1970s.
+    description: `She feels like something from another decade — and she is.
 
-The dramatic shawl collar flows into a full shearling front panel.
+The Topanga coat is a beautifully tailored piece from the late 1960s to early 1970s, crafted from supple suede and finished with dramatic long-pile fur trim along the collar and cuffs. The silhouette is unmistakably of the era: softly structured shoulders, a cinched waist, and a gentle flare through the hem that moves effortlessly when worn.
 
-The coat is designed to wear open or lightly closed with hidden hook and eye closures.
+The oversized fur collar frames the face beautifully, while the matching belt defines the waist and creates a striking, feminine shape. Details like the panel-cut suede construction and double-breasted front closure give this coat both presence and polish.
 
-A true statement vintage piece.
+This is the kind of piece that instantly transforms an outfit — equal parts bohemian glamour and timeless winter elegance.
+
+A true Penny Lane–era classic, gathered and preserved so it can be worn again exactly as it was meant to be.
 
 A garment with a past—ready for its next chapter.
 
-• Authentic vintage 
+Authentic vintage
+• Estimated era: Late 1960s – 1970s
 
-• Estimated era: Late 1960s – Early 1970s 
+• Material: Suede exterior with long-pile fur collar and cuffs
 
-• Material: Suede + shearling 
+• Color: Warm golden suede. Buttercream shearling.
 
-• Color: Golden suede 
+• Lining: Synthetic satin
 
-• Lining: Satin 
+• Closure: Matching original belt
 
-• Closure: Hook closures 
+• Length: Mid-thigh
 
-• Length: Knee length
+• Notable wear: The suede shows natural variation and gentle patina consistent with age. There are light marks and areas of wear visible on the suede, particularly along parts of the back and body, which add to the character of the piece. The fur trim remains full and soft.
 
-Vintage items may show wear consistent with age.`,
-    images: [topangaImg2, topangaImg1, topangaImg3, topangaImg4],
+Vintage items may show minor wear consistent with age.`,
+    images: [topangaImg1, topangaImg2, topangaImg3, topangaImg4, topangaImg5, topangaImg6, topangaImg7, topangaImg8, topangaImg9, topangaImg10, topangaImg11],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "TBD",
@@ -1359,23 +1369,23 @@ Vintage items may show wear consistent with age.`,
         sleeve: "TBD",
         length: "TBD",
       },
-      fitDescription: "TBD",
+      fitDescription: "Tailored waist with flared hem. Vintage sizing differs from modern sizing. Please compare measurements for the best fit.",
     },
     productDetails: {
-      era: `Late 1960s – Early 1970s`,
-      material: `Suede + shearling`,
-      color: `Golden suede`,
-      lining: `Satin`,
-      closure: `Hook closures`,
-      length: `Knee length`,
+      era: `Late 1960s – 1970s`,
+      material: `Suede exterior with long-pile fur collar and cuffs`,
+      color: `Warm golden suede. Buttercream shearling.`,
+      lining: `Synthetic satin`,
+      closure: `Matching original belt`,
+      length: `Mid-thigh`,
+      notableWear: `The suede shows natural variation and gentle patina consistent with age. There are light marks and areas of wear visible on the suede, particularly along parts of the back and body, which add to the character of the piece. The fur trim remains full and soft.`,
     },
     careInstructions: [
-      "Professional suede specialist dry clean only",
-      "Store in a cool, dark place in a breathable garment bag — avoid plastic",
-      "Hang on a padded or broad-shouldered hanger to maintain shape",
-      "Avoid direct sunlight, heat, and moisture",
-      "Use a suede brush to maintain nap and remove surface dust",
-      "Specialist suede cleaning recommended for stains or wear",
+      "Professional dry clean only",
+      "Store in the breathable garment bag provided with purchase",
+      "Hang on a structured hanger to maintain the coat's shape",
+      "Avoid prolonged exposure to direct sunlight or moisture",
+      "Specialist leather and fur cleaning only",
     ],
     category: "penny-lane-afghan",
   },
