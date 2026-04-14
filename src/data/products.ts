@@ -405,6 +405,7 @@ import goldieImg3 from "@/assets/products/goldie/goldie-3.jpg";
 import goldieImg4 from "@/assets/products/goldie/goldie-4.jpg";
 import goldieImg5 from "@/assets/products/goldie/goldie-5.jpg";
 import goldieImg6 from "@/assets/products/goldie/goldie-6.jpg";
+import goldieImg7 from "@/assets/products/goldie/goldie-7.jpg";
 // tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
@@ -3426,7 +3427,7 @@ The shaggy trim gives the piece its signature Penny Lane energy -- a little wild
 
 Not relics. Not replicas.
 But a garment with a past -- ready for its next chapter.`,
-    images: [goldieImg1, goldieImg2, goldieImg3, goldieImg4, goldieImg5, goldieImg6],
+    images: [goldieImg1, goldieImg2, goldieImg3, goldieImg4, goldieImg5, goldieImg6, goldieImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
