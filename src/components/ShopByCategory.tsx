@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 
 const categories = [
 {
@@ -28,7 +29,7 @@ const categories = [
 },
 {
   name: "Jewelry",
-  image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6c4?w=800&q=80&auto=format&fit=crop",
+  image: herkimerFloat1,
   link: "/jewelry"
 }];
 
