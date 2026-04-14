@@ -3427,7 +3427,7 @@ The shaggy trim gives the piece its signature Penny Lane energy -- a little wild
 
 Not relics. Not replicas.
 But a garment with a past -- ready for its next chapter.`,
-    images: [goldieImg1, goldieImg2, goldieImg3, goldieImg4, goldieImg5, goldieImg6],
+    images: [goldieImg1, goldieImg2, goldieImg3, goldieImg4, goldieImg5, goldieImg6, goldieImg7],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
