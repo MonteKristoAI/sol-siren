@@ -3752,7 +3752,7 @@ If you would like to approve your stone before shipment, please reach out. Each 
     name: "HERKIMER DIAMOND",
     variant: "Genuine Herkimer Diamond on 14K Gold-Filled Cable Chain",
     price: 50,
-    image: herkimerCable1,
+    image: herkimerCable4,
     slug: toSlug("herkimer-diamond-cable"),
     description: `Herkimer Diamond: "The Stone of Attunement" -- encourages unity of physical, mental, emotional, spiritual states. In other words, it encourages WHOLENESS.
 
@@ -3761,7 +3761,7 @@ Your dainty Herkimer Diamond necklace will be custom made for YOU and only YOU. 
 Your necklace will be made with a genuine Herkimer Diamond sourced from Herkimer, New York. Each diamond will be 8-10mm and will rest between 16 inches of 14K gold-filled cable chain with a two inch adjuster.
 
 If you would like to approve your stone or would like a different length, please reach out before shipment. We are happy to customize your necklace for you. Free shipping.`,
-    images: [herkimerCable1, herkimerCable2, herkimerCable3, herkimerCable4, herkimerCable5],
+    images: [herkimerCable4, herkimerCable1, herkimerCable2, herkimerCable3, herkimerCable5],
     sizes: ["One Size"],
     sizeFit: {
       modernSize: "One Size",
