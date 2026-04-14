@@ -22,9 +22,15 @@ const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
 
-  const filtered = activeCategory === "all"
+  const filtered = (activeCategory === "all"
     ? products
-    : products.filter((p) => p.category === activeCategory);
+    : products.filter((p) => p.category === activeCategory)
+  ).slice().sort((a, b) => {
+    const aIsJewelry = a.category === "jewelry" ? 1 : 0;
+    const bIsJewelry = b.category === "jewelry" ? 1 : 0;
+    if (aIsJewelry !== bIsJewelry) return aIsJewelry - bIsJewelry;
+    return a.name.localeCompare(b.name);
+  });
 
   const setCategory = (value: string) => {
     if (value === "all") {
