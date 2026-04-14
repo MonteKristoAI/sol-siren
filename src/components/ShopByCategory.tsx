@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
 import sunnyImg1 from "@/assets/products/sunny/sunny-1.webp";
+import fayeImg1 from "@/assets/products/faye/faye-1.webp";
+import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
+import dianaImg1 from "@/assets/products/diana/diana-1.webp";
 
 const categories = [
 {
   name: "Fur",
-  image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
+  image: fayeImg1,
   link: "/shop?category=fur"
 },
 {
   name: "Leather",
-  image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop",
+  image: emmylouImg1,
   link: "/shop?category=leather"
 },
 {
