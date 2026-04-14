@@ -24,7 +24,7 @@ const categories = [
 },
 {
   name: "Overcoat",
-  image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
+  image: dianaImg1,
   link: "/shop?category=overcoat"
 },
 {
