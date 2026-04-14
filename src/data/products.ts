@@ -1399,7 +1399,7 @@ Vintage items may show minor wear consistent with age.`,
     name: "FRANKIE",
     variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim, The FRANKIE",
     price: 0,
-    image: topangaImg2,
+    image: frankieImg1,
     slug: toSlug("frankie"),
     description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
 
