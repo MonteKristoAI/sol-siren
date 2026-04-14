@@ -3381,40 +3381,6 @@ A garment with a past -- ready for its next chapter.`,
     category: "leather",
   },
   {
-    id: "farrah",
-    name: "FARRAH",
-    variant: "Vintage 1960s-1970s Leather Coat with Fur Collar and Cuffs - The Farrah",
-    price: 0,
-    image: clover1,
-    slug: toSlug("farrah"),
-    description: `She feels like something from another decade -- and she is. The Farrah coat is a beautifully tailored piece from the late 1960s to early 1970s, crafted from supple leather and finished with long-pile fur collar and cuffs.
-
-A garment with a past -- ready for its next chapter.
-
-Photos coming soon.`,
-    images: [clover1],
-    sizes: ["XS", "S", "M", "L"],
-    sizeFit: {
-      modernSize: "M/L (estimated)",
-      measurements: { shoulder: "16\"", bust: "38\"", sleeve: "21\"", length: "30\"" },
-      fitDescription: "Tailored through the shoulders with a relaxed body.",
-    },
-    productDetails: {
-      era: "Late 1960s-1970s",
-      material: "Leather with genuine fur collar and cuffs",
-      color: "Dove grey leather exterior. Blush synthetic satin interior.",
-      closure: "Double breasted button front with matching suede belt",
-      length: "Mid-thigh",
-    },
-    careInstructions: [
-      "Professional dry clean only",
-      "Store in a breathable garment bag",
-      "Hang on a structured hanger to maintain shape",
-      "Specialist leather and fur cleaning only",
-    ],
-    category: "leather",
-  },
-  {
     id: "goldie",
     name: "GOLDIE",
     variant: "1970s Penny Lane Suede & Shearling Fur Trim Vest - The Goldie",
