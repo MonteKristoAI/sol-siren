@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
+import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
+import sunnyImg1 from "@/assets/products/sunny/sunny-1.webp";
 
 const categories = [
 {
@@ -14,7 +16,7 @@ const categories = [
 },
 {
   name: "Penny Lane / Afghan",
-  image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
+  image: topangaImg1,
   link: "/shop?category=penny-lane-afghan"
 },
 {
@@ -24,7 +26,7 @@ const categories = [
 },
 {
   name: "Apres Ski",
-  image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
+  image: sunnyImg1,
   link: "/shop?category=apres-ski"
 },
 {
