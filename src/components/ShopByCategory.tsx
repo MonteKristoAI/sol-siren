@@ -16,7 +16,7 @@ const categories = [
 },
 {
   name: "Penny Lane / Afghan",
-  image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
+  image: topangaImg1,
   link: "/shop?category=penny-lane-afghan"
 },
 {
