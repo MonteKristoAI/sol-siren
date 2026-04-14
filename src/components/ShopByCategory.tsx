@@ -29,7 +29,7 @@ const categories = [
 },
 {
   name: "Jewelry",
-  image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6c4?w=800&q=80&auto=format&fit=crop",
+  image: herkimerFloat1,
   link: "/jewelry"
 }];
 
