@@ -399,6 +399,12 @@ import sunnyImg3 from "@/assets/products/sunny/sunny-3.webp";
 import sunnyImg4 from "@/assets/products/sunny/sunny-4.webp";
 import sunnyImg5 from "@/assets/products/sunny/sunny-5.webp";
 import sunnyImg6 from "@/assets/products/sunny/sunny-6.webp";
+import goldieImg1 from "@/assets/products/goldie/goldie-1.jpg";
+import goldieImg2 from "@/assets/products/goldie/goldie-2.jpg";
+import goldieImg3 from "@/assets/products/goldie/goldie-3.jpg";
+import goldieImg4 from "@/assets/products/goldie/goldie-4.jpg";
+import goldieImg5 from "@/assets/products/goldie/goldie-5.jpg";
+import goldieImg6 from "@/assets/products/goldie/goldie-6.jpg";
 // tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
@@ -3412,17 +3418,15 @@ Photos coming soon.`,
     name: "GOLDIE",
     variant: "1970s Penny Lane Suede & Shearling Fur Trim Vest - The Goldie",
     price: 0,
-    image: "",
+    image: goldieImg1,
     slug: toSlug("goldie"),
     description: `Goldie is a vintage suede vest cut from rich caramel suede and framed with dramatic long-hair shearling trim at the collar and hem. The silhouette is open and effortless, designed to layer easily while allowing the texture and movement of the fur to take center stage.
 
 The shaggy trim gives the piece its signature Penny Lane energy -- a little wild, a little glamorous, and entirely unforgettable.
 
 Not relics. Not replicas.
-But a garment with a past -- ready for its next chapter.
-
-Photos coming soon.`,
-    images: [],
+But a garment with a past -- ready for its next chapter.`,
+    images: [goldieImg1, goldieImg2, goldieImg3, goldieImg4, goldieImg5, goldieImg6],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "S/M",
