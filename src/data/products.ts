@@ -1380,6 +1380,71 @@ Vintage items may show wear consistent with age.`,
     category: "penny-lane-afghan",
   },
   {
+    id: "frankie",
+    name: "FRANKIE",
+    variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim, The FRANKIE",
+    price: 0,
+    image: topangaImg2,
+    slug: toSlug("frankie"),
+    description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
+
+The exterior is crafted from supple suede with a soft natural nap that gives the coat beautiful depth and texture. Along the front opening and hemline, the coat is trimmed with curly lamb shearling/mouton-style faux fur trim that adds warmth, movement, and visual contrast against the suede.
+
+Inside, the coat is finished with a synthetic satin lining, typical of suede coats from the era and designed to layer comfortably over sweaters and blouses.
+
+The front closes with corded loop closures, a classic vintage detail often found on suede coats of the era. The loop fasteners create a subtle, understated closure while maintaining the coat's clean lines.
+
+A small interior tag marked "Lot Size 6" remains inside — a charming detail from the coat's original manufacturing.
+
+Simple, timeless, and endlessly wearable, this is the kind of vintage suede piece that only grows better with age.
+
+A garment with a past—ready for its next chapter.
+
+Authentic vintage
+
+• Estimated era: Late 1960s – Early 1970s
+
+• Material: Curly lamb shearling/mouton-style faux fur trim & suede outer layer
+
+• Color: Rich tobacco brown suede. Cream faux shearling.
+
+• Lining: Synthetic satin
+
+• Closure: Hidden corded loop closures along the front
+
+• Length: Knee length
+
+Vintage items may show minor wear consistent with age.`,
+    images: [topangaImg2, topangaImg1, topangaImg3, topangaImg4],
+    sizes: ["XS", "S"],
+    sizeFit: {
+      modernSize: "XS / Small (US 2–4)",
+      measurements: {
+        shoulder: "17 in",
+        bust: "32 in",
+        sleeve: "25 in",
+        length: "32 in",
+      },
+      fitDescription: "Cut in a straight silhouette designed to layer comfortably while maintaining a flattering line.\n\nVintage marked Size 6.\n\nVintage sizing differs from modern sizing. Please compare measurements for the best fit.",
+    },
+    productDetails: {
+      era: "Late 1960s – Early 1970s",
+      material: "Curly lamb shearling/mouton-style faux fur trim & suede outer layer",
+      color: "Rich tobacco brown suede. Cream faux shearling.",
+      lining: "Synthetic satin",
+      closure: "Hidden corded loop closures along the front",
+      length: "Knee length",
+    },
+    careInstructions: [
+      "Professional dry clean only",
+      "Store in the breathable garment bag provided with purchase",
+      "Hang on a structured hanger to maintain the coat's shape",
+      "Avoid prolonged exposure to direct sunlight or moisture",
+      "Specialist leather and fur cleaning only",
+    ],
+    category: "penny-lane-afghan",
+  },
+  {
     id: "emmylou",
     name: "EMMYLOU",
     variant: "Vintage 1970s Suede Leather Coat – The Emmylou",
