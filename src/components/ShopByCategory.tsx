@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 
 const categories = [
 {
