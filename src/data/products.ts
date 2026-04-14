@@ -233,6 +233,10 @@ import topangaImg8 from "@/assets/products/topanga-new/topanga-new-8.webp";
 import topangaImg9 from "@/assets/products/topanga-new/topanga-new-9.webp";
 import topangaImg10 from "@/assets/products/topanga-new/topanga-new-10.webp";
 import topangaImg11 from "@/assets/products/topanga-new/topanga-new-11.webp";
+import frankieImg1 from "@/assets/products/topanga/topanga-1.webp";
+import frankieImg2 from "@/assets/products/topanga/topanga-2.webp";
+import frankieImg3 from "@/assets/products/topanga/topanga-3.webp";
+import frankieImg4 from "@/assets/products/topanga/topanga-4.webp";
 import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
 import emmylouImg2 from "@/assets/products/emmylou/emmylou-2.webp";
 import emmylouImg3 from "@/assets/products/emmylou/emmylou-3.webp";
@@ -1395,7 +1399,7 @@ Vintage items may show minor wear consistent with age.`,
     name: "FRANKIE",
     variant: "Vintage 1970s Suede Penny Lane Coat with Shearling Trim, The FRANKIE",
     price: 0,
-    image: topangaImg2,
+    image: frankieImg1,
     slug: toSlug("frankie"),
     description: `A striking vintage suede coat in a rich earthy brown tone, capturing the effortless spirit of 1970s outerwear.
 
@@ -1426,7 +1430,7 @@ Authentic vintage
 • Length: Knee length
 
 Vintage items may show minor wear consistent with age.`,
-    images: [topangaImg2, topangaImg1, topangaImg3, topangaImg4],
+    images: [frankieImg1, frankieImg2, frankieImg3, frankieImg4],
     sizes: ["XS", "S"],
     sizeFit: {
       modernSize: "XS / Small (US 2–4)",
