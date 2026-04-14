@@ -1430,7 +1430,7 @@ Authentic vintage
 • Length: Knee length
 
 Vintage items may show minor wear consistent with age.`,
-    images: [topangaImg2, topangaImg1, topangaImg3, topangaImg4],
+    images: [frankieImg1, frankieImg2, frankieImg3, frankieImg4],
     sizes: ["XS", "S"],
     sizeFit: {
       modernSize: "XS / Small (US 2–4)",
