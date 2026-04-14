@@ -3488,21 +3488,21 @@ Photos coming soon.`,
     price: 0,
     image: clover1,
     slug: toSlug("clover"),
-    description: `Clover is a beautifully expressive suede cape from the 1970s, crafted in rich earth-toned leather with hand-cut floral applique blooming across the front. Warm shades of chocolate and sand suede create depth and texture, while the organic shapes of the floral motifs give the piece its signature bohemian character.
+    description: `Clover is a beautifully expressive suede cape from the 1970s, crafted in rich earth-toned leather with hand-cut floral appliqué blooming across the front. Warm shades of chocolate and sand suede create a soft contrast, giving the piece a natural, sun-worn palette reminiscent of desert wildflowers.
 
-The silhouette is relaxed and open, designed to drape naturally over the shoulders with easy, flowing movement. A metal front zipper allows the cape to be worn closed for warmth or left open for a more dramatic layered effect.
+The silhouette drapes easily through the shoulders with open cape-style sides, allowing the piece to move fluidly while layering effortlessly. Large patch pockets are framed with geometric appliqué, grounding the organic floral design with subtle structure.
 
-Pieces like this were often one-of-a-kind or produced in very small quantities, reflecting the era's love of handcrafted, artisan-influenced outerwear.
+This is the kind of vintage piece that feels discovered rather than manufactured—textural, soulful, and full of quiet personality.
 
-A garment with a past -- ready for its next chapter.
+A garment with a past—ready for its next chapter.
 
 \u2022 Authentic vintage
 \u2022 Estimated era: 1970s
 \u2022 Material: Genuine suede leather
-\u2022 Color: Chocolate brown with warm sand applique
+\u2022 Color: Chocolate brown and warm sand
 \u2022 Lining: Unlined
 \u2022 Closure: Metal front zipper
-\u2022 Length: Mid-thigh (28 inches)
+\u2022 Length: Mid-thigh
 
 Vintage items may show wear consistent with age.`,
     images: [clover1, clover2, clover3, clover4, clover5, clover6, clover7, clover8, clover9],
@@ -3515,9 +3515,9 @@ Vintage items may show wear consistent with age.`,
     productDetails: {
       era: "1970s",
       material: "Genuine suede leather",
-      color: "Chocolate brown with warm sand applique",
+      color: "Chocolate brown and warm sand",
       closure: "Metal front zipper",
-      length: "Mid-thigh (28 inches)",
+      length: "Mid-thigh",
     },
     careInstructions: [
       "Professional dry clean only",
