@@ -436,6 +436,7 @@ export interface ProductDetails {
   length?: string;
   era?: string;
   fit?: string;
+  notableWear?: string;
 }
 
 export interface ProductWithSlug extends Product {

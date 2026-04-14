@@ -266,6 +266,7 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
             {product.productDetails.closure && <li><span className="text-foreground font-medium">Closure:</span> {product.productDetails.closure}</li>}
             {product.productDetails.length && <li><span className="text-foreground font-medium">Length:</span> {product.productDetails.length}</li>}
             {product.productDetails.fit && <li><span className="text-foreground font-medium">Fit:</span> {product.productDetails.fit}</li>}
+            {product.productDetails.notableWear && <li><span className="text-foreground font-medium">Notable wear:</span> {product.productDetails.notableWear}</li>}
           </ul>
         </Accordion>
         <Accordion title="Size & Fit">
