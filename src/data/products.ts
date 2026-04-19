@@ -3495,42 +3495,6 @@ But a garment with a past -- ready for its next chapter.`,
     ],
     category: "penny-lane-afghan",
   },
-  {
-    id: "ali",
-    name: "ALI",
-    variant: "Vintage Short Penny Lane Shearling Jacket by Navy Ann - The Ali",
-    price: 0,
-    image: "",
-    slug: toSlug("ali"),
-    description: `Some coats feel like they belong somewhere between a mountain town and a long road trip -- warm, worn-in, and quietly unforgettable. Ali is one of those pieces.
-
-Crafted by Navy Ann, this vintage jacket channels the unmistakable spirit of the classic Penny Lane silhouette. Rich chocolate faux suede forms the body, while plush golden shearling frames the coat from collar to hem.
-
-A garment with a past -- ready for its next chapter.
-
-Photos coming soon.`,
-    images: [],
-    sizes: ["XS", "S", "M", "L"],
-    sizeFit: {
-      modernSize: "TBD",
-      measurements: { shoulder: "TBD", bust: "TBD", sleeve: "TBD", length: "TBD" },
-      fitDescription: "Measurements coming when item arrives.",
-    },
-    productDetails: {
-      era: "1990s",
-      material: "Suede body. Shearling trim.",
-      color: "Chocolate brown with honey shearling trim",
-      closure: "Open",
-      length: "Hip-length",
-    },
-    careInstructions: [
-      "Professional dry clean only",
-      "Store in a breathable garment bag",
-      "Hang on a structured hanger",
-      "Specialist leather and fur cleaning only",
-    ],
-    category: "penny-lane-afghan",
-  },
   // ─── LEATHER (new) ───
   {
     id: "clover",
