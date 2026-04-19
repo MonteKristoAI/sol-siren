@@ -3446,7 +3446,7 @@ The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Mode
 Notable wear: Minor inks mark on right sleeve and back right shoulder.
 
 A garment with a past -- ready for its next chapter.`,
-    images: [celesteImg1, celesteImg2, celesteImg3, celesteImg4, celesteImg5],
+    images: [celesteImg1, celesteImg2, celesteImg3, celesteImg4, celesteImg5, celesteImg6, celesteImg7, celesteImg8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M/L",
