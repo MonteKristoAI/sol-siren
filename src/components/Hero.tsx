@@ -15,7 +15,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-28 pb-12 md:py-0 md:w-1/2">
           
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-wide text-background leading-[1.1]" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
             She's been<br />here before
           </h1>
 
