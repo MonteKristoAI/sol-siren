@@ -3305,7 +3305,7 @@ Vintage items may show wear consistent with age.`,
   },
   {
     id: "tilly-bomber",
-    name: "ORANGE PUFFER",
+    name: "TILLY",
     variant: "Vintage 1970s Burnt Orange Sherpa-Lined Colorblock Puffer Bomber Jacket – The Tilly",
     price: 0,
     image: auroraVest,
