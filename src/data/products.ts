@@ -146,6 +146,9 @@ import celesteImg2 from "@/assets/products/celeste/celeste-2.jpg";
 import celesteImg3 from "@/assets/products/celeste/celeste-3.jpg";
 import celesteImg4 from "@/assets/products/celeste/celeste-4.jpg";
 import celesteImg5 from "@/assets/products/celeste/celeste-5.jpg";
+import celesteImg6 from "@/assets/products/celeste/celeste-6.jpg";
+import celesteImg7 from "@/assets/products/celeste/celeste-7.jpg";
+import celesteImg8 from "@/assets/products/celeste/celeste-8.jpg";
 import renateImg1 from "@/assets/products/renate/renate-1.webp";
 import renateImg2 from "@/assets/products/renate/renate-2.webp";
 import renateImg3 from "@/assets/products/renate/renate-3.webp";
@@ -3443,7 +3446,7 @@ The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Mode
 Notable wear: Minor inks mark on right sleeve and back right shoulder.
 
 A garment with a past -- ready for its next chapter.`,
-    images: [celesteImg1, celesteImg2, celesteImg3, celesteImg4, celesteImg5],
+    images: [celesteImg1, celesteImg2, celesteImg3, celesteImg4, celesteImg5, celesteImg6, celesteImg7, celesteImg8],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M/L",
