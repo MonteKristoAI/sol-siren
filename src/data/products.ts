@@ -144,6 +144,8 @@ import annetteImg4 from "@/assets/products/annette/annette-4.webp";
 import celesteImg1 from "@/assets/products/celeste/celeste-1.jpg";
 import celesteImg2 from "@/assets/products/celeste/celeste-2.jpg";
 import celesteImg3 from "@/assets/products/celeste/celeste-3.jpg";
+import celesteImg4 from "@/assets/products/celeste/celeste-4.jpg";
+import celesteImg5 from "@/assets/products/celeste/celeste-5.jpg";
 import renateImg1 from "@/assets/products/renate/renate-1.webp";
 import renateImg2 from "@/assets/products/renate/renate-2.webp";
 import renateImg3 from "@/assets/products/renate/renate-3.webp";
