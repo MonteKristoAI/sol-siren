@@ -141,6 +141,9 @@ import annetteImg1 from "@/assets/products/annette/annette-1.webp";
 import annetteImg2 from "@/assets/products/annette/annette-2.webp";
 import annetteImg3 from "@/assets/products/annette/annette-3.webp";
 import annetteImg4 from "@/assets/products/annette/annette-4.webp";
+import celesteImg1 from "@/assets/products/celeste/celeste-1.jpg";
+import celesteImg2 from "@/assets/products/celeste/celeste-2.jpg";
+import celesteImg3 from "@/assets/products/celeste/celeste-3.jpg";
 import renateImg1 from "@/assets/products/renate/renate-1.webp";
 import renateImg2 from "@/assets/products/renate/renate-2.webp";
 import renateImg3 from "@/assets/products/renate/renate-3.webp";
@@ -3425,7 +3428,7 @@ Vintage items may show wear consistent with age.`,
     name: "CELESTE",
     variant: "Vintage 1970s Dan Di Modes Fur Collar Leather Wrap Coat - Dove Grey Belted Coat",
     price: 0,
-    image: "",
+    image: celesteImg1,
     slug: toSlug("celeste"),
     description: `Celeste carries the quiet glamour of late-1970s outerwear. Crafted from supple sage-grey leather and finished with a plush natural fur collar, the coat reflects the era's love for relaxed tailoring paired with statement texture.
 
@@ -3438,7 +3441,7 @@ The coat is by one of my all-time favorite designers - Dan Di Modes. Dan Di Mode
 Notable wear: Minor inks mark on right sleeve and back right shoulder.
 
 A garment with a past -- ready for its next chapter.`,
-    images: [],
+    images: [celesteImg1, celesteImg2, celesteImg3],
     sizes: ["XS", "S", "M", "L"],
     sizeFit: {
       modernSize: "M/L",
