@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import products from "@/data/products";
 import Footer from "@/components/Footer";
@@ -126,24 +126,13 @@ const ImageGallery = ({ images, name, containIndices = [] }: { images: string[];
 /* ================================================================== */
 const ProductInfo = ({ product }: { product: typeof products[number] }) => {
   const { addItem } = useCart();
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
-  const [sizeError, setSizeError] = useState(false);
 
   const handleAdd = () => {
-    if (!selectedSize) {
-      setSizeError(true);
-      return;
-    }
-    for (let i = 0; i < qty; i++) addItem({ ...product, selectedSize });
+    for (let i = 0; i < qty; i++) addItem({ ...product });
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
-  };
-
-  const handleSizeSelect = (s: string) => {
-    setSelectedSize(s);
-    setSizeError(false);
   };
 
   return (
@@ -167,45 +156,8 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
 
       <div className="w-full h-[1px] bg-border my-8" />
 
-      {/* Size selector */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <p className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground">Size</p>
-          {selectedSize && (
-            <span className="flex items-center gap-1 font-body text-[10px] text-[#5a7d5a]">
-              <Check size={12} /> Size selected
-            </span>
-          )}
-        </div>
-        <motion.div
-          className="flex gap-2"
-          animate={sizeError ? { x: [0, -6, 6, -4, 4, 0] } : {}}
-          transition={{ duration: 0.15 }}
-        >
-          {product.sizes.map((s) => (
-            <button
-              key={s}
-              onClick={() => handleSizeSelect(s)}
-              className={`px-4 py-2 border font-body text-xs tracking-wide transition-all duration-200 ${
-                selectedSize === s
-                  ? "border-foreground bg-foreground text-primary-foreground"
-                  : "border-border text-foreground hover:border-foreground"
-              }`}
-            >
-              {s}
-            </button>
-          ))}
-        </motion.div>
-        <div
-          className="overflow-hidden transition-all duration-300"
-          style={{ maxHeight: sizeError ? 24 : 0, opacity: sizeError ? 1 : 0 }}
-        >
-          <p className="mt-2 font-body text-[11px] text-[#c0392b]/80">Please select a size.</p>
-        </div>
-      </div>
-
       {/* Quantity */}
-      <div className="mt-6">
+      <div>
         <p className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground mb-3">Quantity</p>
         <div className="flex items-center border border-border w-fit">
           <button onClick={() => setQty(Math.max(1, qty - 1))} className="px-3 py-2 text-foreground hover:bg-muted transition-colors">
@@ -234,9 +186,7 @@ const ProductInfo = ({ product }: { product: typeof products[number] }) => {
       ) : (
         <button
           onClick={handleAdd}
-          className={`mt-8 w-full flex items-center justify-center gap-2 bg-foreground text-primary-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase transition-all duration-300 ${
-            selectedSize ? "hover:bg-foreground/90" : "opacity-75 hover:opacity-85"
-          }`}
+          className="mt-8 w-full flex items-center justify-center gap-2 bg-foreground text-primary-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase transition-all duration-300 hover:bg-foreground/90"
         >
           <ShoppingBag size={14} />
           {added ? "Added ✓" : "Add to Cart"}

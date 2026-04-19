@@ -54,9 +54,6 @@ const CartDrawer = () => {
                   <div className="flex-1 flex flex-col justify-between min-w-0">
                     <div>
                       <h4 className="font-display text-base font-light text-foreground truncate">{item.name}</h4>
-                      {item.selectedSize && (
-                        <p className="font-body text-[10px] tracking-wide text-muted-foreground">Size: {item.selectedSize}</p>
-                      )}
                       <p className="font-body text-xs text-muted-foreground">${item.price}.00</p>
                     </div>
                     <div className="flex items-center gap-3">
