@@ -1009,6 +1009,7 @@ Vintage items may show wear consistent with age.`,
   },
   {
     id: "carol",
+    sold: true,
     name: "CAROL",
     variant: "Vintage 1970s Blonde Fox Fur & Leather Panel Coat – The Carol",
     price: 0,
