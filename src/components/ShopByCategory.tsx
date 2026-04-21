@@ -9,7 +9,7 @@ import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
 const categories = [
 {
   name: "Fur",
-  image: fayeImg1,
+  image: furCategory,
   link: "/shop?category=fur"
 },
 {
