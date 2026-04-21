@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
-import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
+import pennyLaneCategory from "@/assets/categories/penny-lane.webp";
 import apresSkiCategory from "@/assets/categories/apres-ski.webp";
 import overcoatCategory from "@/assets/categories/overcoat.webp";
 import furCategory from "@/assets/categories/fur.webp";
@@ -19,7 +19,7 @@ const categories = [
 },
 {
   name: "Penny Lane / Afghan",
-  image: topangaImg1,
+  image: pennyLaneCategory,
   link: "/shop?category=penny-lane-afghan"
 },
 {
@@ -64,8 +64,8 @@ const ShopByCategory = () => {
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           
             <div className="absolute inset-0 bg-foreground/30 transition-colors duration-500 group-hover:bg-foreground/45" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display text-xs tracking-[0.3em] uppercase text-background">
+            <div className="absolute inset-0 flex items-center justify-center px-2">
+              <span className="font-display text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-background text-center whitespace-nowrap">
                 {cat.name}
               </span>
             </div>
