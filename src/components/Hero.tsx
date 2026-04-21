@@ -37,12 +37,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="md:w-1/2 w-full h-[60vh] md:h-screen relative">
+          className="md:w-1/2 w-full h-[60vh] md:h-screen relative bg-foreground">
           
           <img
             src={HERO_IMAGE}
-            alt="Model wearing new collection"
-            className="absolute inset-0 w-full h-full object-cover object-center shadow-[-30px_0_60px_-15px_rgba(0,0,0,0.5)]" />
+            alt="Model wearing vintage shearling fur coat"
+            className="absolute inset-0 w-full h-full object-contain object-center" />
           
         </motion.div>
       </div>
