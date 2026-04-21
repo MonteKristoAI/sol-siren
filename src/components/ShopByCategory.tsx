@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
-import sunnyImg1 from "@/assets/products/sunny/sunny-1.webp";
+import apresSkiCategory from "@/assets/categories/apres-ski.webp";
 import fayeImg1 from "@/assets/products/faye/faye-1.webp";
 import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
 import dianaImg1 from "@/assets/products/diana/diana-1.webp";
@@ -29,7 +29,7 @@ const categories = [
 },
 {
   name: "Apres Ski",
-  image: sunnyImg1,
+  image: apresSkiCategory,
   link: "/shop?category=apres-ski"
 },
 {
