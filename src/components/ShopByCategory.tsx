@@ -29,7 +29,7 @@ const categories = [
 },
 {
   name: "Apres Ski",
-  image: sunnyImg1,
+  image: apresSkiCategory,
   link: "/shop?category=apres-ski"
 },
 {
