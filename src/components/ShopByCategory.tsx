@@ -24,7 +24,7 @@ const categories = [
 },
 {
   name: "Overcoat",
-  image: dianaImg1,
+  image: overcoatCategory,
   link: "/shop?category=overcoat"
 },
 {
