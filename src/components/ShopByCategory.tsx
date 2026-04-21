@@ -3,13 +3,13 @@ import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-fl
 import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
 import apresSkiCategory from "@/assets/categories/apres-ski.webp";
 import overcoatCategory from "@/assets/categories/overcoat.webp";
-import fayeImg1 from "@/assets/products/faye/faye-1.webp";
+import furCategory from "@/assets/categories/fur.webp";
 import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
 
 const categories = [
 {
   name: "Fur",
-  image: fayeImg1,
+  image: furCategory,
   link: "/shop?category=fur"
 },
 {
