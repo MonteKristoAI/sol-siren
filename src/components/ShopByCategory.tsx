@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 import topangaImg1 from "@/assets/products/topanga/topanga-1.webp";
 import apresSkiCategory from "@/assets/categories/apres-ski.webp";
+import overcoatCategory from "@/assets/categories/overcoat.webp";
 import fayeImg1 from "@/assets/products/faye/faye-1.webp";
 import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
-import dianaImg1 from "@/assets/products/diana/diana-1.webp";
 
 const categories = [
 {
@@ -24,7 +24,7 @@ const categories = [
 },
 {
   name: "Overcoat",
-  image: dianaImg1,
+  image: overcoatCategory,
   link: "/shop?category=overcoat"
 },
 {
