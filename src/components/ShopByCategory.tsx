@@ -64,8 +64,8 @@ const ShopByCategory = () => {
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           
             <div className="absolute inset-0 bg-foreground/30 transition-colors duration-500 group-hover:bg-foreground/45" />
-            <div className="absolute inset-0 flex items-center justify-center px-2">
-              <span className="font-display text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-background text-center whitespace-nowrap">
+            <div className="absolute inset-0 flex items-center justify-center px-3">
+              <span className="font-display text-[11px] sm:text-xs tracking-[0.25em] uppercase text-background text-center leading-relaxed">
                 {cat.name}
               </span>
             </div>
