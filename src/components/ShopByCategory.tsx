@@ -4,7 +4,7 @@ import pennyLaneCategory from "@/assets/categories/penny-lane.webp";
 import apresSkiCategory from "@/assets/categories/apres-ski.webp";
 import overcoatCategory from "@/assets/categories/overcoat.webp";
 import furCategory from "@/assets/categories/fur.webp";
-import emmylouImg1 from "@/assets/products/emmylou/emmylou-1.webp";
+import leatherCategory from "@/assets/categories/leather.webp";
 
 const categories = [
 {
@@ -14,7 +14,7 @@ const categories = [
 },
 {
   name: "Leather",
-  image: emmylouImg1,
+  image: leatherCategory,
   link: "/shop?category=leather"
 },
 {
