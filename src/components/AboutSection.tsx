@@ -1,9 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-
-const ABOUT_IMAGE =
-"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format&fit=crop";
+import ABOUT_IMAGE from "@/assets/about-image.webp";
 
 const AboutSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
