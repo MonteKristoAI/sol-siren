@@ -12,11 +12,15 @@ interface ChatMessage {
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "agent",
-  content: "she's been here before. what brings you in today?",
+  content: "she's been here before. anything i can help you find?",
 };
+
+const POPUP_DELAY_MS = 5500;
+const POPUP_DISMISS_KEY = "sol-siren-concierge-tooltip-dismissed";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
   const [chatId, setChatId] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
@@ -25,6 +29,20 @@ export default function ChatWidget() {
   const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem(POPUP_DISMISS_KEY) === "1") return;
+    const t = setTimeout(() => setTooltipOpen(true), POPUP_DELAY_MS);
+    return () => clearTimeout(t);
+  }, []);
+
+  function dismissTooltip() {
+    setTooltipOpen(false);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(POPUP_DISMISS_KEY, "1");
+    }
+  }
 
   useEffect(() => {
     if (open && !chatId && !starting) {
@@ -91,15 +109,52 @@ export default function ChatWidget() {
     }
   }
 
+  function handleBubbleClick() {
+    setTooltipOpen(false);
+    setOpen((v) => !v);
+  }
+
   return (
     <>
+      <AnimatePresence>
+        {tooltipOpen && !open && (
+          <motion.div
+            key="concierge-tooltip"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.28 }}
+            className="fixed bottom-24 right-6 z-50 max-w-[260px] bg-background border border-foreground px-4 py-3 flex items-start gap-3"
+            role="status"
+          >
+            <p className="font-body italic text-[14px] leading-snug text-foreground">
+              she's been here before. anything i can help you find?
+            </p>
+            <button
+              type="button"
+              aria-label="Dismiss"
+              onClick={dismissTooltip}
+              className="text-muted-foreground hover:text-foreground transition-colors -mr-1 -mt-1"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <button
         type="button"
         aria-label={open ? "Close concierge" : "Open concierge"}
-        onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 h-14 px-5 border border-foreground bg-background text-foreground font-display text-[10px] uppercase tracking-fashion hover:bg-foreground hover:text-background transition-colors duration-300"
+        onClick={handleBubbleClick}
+        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-foreground text-background flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-200"
       >
-        {open ? "close" : "concierge"}
+        {open ? (
+          <X className="h-5 w-5" />
+        ) : (
+          <span className="font-display text-[18px] leading-none tracking-wide" style={{ color: "#FAF8F4" }}>
+            S
+          </span>
+        )}
       </button>
 
       <AnimatePresence>
@@ -110,7 +165,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-50 w-[min(92vw,400px)] h-[min(80vh,580px)] bg-background border border-foreground flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-[min(92vw,380px)] h-[min(80vh,580px)] bg-background border border-foreground flex flex-col shadow-xl"
             role="dialog"
             aria-label="Sol Siren concierge"
           >
@@ -133,18 +188,11 @@ export default function ChatWidget() {
               </button>
             </header>
 
-            <div
-              ref={scrollRef}
-              className="flex-1 overflow-y-auto px-5 py-5 space-y-5"
-            >
+            <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-5 space-y-5">
               {messages.map((m) => (
                 <div
                   key={m.id}
-                  className={
-                    m.role === "user"
-                      ? "flex justify-end"
-                      : "flex justify-start"
-                  }
+                  className={m.role === "user" ? "flex justify-end" : "flex justify-start"}
                 >
                   <p
                     className={
@@ -162,14 +210,14 @@ export default function ChatWidget() {
                   she's listening…
                 </p>
               )}
-              {error && (
-                <p className="font-body text-[13px] text-destructive border-t border-border pt-3">
-                  {error}
-                </p>
-              )}
               {starting && messages.length === 1 && (
                 <p className="font-body italic text-[13px] text-muted-foreground">
                   opening the door…
+                </p>
+              )}
+              {error && (
+                <p className="font-body text-[13px] text-destructive border-t border-border pt-3">
+                  {error}
                 </p>
               )}
             </div>
