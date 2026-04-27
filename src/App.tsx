@@ -8,7 +8,6 @@ import { CartProvider } from "@/contexts/CartContext";
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/Navbar";
 import CartDrawer from "@/components/CartDrawer";
-import ChatWidget from "@/components/ChatWidget";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
@@ -34,7 +33,6 @@ const App = () => (
           <ScrollToTop />
           <Navbar />
           <CartDrawer />
-          <ChatWidget />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
