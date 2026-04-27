@@ -165,7 +165,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-50 w-[min(92vw,380px)] h-[min(80vh,580px)] bg-background border border-foreground flex flex-col shadow-xl"
+            className="fixed top-28 bottom-24 right-4 sm:right-6 left-4 sm:left-auto z-50 sm:w-[min(92vw,380px)] max-h-[580px] bg-background border border-foreground flex flex-col shadow-xl"
             role="dialog"
             aria-label="Sol Siren concierge"
           >
@@ -227,7 +227,8 @@ export default function ChatWidget() {
                 e.preventDefault();
                 sendMessage();
               }}
-              className="border-t border-border px-5 py-3 flex items-end gap-3"
+              onClick={() => inputRef.current?.focus()}
+              className="border-t border-border px-5 py-4 flex items-end gap-3 cursor-text"
             >
               <textarea
                 ref={inputRef}
@@ -237,7 +238,7 @@ export default function ChatWidget() {
                 onKeyDown={onKeyDown}
                 placeholder="ask anything"
                 disabled={!chatId || sending}
-                className="flex-1 resize-none bg-transparent font-body text-[15px] leading-relaxed text-foreground placeholder:text-muted-foreground focus:outline-none max-h-32"
+                className="flex-1 resize-none bg-transparent font-body text-[15px] leading-relaxed text-foreground placeholder:text-muted-foreground focus:outline-none min-h-[36px] max-h-32 py-1.5"
               />
               <button
                 type="submit"
