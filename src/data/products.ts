@@ -477,7 +477,7 @@ function toSlug(name: string) {
 const products: ProductWithSlug[] = [
   {
     id: "cassidy",
-    name: "THE CASSIDY",
+    name: "CASSIDY",
     variant: "Vintage 1970s Borgana Fairmoor Faux Shearling Coat – The Cassidy",
     price: 340,
     image: cassidyFront,
