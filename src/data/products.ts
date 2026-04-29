@@ -436,6 +436,9 @@ import conroe1 from "@/assets/products/conroe-1.jpg";
 import conroe2 from "@/assets/products/conroe-2.jpg";
 import conroe3 from "@/assets/products/conroe-3.jpg";
 import conroe4 from "@/assets/products/conroe-4.jpg";
+import fiona1 from "@/assets/products/fiona-1.jpg";
+import fiona2 from "@/assets/products/fiona-2.jpg";
+import fiona3 from "@/assets/products/fiona-3.jpg";
 // tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
@@ -3684,6 +3687,64 @@ Vintage items may show wear consistent with age.`,
       "Hang on a padded or broad-shouldered hanger to maintain shape",
       "Avoid direct sunlight, heat, and moisture",
       "Allow shearling to breathe — do not crush or compress",
+    ],
+    category: "penny-lane-afghan",
+  },
+  {
+    id: "fiona",
+    name: "FIONA",
+    variant: "1970s Vintage Tweed Penny Lane Coat – The Fiona",
+    price: 185,
+    image: fiona1,
+    slug: toSlug("fiona"),
+    description: `1970s Vintage Tweed Penny Lane Coat, The Fiona
+
+She doesn't need a label. You can feel what she is.
+
+Fiona is a above-the-knee belted wrap coat in a chunky artisan-woven wool tweed — a rich, earthy palette of ochre yellow, sage green, warm brown, and oat, woven in a substantial basket weave that speaks to British Isles craft tradition. The kind of fabric that took real skill and real time to make.
+
+The collar is an oversized sweep of creamy faux fur, dramatic and enveloping against the structured tweed. Matching faux fur cuffs frame the wrists with equal intention. A self-fabric belt cinches the waist. The lining is a deep antique gold satin that catches the light every time she moves.
+
+The closure is the detail that sets her apart — genuine horn toggles threaded through leather loops, each one backed in dark leather. Nothing mass-produced. Nothing careless.
+
+Short enough to show the boot. Long enough to mean it.
+
+Her maker's label is gone, removed somewhere along the decades. But the wool knows where it came from.
+
+• Era: c. 1968–1973
+• Fabric: Wool tweed (burn-test confirmed)
+• Trim: Faux fur collar and cuffs
+• Lining: Antique gold satin
+• Closure: Horn toggle with leather loops
+• Label: Unlabeled — maker's label removed
+
+Vintage items may show wear consistent with age.`,
+    images: [fiona1, fiona2, fiona3],
+    sizes: ["XS/S"],
+    sizeFit: {
+      modernSize: "XS/S",
+      measurements: {
+        shoulder: "35\"",
+        bust: "28\"",
+        sleeve: "24\"",
+        length: "35\"",
+      },
+      fitDescription: "Vintage sizing differs from modern sizing. Please compare measurements for the best fit.",
+    },
+    productDetails: {
+      era: "c. 1968–1973",
+      material: "Wool tweed with faux fur collar and cuffs",
+      color: "Ochre, sage, brown, oat",
+      lining: "Antique gold satin",
+      closure: "Horn toggle with leather loops",
+      length: "Above-the-knee",
+    },
+    careInstructions: [
+      "Professional dry clean only by a specialist familiar with vintage wool and faux fur",
+      "Store in a cool, dark place in a breathable garment bag — avoid plastic",
+      "Hang on a padded or broad-shouldered hanger to maintain shape",
+      "Avoid direct sunlight, heat, and moisture",
+      "Gently brush faux fur trim to keep it lofted",
     ],
     category: "penny-lane-afghan",
   },
