@@ -1,5 +1,12 @@
 import type { Product } from "@/contexts/CartContext";
 import fayeFront from "@/assets/products/faye-front.webp";
+import cassidyFront from "@/assets/products/cassidy-front.webp";
+import cassidyBack from "@/assets/products/cassidy-back.webp";
+import cassidySide from "@/assets/products/cassidy-side.webp";
+import cassidyCollar from "@/assets/products/cassidy-collar.webp";
+import cassidyBelt from "@/assets/products/cassidy-belt.webp";
+import cassidyDetail from "@/assets/products/cassidy-detail.webp";
+import cassidyLabel from "@/assets/products/cassidy-label.webp";
 import fayeCollar from "@/assets/products/faye-collar.webp";
 import fayeClosure from "@/assets/products/faye-closure.webp";
 import fayeDetail from "@/assets/products/faye-detail.webp";
@@ -468,6 +475,67 @@ function toSlug(name: string) {
 }
 
 const products: ProductWithSlug[] = [
+  {
+    id: "cassidy",
+    name: "THE CASSIDY",
+    variant: "Vintage 1970s Borgana Fairmoor Faux Shearling Coat – The Cassidy",
+    price: 340,
+    image: cassidyFront,
+    slug: toSlug("cassidy"),
+    description: `1970s Borgana Fairmoor Belted Faux Shearling Coat - Brown Borg Fabric Vintage Alpine Coat - The Cassidy
+
+She carries the quiet warmth of another decade.
+
+This striking 1970s Borgana coat is crafted from the iconic Borg Fabric, a plush faux shearling developed in America during the late 1960s. Designed to echo the look of traditional shearling while remaining lighter and more versatile, Borg fabric became synonymous with the luxurious winter coats of the era.
+
+Styled by Fairmoor, this piece features a dramatic shawl collar, a beautifully structured waist, and sculptural paneling that alternates between soft shearling and textured leather-look panels. The result is a silhouette that feels both strong and feminine — a coat made to move through cold winter air with presence.
+
+A wide belt defines the waist while vertical shearling panels create an elegant line through the skirt. The warm camel tone captures the spirit of 1970s alpine style — timeless, grounded, and quietly luxurious.
+
+It is a coat that feels both nostalgic and strikingly modern.
+
+A garment with a past—ready for its next chapter.
+
+• Authentic vintage
+• Estimated era: 1970s
+• Material: Borg Fabric Faux Shearling
+• Color: Brown/Chestnut
+• Lining: Satin
+• Closure: Front snap closure with waist belt
+• Length: Full length
+• Notable Wear: Satin interior lining
+
+Vintage items may show wear consistent with age.`,
+    images: [cassidyFront, cassidySide, cassidyBack, cassidyCollar, cassidyBelt, cassidyDetail, cassidyLabel],
+    sizes: ["S", "M"],
+    sizeFit: {
+      modernSize: "S/M",
+      measurements: {
+        shoulder: "16\"",
+        bust: "40-42\"",
+        sleeve: "24\"",
+        length: "42\"",
+      },
+      fitDescription: "Vintage sizing differs from modern sizing. Please compare measurements for the best fit.",
+    },
+    productDetails: {
+      era: "1970s",
+      material: "Borg Fabric Faux Shearling",
+      color: "Brown/Chestnut",
+      lining: "Satin",
+      closure: "Front snap closure with waist belt",
+      length: "Full length",
+      notableWear: "Satin interior lining",
+    },
+    careInstructions: [
+      "Clean by fur coat method only — do not brush, card, press, or steam",
+      "Store in a cool, dark place in a breathable garment bag — avoid plastic",
+      "Hang on a padded or broad-shouldered hanger to maintain shape",
+      "Avoid direct sunlight, heat, and moisture",
+      "Allow the pile to breathe — do not crush or compress",
+    ],
+    category: "fur",
+  },
   {
     id: "faye",
     name: "FAYE",
