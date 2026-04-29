@@ -432,6 +432,10 @@ import goldieImg4 from "@/assets/products/goldie/goldie-4.webp";
 import goldieImg5 from "@/assets/products/goldie/goldie-5.webp";
 import goldieImg6 from "@/assets/products/goldie/goldie-6.webp";
 import goldieImg7 from "@/assets/products/goldie/goldie-7.webp";
+import conroe1 from "@/assets/products/conroe-1.jpg";
+import conroe2 from "@/assets/products/conroe-2.jpg";
+import conroe3 from "@/assets/products/conroe-3.jpg";
+import conroe4 from "@/assets/products/conroe-4.jpg";
 // tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
@@ -3619,6 +3623,69 @@ Vintage items may show wear consistent with age.`,
       "Specialist leather cleaning only",
     ],
     category: "leather",
+  },
+  {
+    id: "conroe",
+    name: "CONROE",
+    variant: "Vintage Lilli Ann London Shearling Penny Lane Coat – 1970s Suede & Sheepskin Fur Trim – The Conroe",
+    price: 500,
+    image: conroe1,
+    slug: toSlug("conroe"),
+    description: `Vintage Lilli Ann London Shearling Penny Lane Coat – 1970s Suede & Sheepskin Fur Trim – The CONROE
+
+Some garments seem to carry the memory of everywhere they have been.
+
+This extraordinary shearling coat was crafted by Lilli Ann London and made in England during the late 1960s to early 1970s — a period when the brand was celebrated for its elegant tailoring and luxurious outerwear.
+
+Constructed from buttery suede and framed in sweeping panels of plush sheepskin shearling, the coat captures the effortless glamour of the era. The dramatic shawl collar, full shearling cuffs, and fur-trimmed hem create the unmistakable silhouette now affectionately known as the "Penny Lane" coat.
+
+One of the most charming details lies hidden inside.
+
+Still attached beneath the Lilli Ann label is the original boutique tag from Leon's of Conroe, Texas — a small American shop that once carried this coat decades ago. It offers a quiet glimpse into the coat's journey, suggesting it once hung in a boutique thousands of miles from where it was made, waiting for the right woman to take it home.
+
+Vintage, here, is not about nostalgia.
+It is about honoring craftsmanship from another era that no longer exists.
+
+This coat has already lived a life.
+Now it waits for its next chapter.
+
+• Authentic vintage
+• Estimated era: Late 1960s – Early 1970s
+• Material: Suede with sheepskin trim
+• Color: Camel
+• Lining: Satin
+• Closure: Hidden eye hook
+• Length: Mid-thigh/knee length
+
+Vintage items may show wear consistent with age.`,
+    images: [conroe1, conroe2, conroe3, conroe4],
+    sizes: ["S"],
+    sizeFit: {
+      modernSize: "S",
+      measurements: {
+        shoulder: "16\"",
+        bust: "36\"",
+        sleeve: "22\"",
+        length: "33\"",
+      },
+      fitDescription: "Vintage sizing differs from modern sizing. Please compare measurements for the best fit.",
+    },
+    productDetails: {
+      era: "Late 1960s – Early 1970s",
+      material: "Suede with sheepskin trim",
+      color: "Camel",
+      lining: "Satin",
+      closure: "Hidden eye hook",
+      length: "Mid-thigh/knee length",
+    },
+    careInstructions: [
+      "Professional fur and leather specialist clean only",
+      "Store in a cool, dark place in a breathable garment bag — avoid plastic",
+      "Hang on a padded or broad-shouldered hanger to maintain shape",
+      "Avoid direct sunlight, heat, and moisture",
+      "Allow shearling to breathe — do not crush or compress",
+    ],
+    category: "penny-lane-afghan",
   },
   // ─── JEWELRY ───
   {
