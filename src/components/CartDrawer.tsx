@@ -3,13 +3,35 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Plus, Minus, ShoppingBag } from "lucide-react";
+import { X, Plus, Minus, ShoppingBag, Loader2 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { createCart } from "@/lib/shopify";
 
 const CartDrawer = () => {
   const { items, count, subtotal, isOpen, closeCart, updateQty, removeItem } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
   const router = useRouter();
+
+  const handleCheckout = async () => {
+    if (items.length === 0 || checkoutLoading) return;
+    setCheckoutLoading(true);
+    setCheckoutError(null);
+    try {
+      // The cart item id IS the Shopify variant ID (set when added)
+      const lines = items.map((item) => ({
+        merchandiseId: item.id,
+        quantity: item.qty,
+      }));
+      const cart = await createCart(lines);
+      window.location.href = cart.checkoutUrl;
+    } catch (e) {
+      console.error("Checkout error:", e);
+      setCheckoutError(e instanceof Error ? e.message : "Could not start checkout");
+      setCheckoutLoading(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -91,11 +113,19 @@ const CartDrawer = () => {
                   <span className="font-body text-xs tracking-ultra-wide uppercase text-muted-foreground">Subtotal</span>
                   <span className="font-body text-base font-medium text-foreground">${subtotal.toFixed(2)}</span>
                 </div>
+                {checkoutError && (
+                  <p className="text-[11px] text-[#c0392b] font-body">{checkoutError}</p>
+                )}
                 <button
-                  onClick={() => { closeCart(); router.push("/checkout"); }}
-                  className="w-full bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors"
+                  onClick={handleCheckout}
+                  disabled={checkoutLoading}
+                  className="w-full bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Checkout (Demo)
+                  {checkoutLoading ? (
+                    <><Loader2 size={14} className="animate-spin" /> Loading checkout...</>
+                  ) : (
+                    "Checkout"
+                  )}
                 </button>
                 <button
                   onClick={() => { closeCart(); router.push("/shop"); window.scrollTo({ top: 0, behavior: "smooth" }); }}

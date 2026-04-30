@@ -6,11 +6,10 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Eye, X } from "lucide-react";
 import { useCart, type Product } from "@/contexts/CartContext";
-import products from "@/data/products";
-import type { ProductCategory } from "@/data/products";
+import type { UIProduct } from "@/lib/shopify";
 import Footer from "@/components/Footer";
 
-const categories: { label: string; value: ProductCategory | "all" }[] = [
+const categories: { label: string; value: string }[] = [
   { label: "All", value: "all" },
   { label: "Fur", value: "fur" },
   { label: "Leather", value: "leather" },
@@ -20,12 +19,12 @@ const categories: { label: string; value: ProductCategory | "all" }[] = [
   { label: "Jewelry", value: "jewelry" },
 ];
 
-const Shop = () => {
-  const [quickView, setQuickView] = useState<Product | null>(null);
+const Shop = ({ products }: { products: UIProduct[] }) => {
+  const [quickView, setQuickView] = useState<UIProduct | null>(null);
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
+  const activeCategory = searchParams.get("category") || "all";
 
   const filtered = (activeCategory === "all"
     ? products
@@ -115,8 +114,8 @@ const Shop = () => {
 };
 
 /* ================================================================== */
-const ProductCard = ({ product, index, onQuickView }: { product: Product; index: number; onQuickView: () => void }) => {
-  const slug = (product as any).slug || product.id;
+const ProductCard = ({ product, index, onQuickView }: { product: UIProduct; index: number; onQuickView: () => void }) => {
+  const slug = product.slug || product.id;
 
   return (
     <motion.div
@@ -131,7 +130,7 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
           <img
             src={product.image}
             alt={product.name}
-            className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-105 ${(product as any).containIndices?.includes(0) ? 'object-contain' : 'object-cover'}`}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             loading="lazy"
           />
         ) : (
@@ -180,7 +179,7 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
   );
 };
 
-const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () => void }) => {
+const QuickViewModal = ({ product, onClose }: { product: UIProduct; onClose: () => void }) => {
   const { addItem } = useCart();
 
   return (
@@ -213,7 +212,7 @@ const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () =>
             A timeless piece from our curated vintage-inspired collection. Designed for effortless elegance.
           </p>
           <button
-            onClick={() => { addItem(product); onClose(); }}
+            onClick={() => { addItem({ id: product.variantId || product.id, name: product.name, price: product.price, image: product.image, variant: product.variant }); onClose(); }}
             className="mt-8 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
           >
             <ShoppingBag size={14} />
