@@ -4,14 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Eye, X } from "lucide-react";
-import { useCart, type Product } from "@/contexts/CartContext";
-import products from "@/data/products";
+import { useCart } from "@/contexts/CartContext";
+import type { UIProduct } from "@/lib/shopify";
 
 /* ================================================================== */
 /*  SECTION                                                            */
 /* ================================================================== */
-const FeaturedShop = () => {
-  const [quickView, setQuickView] = useState<Product | null>(null);
+const FeaturedShop = ({ products }: { products: UIProduct[] }) => {
+  const [quickView, setQuickView] = useState<UIProduct | null>(null);
 
   return (
     <section className="bg-background py-24 md:py-32 px-6 md:px-16">
@@ -53,8 +53,8 @@ const FeaturedShop = () => {
 /* ================================================================== */
 /*  PRODUCT CARD                                                       */
 /* ================================================================== */
-const ProductCard = ({ product, onQuickView }: { product: Product; onQuickView: () => void }) => {
-  const slug = (product as any).slug || product.id;
+const ProductCard = ({ product, onQuickView }: { product: UIProduct; onQuickView: () => void }) => {
+  const slug = product.slug || product.id;
 
   return (
     <motion.div
@@ -108,7 +108,7 @@ const ProductCard = ({ product, onQuickView }: { product: Product; onQuickView: 
 /* ================================================================== */
 /*  QUICK VIEW MODAL                                                   */
 /* ================================================================== */
-const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () => void }) => {
+const QuickViewModal = ({ product, onClose }: { product: UIProduct; onClose: () => void }) => {
   const { addItem } = useCart();
 
   return (
@@ -151,7 +151,7 @@ const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () =>
 
           <button
             onClick={() => {
-              addItem(product);
+              addItem({ id: product.variantId || product.id, name: product.name, price: product.price, image: product.image, variant: product.variant });
               onClose();
             }}
             className="mt-8 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
