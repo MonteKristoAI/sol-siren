@@ -27,19 +27,22 @@ const Shop = () => {
   const pathname = usePathname();
   const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
 
-  const available = products.filter((p) => !p.sold);
-  const filtered = activeCategory === "all"
-    ? available
-    : available.filter((p) => p.category === activeCategory);
+  const filtered = (activeCategory === "all"
+    ? products
+    : products.filter((p) => p.category === activeCategory)
+  ).slice().sort((a, b) => {
+    const aIsJewelry = a.category === "jewelry" ? 1 : 0;
+    const bIsJewelry = b.category === "jewelry" ? 1 : 0;
+    if (aIsJewelry !== bIsJewelry) return aIsJewelry - bIsJewelry;
+    return a.name.localeCompare(b.name);
+  });
 
   const setCategory = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
     if (value === "all") {
-      params.delete("category");
+      router.push(pathname, { scroll: false });
     } else {
-      params.set("category", value);
+      router.push(`${pathname}?category=${value}`, { scroll: false });
     }
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (
@@ -124,12 +127,19 @@ const ProductCard = ({ product, index, onQuickView }: { product: Product; index:
       className="group"
     >
       <Link href={`/product/${slug}`} className={`relative aspect-[3/4] overflow-hidden border border-border bg-muted block ${product.sold ? "opacity-75" : ""}`}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          loading="lazy"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-105 ${(product as any).containIndices?.includes(0) ? 'object-contain' : 'object-cover'}`}
+            loading="lazy"
+          />
+        ) : (
+          <div className="h-full w-full flex flex-col items-center justify-center bg-muted">
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Photos</p>
+            <p className="font-display text-lg text-muted-foreground/60 tracking-wide">Coming Soon</p>
+          </div>
+        )}
         {product.sold && (
           <div className="absolute top-4 left-4 bg-foreground text-primary-foreground font-body text-[10px] tracking-ultra-wide uppercase px-3 py-1.5 z-10">
             Sold
@@ -216,4 +226,3 @@ const QuickViewModal = ({ product, onClose }: { product: Product; onClose: () =>
 };
 
 export default Shop;
-export { Shop as ShopClient };
