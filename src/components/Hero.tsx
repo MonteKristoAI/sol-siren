@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-const HERO_IMAGE =
-"https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1800&q=80&auto=format&fit=crop";
+import HERO_IMAGE from "@/assets/hero-image.webp";
 
 const Hero = () => {
   return (
@@ -17,8 +15,8 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-28 pb-12 md:py-0 md:w-1/2">
           
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
-            She's Been<br />Here Before
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-wide text-background leading-[1.1]" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
+            She's been<br />here before
           </h1>
 
           <div className="mt-4 font-body text-sm md:text-base text-background/80 max-w-md leading-relaxed">
@@ -41,12 +39,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="md:w-1/2 w-full h-[60vh] md:h-screen relative">
+          className="md:w-1/2 w-full h-[60vh] md:h-screen relative bg-foreground overflow-hidden">
           
           <img
-            src={HERO_IMAGE}
-            alt="Model wearing new collection"
-            className="absolute inset-0 w-full h-full object-cover object-center shadow-[-30px_0_60px_-15px_rgba(0,0,0,0.5)]" />
+            src={HERO_IMAGE.src}
+            alt="Model wearing vintage shearling fur coat"
+            className="absolute inset-0 w-full h-full object-cover object-top" />
           
         </motion.div>
       </div>

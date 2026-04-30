@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.svg";
 import { useCart } from "@/contexts/CartContext";
 
 const shopCategories = [
@@ -156,6 +156,7 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile: Shop + Cart + Hamburger */}
         <div className="flex md:hidden items-center gap-5">
           <Link
             href="/shop"

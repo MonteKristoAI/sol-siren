@@ -3,9 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-
-const ABOUT_IMAGE =
-"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format&fit=crop";
+import ABOUT_IMAGE from "@/assets/about-image.webp";
 
 const AboutSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
@@ -28,7 +26,7 @@ const AboutSection = () => {
           className="relative aspect-[3/4] overflow-hidden">
           
           <motion.img
-            src={ABOUT_IMAGE}
+            src={ABOUT_IMAGE.src}
             alt="Editorial fashion lifestyle"
             className="h-full w-full object-cover"
             style={{ y: imgY }}
