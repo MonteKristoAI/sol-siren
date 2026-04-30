@@ -432,13 +432,13 @@ import goldieImg4 from "@/assets/products/goldie/goldie-4.webp";
 import goldieImg5 from "@/assets/products/goldie/goldie-5.webp";
 import goldieImg6 from "@/assets/products/goldie/goldie-6.webp";
 import goldieImg7 from "@/assets/products/goldie/goldie-7.webp";
-import conroe1 from "@/assets/products/conroe-1.jpg";
-import conroe2 from "@/assets/products/conroe-2.jpg";
-import conroe3 from "@/assets/products/conroe-3.jpg";
-import conroe4 from "@/assets/products/conroe-4.jpg";
-import fiona1 from "@/assets/products/fiona-1.jpg";
-import fiona2 from "@/assets/products/fiona-2.jpg";
-import fiona3 from "@/assets/products/fiona-3.jpg";
+import conroe1 from "@/assets/products/conroe-1.webp";
+import conroe2 from "@/assets/products/conroe-2.webp";
+import conroe3 from "@/assets/products/conroe-3.webp";
+import conroe4 from "@/assets/products/conroe-4.webp";
+import fiona1 from "@/assets/products/fiona-1.webp";
+import fiona2 from "@/assets/products/fiona-2.webp";
+import fiona3 from "@/assets/products/fiona-3.webp";
 // tilly and romy imports already declared above
 
 export type ProductCategory = "fur" | "leather" | "penny-lane-afghan" | "overcoat" | "apres-ski" | "jewelry";
