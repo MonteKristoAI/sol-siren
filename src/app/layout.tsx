@@ -5,7 +5,6 @@ import { Providers } from "./providers";
 import Navbar from "@/components/Navbar";
 import CartDrawer from "@/components/CartDrawer";
 import ChatWidget from "@/components/ChatWidget";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,23 +54,6 @@ export default function RootLayout({
           <ChatWidget />
           {children}
         </Providers>
-        
-        <Script
-          id="retell-widget"
-          src="https://dashboard.retellai.com/retell-widget.js"
-          strategy="lazyOnload"
-          data-public-key="public_key_462b3086b404893b6a625"
-          data-agent-id="agent_869a95e48b30ebc1c7317dd683"
-          data-agent-version="V1"
-          data-title="Sol Siren"
-          data-bot-name="Anna"
-          data-popup-message="Hi, I'm Anna. Welcome to Sol Siren how can I help you today?"
-          data-show-ai-popup="true"
-          data-show-ai-popup-time="4"
-          data-auto-open="false"
-          data-color="#FFD700"
-          data-logo-url="/logo-widget.png"
-        />
       </body>
     </html>
   );
