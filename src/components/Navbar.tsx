@@ -1,8 +1,11 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.webp";
 import { useCart } from "@/contexts/CartContext";
 
 const shopCategories = [
@@ -20,22 +23,22 @@ const Navbar = () => {
   const { count, openCart } = useCart();
   const [shopOpen, setShopOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
-    if (isHome && location.hash) {
-      const id = location.hash.slice(1);
+    if (isHome && typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.slice(1);
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
-  }, [isHome, location.hash]);
+  }, [isHome]);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const linkClass =
     "relative font-body text-xs tracking-ultra-wide uppercase text-foreground/80 hover:text-foreground transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1px] after:bottom-[-2px] after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left";
@@ -62,9 +65,9 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between px-6 md:px-16 py-4 transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-sm">
         {/* Logo */}
-        <Link to="/" onClick={handleHomeClick}>
+        <Link href="/" onClick={handleHomeClick}>
           <img
-            src={logo}
+            src={logo.src}
             alt="Sol Siren Vintage"
             className="h-14 md:h-16 ml-2 md:ml-6 select-none"
             draggable={false}
@@ -73,7 +76,7 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 md:gap-12">
-          <Link to="/" onClick={handleHomeClick} className={linkClass}>
+          <Link href="/" onClick={handleHomeClick} className={linkClass}>
             Home
           </Link>
 
@@ -83,7 +86,7 @@ const Navbar = () => {
             onMouseLeave={() => setShopOpen(false)}
           >
             <Link
-              to="/shop"
+              href="/shop"
               className={linkClass}
             >
               Shop
@@ -101,7 +104,7 @@ const Navbar = () => {
                     {shopCategories.map((cat) => (
                       <Link
                         key={cat.to}
-                        to={cat.to}
+                        href={cat.to}
                         onClick={() => {
                           setShopOpen(false);
                         }}
@@ -124,13 +127,13 @@ const Navbar = () => {
             if (item.to.startsWith("/#")) {
               const sectionId = item.to.slice(2);
               return (
-                <Link key={item.label} to={`/${item.to.slice(1)}`} onClick={handleSectionClick(sectionId)} className={linkClass}>
+                <Link key={item.label} href={`/${item.to.slice(1)}`} onClick={handleSectionClick(sectionId)} className={linkClass}>
                   {item.label}
                 </Link>
               );
             }
             return (
-              <Link key={item.label} to={item.to} className={linkClass}>
+              <Link key={item.label} href={item.to} className={linkClass}>
                 {item.label}
               </Link>
             );
@@ -153,10 +156,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile: Shop + Cart + Hamburger */}
         <div className="flex md:hidden items-center gap-5">
           <Link
-            to="/shop"
+            href="/shop"
             className={linkClass}
           >
             Shop
@@ -197,14 +199,14 @@ const Navbar = () => {
             transition={{ duration: 0.25 }}
             className="fixed top-[72px] left-0 right-0 z-[55] bg-background border-b border-border shadow-md px-8 py-6 md:hidden"
           >
-            <Link to="/" onClick={(e) => { handleHomeClick(e); setMobileOpen(false); }} className={mobileLinkClass}>
+            <Link href="/" onClick={(e) => { handleHomeClick(e); setMobileOpen(false); }} className={mobileLinkClass}>
               Home
             </Link>
 
             {shopCategories.map((cat) => (
               <Link
                 key={cat.to}
-                to={cat.to}
+                href={cat.to}
                 onClick={() => { setMobileOpen(false); }}
                 className={`${mobileLinkClass} pl-4 text-xs`}
               >
@@ -212,13 +214,13 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link to="/#about" onClick={handleSectionClick("about")} className={mobileLinkClass}>
+            <Link href="/#about" onClick={handleSectionClick("about")} className={mobileLinkClass}>
               About
             </Link>
-            <Link to="/blog" onClick={() => { setMobileOpen(false); }} className={mobileLinkClass}>
+            <Link href="/blog" onClick={() => { setMobileOpen(false); }} className={mobileLinkClass}>
               Blog
             </Link>
-            <Link to="/#contact" onClick={handleSectionClick("contact")} className={mobileLinkClass}>
+            <Link href="/#contact" onClick={handleSectionClick("contact")} className={mobileLinkClass}>
               Contact
             </Link>
           </motion.div>

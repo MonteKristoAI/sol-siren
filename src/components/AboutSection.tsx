@@ -1,7 +1,11 @@
+"use client";
+
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
-import ABOUT_IMAGE from "@/assets/about-image.webp";
+import Link from "next/link";
+
+const ABOUT_IMAGE =
+"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format&fit=crop";
 
 const AboutSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
@@ -91,7 +95,7 @@ const AboutSection = () => {
             Some garments simply remember how to be worn.
           </p>
 
-          <Link to="/shop" className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start">
+          <Link href="/shop" className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start">
             
             Explore the Collection →
           </Link>

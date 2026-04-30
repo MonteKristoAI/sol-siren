@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const reviews = [
   {

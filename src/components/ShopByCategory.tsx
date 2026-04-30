@@ -1,40 +1,34 @@
-import { Link } from "react-router-dom";
-import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
-import pennyLaneCategory from "@/assets/categories/penny-lane.webp";
-import apresSkiCategory from "@/assets/categories/apres-ski.webp";
-import overcoatCategory from "@/assets/categories/overcoat.webp";
-import furCategory from "@/assets/categories/fur.webp";
-import leatherCategory from "@/assets/categories/leather.webp";
+import Link from "next/link";
 
 const categories = [
 {
   name: "Fur",
-  image: furCategory,
+  image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=fur"
 },
 {
   name: "Leather",
-  image: leatherCategory,
+  image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=leather"
 },
 {
   name: "Penny Lane / Afghan",
-  image: pennyLaneCategory,
+  image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=penny-lane-afghan"
 },
 {
   name: "Overcoat",
-  image: overcoatCategory,
+  image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=overcoat"
 },
 {
   name: "Apres Ski",
-  image: apresSkiCategory,
+  image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop",
   link: "/shop?category=apres-ski"
 },
 {
   name: "Jewelry",
-  image: herkimerFloat1,
+  image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6c4?w=800&q=80&auto=format&fit=crop",
   link: "/jewelry"
 }];
 
@@ -55,7 +49,7 @@ const ShopByCategory = () => {
         {categories.map((cat) =>
         <Link
           key={cat.name}
-          to={cat.link}
+          href={cat.link}
           className="group relative block aspect-[3/4] overflow-hidden">
           
             <img
@@ -64,8 +58,8 @@ const ShopByCategory = () => {
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           
             <div className="absolute inset-0 bg-foreground/30 transition-colors duration-500 group-hover:bg-foreground/45" />
-            <div className="absolute inset-0 flex items-center justify-center px-3">
-              <span className="font-display text-[11px] sm:text-xs tracking-[0.25em] uppercase text-background text-center leading-relaxed">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-display text-xs tracking-[0.3em] uppercase text-background">
                 {cat.name}
               </span>
             </div>

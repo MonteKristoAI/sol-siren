@@ -1,0 +1,113 @@
+# Lighthouse CI for any client website.
+# Drop this into `.github/workflows/lighthouse.yml` in the client's repo.
+# Manifesto-aligned thresholds. Blocks merge if perf <85 or LCP >3s.
+#
+# Customize the env vars at the top per client.
+
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Edit these for the specific client.
+env:
+  CLIENT_SLUG: sol-siren           # e.g. getstuffdone
+  PERF_MIN: 85
+  A11Y_MIN: 95
+  BP_MIN: 90
+  SEO_MIN: 95
+  LCP_MAX_MS: 3000
+  CLS_MAX: 0.1
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Start server
+        run: |
+          npm run start &
+          for i in {1..30}; do
+            curl -sf -o /dev/null http://localhost:3000/ && break
+            sleep 1
+          done
+          echo "server up"
+
+      - name: Run Lighthouse
+        run: |
+          npx --yes lighthouse@12 http://localhost:3000/ \
+            --quiet \
+            --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" \
+            --form-factor=mobile \
+            --throttling-method=simulate \
+            --output=json \
+            --output-path=./lh-mobile.json \
+            --only-categories=performance,accessibility,best-practices,seo
+
+      - name: Check budget
+        run: |
+          python3 <<'PY'
+          import json, os, sys
+          d = json.load(open("lh-mobile.json"))
+          c = d["categories"]
+          a = d["audits"]
+          perf = round(c["performance"]["score"] * 100)
+          a11y = round(c["accessibility"]["score"] * 100)
+          bp = round(c["best-practices"]["score"] * 100)
+          seo = round(c["seo"]["score"] * 100)
+          lcp = int(a["largest-contentful-paint"].get("numericValue", 0))
+          cls = float(a["cumulative-layout-shift"].get("numericValue", 0))
+          print(f"Perf {perf} A11y {a11y} BP {bp} SEO {seo}  LCP {lcp}ms  CLS {cls:.3f}")
+          fails = []
+          if perf < int(os.environ["PERF_MIN"]):  fails.append(f"Perf {perf} < {os.environ['PERF_MIN']}")
+          if a11y < int(os.environ["A11Y_MIN"]):  fails.append(f"A11y {a11y} < {os.environ['A11Y_MIN']}")
+          if bp   < int(os.environ["BP_MIN"]):    fails.append(f"BP {bp} < {os.environ['BP_MIN']}")
+          if seo  < int(os.environ["SEO_MIN"]):   fails.append(f"SEO {seo} < {os.environ['SEO_MIN']}")
+          if lcp  > int(os.environ["LCP_MAX_MS"]):fails.append(f"LCP {lcp}ms > {os.environ['LCP_MAX_MS']}")
+          if cls  > float(os.environ["CLS_MAX"]): fails.append(f"CLS {cls:.3f} > {os.environ['CLS_MAX']}")
+          for f in fails:
+              print(f"::error title=Perf budget::{f}")
+          # Write a job summary
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "w") as out:
+              out.write(f"## Lighthouse Mobile\n\n")
+              out.write(f"| Metric | Value | Budget |\n|---|---:|---:|\n")
+              out.write(f"| Perf | {perf} | ≥ {os.environ['PERF_MIN']} |\n")
+              out.write(f"| A11y | {a11y} | ≥ {os.environ['A11Y_MIN']} |\n")
+              out.write(f"| BP   | {bp}   | ≥ {os.environ['BP_MIN']}   |\n")
+              out.write(f"| SEO  | {seo}  | ≥ {os.environ['SEO_MIN']}  |\n")
+              out.write(f"| LCP  | {lcp}ms | ≤ {os.environ['LCP_MAX_MS']}ms |\n")
+              out.write(f"| CLS  | {cls:.3f} | ≤ {os.environ['CLS_MAX']} |\n")
+              if fails:
+                  out.write(f"\n### ❌ {len(fails)} budget violation(s)\n\n")
+                  for f in fails:
+                      out.write(f"- {f}\n")
+              else:
+                  out.write("\n### ✅ All budgets met.\n")
+          sys.exit(1 if fails else 0)
+          PY
+
+      - name: Upload Lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-${{ github.sha }}
+          path: lh-mobile.json
+          retention-days: 14

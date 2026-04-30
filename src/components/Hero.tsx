@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
-import HERO_IMAGE from "@/assets/hero-image.webp";
+
+const HERO_IMAGE =
+"https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1800&q=80&auto=format&fit=crop";
 
 const Hero = () => {
   return (
@@ -13,8 +17,8 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-28 pb-12 md:py-0 md:w-1/2">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-wide text-background leading-[1.1]" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
-            She's been<br />here before
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide text-background leading-[1.1]">
+            She's Been<br />Here Before
           </h1>
 
           <div className="mt-4 font-body text-sm md:text-base text-background/80 max-w-md leading-relaxed">
@@ -26,7 +30,7 @@ const Hero = () => {
             Intentionally curated, soulful vintage outerwear.
           </p>
 
-          <Link to="/shop"
+          <Link href="/shop"
             className="mt-8 inline-block font-body text-[11px] tracking-ultra-wide uppercase text-background/80 hover:text-background border-b border-background/30 hover:border-background pb-1 transition-all duration-300 w-fit">
             Discover the collection
           </Link>
@@ -37,12 +41,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="md:w-1/2 w-full h-[60vh] md:h-screen relative bg-foreground overflow-hidden">
+          className="md:w-1/2 w-full h-[60vh] md:h-screen relative">
           
           <img
             src={HERO_IMAGE}
-            alt="Model wearing vintage shearling fur coat"
-            className="absolute inset-0 w-full h-full object-cover object-top" />
+            alt="Model wearing new collection"
+            className="absolute inset-0 w-full h-full object-cover object-center shadow-[-30px_0_60px_-15px_rgba(0,0,0,0.5)]" />
           
         </motion.div>
       </div>
