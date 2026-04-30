@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import herkimerFloat1 from "@/assets/products/jewelry/herkimer-float/herkimer-float-1.webp";
 import pennyLaneCategory from "@/assets/categories/penny-lane.webp";
 import apresSkiCategory from "@/assets/categories/apres-ski.webp";
@@ -9,32 +9,32 @@ import leatherCategory from "@/assets/categories/leather.webp";
 const categories = [
 {
   name: "Fur",
-  image: furCategory,
+  image: furCategory.src,
   link: "/shop?category=fur"
 },
 {
   name: "Leather",
-  image: leatherCategory,
+  image: leatherCategory.src,
   link: "/shop?category=leather"
 },
 {
   name: "Penny Lane / Afghan",
-  image: pennyLaneCategory,
+  image: pennyLaneCategory.src,
   link: "/shop?category=penny-lane-afghan"
 },
 {
   name: "Overcoat",
-  image: overcoatCategory,
+  image: overcoatCategory.src,
   link: "/shop?category=overcoat"
 },
 {
   name: "Apres Ski",
-  image: apresSkiCategory,
+  image: apresSkiCategory.src,
   link: "/shop?category=apres-ski"
 },
 {
   name: "Jewelry",
-  image: herkimerFloat1,
+  image: herkimerFloat1.src,
   link: "/jewelry"
 }];
 
@@ -55,7 +55,7 @@ const ShopByCategory = () => {
         {categories.map((cat) =>
         <Link
           key={cat.name}
-          to={cat.link}
+          href={cat.link}
           className="group relative block aspect-[3/4] overflow-hidden">
           
             <img

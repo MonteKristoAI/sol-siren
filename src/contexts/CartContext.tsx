@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from "react";
 
 export interface Product {

@@ -1,4 +1,31 @@
-# Logs
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build/
+dist/
+dist-ssr
+
+# production
+*.tsbuildinfo
+next-env.d.ts
+
+# env files (NEVER commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+# vercel
+.vercel
+
+# debug logs
 logs
 *.log
 npm-debug.log*
@@ -7,18 +34,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# misc
+.DS_Store
+*.pem
 
-# Editor directories and files
+# editor
+.idea
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# legacy / migration artifacts
+.lovable
+_incoming-apr8

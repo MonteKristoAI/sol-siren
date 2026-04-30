@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Left: Logo + tagline */}
           <div className="space-y-4">
-            <img src={logo} alt="Sol Siren Vintage" className="h-20 select-none" draggable={false} />
+            <img src={logo.src} alt="Sol Siren Vintage" className="h-20 select-none" draggable={false} />
             <p className="font-body text-xs tracking-wide text-muted-foreground max-w-[240px]">
               Intentionally curated, soulful vintage outerwear.
             </p>
@@ -35,7 +35,7 @@ const Footer = () => {
                 ].map((item) => (
                   <Link
                     key={item.label}
-                    to={item.to}
+                    href={item.to}
                     className="font-body text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
                   >
                     {item.label}
@@ -55,7 +55,7 @@ const Footer = () => {
                 ].map((item) => (
                   <Link
                     key={item.label}
-                    to={item.to}
+                    href={item.to}
                     className="font-body text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
                   >
                     {item.label}

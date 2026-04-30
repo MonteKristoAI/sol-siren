@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import HERO_IMAGE from "@/assets/hero-image.webp";
 
@@ -26,7 +28,7 @@ const Hero = () => {
             Intentionally curated, soulful vintage outerwear.
           </p>
 
-          <Link to="/shop"
+          <Link href="/shop"
             className="mt-8 inline-block font-body text-[11px] tracking-ultra-wide uppercase text-background/80 hover:text-background border-b border-background/30 hover:border-background pb-1 transition-all duration-300 w-fit">
             Discover the collection
           </Link>
@@ -40,7 +42,7 @@ const Hero = () => {
           className="md:w-1/2 w-full h-[60vh] md:h-screen relative bg-foreground overflow-hidden">
           
           <img
-            src={HERO_IMAGE}
+            src={HERO_IMAGE.src}
             alt="Model wearing vintage shearling fur coat"
             className="absolute inset-0 w-full h-full object-cover object-top" />
           

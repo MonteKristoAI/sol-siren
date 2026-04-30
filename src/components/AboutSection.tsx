@@ -1,6 +1,8 @@
+"use client";
+
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import ABOUT_IMAGE from "@/assets/about-image.webp";
 
 const AboutSection = () => {
@@ -24,7 +26,7 @@ const AboutSection = () => {
           className="relative aspect-[3/4] overflow-hidden">
           
           <motion.img
-            src={ABOUT_IMAGE}
+            src={ABOUT_IMAGE.src}
             alt="Editorial fashion lifestyle"
             className="h-full w-full object-cover"
             style={{ y: imgY }}
@@ -91,7 +93,7 @@ const AboutSection = () => {
             Some garments simply remember how to be worn.
           </p>
 
-          <Link to="/shop" className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start">
+          <Link href="/shop" className="mt-10 inline-flex items-center gap-2 font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-1 hover:opacity-70 transition-opacity duration-300 self-start">
             
             Explore the Collection →
           </Link>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 
 const BlogSection = () => {
@@ -22,7 +22,7 @@ const BlogSection = () => {
           {featured.map((post) => (
             <Link
               key={post.slug}
-              to={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}`}
               className="group block"
             >
               <div className="aspect-[4/3] overflow-hidden bg-muted">
@@ -54,7 +54,7 @@ const BlogSection = () => {
         {/* View All */}
         <div className="text-center mt-14">
           <Link
-            to="/blog"
+            href="/blog"
             className="inline-block border border-foreground bg-transparent text-foreground px-10 py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground hover:text-primary-foreground transition-colors duration-300"
           >
             View All Posts

@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Eye, X } from "lucide-react";
 import { useCart, type Product } from "@/contexts/CartContext";
@@ -33,7 +35,7 @@ const FeaturedShop = () => {
       {/* View All */}
       <div className="mx-auto max-w-7xl text-center mt-14">
         <Link
-          to="/shop"
+          href="/shop"
           className="inline-block border border-foreground bg-transparent text-foreground px-10 py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground hover:text-primary-foreground transition-colors duration-300"
         >
           View All Products
@@ -62,7 +64,7 @@ const ProductCard = ({ product, onQuickView }: { product: Product; onQuickView: 
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="group"
     >
-      <Link to={`/product/${slug}`} className="relative aspect-[3/4] overflow-hidden border border-border bg-muted block">
+      <Link href={`/product/${slug}`} className="relative aspect-[3/4] overflow-hidden border border-border bg-muted block">
         {product.image ? (
           <img
             src={product.image}
@@ -86,14 +88,14 @@ const ProductCard = ({ product, onQuickView }: { product: Product; onQuickView: 
         </button>
       </Link>
 
-      <Link to={`/product/${slug}`} className="block mt-4 space-y-1">
+      <Link href={`/product/${slug}`} className="block mt-4 space-y-1">
         <h3 className="font-display text-lg md:text-xl font-light text-foreground hover:opacity-70 transition-opacity">{product.name}</h3>
         <p className="font-body text-xs tracking-wide text-muted-foreground">{product.variant}</p>
         <p className="font-body text-sm font-medium text-foreground">${product.price}.00</p>
       </Link>
 
       <Link
-        to={`/product/${slug}`}
+        href={`/product/${slug}`}
         className="mt-4 w-full flex items-center justify-center gap-2 border border-foreground bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
       >
         <ShoppingBag size={14} />

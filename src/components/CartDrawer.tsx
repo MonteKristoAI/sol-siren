@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
@@ -7,7 +9,7 @@ import { useCart } from "@/contexts/CartContext";
 const CartDrawer = () => {
   const { items, count, subtotal, isOpen, closeCart, updateQty, removeItem } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <AnimatePresence>
@@ -90,13 +92,13 @@ const CartDrawer = () => {
                   <span className="font-body text-base font-medium text-foreground">${subtotal.toFixed(2)}</span>
                 </div>
                 <button
-                  onClick={() => { closeCart(); navigate("/checkout"); }}
+                  onClick={() => { closeCart(); router.push("/checkout"); }}
                   className="w-full bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors"
                 >
                   Checkout (Demo)
                 </button>
                 <button
-                  onClick={() => { closeCart(); navigate("/shop"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  onClick={() => { closeCart(); router.push("/shop"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                   className="w-full border border-border py-3 font-body text-[10px] tracking-ultra-wide uppercase text-foreground hover:bg-muted transition-colors"
                 >
                   Continue Shopping
