@@ -67,20 +67,27 @@ async function shopifyFetch<T>({
   query,
   variables,
   cache = "no-store",
+  revalidate,
 }: {
   query: string;
   variables?: Record<string, any>;
   cache?: RequestCache;
+  revalidate?: number;
 }): Promise<T> {
-  const res = await fetch(ENDPOINT, {
+  const fetchOpts: RequestInit & { next?: { revalidate?: number } } = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "X-Shopify-Storefront-Access-Token": STOREFRONT_TOKEN,
     },
     body: JSON.stringify({ query, variables }),
-    cache,
-  });
+  };
+  if (revalidate !== undefined) {
+    fetchOpts.next = { revalidate };
+  } else {
+    fetchOpts.cache = cache;
+  }
+  const res = await fetch(ENDPOINT, fetchOpts);
 
   if (!res.ok) {
     throw new Error(`Shopify API ${res.status}: ${await res.text()}`);
@@ -133,7 +140,7 @@ function flattenProduct(p: any): ShopifyProduct {
 export async function getAllProducts(): Promise<ShopifyProduct[]> {
   const data = await shopifyFetch<{ products: { edges: { node: any }[] } }>({
     query: `query { products(first: 100) { edges { node { ${PRODUCT_FRAGMENT} } } } }`,
-    cache: "force-cache",
+    revalidate: 60,
   });
   return data.products.edges.map((e) => flattenProduct(e.node));
 }
@@ -142,7 +149,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
   const data = await shopifyFetch<{ product: any | null }>({
     query: `query Product($handle: String!) { product(handle: $handle) { ${PRODUCT_FRAGMENT} } }`,
     variables: { handle },
-    cache: "force-cache",
+    revalidate: 60,
   });
   return data.product ? flattenProduct(data.product) : null;
 }
