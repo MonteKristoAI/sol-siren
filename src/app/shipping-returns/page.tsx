@@ -22,7 +22,7 @@ const ShippingReturns = () => (
           </p>
 
           <p>
-            Each coat is presented on a custom engraved wooden hanger bearing its name — not a label, but a recognition. A quiet honoring of what it has been and what it is becoming.
+            Each coat is intentionally presented in a natural fiber garment bag, on a custom, engraved wooden hanger, bearing its name — not a label, but a recognition. A quiet honoring of what it has been and what is becoming.
           </p>
 
           <p>
@@ -55,7 +55,7 @@ const ShippingReturns = () => (
 
           <div className="w-10 h-[1px] bg-border my-4" />
 
-          <p>Orders are carefully prepared and shipped within 3–5 days.</p>
+          <p>Orders are prepared…within 2–4 business days.</p>
 
           <p className="font-medium text-foreground">Please choose with intention. All sales are final.</p>
         </div>

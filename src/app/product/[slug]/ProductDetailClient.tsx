@@ -246,11 +246,11 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
       <div className="mt-6 space-y-2">
         <div className="flex items-center gap-2 text-muted-foreground">
           <Truck size={14} />
-          <span className="font-body text-xs">Free shipping on orders over $150.</span>
+          <span className="font-body text-xs">Complimentary shipping on orders over $150.</span>
         </div>
         <div className="flex items-center gap-2 text-muted-foreground">
           <RotateCcw size={14} />
-          <span className="font-body text-xs">14-day returns.</span>
+          <span className="font-body text-xs">No returns. Please choose with intention.</span>
         </div>
       </div>
     </motion.div>
