@@ -74,7 +74,7 @@ const Jewelry = ({ products }: { products: UIProduct[] }) => {
               <Gem size={13} /> 14K Gold-Filled
             </span>
             <span className="w-[1px] h-3 bg-border" />
-            <span>Free Shipping</span>
+            <span>Complimentary Shipping</span>
             <span className="w-[1px] h-3 bg-border" />
             <span>Handcrafted</span>
           </motion.div>
@@ -178,7 +178,7 @@ const Jewelry = ({ products }: { products: UIProduct[] }) => {
               <span className="text-foreground font-medium">
                 16-18 inch adjustable chain
               </span>
-              . Free shipping on every order.
+              . Complimentary shipping on every order.
             </p>
           </motion.div>
         </section>

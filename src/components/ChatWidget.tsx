@@ -14,7 +14,7 @@ interface ChatMessage {
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "agent",
-  content: "she's been here before. anything i can help you find?",
+  content: "I've been here before…",
 };
 
 const POPUP_DELAY_MS = 5500;
@@ -130,7 +130,7 @@ export default function ChatWidget() {
             role="status"
           >
             <p className="font-body italic text-[14px] leading-snug text-foreground">
-              she's been here before. anything i can help you find?
+              I've been here before…
             </p>
             <button
               type="button"
