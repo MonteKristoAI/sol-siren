@@ -184,7 +184,16 @@ const CART_FRAGMENT = `
 `;
 
 function flattenCart(c: any): Cart {
-  return { ...c, lines: c.lines.edges.map((e: any) => e.node) };
+  // Rewrite checkoutUrl to use myshopify.com host. Shopify generates checkout
+  // URLs from the configured primary domain (currently solsirenvintage.com),
+  // but that domain now resolves to Vercel and has no /cart/c/ route.
+  // Routing checkout through the myshopify host keeps Shopify-hosted checkout
+  // working until the primary domain is reassigned in Shopify admin.
+  const checkoutUrl = (c.checkoutUrl || "").replace(
+    /^https?:\/\/[^/]+/,
+    `https://${STORE_DOMAIN}`,
+  );
+  return { ...c, checkoutUrl, lines: c.lines.edges.map((e: any) => e.node) };
 }
 
 export async function createCart(lines: { merchandiseId: string; quantity: number }[] = []): Promise<Cart> {
