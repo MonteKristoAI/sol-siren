@@ -58,16 +58,23 @@ const BlogPostClient = () => {
         </div>
 
         {/* Content */}
-        <div className="mt-10 space-y-6">
-          {post.content.split("\n\n").map((paragraph, i) => (
-            <p
-              key={i}
-              className="font-body text-sm md:text-base text-foreground/80 leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        {post.htmlBody ? (
+          <div
+            className="mt-10 font-body text-sm md:text-base text-foreground/80 leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-light [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-xl [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:mb-6 [&_ul]:pl-5 [&_ul]:list-disc [&_li]:mb-2 [&_img]:my-8 [&_img]:w-full [&_img]:h-auto [&_svg]:my-8 [&_svg]:max-w-full [&_svg]:h-auto [&_figure]:my-8 [&_figcaption]:text-xs [&_figcaption]:opacity-60 [&_table]:w-full [&_table]:my-8 [&_table]:text-sm [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_.byline]:text-xs [&_.byline]:tracking-wide [&_.byline]:uppercase [&_.byline]:opacity-60 [&_.byline]:mb-6 [&_aside.mk-takeaways]:border [&_aside.mk-takeaways]:border-border [&_aside.mk-takeaways]:p-6 [&_aside.mk-takeaways]:my-8 [&_aside.mk-cta]:border [&_aside.mk-cta]:border-border [&_aside.mk-cta]:p-8 [&_aside.mk-cta]:mt-12 [&_aside.mk-cta]:text-center [&_a.mk-cta-button]:inline-block [&_a.mk-cta-button]:mt-4 [&_a.mk-cta-button]:border [&_a.mk-cta-button]:border-foreground [&_a.mk-cta-button]:px-6 [&_a.mk-cta-button]:py-3 [&_a.mk-cta-button]:text-xs [&_a.mk-cta-button]:tracking-widest [&_a.mk-cta-button]:uppercase [&_a]:underline [&_a]:underline-offset-2"
+            dangerouslySetInnerHTML={{ __html: post.htmlBody }}
+          />
+        ) : (
+          <div className="mt-10 space-y-6">
+            {post.content.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="font-body text-sm md:text-base text-foreground/80 leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        )}
 
         <div className="w-12 h-[1px] bg-border my-12" />
 
