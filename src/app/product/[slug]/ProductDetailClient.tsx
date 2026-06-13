@@ -1,16 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import type { UIProduct } from "@/lib/shopify";
+import { event, gidToId } from "@/lib/metaPixel";
 import Footer from "@/components/Footer";
 
 const ProductDetailClient = ({ product }: { product: UIProduct }) => {
   const router = useRouter();
+
+  // Meta Pixel: ViewContent when a product detail page is opened.
+  useEffect(() => {
+    event("ViewContent", {
+      content_ids: [gidToId(product.variantId || product.id)],
+      content_name: product.name,
+      content_type: "product",
+      value: product.price,
+      currency: "USD",
+    });
+  }, [product.id, product.variantId, product.name, product.price]);
 
   return (
     <>
@@ -127,6 +139,16 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
         selectedSize: selectedSize || undefined,
       });
     }
+    // Meta Pixel: AddToCart.
+    const contentId = gidToId(product.variantId || product.id);
+    event("AddToCart", {
+      content_ids: [contentId],
+      content_name: product.name,
+      content_type: "product",
+      value: product.price * qty,
+      currency: "USD",
+      contents: [{ id: contentId, quantity: qty, item_price: product.price }],
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };

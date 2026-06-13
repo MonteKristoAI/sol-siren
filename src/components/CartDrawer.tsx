@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, Loader2 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { createCart } from "@/lib/shopify";
+import { event, gidToId } from "@/lib/metaPixel";
 
 const CartDrawer = () => {
   const { items, count, subtotal, isOpen, closeCart, updateQty, removeItem } = useCart();
@@ -19,6 +20,16 @@ const CartDrawer = () => {
     setCheckoutLoading(true);
     setCheckoutError(null);
     try {
+      // Meta Pixel: InitiateCheckout — the last step we control before the
+      // hand-off to Shopify-hosted checkout (Purchase fires on Shopify's side).
+      event("InitiateCheckout", {
+        content_ids: items.map((i) => gidToId(i.id)),
+        content_type: "product",
+        num_items: count,
+        value: subtotal,
+        currency: "USD",
+        contents: items.map((i) => ({ id: gidToId(i.id), quantity: i.qty, item_price: i.price })),
+      });
       // The cart item id IS the Shopify variant ID (set when added)
       const lines = items.map((item) => ({
         merchandiseId: item.id,
