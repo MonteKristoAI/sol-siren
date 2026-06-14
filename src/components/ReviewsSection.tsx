@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import ReviewGate from "@/components/ReviewGate";
 
 const reviews = [
   {
@@ -78,16 +79,9 @@ const ReviewsSection = () => {
         ))}
       </div>
 
-      {/* Bottom Link */}
+      {/* Bottom CTA — gated review flow */}
       <div className="text-center mt-14">
-        <a
-          href="https://g.page/r/CRopL5TPbBjoEAE/review"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground border-b border-muted-foreground/30 hover:border-foreground pb-1 transition-all duration-300"
-        >
-          ⭐ Leave a Review →
-        </a>
+        <ReviewGate />
       </div>
     </section>
   );
