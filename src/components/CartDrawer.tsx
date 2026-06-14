@@ -36,6 +36,9 @@ const CartDrawer = () => {
         quantity: item.qty,
       }));
       const cart = await createCart(lines);
+      // Give the InitiateCheckout pixel beacon a tick to flush before the hard
+      // cross-domain redirect to Shopify-hosted checkout cancels any in-flight request.
+      await new Promise((r) => setTimeout(r, 300));
       window.location.href = cart.checkoutUrl;
     } catch (e) {
       console.error("Checkout error:", e);
