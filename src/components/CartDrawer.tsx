@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Plus, Minus, ShoppingBag, Loader2 } from "lucide-react";
+import { X, ShoppingBag, Loader2 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { createCart } from "@/lib/shopify";
 import { event, gidToId } from "@/lib/metaPixel";
 
 const CartDrawer = () => {
-  const { items, count, subtotal, isOpen, closeCart, updateQty, removeItem } = useCart();
+  const { items, count, subtotal, isOpen, closeCart, removeItem } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
@@ -95,19 +95,7 @@ const CartDrawer = () => {
                       <p className="font-body text-xs text-muted-foreground">${item.price}.00</p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <button
-                        onClick={() => updateQty(item.id, item.qty - 1)}
-                        className="w-7 h-7 flex items-center justify-center border border-border text-foreground hover:bg-muted transition-colors"
-                      >
-                        <Minus size={12} />
-                      </button>
-                      <span className="font-body text-sm text-foreground w-4 text-center">{item.qty}</span>
-                      <button
-                        onClick={() => updateQty(item.id, item.qty + 1)}
-                        className="w-7 h-7 flex items-center justify-center border border-border text-foreground hover:bg-muted transition-colors"
-                      >
-                        <Plus size={12} />
-                      </button>
+                      <span className="font-body text-[10px] tracking-wide uppercase text-muted-foreground">One of a kind</span>
                       <button
                         onClick={() => removeItem(item.id)}
                         className="ml-auto font-body text-[10px] tracking-wide uppercase text-muted-foreground hover:text-destructive transition-colors"

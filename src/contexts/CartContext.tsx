@@ -53,7 +53,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const cartId = product.selectedSize ? `${product.id}-${product.selectedSize}` : product.id;
     setItems((prev) => {
       const existing = prev.find((i) => i.id === cartId);
-      if (existing) return prev.map((i) => (i.id === cartId ? { ...i, qty: i.qty + 1 } : i));
+      // One-of-a-kind: each piece is unique, so a line never exceeds qty 1.
+      if (existing) return prev;
       return [...prev, { ...product, id: cartId, qty: 1 }];
     });
     setIsOpen(true);
@@ -65,7 +66,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const updateQty = useCallback((id: string, qty: number) => {
     if (qty < 1) return removeItem(id);
-    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, qty } : i)));
+    // One-of-a-kind: never allow a line above a single unit.
+    const capped = Math.min(qty, 1);
+    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, qty: capped } : i)));
   }, [removeItem]);
 
   const count = items.reduce((s, i) => s + i.qty, 0);

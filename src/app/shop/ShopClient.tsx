@@ -30,6 +30,10 @@ const Shop = ({ products }: { products: UIProduct[] }) => {
     ? products
     : products.filter((p) => p.category === activeCategory)
   ).slice().sort((a, b) => {
+    // Sold pieces always sink to the very bottom of the grid.
+    const aSold = a.sold ? 1 : 0;
+    const bSold = b.sold ? 1 : 0;
+    if (aSold !== bSold) return aSold - bSold;
     const aIsJewelry = a.category === "jewelry" ? 1 : 0;
     const bIsJewelry = b.category === "jewelry" ? 1 : 0;
     if (aIsJewelry !== bIsJewelry) return aIsJewelry - bIsJewelry;

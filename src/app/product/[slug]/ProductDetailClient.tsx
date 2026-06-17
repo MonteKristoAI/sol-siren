@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Minus, Plus, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
+import { ShoppingBag, Truck, RotateCcw, ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import type { UIProduct } from "@/lib/shopify";
 import { event, gidToId } from "@/lib/metaPixel";
@@ -118,7 +118,6 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
 const ProductInfo = ({ product }: { product: UIProduct }) => {
   const { addItem } = useCart();
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const [sizeError, setSizeError] = useState(false);
 
@@ -129,25 +128,24 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
       setSizeError(true);
       return;
     }
-    for (let i = 0; i < qty; i++) {
-      addItem({
-        id: product.variantId || product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        variant: product.variant,
-        selectedSize: selectedSize || undefined,
-      });
-    }
+    // One-of-a-kind: a single unit per piece, always.
+    addItem({
+      id: product.variantId || product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      variant: product.variant,
+      selectedSize: selectedSize || undefined,
+    });
     // Meta Pixel: AddToCart.
     const contentId = gidToId(product.variantId || product.id);
     event("AddToCart", {
       content_ids: [contentId],
       content_name: product.name,
       content_type: "product",
-      value: product.price * qty,
+      value: product.price,
       currency: "USD",
-      contents: [{ id: contentId, quantity: qty, item_price: product.price }],
+      contents: [{ id: contentId, quantity: 1, item_price: product.price }],
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
@@ -225,19 +223,12 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
         </div>
       )}
 
-      {/* Quantity */}
-      <div className="mt-6">
-        <p className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground mb-3">Quantity</p>
-        <div className="flex items-center border border-border w-fit">
-          <button onClick={() => setQty(Math.max(1, qty - 1))} className="px-3 py-2 text-foreground hover:bg-muted transition-colors">
-            <Minus size={14} />
-          </button>
-          <span className="px-5 py-2 font-body text-sm text-foreground border-x border-border">{qty}</span>
-          <button onClick={() => setQty(qty + 1)} className="px-3 py-2 text-foreground hover:bg-muted transition-colors">
-            <Plus size={14} />
-          </button>
-        </div>
-      </div>
+      {/* One of a kind — no quantity choice, only one exists */}
+      {!product.sold && (
+        <p className="mt-6 font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground">
+          One of a kind · only one available
+        </p>
+      )}
 
       {/* Add to Cart */}
       {product.sold ? (
