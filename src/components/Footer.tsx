@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import { Instagram, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 const Footer = () => {
@@ -72,11 +72,14 @@ const Footer = () => {
                 Connect
               </h4>
               <div className="flex items-center gap-4">
-                <a href="#" className="text-foreground/60 hover:text-foreground transition-colors duration-300">
+                <a
+                  href="https://www.instagram.com/solsirenvintage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sol Siren Vintage on Instagram"
+                  className="text-foreground/60 hover:text-foreground transition-colors duration-300"
+                >
                   <Instagram size={18} />
-                </a>
-                <a href="#" className="text-foreground/60 hover:text-foreground transition-colors duration-300">
-                  <Facebook size={18} />
                 </a>
               </div>
             </div>
@@ -88,7 +91,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin size={13} />
-                <span className="font-body text-xs">Los Angeles, CA</span>
+                <span className="font-body text-xs">San Diego, CA</span>
               </div>
             </div>
           </div>
