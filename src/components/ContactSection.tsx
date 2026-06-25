@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Instagram, MapPin, Clock, Check } from "lucide-react";
+import { Mail, Instagram, MapPin, Check } from "lucide-react";
 
 const VALID_COLOR = "#5a7d5a"; // muted sage green
 
@@ -62,16 +62,28 @@ const ContactSection = () => {
 
           <div className="space-y-5">
             {[
-              { icon: Mail, label: "hello@solsirenvintage.com" },
-              { icon: Instagram, label: "@solsirenvintage" },
+              { icon: Mail, label: "hello@solsirenvintage.com", href: "mailto:hello@solsirenvintage.com" },
+              { icon: Instagram, label: "@solsirenvintage", href: "https://www.instagram.com/solsirenvintage" },
               { icon: MapPin, label: "United States" },
-              { icon: Clock, label: "Mon–Fri, 9 AM – 6 PM" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-3 text-muted-foreground">
-                <Icon size={15} className="flex-shrink-0" />
-                <span className="font-body text-sm">{label}</span>
-              </div>
-            ))}
+            ].map(({ icon: Icon, label, href }) =>
+              href ? (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  <Icon size={15} className="flex-shrink-0" />
+                  <span className="font-body text-sm">{label}</span>
+                </a>
+              ) : (
+                <div key={label} className="flex items-center gap-3 text-muted-foreground">
+                  <Icon size={15} className="flex-shrink-0" />
+                  <span className="font-body text-sm">{label}</span>
+                </div>
+              )
+            )}
           </div>
         </motion.div>
 

@@ -255,15 +255,19 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
         </button>
       )}
 
-      {/* Shipping notes */}
-      <div className="mt-6 space-y-2">
+      {/* Shipping + sizing notes */}
+      <div className="mt-6 space-y-3">
         <div className="flex items-center gap-2 text-muted-foreground">
-          <Truck size={14} />
-          <span className="font-body text-xs">Complimentary shipping on orders over $150.</span>
+          <Truck size={14} className="flex-shrink-0" />
+          <span className="font-body text-xs">Complimentary shipping on ALL orders.</span>
         </div>
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <RotateCcw size={14} />
-          <span className="font-body text-xs">No returns. Please choose with intention.</span>
+        <div className="flex items-start gap-2 text-muted-foreground">
+          <RotateCcw size={14} className="flex-shrink-0 mt-0.5" />
+          <span className="font-body text-xs leading-relaxed">
+            Not sure about sizing? Send us your bust, waist and shoulder measurements
+            before ordering, and we'll tell you honestly if it's right for you. Please
+            choose with intention. All sales are final, as each piece is one-of-one.
+          </span>
         </div>
       </div>
     </motion.div>

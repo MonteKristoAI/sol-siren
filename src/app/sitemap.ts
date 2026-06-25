@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllProducts } from "@/lib/shopify";
 import { archiveProducts } from "@/lib/archive-products";
-import { blogPosts } from "@/data/blog";
 
 const BASE = "https://www.solsirenvintage.com";
 
@@ -15,7 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/shop`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/jewelry`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${BASE}/archive`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${BASE}/gift-cards`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
@@ -42,12 +40,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.3,
   }));
 
-  const blog: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.5,
-  }));
-
-  return [...staticRoutes, ...liveProducts, ...archived, ...blog];
+  return [...staticRoutes, ...liveProducts, ...archived];
 }

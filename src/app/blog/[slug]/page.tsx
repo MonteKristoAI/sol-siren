@@ -1,25 +1,7 @@
-import { Metadata } from 'next';
-import { blogPosts } from '@/data/blog';
-import BlogPostClient from './BlogPostClient';
+import { redirect } from "next/navigation";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = blogPosts.find((p) => p.slug === params.slug);
-  
-  if (!post) {
-    return {
-      title: 'Post Not Found | Sol Siren',
-    };
-  }
-
-  return {
-    title: `${post.title} | Sol Siren`,
-    description: post.excerpt,
-    openGraph: {
-      images: [post.image],
-    },
-  };
-}
-
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  return <BlogPostClient />;
+// Journal entries are hidden for now. Redirect individual posts home too,
+// so old/shared links don't surface placeholder content.
+export default function BlogPostPage() {
+  redirect("/");
 }

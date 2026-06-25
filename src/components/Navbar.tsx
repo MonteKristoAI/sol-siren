@@ -121,7 +121,6 @@ const Navbar = () => {
 
           {[
             { label: "About", to: "/#about" },
-            { label: "Blog", to: "/blog" },
             { label: "Contact", to: "/#contact" },
           ].map((item) => {
             if (item.to.startsWith("/#")) {
@@ -217,9 +216,6 @@ const Navbar = () => {
 
             <Link href="/#about" onClick={handleSectionClick("about")} className={mobileLinkClass}>
               About
-            </Link>
-            <Link href="/blog" onClick={() => { setMobileOpen(false); }} className={mobileLinkClass}>
-              Blog
             </Link>
             <Link href="/#contact" onClick={handleSectionClick("contact")} className={mobileLinkClass}>
               Contact
