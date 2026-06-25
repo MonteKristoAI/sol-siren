@@ -1,9 +1,42 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getProductByHandle, toUIProduct } from "@/lib/shopify";
+import { getProductByHandle, toUIProduct, type UIProduct } from "@/lib/shopify";
 import { findArchiveByHandle } from "@/lib/archive-products";
 import ProductDetailClient from "./ProductDetailClient";
 import Footer from "@/components/Footer";
+
+const BASE = "https://www.solsirenvintage.com";
+
+// Product structured data so the piece is eligible for Google Shopping /
+// Merchant Center and rich results. Crawlers read price + availability here.
+function ProductJsonLd({ product }: { product: UIProduct }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.images?.length ? product.images : product.image ? [product.image] : [],
+    description: product.description || `Hand-curated vintage ${product.name} from Sol Siren Vintage.`,
+    sku: product.id,
+    brand: { "@type": "Brand", name: "Sol Siren Vintage" },
+    offers: {
+      "@type": "Offer",
+      url: `${BASE}/product/${product.slug}`,
+      priceCurrency: "USD",
+      price: product.price,
+      itemCondition: "https://schema.org/UsedCondition",
+      availability: product.sold
+        ? "https://schema.org/OutOfStock"
+        : "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: "Sol Siren Vintage" },
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
 
 export const revalidate = 60;
 
@@ -36,12 +69,23 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: { slug: string } }) {
   const live = await getProductByHandle(params.slug);
   if (live) {
-    return <ProductDetailClient product={toUIProduct(live)} />;
+    const product = toUIProduct(live);
+    return (
+      <>
+        <ProductJsonLd product={product} />
+        <ProductDetailClient product={product} />
+      </>
+    );
   }
 
   const archived = findArchiveByHandle(params.slug);
   if (archived) {
-    return <ProductDetailClient product={archived} />;
+    return (
+      <>
+        <ProductJsonLd product={archived} />
+        <ProductDetailClient product={archived} />
+      </>
+    );
   }
 
   return (

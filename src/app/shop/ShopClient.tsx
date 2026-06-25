@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Eye, X } from "lucide-react";
 import { useCart, type Product } from "@/contexts/CartContext";
@@ -19,12 +19,15 @@ const categories: { label: string; value: string }[] = [
   { label: "Jewelry", value: "jewelry" },
 ];
 
-const Shop = ({ products }: { products: UIProduct[] }) => {
+const Shop = ({ products, initialCategory = "all" }: { products: UIProduct[]; initialCategory?: string }) => {
   const [quickView, setQuickView] = useState<UIProduct | null>(null);
-  const searchParams = useSearchParams();
+  // Category lives in component state (seeded from the server via initialCategory),
+  // NOT from useSearchParams. Reading useSearchParams here forces the whole grid to
+  // client-only rendering, which left the server HTML empty and made the store look
+  // "parked" with no products to Google's crawler. State keeps the grid server-rendered.
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const router = useRouter();
   const pathname = usePathname();
-  const activeCategory = searchParams.get("category") || "all";
 
   const filtered = (activeCategory === "all"
     ? products
@@ -41,6 +44,8 @@ const Shop = ({ products }: { products: UIProduct[] }) => {
   });
 
   const setCategory = (value: string) => {
+    setActiveCategory(value);
+    // Keep the URL shareable/back-button friendly without re-reading searchParams.
     if (value === "all") {
       router.push(pathname, { scroll: false });
     } else {

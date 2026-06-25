@@ -10,6 +10,8 @@ import MetaPixel from "@/components/MetaPixel";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.solsirenvintage.com"),
+  alternates: { canonical: "/" },
   title: "Sol Siren Vintage — Curated Vintage Fashion & Jewelry",
   description: "Sol Siren Vintage — hand-curated vintage fur, leather, Penny Lane, overcoats, après ski, and one-of-a-kind jewelry. Each piece sourced for its story.",
   icons: {
@@ -46,9 +48,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    name: "Sol Siren Vintage",
+    url: "https://www.solsirenvintage.com",
+    logo: "https://www.solsirenvintage.com/apple-touch-icon.png",
+    description:
+      "Hand-curated vintage fur, leather, Penny Lane, overcoats, après ski, and one-of-a-kind jewelry.",
+    email: "hello@solsirenvintage.com",
+    sameAs: ["https://www.instagram.com/solsirenvintage"],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <MetaPixel />
         <Providers>
           <Navbar />
