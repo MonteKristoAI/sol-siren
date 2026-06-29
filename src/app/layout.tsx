@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../index.css";
 import { Providers } from "./providers";
-import Navbar from "@/components/Navbar";
-import CartDrawer from "@/components/CartDrawer";
-import ChatWidget from "@/components/ChatWidget";
-import MetaPixel from "@/components/MetaPixel";
+import StorefrontChrome from "@/components/StorefrontChrome";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,12 +64,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-        <MetaPixel />
         <Providers>
-          <Navbar />
-          <CartDrawer />
-          <ChatWidget />
-          {children}
+          <StorefrontChrome>{children}</StorefrontChrome>
         </Providers>
       </body>
     </html>
