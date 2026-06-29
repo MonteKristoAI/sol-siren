@@ -121,7 +121,7 @@ function TranscriptDrawer({ chat, onClose }: { chat: ChatDetail; onClose: () => 
       <div className="flex h-full w-full max-w-md flex-col bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-[#E4DAC9] px-5 py-4">
           <div>
-            <h2 className="font-display text-lg">Transcript</h2>
+            <h2 className="font-semibold text-lg">Transcript</h2>
             {chat.email && (
               <a href={`mailto:${chat.email}`} className="flex items-center gap-1.5 text-sm text-[#5C1F1F]">
                 <Mail size={13} /> {chat.email}
