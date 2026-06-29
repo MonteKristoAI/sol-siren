@@ -45,7 +45,7 @@ export default function AdminChrome({
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF7F1] text-[#1A1A1A] font-body">
+    <div className="min-h-screen bg-[#FAF7F1] text-[#1A1A1A]">
       {/* Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 z-40 w-60 transform border-r border-[#E4DAC9] bg-[#1A1A1A] text-[#F5EFE6] transition-transform md:translate-x-0 ${
@@ -53,7 +53,7 @@ export default function AdminChrome({
         }`}
       >
         <div className="flex h-16 items-center justify-between px-5">
-          <span className="font-display text-lg tracking-fashion">SOL SIREN</span>
+          <span className="font-semibold text-lg tracking-fashion">SOL SIREN</span>
           <button className="md:hidden" onClick={() => setOpen(false)} aria-label="Close menu">
             <X size={20} />
           </button>
@@ -93,7 +93,7 @@ export default function AdminChrome({
             <button className="md:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
               <Menu size={22} />
             </button>
-            <h1 className="font-display text-xl tracking-wide text-[#1A1A1A]">{title}</h1>
+            <h1 className="font-semibold text-xl tracking-wide text-[#1A1A1A]">{title}</h1>
           </div>
           <div>{action}</div>
         </header>

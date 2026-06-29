@@ -17,7 +17,7 @@ function Stat({ label, value, sub, href }: { label: string; value: React.ReactNo
   const inner = (
     <div className="rounded-lg border border-[#E4DAC9] bg-white p-5 transition-shadow hover:shadow-sm">
       <div className="text-xs uppercase tracking-widest text-[#8a7d68]">{label}</div>
-      <div className="mt-2 font-display text-3xl text-[#1A1A1A]">{value}</div>
+      <div className="mt-2 font-semibold text-3xl text-[#1A1A1A]">{value}</div>
       {sub && <div className="mt-1 text-sm text-[#8a7d68]">{sub}</div>}
     </div>
   );
@@ -53,7 +53,7 @@ export default function Dashboard() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-lg border border-[#E4DAC9] bg-white p-5">
-              <h2 className="mb-3 font-display text-lg">Recent orders</h2>
+              <h2 className="mb-3 font-semibold text-lg">Recent orders</h2>
               {s.recentOrders.length === 0 ? (
                 <p className="text-sm text-[#8a7d68]">No orders yet.</p>
               ) : (
@@ -76,7 +76,7 @@ export default function Dashboard() {
             </div>
 
             <div className="rounded-lg border border-[#E4DAC9] bg-white p-5">
-              <h2 className="mb-1 font-display text-lg">Been live longest</h2>
+              <h2 className="mb-1 font-semibold text-lg">Been live longest</h2>
               <p className="mb-3 text-xs text-[#8a7d68]">Pieces that may want fresh photos or a feature.</p>
               {s.aging.length === 0 ? (
                 <p className="text-sm text-[#8a7d68]">Nothing live yet.</p>

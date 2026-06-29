@@ -43,10 +43,10 @@ function LoginInner() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#1A1A1A] px-4 font-body text-[#F5EFE6]">
+    <div className="flex min-h-screen items-center justify-center bg-[#1A1A1A] px-4 text-[#F5EFE6]">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <div className="font-display text-3xl tracking-fashion">SOL SIREN</div>
+          <div className="font-semibold text-3xl tracking-fashion">SOL SIREN</div>
           <div className="mt-1 text-sm text-[#C9BBA6]">Studio Admin</div>
         </div>
         <form onSubmit={submit} className="space-y-4">
@@ -62,7 +62,7 @@ function LoginInner() {
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full rounded bg-[#5C1F1F] px-4 py-3 font-display tracking-wide text-[#F5EFE6] transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="w-full rounded bg-[#5C1F1F] px-4 py-3 font-semibold tracking-wide text-[#F5EFE6] transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             {loading ? "Signing in…" : "Enter"}
           </button>

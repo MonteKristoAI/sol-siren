@@ -249,7 +249,7 @@ function Modal({ title, children, onClose }: { title: string; children: React.Re
         className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="mb-4 font-display text-xl">{title}</h2>
+        <h2 className="mb-4 font-semibold text-xl">{title}</h2>
         {children}
       </div>
     </div>
