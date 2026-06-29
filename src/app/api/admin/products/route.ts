@@ -7,6 +7,7 @@ import {
   setPrice,
   createDraftProduct,
 } from "@/lib/admin/shopify-admin";
+import { moveToArchive, restoreToLive, setPriceHidden } from "@/lib/admin/shopify-extra";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -30,13 +31,18 @@ export async function PATCH(req: Request) {
   try {
     switch (b.action) {
       case "markSold":
-        await setStatus(b.id, "ARCHIVED");
-        await addTags(b.id, ["sold"]);
+      case "archive":
+        // Archived pieces stay ACTIVE + tagged so they remain on the site's
+        // brand archive (not hidden). See shopify-extra.moveToArchive.
+        await moveToArchive(b.id);
         await removeTags(b.id, ["reserved"]);
         break;
       case "restore":
-        await setStatus(b.id, "ACTIVE");
-        await removeTags(b.id, ["sold"]);
+      case "unarchive":
+        await restoreToLive(b.id);
+        break;
+      case "priceHidden":
+        await setPriceHidden(b.id, !!b.payload?.hidden);
         break;
       case "reserve":
         await addTags(b.id, ["reserved"]);

@@ -184,12 +184,12 @@ function InventoryInner() {
                     <td className="px-4 py-3"><StatusBadge p={p} reserved={reserved} /></td>
                     <td className="px-4 py-3">
                       <div className="flex justify-end gap-1.5">
-                        {p.status !== "ARCHIVED" && !p.tags.includes("sold") ? (
-                          <Act disabled={isBusy} onClick={() => act(p.id, "markSold")} kind="danger">Mark sold</Act>
+                        {p.status !== "ARCHIVED" && !p.tags.includes("sold") && !p.tags.includes("archive") ? (
+                          <Act disabled={isBusy} onClick={() => act(p.id, "archive")} kind="danger">Archive (sold)</Act>
                         ) : (
-                          <Act disabled={isBusy} onClick={() => act(p.id, "restore")}>Restore</Act>
+                          <Act disabled={isBusy} onClick={() => act(p.id, "unarchive")}>Back to live</Act>
                         )}
-                        {p.status === "ACTIVE" &&
+                        {p.status === "ACTIVE" && !p.tags.includes("archive") && !p.tags.includes("sold") &&
                           (reserved ? (
                             <Act disabled={isBusy} onClick={() => act(p.id, "unreserve")}>Release hold</Act>
                           ) : (
