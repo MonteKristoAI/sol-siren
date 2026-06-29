@@ -215,6 +215,7 @@ export async function createDraftProduct(input: {
 }
 
 export type AdminOrder = {
+  id: string;
   name: string;
   createdAt: string;
   financialStatus: string;
@@ -231,7 +232,7 @@ export async function listOrders(first = 25): Promise<AdminOrder[]> {
     `query($first: Int!){
       orders(first:$first, sortKey: CREATED_AT, reverse:true){
         edges{ node{
-          name createdAt displayFinancialStatus displayFulfillmentStatus
+          id name createdAt displayFinancialStatus displayFulfillmentStatus
           totalPriceSet{ shopMoney{ amount currencyCode } }
           customer{ displayName }
           shippingAddress{ country }
@@ -244,6 +245,7 @@ export async function listOrders(first = 25): Promise<AdminOrder[]> {
   return (data.orders?.edges || []).map((e: any) => {
     const n = e.node;
     return {
+      id: n.id,
       name: n.name,
       createdAt: n.createdAt,
       financialStatus: n.displayFinancialStatus || "",
