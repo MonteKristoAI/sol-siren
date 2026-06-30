@@ -1,4 +1,4 @@
-import { listGiftCards, createGiftCard } from "@/lib/admin/shopify-extra";
+import { listGiftCards, createGiftCard, deactivateGiftCard } from "@/lib/admin/shopify-extra";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -24,6 +24,24 @@ export async function POST(req: Request) {
   try {
     const gc = await createGiftCard(amount, b.expiresInDays ?? null, b.note);
     return Response.json({ ok: true, giftCard: gc });
+  } catch (e) {
+    return Response.json({ error: e instanceof Error ? e.message : "error" }, { status: 502 });
+  }
+}
+
+// PATCH { id, action: "deactivate" } -> disables a gift card so it can't be used.
+export async function PATCH(req: Request) {
+  let b: { id?: string; action?: string };
+  try {
+    b = await req.json();
+  } catch {
+    return Response.json({ error: "invalid body" }, { status: 400 });
+  }
+  if (!b.id) return Response.json({ error: "id required" }, { status: 400 });
+  try {
+    if (b.action === "deactivate") await deactivateGiftCard(b.id);
+    else return Response.json({ error: "unknown action" }, { status: 400 });
+    return Response.json({ ok: true });
   } catch (e) {
     return Response.json({ error: e instanceof Error ? e.message : "error" }, { status: 502 });
   }

@@ -107,26 +107,44 @@ export type AdminGiftCard = {
   id: string;
   maskedCode: string;
   balance: number;
+  initialValue: number;
   currency: string;
   enabled: boolean;
+  expiresOn: string | null;
+  note: string | null;
   createdAt: string;
 };
 
 export async function listGiftCards(): Promise<AdminGiftCard[]> {
   const data: any = await adminGraphql(
-    `query{ giftCards(first: 50, sortKey: CREATED_AT, reverse: true){ edges{ node{
-      id lastCharacters enabled createdAt
+    `query{ giftCards(first: 100, sortKey: CREATED_AT, reverse: true){ edges{ node{
+      id lastCharacters enabled createdAt expiresOn note
       balance{ amount currencyCode }
+      initialValue{ amount }
     } } } }`
   ).catch(() => ({ giftCards: { edges: [] } }));
   return (data.giftCards?.edges || []).map((e: any) => ({
     id: e.node.id,
     maskedCode: `••••${e.node.lastCharacters || ""}`,
     balance: parseFloat(e.node.balance?.amount || "0"),
+    initialValue: parseFloat(e.node.initialValue?.amount || e.node.balance?.amount || "0"),
     currency: e.node.balance?.currencyCode || "USD",
     enabled: !!e.node.enabled,
+    expiresOn: e.node.expiresOn || null,
+    note: e.node.note || null,
     createdAt: e.node.createdAt,
   }));
+}
+
+// Deactivate (disable) a gift card so it can no longer be redeemed. Shopify does
+// not allow hard-deleting gift cards; deactivation is the equivalent.
+export async function deactivateGiftCard(id: string): Promise<void> {
+  const data: any = await adminGraphql(
+    `mutation($id: ID!){ giftCardDeactivate(id: $id){ giftCard{ id enabled } userErrors{ message } } }`,
+    { id }
+  );
+  const errs = data?.giftCardDeactivate?.userErrors;
+  if (errs && errs.length) throw new Error(errs.map((e: any) => e.message).join("; "));
 }
 
 // Create a one-off gift card. expiresInDays sets an expiry; the plaintext code
