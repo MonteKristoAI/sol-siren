@@ -7,11 +7,9 @@ import { api } from "../_components/api";
 
 export default function SettingsPage() {
   const [shopify, setShopify] = useState<boolean | null>(null);
-  const [retell, setRetell] = useState<boolean | null>(null);
 
   useEffect(() => {
     api("/products").then(() => setShopify(true)).catch(() => setShopify(false));
-    api("/chats").then(() => setRetell(true)).catch(() => setRetell(false));
   }, []);
 
   return (
@@ -19,7 +17,6 @@ export default function SettingsPage() {
       <div className="max-w-2xl space-y-6">
         <Section title="Connections">
           <Row label="Shopify (store, products, orders)" ok={shopify} />
-          <Row label="Concierge chat (Retell)" ok={retell} />
           <Row label="Store" value="sol-siren-vintage.myshopify.com" />
         </Section>
 
@@ -34,7 +31,7 @@ export default function SettingsPage() {
           <ul className="list-disc space-y-1 pl-5 text-sm text-[#5a5246]">
             <li>Mark a sold piece via <b>Inventory → Archive</b>; it stays on the site under your brand archive.</li>
             <li>Print a packaging card for any piece in <b>History Cards</b>.</li>
-            <li>Update what the chatbot knows in <b>Bot Knowledge</b>; it publishes instantly.</li>
+            <li>Create a one-off gift card with its own expiry in <b>Gift Cards</b>.</li>
           </ul>
         </Section>
       </div>

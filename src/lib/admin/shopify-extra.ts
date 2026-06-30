@@ -128,3 +128,64 @@ export async function listGiftCards(): Promise<AdminGiftCard[]> {
     createdAt: e.node.createdAt,
   }));
 }
+
+// Create a one-off gift card. expiresInDays sets an expiry; the plaintext code
+// is returned ONCE (Shopify never reveals it again). Redeemable natively at
+// Shopify checkout. Requires write_gift_cards scope.
+export async function createGiftCard(
+  amount: number,
+  expiresInDays?: number | null,
+  note?: string
+): Promise<{ code: string; balance: number; currency: string; expiresOn: string | null }> {
+  let expiresOn: string | null = null;
+  if (expiresInDays && expiresInDays > 0) {
+    expiresOn = new Date(Date.now() + expiresInDays * 86400000).toISOString().slice(0, 10);
+  }
+  const input: any = { initialValue: amount.toFixed(2) };
+  if (expiresOn) input.expiresOn = expiresOn;
+  if (note) input.note = note;
+  const data: any = await adminGraphql(
+    `mutation($input: GiftCardCreateInput!){
+      giftCardCreate(input: $input){
+        giftCard { id expiresOn balance{ amount currencyCode } }
+        giftCardCode
+        userErrors{ field message }
+      }
+    }`,
+    { input }
+  );
+  const errs = data?.giftCardCreate?.userErrors;
+  if (errs && errs.length) throw new Error(errs.map((e: any) => e.message).join("; "));
+  const gc = data.giftCardCreate.giftCard;
+  return {
+    code: data.giftCardCreate.giftCardCode,
+    balance: parseFloat(gc?.balance?.amount || String(amount)),
+    currency: gc?.balance?.currencyCode || "USD",
+    expiresOn: gc?.expiresOn || expiresOn,
+  };
+}
+
+// ---- Staged image uploads (for Add Piece) ---------------------------------
+// Returns a Shopify-hosted resourceUrl for each file, usable directly as
+// productCreate media originalSource. No external storage needed.
+export async function stageUpload(filename: string, mimeType: string, bytes: Buffer): Promise<string> {
+  const data: any = await adminGraphql(
+    `mutation($input: [StagedUploadInput!]!){
+      stagedUploadsCreate(input: $input){
+        stagedTargets { url resourceUrl parameters { name value } }
+        userErrors { field message }
+      }
+    }`,
+    { input: [{ filename, mimeType, resource: "IMAGE", httpMethod: "POST" }] }
+  );
+  const errs = data?.stagedUploadsCreate?.userErrors;
+  if (errs && errs.length) throw new Error(errs.map((e: any) => e.message).join("; "));
+  const target = data.stagedUploadsCreate.stagedTargets[0];
+
+  const form = new FormData();
+  for (const p of target.parameters) form.append(p.name, p.value);
+  form.append("file", new Blob([bytes], { type: mimeType }), filename);
+  const up = await fetch(target.url, { method: "POST", body: form });
+  if (!up.ok) throw new Error(`staged upload failed ${up.status}: ${(await up.text()).slice(0, 200)}`);
+  return target.resourceUrl;
+}

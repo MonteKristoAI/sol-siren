@@ -12,8 +12,6 @@ import {
   Archive,
   Tag,
   Inbox,
-  MessagesSquare,
-  Bot,
   FolderOpen,
   Gift,
   FileText,
@@ -39,8 +37,6 @@ const NAV: NavItem[] = [
   { href: "/admin/labels", label: "History Cards", icon: Tag, group: "Orders" },
 
   { href: "/admin/inbox", label: "Inbox", icon: Inbox, group: "Customers" },
-  { href: "/admin/chats", label: "Concierge Chats", icon: MessagesSquare, group: "Customers" },
-  { href: "/admin/concierge", label: "Bot Knowledge", icon: Bot, group: "Customers" },
 
   { href: "/admin/gift-cards", label: "Gift Cards", icon: Gift, group: "Store" },
   { href: "/admin/content", label: "Content / Pages", icon: FileText, group: "Store" },
