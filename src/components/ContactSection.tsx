@@ -11,13 +11,43 @@ const validators: Record<string, { test: (v: string) => boolean; msg: string }> 
   email: { test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()), msg: "We'll contact you soon." },
 };
 
+const INQUIRY_TYPES = ["General", "Order", "Sizing", "Shipping", "Collaboration", "Similar Piece"];
+
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [values, setValues] = useState<Record<string, string>>({});
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [values, setValues] = useState<Record<string, string>>({ type: "General" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (sending) return;
+    setError("");
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: values.name || "",
+          email: values.email || "",
+          subject: values.subject || "",
+          message: values.message || "",
+          type: values.type || "General",
+          company: values.company || "", // honeypot
+        }),
+      });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(j.error || "Something went wrong. Please email hello@solsirenvintage.com.");
+        setSending(false);
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Network error. Please email hello@solsirenvintage.com.");
+      setSending(false);
+    }
   };
 
   const isValid = (name: string) => validators[name]?.test(values[name] || "") ?? false;
@@ -148,21 +178,52 @@ const ContactSection = () => {
 
               <div>
                 <label className="block font-body text-xs text-muted-foreground mb-1.5">
+                  Reason
+                </label>
+                <select
+                  value={values.type || "General"}
+                  onChange={(e) => setValues((p) => ({ ...p, type: e.target.value }))}
+                  className="w-full border border-border bg-transparent px-4 py-3 font-body text-sm text-foreground focus:outline-none focus:border-foreground transition-colors duration-200"
+                >
+                  {INQUIRY_TYPES.map((t) => (
+                    <option key={t} value={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block font-body text-xs text-muted-foreground mb-1.5">
                   Message
                 </label>
                 <textarea
                   required
                   rows={5}
                   placeholder="Tell us what's on your mind…"
+                  value={values.message || ""}
+                  onChange={(e) => setValues((p) => ({ ...p, message: e.target.value }))}
                   className="w-full border border-border bg-transparent px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-200 resize-none"
                 />
               </div>
 
+              {/* honeypot — hidden from people, catches bots */}
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={values.company || ""}
+                onChange={(e) => setValues((p) => ({ ...p, company: e.target.value }))}
+                className="hidden"
+              />
+
+              {error && <p className="font-body text-xs text-[#9a3b3b]">{error}</p>}
+
               <button
                 type="submit"
-                className="w-full bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300"
+                disabled={sending}
+                className="w-full bg-foreground text-primary-foreground py-3 font-body text-[10px] tracking-ultra-wide uppercase hover:bg-foreground/90 transition-colors duration-300 disabled:opacity-60"
               >
-                Send Message →
+                {sending ? "Sending…" : "Send Message →"}
               </button>
             </form>
           )}

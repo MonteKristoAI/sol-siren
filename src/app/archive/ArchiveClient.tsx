@@ -28,13 +28,14 @@ const fadeUp: any = {
   }),
 };
 
-const Archive = () => {
+const Archive = ({ shopifyArchived = [] }: { shopifyArchived?: any[] }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
   const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
 
-  const soldItems = products.filter((p) => p.sold);
+  // Shopify pieces archived in the admin, plus the legacy static sold pieces.
+  const soldItems = [...shopifyArchived, ...products.filter((p) => p.sold)];
   const filtered = activeCategory === "all"
     ? soldItems
     : soldItems.filter((p) => p.category === activeCategory);
