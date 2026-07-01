@@ -15,6 +15,7 @@ type Stats = {
     missingMeasurements: { count: number; sample: Sample[] };
     missingCards: { count: number; sample: Sample[] };
     newInquiries: number | null;
+    similarPieceRequests: number | null;
   };
   aging: { title: string; handle: string; createdAt: string }[];
   recentOrders: { name: string; customer: string; total: number; currency: string; createdAt: string; country: string | null }[];
@@ -39,6 +40,7 @@ export default function Dashboard() {
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <Task n={s.todo.ordersToFulfill} label="orders to fulfill" href="/admin/fulfillment" tone={s.todo.ordersToFulfill ? "warn" : "calm"} />
               <Task n={s.todo.newInquiries} label="new contact requests" href="/admin/inbox" tone={s.todo.newInquiries ? "warn" : "calm"} soon={s.todo.newInquiries === null} />
+              <Task n={s.todo.similarPieceRequests} label="similar-piece requests" href="/admin/inbox" tone={s.todo.similarPieceRequests ? "info" : "calm"} soon={s.todo.similarPieceRequests === null} />
               <Task n={s.todo.missingMeasurements.count} label="pieces missing measurements" href="/admin/inventory" sample={s.todo.missingMeasurements.sample} tone={s.todo.missingMeasurements.count ? "info" : "calm"} />
               <Task n={s.todo.missingCards.count} label="pieces missing a history card" href="/admin/labels" sample={s.todo.missingCards.sample} tone={s.todo.missingCards.count ? "info" : "calm"} />
               <Task n={s.aging.length} label="pieces live a long time" href="/admin/inventory" sample={s.aging} tone="info" />

@@ -1,14 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Globe, X, Check } from "lucide-react";
+import { Loader2, Globe, X, Check, Copy, Mail } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
 import { api, fmtDate, money } from "../_components/api";
 
+type ShipTo = { name: string; address1: string; address2: string; city: string; province: string; zip: string; country: string; phone: string };
 type Order = {
   id: string; name: string; createdAt: string; financialStatus: string; fulfillmentStatus: string;
-  total: number; currency: string; customer: string; country: string | null; items: string[];
+  total: number; currency: string; customer: string; email: string; country: string | null; ship: ShipTo | null; items: string[];
 };
+
+function shipLines(s: ShipTo): string[] {
+  return [
+    s.name,
+    s.address1,
+    s.address2,
+    [s.city, s.province, s.zip].filter(Boolean).join(", "),
+    s.country,
+  ].filter(Boolean);
+}
 
 const CHECKLIST: { key: string; label: string }[] = [
   { key: "cleaned", label: "Garment cleaned / checked" },
@@ -128,6 +139,35 @@ function ChecklistDrawer({ order, onClose }: { order: Order; onClose: () => void
           <button onClick={onClose} aria-label="Close"><X size={20} /></button>
         </div>
         <div className="flex-1 overflow-y-auto p-5">
+          {/* Ship to */}
+          {order.ship ? (
+            <div className="mb-5 rounded-lg border border-[#E4DAC9] bg-[#FAF7F1] p-4">
+              <div className="mb-1.5 flex items-center justify-between">
+                <span className="text-xs uppercase tracking-widest text-[#8a7d68]">Ship to</span>
+                <button
+                  onClick={() => navigator.clipboard?.writeText(shipLines(order.ship!).join("\n"))}
+                  className="flex items-center gap-1 rounded border border-[#E4DAC9] bg-white px-2 py-1 text-xs hover:bg-[#F5EFE6]"
+                >
+                  <Copy size={12} /> Copy
+                </button>
+              </div>
+              <address className="not-italic text-sm leading-relaxed text-[#2A2520]">
+                {shipLines(order.ship).map((l, i) => <div key={i}>{l}</div>)}
+              </address>
+              {order.ship.phone && <div className="mt-1 text-sm text-[#5a5246]">{order.ship.phone}</div>}
+              {order.email && (
+                <a href={`mailto:${order.email}`} className="mt-1 flex items-center gap-1 text-sm text-[#5C1F1F]">
+                  <Mail size={13} /> {order.email}
+                </a>
+              )}
+            </div>
+          ) : (
+            <div className="mb-5 rounded-lg border border-[#E4DAC9] bg-[#FAF7F1] p-4 text-sm text-[#8a7d68]">
+              No shipping address on this order.
+              {order.email && <a href={`mailto:${order.email}`} className="ml-1 text-[#5C1F1F]">{order.email}</a>}
+            </div>
+          )}
+
           {loading ? (
             <p className="flex items-center gap-2 text-[#8a7d68]"><Loader2 className="animate-spin" size={16} /> Loading…</p>
           ) : (

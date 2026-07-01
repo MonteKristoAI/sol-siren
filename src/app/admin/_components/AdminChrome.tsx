@@ -15,7 +15,6 @@ import {
   FolderOpen,
   Gift,
   FileText,
-  ScrollText,
   Settings,
   LogOut,
   Menu,
@@ -39,8 +38,7 @@ const NAV: NavItem[] = [
   { href: "/admin/inbox", label: "Inbox", icon: Inbox, group: "Customers" },
 
   { href: "/admin/gift-cards", label: "Gift Cards", icon: Gift, group: "Store" },
-  { href: "/admin/content", label: "Content / Pages", icon: FileText, group: "Store" },
-  { href: "/admin/policies", label: "FAQ / Policies", icon: ScrollText, group: "Store" },
+  { href: "/admin/content", label: "Site Pages", icon: FileText, group: "Store" },
   { href: "/admin/settings", label: "Settings", icon: Settings, group: "Store" },
 ];
 
