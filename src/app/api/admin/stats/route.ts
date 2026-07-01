@@ -1,6 +1,6 @@
 import { listProducts, listOrders } from "@/lib/admin/shopify-admin";
 import { getProductsMeta } from "@/lib/admin/shopify-extra";
-import { countNewInquiries } from "@/lib/admin/inbox";
+import { listInquiries } from "@/lib/admin/inbox";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -9,11 +9,13 @@ const MEAS_RE = /(\d+\s*(cm|in\b|inch|"|”)|bust|chest|length|shoulder|sleeve|w
 
 export async function GET() {
   try {
-    const [products, orders, newInquiries] = await Promise.all([
+    const [products, orders, inquiries] = await Promise.all([
       listProducts().catch(() => []),
       listOrders(50).catch(() => []),
-      countNewInquiries().catch(() => 0),
+      listInquiries(100).catch(() => []),
     ]);
+    const newInquiries = inquiries.filter((i) => i.status === "New").length;
+    const similarPieceRequests = inquiries.filter((i) => i.inquiryType === "Similar Piece" && i.status !== "Closed").length;
 
     const now = new Date();
     const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
@@ -56,6 +58,7 @@ export async function GET() {
         missingMeasurements: { count: missingMeasurements.length, sample: missingMeasurements.slice(0, 6) },
         missingCards: { count: missingCards.length, sample: missingCards.slice(0, 6) },
         newInquiries,
+        similarPieceRequests,
       },
       aging,
       recentOrders: orders.slice(0, 5),

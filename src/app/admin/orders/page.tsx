@@ -5,6 +5,7 @@ import { Globe, Loader2 } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
 import { api, fmtDate, money } from "../_components/api";
 
+type ShipTo = { city: string; province: string; country: string } | null;
 type Order = {
   name: string;
   createdAt: string;
@@ -13,7 +14,9 @@ type Order = {
   total: number;
   currency: string;
   customer: string;
+  email: string;
   country: string | null;
+  ship: ShipTo;
   items: string[];
 };
 
@@ -59,12 +62,18 @@ export default function OrdersPage() {
                 <tr key={o.name}>
                   <td className="px-4 py-3 font-medium">{o.name}</td>
                   <td className="px-4 py-3">
-                    {o.customer}
-                    {intl(o.country) && (
-                      <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-[#f3ead2] px-2 py-0.5 text-xs text-[#7a5c12]">
-                        <Globe size={11} /> {o.country}
-                      </span>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <span>{o.customer}</span>
+                      {intl(o.country) && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-[#f3ead2] px-2 py-0.5 text-xs text-[#7a5c12]">
+                          <Globe size={11} /> {o.country}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-xs text-[#8a7d68]">
+                      {[o.ship?.city, o.ship?.country].filter(Boolean).join(", ")}
+                      {o.email && <span>{o.ship?.city ? " · " : ""}{o.email}</span>}
+                    </div>
                   </td>
                   <td className="px-4 py-3 text-[#5a5246]">{o.items.join(", ") || "—"}</td>
                   <td className="px-4 py-3">{money(o.total, o.currency)}</td>

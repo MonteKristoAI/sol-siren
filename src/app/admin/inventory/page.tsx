@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, Plus, ExternalLink, Loader2 } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
@@ -41,7 +42,6 @@ function InventoryInner() {
   const [filter, setFilter] = useState<Filter>("all");
   const [busy, setBusy] = useState<string | null>(null);
   const [edit, setEdit] = useState<Product | null>(null);
-  const [creating, setCreating] = useState(false);
 
   useEffect(() => {
     const f = params.get("filter");
@@ -103,12 +103,12 @@ function InventoryInner() {
     <AdminChrome
       title="Inventory"
       action={
-        <button
-          onClick={() => setCreating(true)}
+        <Link
+          href="/admin/add-piece"
           className="flex items-center gap-2 rounded bg-[#1A1A1A] px-3 py-2 text-sm text-[#F5EFE6] hover:opacity-90"
         >
-          <Plus size={16} /> New piece
-        </button>
+          <Plus size={16} /> Add piece
+        </Link>
       }
     >
       {err && <div className="mb-4 rounded border border-[#d9b8b8] bg-[#f7eaea] px-4 py-3 text-sm text-[#5C1F1F]">{err}</div>}
@@ -212,7 +212,6 @@ function InventoryInner() {
       )}
 
       {edit && <EditDialog product={edit} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); load(); }} />}
-      {creating && <CreateDialog onClose={() => setCreating(false)} onCreated={() => { setCreating(false); load(); }} />}
     </AdminChrome>
   );
 }
@@ -312,71 +311,6 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
           <button onClick={onClose} className="rounded border border-[#E4DAC9] px-4 py-2 text-sm">Cancel</button>
           <button onClick={save} disabled={saving} className="rounded bg-[#1A1A1A] px-4 py-2 text-sm text-[#F5EFE6] disabled:opacity-50">
             {saving ? "Saving…" : "Save changes"}
-          </button>
-        </div>
-      </div>
-    </Modal>
-  );
-}
-
-function CreateDialog({ onClose, onCreated }: { onClose: () => void; onCreated: () => void }) {
-  const [title, setTitle] = useState("");
-  const [productType, setProductType] = useState("Fur");
-  const [price, setPrice] = useState("");
-  const [tags, setTags] = useState("");
-  const [desc, setDesc] = useState("");
-  const [images, setImages] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [err, setErr] = useState("");
-
-  async function create() {
-    if (!title.trim()) { setErr("Name is required"); return; }
-    setSaving(true);
-    setErr("");
-    try {
-      await api("/products", {
-        method: "POST",
-        body: JSON.stringify({
-          title,
-          productType,
-          price: price ? Number(price) : undefined,
-          tags: tags.split(",").map((t) => t.trim()).filter(Boolean),
-          descriptionHtml: desc,
-          imageUrls: images.split(/[\n,]/).map((s) => s.trim()).filter(Boolean),
-        }),
-      });
-      onCreated();
-    } catch (e: any) {
-      setErr(e.message);
-      setSaving(false);
-    }
-  }
-
-  return (
-    <Modal title="Add a new piece (saved as draft)" onClose={onClose}>
-      <div className="space-y-3">
-        <Labeled label="Name (e.g. TALLULAH — Vintage 1970s Shearling Coat)">
-          <input className={FIELD} value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
-        </Labeled>
-        <div className="grid grid-cols-2 gap-3">
-          <Labeled label="Category">
-            <select className={FIELD} value={productType} onChange={(e) => setProductType(e.target.value)}>
-              {["Fur", "Leather", "Penny Lane / Afghan", "Overcoat", "Apres Ski", "Jewelry"].map((c) => (
-                <option key={c}>{c}</option>
-              ))}
-            </select>
-          </Labeled>
-          <Labeled label="Price (USD)"><input className={FIELD} type="number" value={price} onChange={(e) => setPrice(e.target.value)} /></Labeled>
-        </div>
-        <Labeled label="Tags (era, material…)"><input className={FIELD} value={tags} onChange={(e) => setTags(e.target.value)} placeholder="1970s, Shearling, Vintage" /></Labeled>
-        <Labeled label="Story / description (HTML ok)"><textarea className={`${FIELD} h-28`} value={desc} onChange={(e) => setDesc(e.target.value)} /></Labeled>
-        <Labeled label="Image URLs (one per line)"><textarea className={`${FIELD} h-20`} value={images} onChange={(e) => setImages(e.target.value)} placeholder="https://…/photo-1.jpg" /></Labeled>
-        <p className="text-xs text-[#8a7d68]">Created as a Draft in Shopify so you review and set it live there.</p>
-        {err && <p className="text-sm text-[#5C1F1F]">{err}</p>}
-        <div className="flex justify-end gap-2 pt-2">
-          <button onClick={onClose} className="rounded border border-[#E4DAC9] px-4 py-2 text-sm">Cancel</button>
-          <button onClick={create} disabled={saving} className="rounded bg-[#1A1A1A] px-4 py-2 text-sm text-[#F5EFE6] disabled:opacity-50">
-            {saving ? "Creating…" : "Create draft"}
           </button>
         </div>
       </div>

@@ -214,6 +214,17 @@ export async function createDraftProduct(input: {
   return product;
 }
 
+export type ShipTo = {
+  name: string;
+  address1: string;
+  address2: string;
+  city: string;
+  province: string;
+  zip: string;
+  country: string;
+  phone: string;
+};
+
 export type AdminOrder = {
   id: string;
   name: string;
@@ -223,7 +234,9 @@ export type AdminOrder = {
   total: number;
   currency: string;
   customer: string;
+  email: string;
   country: string | null;
+  ship: ShipTo | null;
   items: string[];
 };
 
@@ -232,10 +245,10 @@ export async function listOrders(first = 25): Promise<AdminOrder[]> {
     `query($first: Int!){
       orders(first:$first, sortKey: CREATED_AT, reverse:true){
         edges{ node{
-          id name createdAt displayFinancialStatus displayFulfillmentStatus
+          id name createdAt displayFinancialStatus displayFulfillmentStatus email
           totalPriceSet{ shopMoney{ amount currencyCode } }
-          customer{ displayName }
-          shippingAddress{ country }
+          customer{ displayName email }
+          shippingAddress{ name address1 address2 city province provinceCode zip country phone }
           lineItems(first:10){ edges{ node{ title } } }
         } }
       }
@@ -244,6 +257,7 @@ export async function listOrders(first = 25): Promise<AdminOrder[]> {
   );
   return (data.orders?.edges || []).map((e: any) => {
     const n = e.node;
+    const a = n.shippingAddress;
     return {
       id: n.id,
       name: n.name,
@@ -253,7 +267,20 @@ export async function listOrders(first = 25): Promise<AdminOrder[]> {
       total: parseFloat(n.totalPriceSet?.shopMoney?.amount || "0"),
       currency: n.totalPriceSet?.shopMoney?.currencyCode || "USD",
       customer: n.customer?.displayName || "Guest",
-      country: n.shippingAddress?.country || null,
+      email: n.email || n.customer?.email || "",
+      country: a?.country || null,
+      ship: a
+        ? {
+            name: a.name || "",
+            address1: a.address1 || "",
+            address2: a.address2 || "",
+            city: a.city || "",
+            province: a.province || a.provinceCode || "",
+            zip: a.zip || "",
+            country: a.country || "",
+            phone: a.phone || "",
+          }
+        : null,
       items: (n.lineItems?.edges || []).map((le: any) => le.node.title),
     } as AdminOrder;
   });
