@@ -39,13 +39,13 @@ const ContactSection = () => {
       });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(j.error || "Something went wrong. Please email hello@solsirenvintage.com.");
+        setError(j.error || "Something went wrong. Please email solsirenvintage@gmail.com.");
         setSending(false);
         return;
       }
       setSubmitted(true);
     } catch {
-      setError("Network error. Please email hello@solsirenvintage.com.");
+      setError("Network error. Please email solsirenvintage@gmail.com.");
       setSending(false);
     }
   };
@@ -92,7 +92,7 @@ const ContactSection = () => {
 
           <div className="space-y-5">
             {[
-              { icon: Mail, label: "hello@solsirenvintage.com", href: "mailto:hello@solsirenvintage.com" },
+              { icon: Mail, label: "solsirenvintage@gmail.com", href: "mailto:solsirenvintage@gmail.com" },
               { icon: Instagram, label: "@solsirenvintage", href: "https://www.instagram.com/solsirenvintage" },
               { icon: MapPin, label: "United States" },
             ].map(({ icon: Icon, label, href }) =>
