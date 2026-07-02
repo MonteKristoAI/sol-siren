@@ -1,11 +1,65 @@
-import { redirect } from "next/navigation";
+import { Metadata } from "next";
+import Link from "next/link";
+import { blogPosts } from "@/data/blog";
+import Footer from "@/components/Footer";
 
-// The Journal is hidden for now (placeholder entries Erin doesn't want public).
-// Send any /blog visit back to the homepage until real editorial is ready.
-// force-dynamic so the redirect runs at request time and emits a proper 307;
-// statically prerendering an unconditional redirect renders an error page instead.
-export const dynamic = "force-dynamic";
+export const metadata: Metadata = {
+  title: "The Journal | Sol Siren",
+  description:
+    "Stories, style guides, and authentication guides for timeless vintage fashion.",
+  alternates: { canonical: "https://www.solsirenvintage.com/blog" },
+};
 
-export default function BlogIndex() {
-  redirect("/");
+export default function Blog() {
+  return (
+    <main className="bg-background pt-24 md:pt-32">
+      {/* Header */}
+      <div className="mx-auto max-w-7xl px-6 md:px-16 mb-16 text-center">
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-foreground">
+          The Journal
+        </h1>
+        <p className="mt-4 font-body text-sm text-muted-foreground">
+          Stories, style guides, and reflections on timeless fashion.
+        </p>
+      </div>
+
+      {/* Posts Grid */}
+      <div className="mx-auto max-w-7xl px-6 md:px-16 pb-24 md:pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {blogPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group block"
+            >
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-5">
+                <p className="font-body text-[10px] tracking-ultra-wide uppercase text-muted-foreground mb-2">
+                  {post.date}
+                </p>
+                <h3 className="font-display text-xl md:text-2xl font-light text-foreground group-hover:opacity-70 transition-opacity">
+                  {post.title}
+                </h3>
+                <p className="mt-2 font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                  {post.excerpt}
+                </p>
+                <span className="mt-3 inline-block font-body text-[10px] tracking-ultra-wide uppercase text-foreground border-b border-foreground pb-0.5">
+                  Read More
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </main>
+  );
 }
