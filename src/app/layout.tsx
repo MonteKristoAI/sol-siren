@@ -53,7 +53,7 @@ export default function RootLayout({
     logo: "https://www.solsirenvintage.com/apple-touch-icon.png",
     description:
       "Hand-curated vintage fur, leather, Penny Lane, overcoats, après ski, and one-of-a-kind jewelry.",
-    email: "hello@solsirenvintage.com",
+    email: "solsirenvintage@gmail.com",
     sameAs: ["https://www.instagram.com/solsirenvintage"],
   };
 
