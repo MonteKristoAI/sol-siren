@@ -1,11 +1,13 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Search, Plus, ExternalLink, Loader2 } from "lucide-react";
+import { Search, Plus, ExternalLink, Loader2, Star, Trash2, UploadCloud } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
+import RichText from "../_components/RichText";
 import { api, money } from "../_components/api";
+import { SIZE_FIT_FIELDS, stripSizeFit, type SizeFit } from "@/lib/admin/size-fit";
 
 export default function InventoryPage() {
   return (
@@ -241,11 +243,11 @@ function Act({ children, onClick, disabled, kind }: { children: React.ReactNode;
   );
 }
 
-function Modal({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
+function Modal({ title, children, onClose, wide }: { title: string; children: React.ReactNode; onClose: () => void; wide?: boolean }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
       <div
-        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-xl"
+        className={`max-h-[92vh] w-full overflow-y-auto rounded-lg bg-white p-6 shadow-xl ${wide ? "max-w-2xl" : "max-w-lg"}`}
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="mb-4 font-semibold text-xl">{title}</h2>
@@ -257,14 +259,25 @@ function Modal({ title, children, onClose }: { title: string; children: React.Re
 
 const FIELD = "w-full rounded border border-[#E4DAC9] px-3 py-2 text-sm outline-none focus:border-[#B8A48A]";
 
+type Media = { id: string; url: string };
+
 function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: () => void; onSaved: () => void }) {
   const [title, setTitle] = useState(product.title);
   const [productType, setProductType] = useState(product.productType);
   const [tags, setTags] = useState(product.tags.join(", "));
-  const [desc, setDesc] = useState(product.descriptionHtml || product.description);
+  const [story, setStory] = useState(stripSizeFit(product.descriptionHtml || product.description));
+  const [sizeFit, setSizeFit] = useState<SizeFit>({});
   const [price, setPrice] = useState(product.price?.toString() || "");
+  const [media, setMedia] = useState<Media[]>([]);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState("");
+
+  useEffect(() => {
+    api<{ media: Media[] }>(`/product-media?id=${encodeURIComponent(product.id)}`).then((d) => setMedia(d.media)).catch(() => {});
+    api<{ meta: Record<string, string> }>(`/piece-meta?id=${encodeURIComponent(product.id)}`)
+      .then((d) => { if (d.meta.size_fit) { try { setSizeFit(JSON.parse(d.meta.size_fit)); } catch {} } })
+      .catch(() => {});
+  }, [product.id]);
 
   async function save() {
     setSaving(true);
@@ -279,7 +292,8 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
             title,
             productType,
             tags: tags.split(",").map((t) => t.trim()).filter(Boolean),
-            descriptionHtml: desc,
+            descriptionHtml: story,
+            sizeFit,
           },
         }),
       });
@@ -297,17 +311,26 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
   }
 
   return (
-    <Modal title="Edit piece" onClose={onClose}>
-      <div className="space-y-3">
+    <Modal title="Edit piece" onClose={onClose} wide>
+      <div className="space-y-4">
+        <PhotoManager productId={product.id} media={media} setMedia={setMedia} />
+
         <Labeled label="Name"><input className={FIELD} value={title} onChange={(e) => setTitle(e.target.value)} /></Labeled>
         <div className="grid grid-cols-2 gap-3">
           <Labeled label="Category"><input className={FIELD} value={productType} onChange={(e) => setProductType(e.target.value)} /></Labeled>
           <Labeled label="Price (USD)"><input className={FIELD} type="number" value={price} onChange={(e) => setPrice(e.target.value)} /></Labeled>
         </div>
-        <Labeled label="Tags (comma separated — era, material…)"><input className={FIELD} value={tags} onChange={(e) => setTags(e.target.value)} /></Labeled>
-        <Labeled label="Description (HTML)"><textarea className={`${FIELD} h-40`} value={desc} onChange={(e) => setDesc(e.target.value)} /></Labeled>
+        <Labeled label="Tags (era, material, comma separated)"><input className={FIELD} value={tags} onChange={(e) => setTags(e.target.value)} /></Labeled>
+
+        <div>
+          <span className="mb-1 block text-xs uppercase tracking-wider text-[#8a7d68]">Story</span>
+          <RichText value={story} onChange={setStory} />
+        </div>
+
+        <SizeFitFields value={sizeFit} onChange={setSizeFit} />
+
         {err && <p className="text-sm text-[#5C1F1F]">{err}</p>}
-        <div className="flex justify-end gap-2 pt-2">
+        <div className="flex justify-end gap-2 pt-1">
           <button onClick={onClose} className="rounded border border-[#E4DAC9] px-4 py-2 text-sm">Cancel</button>
           <button onClick={save} disabled={saving} className="rounded bg-[#1A1A1A] px-4 py-2 text-sm text-[#F5EFE6] disabled:opacity-50">
             {saving ? "Saving…" : "Save changes"}
@@ -315,6 +338,101 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
         </div>
       </div>
     </Modal>
+  );
+}
+
+function PhotoManager({ productId, media, setMedia }: { productId: string; media: Media[]; setMedia: (m: Media[]) => void }) {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+
+  async function addFiles(list: FileList | null) {
+    if (!list || !list.length) return;
+    setBusy(true); setErr("");
+    try {
+      const fd = new FormData();
+      Array.from(list).filter((f) => f.type.startsWith("image/")).forEach((f) => fd.append("files", f));
+      const up = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const uj = await up.json();
+      if (!up.ok) throw new Error(uj.error || "upload failed");
+      const res = await api<{ media: Media[] }>("/product-media", { method: "POST", body: JSON.stringify({ id: productId, resourceUrls: uj.urls }) });
+      setMedia(res.media);
+    } catch (e: any) { setErr(e.message); }
+    finally { setBusy(false); if (fileRef.current) fileRef.current.value = ""; }
+  }
+  async function remove(mediaId: string) {
+    setBusy(true); setErr("");
+    try {
+      await api("/product-media", { method: "DELETE", body: JSON.stringify({ id: productId, mediaIds: [mediaId] }) });
+      setMedia(media.filter((m) => m.id !== mediaId));
+    } catch (e: any) { setErr(e.message); }
+    finally { setBusy(false); }
+  }
+  async function makeCover(mediaId: string) {
+    const ordered = [mediaId, ...media.filter((m) => m.id !== mediaId).map((m) => m.id)];
+    setBusy(true); setErr("");
+    try {
+      await api("/product-media", { method: "PATCH", body: JSON.stringify({ id: productId, orderedIds: ordered }) });
+      setMedia([media.find((m) => m.id === mediaId)!, ...media.filter((m) => m.id !== mediaId)]);
+    } catch (e: any) { setErr(e.message); }
+    finally { setBusy(false); }
+  }
+
+  return (
+    <div>
+      <div className="mb-1.5 flex items-center justify-between">
+        <span className="text-xs uppercase tracking-wider text-[#8a7d68]">Photos</span>
+        <button onClick={() => fileRef.current?.click()} disabled={busy}
+          className="flex items-center gap-1.5 rounded border border-[#E4DAC9] px-2.5 py-1 text-xs hover:bg-[#F5EFE6] disabled:opacity-50">
+          <UploadCloud size={13} /> Add photos
+        </button>
+        <input ref={fileRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => addFiles(e.target.files)} />
+      </div>
+      {media.length === 0 ? (
+        <div className="rounded border border-dashed border-[#D8CBB4] bg-[#FAF7F1] px-4 py-6 text-center text-xs text-[#8a7d68]">
+          {busy ? "Working…" : "No photos yet. Click Add photos."}
+        </div>
+      ) : (
+        <div className="grid grid-cols-5 gap-2">
+          {media.map((m, i) => (
+            <div key={m.id} className="group relative aspect-[3/4] overflow-hidden rounded border border-[#E4DAC9]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={m.url} alt="" className="h-full w-full object-cover" />
+              {i === 0 && <span className="absolute left-1 top-1 rounded bg-[#1A1A1A]/80 px-1.5 py-0.5 text-[10px] text-[#F5EFE6]">cover</span>}
+              <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1 bg-black/40 py-1 opacity-0 transition-opacity group-hover:opacity-100">
+                {i !== 0 && (
+                  <button onClick={() => makeCover(m.id)} disabled={busy} title="Make cover" className="rounded p-1 text-white hover:bg-white/20"><Star size={13} /></button>
+                )}
+                <button onClick={() => remove(m.id)} disabled={busy} title="Remove" className="rounded p-1 text-white hover:bg-white/20"><Trash2 size={13} /></button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {err && <p className="mt-1 text-xs text-[#5C1F1F]">{err}</p>}
+    </div>
+  );
+}
+
+function SizeFitFields({ value, onChange }: { value: SizeFit; onChange: (v: SizeFit) => void }) {
+  return (
+    <div className="rounded-lg border border-[#E4DAC9] bg-[#FAF7F1] p-3">
+      <div className="mb-2 text-xs uppercase tracking-wider text-[#8a7d68]">Size &amp; Fit (shows on the listing)</div>
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {SIZE_FIT_FIELDS.map((f) => (
+          <label key={f.key} className="block">
+            <span className="mb-0.5 block text-[11px] text-[#8a7d68]">{f.label}{f.key !== "estimatedSize" ? ' (in)' : ''}</span>
+            <input
+              className="w-full rounded border border-[#E4DAC9] bg-white px-2.5 py-1.5 text-sm outline-none focus:border-[#B8A48A]"
+              value={value[f.key] || ""}
+              placeholder={f.placeholder}
+              onChange={(e) => onChange({ ...value, [f.key]: e.target.value })}
+            />
+          </label>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] text-[#8a7d68]">Just numbers are fine (we add the inch mark). Ranges like 40-42 work too.</p>
+    </div>
   );
 }
 

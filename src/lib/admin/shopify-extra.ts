@@ -207,3 +207,58 @@ export async function stageUpload(filename: string, mimeType: string, bytes: Buf
   if (!up.ok) throw new Error(`staged upload failed ${up.status}: ${(await up.text()).slice(0, 200)}`);
   return target.resourceUrl;
 }
+
+// ---- Product media management (edit photos on any piece) --------------------
+
+export type ProductMedia = { id: string; url: string };
+
+export async function getProductMedia(productId: string): Promise<ProductMedia[]> {
+  const data: any = await adminGraphql(
+    `query($id: ID!){ product(id:$id){ media(first: 50){ nodes{
+      id ... on MediaImage { image{ url } }
+    } } } }`,
+    { id: productId }
+  );
+  return (data.product?.media?.nodes || [])
+    .filter((n: any) => n.image?.url)
+    .map((n: any) => ({ id: n.id, url: n.image.url }));
+}
+
+async function mediaErrors(data: any, key: string) {
+  const errs = data?.[key]?.mediaUserErrors;
+  if (errs && errs.length) throw new Error(errs.map((e: any) => e.message).join("; "));
+}
+
+export async function addProductMedia(productId: string, resourceUrls: string[]): Promise<void> {
+  if (!resourceUrls.length) return;
+  const data: any = await adminGraphql(
+    `mutation($productId: ID!, $media: [CreateMediaInput!]!){
+      productCreateMedia(productId:$productId, media:$media){ media{ id } mediaUserErrors{ field message } }
+    }`,
+    { productId, media: resourceUrls.map((u) => ({ originalSource: u, mediaContentType: "IMAGE" })) }
+  );
+  await mediaErrors(data, "productCreateMedia");
+}
+
+export async function deleteProductMedia(productId: string, mediaIds: string[]): Promise<void> {
+  if (!mediaIds.length) return;
+  const data: any = await adminGraphql(
+    `mutation($productId: ID!, $mediaIds: [ID!]!){
+      productDeleteMedia(productId:$productId, mediaIds:$mediaIds){ deletedMediaIds mediaUserErrors{ field message } }
+    }`,
+    { productId, mediaIds }
+  );
+  await mediaErrors(data, "productDeleteMedia");
+}
+
+// Reorder so the given ids appear in this order (first = cover/featured image).
+export async function reorderProductMedia(productId: string, orderedIds: string[]): Promise<void> {
+  if (orderedIds.length < 2) return;
+  const data: any = await adminGraphql(
+    `mutation($id: ID!, $moves: [MoveInput!]!){
+      productReorderMedia(id:$id, moves:$moves){ job{ id } mediaUserErrors{ field message } }
+    }`,
+    { id: productId, moves: orderedIds.map((id, i) => ({ id, newPosition: String(i) })) }
+  );
+  await mediaErrors(data, "productReorderMedia");
+}

@@ -7,7 +7,8 @@ import {
   setPrice,
   createDraftProduct,
 } from "@/lib/admin/shopify-admin";
-import { moveToArchive, restoreToLive, setPriceHidden } from "@/lib/admin/shopify-extra";
+import { moveToArchive, restoreToLive, setPriceHidden, setMetafield } from "@/lib/admin/shopify-extra";
+import { composeDescription, isSizeFitEmpty } from "@/lib/admin/size-fit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -53,9 +54,22 @@ export async function PATCH(req: Request) {
       case "setStatus":
         await setStatus(b.id, b.payload?.status);
         break;
-      case "updateDetails":
-        await updateDetails(b.id, b.payload || {});
+      case "updateDetails": {
+        const payload = { ...(b.payload || {}) };
+        // Size & Fit: compose into the description (shown on site) + save raw for reload.
+        if (payload.sizeFit) {
+          payload.descriptionHtml = composeDescription(payload.descriptionHtml || "", payload.sizeFit);
+          await setMetafield(
+            b.id,
+            "size_fit",
+            isSizeFitEmpty(payload.sizeFit) ? "{}" : JSON.stringify(payload.sizeFit),
+            "json"
+          );
+          delete payload.sizeFit;
+        }
+        await updateDetails(b.id, payload);
         break;
+      }
       case "setPrice":
         if (!b.payload?.variantId) return Response.json({ error: "variantId required" }, { status: 400 });
         await setPrice(b.id, b.payload.variantId, Number(b.payload.price));
@@ -78,14 +92,20 @@ export async function POST(req: Request) {
   }
   if (!b.title) return Response.json({ error: "title required" }, { status: 400 });
   try {
+    const descriptionHtml = b.sizeFit
+      ? composeDescription(b.descriptionHtml || "", b.sizeFit)
+      : b.descriptionHtml;
     const product = await createDraftProduct({
       title: b.title,
-      descriptionHtml: b.descriptionHtml,
+      descriptionHtml,
       productType: b.productType,
       tags: b.tags,
       price: b.price != null ? Number(b.price) : undefined,
       imageUrls: b.imageUrls,
     });
+    if (b.sizeFit && !isSizeFitEmpty(b.sizeFit) && product?.id) {
+      await setMetafield(product.id, "size_fit", JSON.stringify(b.sizeFit), "json").catch(() => {});
+    }
     return Response.json({ ok: true, product });
   } catch (e) {
     return Response.json({ error: msg(e) }, { status: 502 });
