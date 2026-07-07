@@ -2,9 +2,11 @@
 
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, UploadCloud, X, GripVertical } from "lucide-react";
+import { Check, UploadCloud, X } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
+import RichText from "../_components/RichText";
 import { api } from "../_components/api";
+import { SIZE_FIT_FIELDS, type SizeFit } from "@/lib/admin/size-fit";
 
 const FIELD = "w-full rounded border border-[#E4DAC9] px-3 py-2 text-sm outline-none focus:border-[#B8A48A]";
 const CATS = ["Fur", "Leather", "Penny Lane / Afghan", "Overcoat", "Apres Ski", "Jewelry"];
@@ -19,6 +21,7 @@ export default function AddPiecePage() {
   const [price, setPrice] = useState("");
   const [tags, setTags] = useState("");
   const [desc, setDesc] = useState("");
+  const [sizeFit, setSizeFit] = useState<SizeFit>({});
   const [pics, setPics] = useState<Pic[]>([]);
   const [saving, setSaving] = useState(false);
   const [stage, setStage] = useState("");
@@ -58,6 +61,7 @@ export default function AddPiecePage() {
           price: price ? Number(price) : undefined,
           tags: tags.split(",").map((t) => t.trim()).filter(Boolean),
           descriptionHtml: desc,
+          sizeFit,
           imageUrls,
         }),
       });
@@ -93,7 +97,27 @@ export default function AddPiecePage() {
             <Labeled label="Tags — era, material, decade (comma separated)">
               <input className={FIELD} value={tags} onChange={(e) => setTags(e.target.value)} placeholder="1970s, Shearling, Vintage" />
             </Labeled>
-            <Labeled label="Story / description"><textarea className={`${FIELD} h-28`} value={desc} onChange={(e) => setDesc(e.target.value)} /></Labeled>
+            <div>
+              <span className="mb-1 block text-xs uppercase tracking-wider text-[#8a7d68]">Story / description</span>
+              <RichText value={desc} onChange={setDesc} minHeight={110} />
+            </div>
+
+            <div className="rounded-lg border border-[#E4DAC9] bg-[#FAF7F1] p-3">
+              <div className="mb-2 text-xs uppercase tracking-wider text-[#8a7d68]">Size &amp; Fit (shows on the listing)</div>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {SIZE_FIT_FIELDS.map((f) => (
+                  <label key={f.key} className="block">
+                    <span className="mb-0.5 block text-[11px] text-[#8a7d68]">{f.label}{f.key !== "estimatedSize" ? " (in)" : ""}</span>
+                    <input
+                      className="w-full rounded border border-[#E4DAC9] bg-white px-2.5 py-1.5 text-sm outline-none focus:border-[#B8A48A]"
+                      value={sizeFit[f.key] || ""}
+                      placeholder={f.placeholder}
+                      onChange={(e) => setSizeFit({ ...sizeFit, [f.key]: e.target.value })}
+                    />
+                  </label>
+                ))}
+              </div>
+            </div>
 
             {/* Photos */}
             <div>
