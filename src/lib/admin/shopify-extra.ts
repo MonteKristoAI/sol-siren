@@ -210,18 +210,25 @@ export async function stageUpload(filename: string, mimeType: string, bytes: Buf
 
 // ---- Product media management (edit photos on any piece) --------------------
 
-export type ProductMedia = { id: string; url: string };
+export type ProductMedia = { id: string; url: string; ready: boolean };
 
 export async function getProductMedia(productId: string): Promise<ProductMedia[]> {
   const data: any = await adminGraphql(
     `query($id: ID!){ product(id:$id){ media(first: 50){ nodes{
-      id ... on MediaImage { image{ url } }
+      id mediaContentType status
+      ... on MediaImage { image{ url } preview{ image{ url } } }
     } } } }`,
     { id: productId }
   );
+  // Keep freshly-added images even while Shopify is still processing them
+  // (fall back to the preview url, which is ready almost immediately).
   return (data.product?.media?.nodes || [])
-    .filter((n: any) => n.image?.url)
-    .map((n: any) => ({ id: n.id, url: n.image.url }));
+    .filter((n: any) => n.mediaContentType === "IMAGE")
+    .map((n: any) => ({
+      id: n.id,
+      url: n.image?.url || n.preview?.image?.url || "",
+      ready: n.status === "READY" && !!n.image?.url,
+    }));
 }
 
 async function mediaErrors(data: any, key: string) {
