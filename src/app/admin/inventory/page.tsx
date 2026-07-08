@@ -259,7 +259,7 @@ function Modal({ title, children, onClose, wide }: { title: string; children: Re
 
 const FIELD = "w-full rounded border border-[#E4DAC9] px-3 py-2 text-sm outline-none focus:border-[#B8A48A]";
 
-type Media = { id: string; url: string };
+type Media = { id: string; url: string; ready?: boolean };
 
 function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: () => void; onSaved: () => void }) {
   const [title, setTitle] = useState(product.title);
@@ -346,6 +346,13 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
+  async function refetch() {
+    try {
+      const d = await api<{ media: Media[] }>(`/product-media?id=${encodeURIComponent(productId)}`);
+      setMedia(d.media);
+    } catch {}
+  }
+
   async function addFiles(list: FileList | null) {
     if (!list || !list.length) return;
     setBusy(true); setErr("");
@@ -357,6 +364,9 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
       if (!up.ok) throw new Error(uj.error || "upload failed");
       const res = await api<{ media: Media[] }>("/product-media", { method: "POST", body: JSON.stringify({ id: productId, resourceUrls: uj.urls }) });
       setMedia(res.media);
+      // Shopify processes new images for a moment; refresh so the final photo swaps in.
+      setTimeout(refetch, 2500);
+      setTimeout(refetch, 6000);
     } catch (e: any) { setErr(e.message); }
     finally { setBusy(false); if (fileRef.current) fileRef.current.value = ""; }
   }
@@ -395,9 +405,13 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
       ) : (
         <div className="grid grid-cols-5 gap-2">
           {media.map((m, i) => (
-            <div key={m.id} className="group relative aspect-[3/4] overflow-hidden rounded border border-[#E4DAC9]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={m.url} alt="" className="h-full w-full object-cover" />
+            <div key={m.id} className="group relative aspect-[3/4] overflow-hidden rounded border border-[#E4DAC9] bg-[#F0E8D9]">
+              {m.url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={m.url} alt="" className="h-full w-full object-cover" />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center"><Loader2 className="animate-spin text-[#b6a890]" size={16} /></div>
+              )}
               {i === 0 && <span className="absolute left-1 top-1 rounded bg-[#1A1A1A]/80 px-1.5 py-0.5 text-[10px] text-[#F5EFE6]">cover</span>}
               <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1 bg-black/40 py-1 opacity-0 transition-opacity group-hover:opacity-100">
                 {i !== 0 && (
