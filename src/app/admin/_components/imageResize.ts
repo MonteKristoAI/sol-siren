@@ -1,7 +1,8 @@
-// Downscale/compress an image in the browser before upload so it stays well
-// under the serverless request-size limit and loads fast on the site. Keeps
-// plenty of quality (2400px longest side). Falls back to the original file if
-// the browser can't decode it (e.g. some HEIC), so uploads still attempt.
+// Downscale + convert every uploaded image to WebP in the browser before it
+// goes to Shopify (smaller files, faster site, well under the request limit).
+// Keeps plenty of quality (2400px longest side). Falls back to JPEG if the
+// browser can't encode WebP, and to the original file if it can't decode the
+// image at all (e.g. some HEIC).
 export async function resizeImage(file: File, maxDim = 2400, quality = 0.85): Promise<File> {
   if (!file.type.startsWith("image/")) return file;
 
@@ -9,18 +10,11 @@ export async function resizeImage(file: File, maxDim = 2400, quality = 0.85): Pr
   try {
     bitmap = await createImageBitmap(file);
   } catch {
-    return file;
+    return file; // browser can't decode it, upload as-is
   }
 
   const { width, height } = bitmap;
-  const longest = Math.max(width, height);
-  // Already small enough and light: keep as-is.
-  if (longest <= maxDim && file.size < 3 * 1024 * 1024) {
-    bitmap.close?.();
-    return file;
-  }
-
-  const scale = Math.min(1, maxDim / longest);
+  const scale = Math.min(1, maxDim / Math.max(width, height));
   const w = Math.max(1, Math.round(width * scale));
   const h = Math.max(1, Math.round(height * scale));
 
@@ -35,9 +29,17 @@ export async function resizeImage(file: File, maxDim = 2400, quality = 0.85): Pr
   ctx.drawImage(bitmap, 0, 0, w, h);
   bitmap.close?.();
 
-  const blob: Blob | null = await new Promise((res) => canvas.toBlob(res, "image/jpeg", quality));
-  if (!blob || blob.size >= file.size) return file;
+  let blob: Blob | null = await new Promise((res) => canvas.toBlob(res, "image/webp", quality));
+  let ext = "webp";
+  let mime = "image/webp";
+  if (!blob) {
+    // older browser without webp encode support
+    blob = await new Promise((res) => canvas.toBlob(res, "image/jpeg", quality));
+    ext = "jpg";
+    mime = "image/jpeg";
+  }
+  if (!blob) return file;
 
-  const name = file.name.replace(/\.(png|webp|heic|heif|bmp|tiff?)$/i, ".jpg");
-  return new File([blob], name.match(/\.jpe?g$/i) ? name : `${name}.jpg`, { type: "image/jpeg" });
+  const base = file.name.replace(/\.[^.]+$/, "") || "photo";
+  return new File([blob], `${base}.${ext}`, { type: mime });
 }
