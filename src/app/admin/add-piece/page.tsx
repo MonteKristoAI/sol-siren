@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Check, UploadCloud, X } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
 import RichText from "../_components/RichText";
+import { uploadImages } from "../_components/uploadImages";
 import { api } from "../_components/api";
 import { SIZE_FIT_FIELDS, type SizeFit } from "@/lib/admin/size-fit";
 
@@ -45,13 +46,7 @@ export default function AddPiecePage() {
     try {
       let imageUrls: string[] = [];
       if (pics.length) {
-        setStage(`Uploading ${pics.length} photo${pics.length > 1 ? "s" : ""}…`);
-        const fd = new FormData();
-        pics.forEach((p) => fd.append("files", p.file));
-        const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
-        const j = await res.json();
-        if (!res.ok) throw new Error(j.error || "upload failed");
-        imageUrls = j.urls;
+        imageUrls = await uploadImages(pics.map((p) => p.file), setStage);
       }
       setStage("Creating draft…");
       await api("/products", {
