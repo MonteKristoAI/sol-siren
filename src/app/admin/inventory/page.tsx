@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Search, Plus, ExternalLink, Loader2, Star, Trash2, UploadCloud } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
 import RichText from "../_components/RichText";
+import { uploadImages } from "../_components/uploadImages";
 import { api, money } from "../_components/api";
 import { SIZE_FIT_FIELDS, stripSizeFit, type SizeFit } from "@/lib/admin/size-fit";
 
@@ -315,7 +316,7 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
       <div className="space-y-4">
         <PhotoManager productId={product.id} media={media} setMedia={setMedia} />
 
-        <Labeled label="Name"><input className={FIELD} value={title} onChange={(e) => setTitle(e.target.value)} /></Labeled>
+        <Labeled label="Name (the listing title)"><input className={FIELD} value={title} onChange={(e) => setTitle(e.target.value)} /></Labeled>
         <div className="grid grid-cols-2 gap-3">
           <Labeled label="Category"><input className={FIELD} value={productType} onChange={(e) => setProductType(e.target.value)} /></Labeled>
           <Labeled label="Price (USD)"><input className={FIELD} type="number" value={price} onChange={(e) => setPrice(e.target.value)} /></Labeled>
@@ -344,6 +345,7 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
 function PhotoManager({ productId, media, setMedia }: { productId: string; media: Media[]; setMedia: (m: Media[]) => void }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState("");
   const [err, setErr] = useState("");
 
   async function refetch() {
@@ -354,21 +356,21 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
   }
 
   async function addFiles(list: FileList | null) {
-    if (!list || !list.length) return;
+    const files = Array.from(list || []).filter((f) => f.type.startsWith("image/"));
+    if (!files.length) return;
     setBusy(true); setErr("");
     try {
-      const fd = new FormData();
-      Array.from(list).filter((f) => f.type.startsWith("image/")).forEach((f) => fd.append("files", f));
-      const up = await fetch("/api/admin/upload", { method: "POST", body: fd });
-      const uj = await up.json();
-      if (!up.ok) throw new Error(uj.error || "upload failed");
-      const res = await api<{ media: Media[] }>("/product-media", { method: "POST", body: JSON.stringify({ id: productId, resourceUrls: uj.urls }) });
-      setMedia(res.media);
-      // Shopify processes new images for a moment; refresh so the final photo swaps in.
-      setTimeout(refetch, 2500);
-      setTimeout(refetch, 6000);
+      const urls = await uploadImages(files, setProgress);
+      if (urls.length) {
+        setProgress("Attaching…");
+        const res = await api<{ media: Media[] }>("/product-media", { method: "POST", body: JSON.stringify({ id: productId, resourceUrls: urls }) });
+        setMedia(res.media);
+        // Shopify processes new images for a moment; refresh so the final photo swaps in.
+        setTimeout(refetch, 2500);
+        setTimeout(refetch, 6000);
+      }
     } catch (e: any) { setErr(e.message); }
-    finally { setBusy(false); if (fileRef.current) fileRef.current.value = ""; }
+    finally { setBusy(false); setProgress(""); if (fileRef.current) fileRef.current.value = ""; }
   }
   async function remove(mediaId: string) {
     setBusy(true); setErr("");
@@ -392,15 +394,18 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
     <div>
       <div className="mb-1.5 flex items-center justify-between">
         <span className="text-xs uppercase tracking-wider text-[#8a7d68]">Photos</span>
-        <button onClick={() => fileRef.current?.click()} disabled={busy}
-          className="flex items-center gap-1.5 rounded border border-[#E4DAC9] px-2.5 py-1 text-xs hover:bg-[#F5EFE6] disabled:opacity-50">
-          <UploadCloud size={13} /> Add photos
-        </button>
+        <div className="flex items-center gap-2">
+          {busy && progress && <span className="text-xs text-[#8a7d68]">{progress}</span>}
+          <button onClick={() => fileRef.current?.click()} disabled={busy}
+            className="flex items-center gap-1.5 rounded border border-[#E4DAC9] px-2.5 py-1 text-xs hover:bg-[#F5EFE6] disabled:opacity-50">
+            <UploadCloud size={13} /> Add photos
+          </button>
+        </div>
         <input ref={fileRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => addFiles(e.target.files)} />
       </div>
       {media.length === 0 ? (
         <div className="rounded border border-dashed border-[#D8CBB4] bg-[#FAF7F1] px-4 py-6 text-center text-xs text-[#8a7d68]">
-          {busy ? "Working…" : "No photos yet. Click Add photos."}
+          {busy ? (progress || "Working…") : "No photos yet. Click Add photos."}
         </div>
       ) : (
         <div className="grid grid-cols-5 gap-2">
