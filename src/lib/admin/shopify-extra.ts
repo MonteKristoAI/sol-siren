@@ -5,6 +5,28 @@ import { adminGraphql, addTags, removeTags, setStatus } from "@/lib/admin/shopif
 
 export const MF_NAMESPACE = "ss_admin";
 
+// ---- Publish (make a draft go live on the site) ----------------------------
+// The headless site reads products published to these channels. A draft is not
+// published anywhere, so it must be set ACTIVE and published to appear.
+const LIVE_CHANNELS = ["Online Store", "Sol Siren Vintage Headless"];
+
+export async function makeProductLive(id: string): Promise<void> {
+  await setStatus(id, "ACTIVE");
+  const data: any = await adminGraphql(`{ publications(first: 30){ nodes{ id name } } }`);
+  const input = (data.publications?.nodes || [])
+    .filter((p: any) => LIVE_CHANNELS.includes(p.name))
+    .map((p: any) => ({ publicationId: p.id }));
+  if (!input.length) return;
+  const r: any = await adminGraphql(
+    `mutation($id: ID!, $input: [PublicationInput!]!){
+      publishablePublish(id: $id, input: $input){ userErrors{ field message } }
+    }`,
+    { id, input }
+  );
+  const errs = r?.publishablePublish?.userErrors;
+  if (errs && errs.length) throw new Error(errs.map((e: any) => e.message).join("; "));
+}
+
 // ---- Archive lifecycle -----------------------------------------------------
 // Archived pieces stay ACTIVE in Shopify (so the Storefront API still returns
 // them and they can show in the site's brand archive) but carry tags that the
