@@ -187,7 +187,9 @@ function InventoryInner() {
                     <td className="px-4 py-3"><StatusBadge p={p} reserved={reserved} /></td>
                     <td className="px-4 py-3">
                       <div className="flex justify-end gap-1.5">
-                        {p.status !== "ARCHIVED" && !p.tags.includes("sold") && !p.tags.includes("archive") ? (
+                        {p.status === "DRAFT" ? (
+                          <Act disabled={isBusy} onClick={() => act(p.id, "makeLive")} kind="go">Make live</Act>
+                        ) : p.status !== "ARCHIVED" && !p.tags.includes("sold") && !p.tags.includes("archive") ? (
                           <Act disabled={isBusy} onClick={() => act(p.id, "archive")} kind="danger">Archive (sold)</Act>
                         ) : (
                           <Act disabled={isBusy} onClick={() => act(p.id, "unarchive")}>Back to live</Act>
@@ -228,7 +230,7 @@ function StatusBadge({ p, reserved }: { p: Product; reserved: boolean }) {
   return <span className={`rounded-full px-2.5 py-1 text-xs ${cls}`}>{label}</span>;
 }
 
-function Act({ children, onClick, disabled, kind }: { children: React.ReactNode; onClick: () => void; disabled?: boolean; kind?: "danger" }) {
+function Act({ children, onClick, disabled, kind }: { children: React.ReactNode; onClick: () => void; disabled?: boolean; kind?: "danger" | "go" }) {
   return (
     <button
       onClick={onClick}
@@ -236,6 +238,8 @@ function Act({ children, onClick, disabled, kind }: { children: React.ReactNode;
       className={`rounded border px-2.5 py-1 text-xs transition-colors disabled:opacity-40 ${
         kind === "danger"
           ? "border-[#d9b8b8] text-[#5C1F1F] hover:bg-[#f7eaea]"
+          : kind === "go"
+          ? "border-transparent bg-[#2f5a2f] text-white hover:bg-[#274a27]"
           : "border-[#E4DAC9] text-[#1A1A1A] hover:bg-[#F5EFE6]"
       }`}
     >

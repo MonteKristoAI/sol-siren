@@ -7,7 +7,7 @@ import {
   setPrice,
   createDraftProduct,
 } from "@/lib/admin/shopify-admin";
-import { moveToArchive, restoreToLive, setPriceHidden, setMetafield } from "@/lib/admin/shopify-extra";
+import { moveToArchive, restoreToLive, setPriceHidden, setMetafield, makeProductLive } from "@/lib/admin/shopify-extra";
 import { composeDescription, isSizeFitEmpty } from "@/lib/admin/size-fit";
 
 export const runtime = "nodejs";
@@ -41,6 +41,9 @@ export async function PATCH(req: Request) {
       case "restore":
       case "unarchive":
         await restoreToLive(b.id);
+        break;
+      case "makeLive":
+        await makeProductLive(b.id);
         break;
       case "priceHidden":
         await setPriceHidden(b.id, !!b.payload?.hidden);
