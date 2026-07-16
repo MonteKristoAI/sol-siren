@@ -164,7 +164,9 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
       className="flex flex-col justify-start md:sticky md:top-28"
     >
       <h1 className="font-display text-3xl md:text-4xl font-light text-foreground">{product.name}</h1>
-      <p className="mt-2 font-body text-xs tracking-wide text-muted-foreground">{product.variant}</p>
+      {/* Full descriptive title as a real heading: keeps the look, but the words
+          shoppers search are a heading rather than plain text. */}
+      <h2 className="mt-2 font-body text-xs font-normal tracking-wide text-muted-foreground">{product.variant}</h2>
       <p className="mt-4 font-body text-xl font-medium text-foreground">${product.price}.00</p>
 
       {product.descriptionHtml ? (

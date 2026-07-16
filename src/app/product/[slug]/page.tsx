@@ -13,7 +13,9 @@ function ProductJsonLd({ product }: { product: UIProduct }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.name,
+    // Full listing title (with era/material/style), not just the piece's name,
+    // so Shopping and rich results carry the words shoppers search.
+    name: product.variant || product.name,
     image: product.images?.length ? product.images : product.image ? [product.image] : [],
     description: product.description || `Hand-curated vintage ${product.name} from Sol Siren Vintage.`,
     sku: product.id,
