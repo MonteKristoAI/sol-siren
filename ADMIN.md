@@ -12,7 +12,10 @@ straight to the Shopify Admin API and the Retell API.
 - **Inventory** — every piece with photo, category, price, status. One-click
   **Mark sold** (archives in Shopify + tags `sold`), **Hold/Release** (tags
   `reserved`), **Restore**, inline **Edit** (name, category, price, tags, story),
-  and **New piece** intake (creates a Shopify *draft* for review).
+  and **New piece** intake (creates a Shopify *draft* for review). **Back to
+  draft** is the reverse of Make live: it pulls a live piece off the site
+  without archiving it as sold, for pieces that are not ready to be seen
+  (no photos yet, for example). Make live puts it back.
 - **Orders** — read view of recent orders; international (customs) orders flagged.
 - **Concierge Chats** — recent chat transcripts from the website concierge, plus
   a **Leads & intent** tab that surfaces captured emails and buying signals.

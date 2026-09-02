@@ -194,12 +194,16 @@ function InventoryInner() {
                         ) : (
                           <Act disabled={isBusy} onClick={() => act(p.id, "unarchive")}>Back to live</Act>
                         )}
-                        {p.status === "ACTIVE" && !p.tags.includes("archive") && !p.tags.includes("sold") &&
-                          (reserved ? (
-                            <Act disabled={isBusy} onClick={() => act(p.id, "unreserve")}>Release hold</Act>
-                          ) : (
-                            <Act disabled={isBusy} onClick={() => act(p.id, "reserve")}>Hold</Act>
-                          ))}
+                        {p.status === "ACTIVE" && !p.tags.includes("archive") && !p.tags.includes("sold") && (
+                          <>
+                            {reserved ? (
+                              <Act disabled={isBusy} onClick={() => act(p.id, "unreserve")}>Release hold</Act>
+                            ) : (
+                              <Act disabled={isBusy} onClick={() => act(p.id, "reserve")}>Hold</Act>
+                            )}
+                            <Act disabled={isBusy} onClick={() => act(p.id, "backToDraft")}>Back to draft</Act>
+                          </>
+                        )}
                         <Act disabled={isBusy} onClick={() => setEdit(p)}>Edit</Act>
                       </div>
                     </td>

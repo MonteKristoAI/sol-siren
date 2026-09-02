@@ -45,6 +45,12 @@ export async function PATCH(req: Request) {
       case "makeLive":
         await makeProductLive(b.id);
         break;
+      case "backToDraft":
+        // Draft is the reverse of makeLive. Shopify drops a draft product from
+        // every sales channel on its own, so it leaves the site within the
+        // storefront's revalidate window. makeLive republishes it.
+        await setStatus(b.id, "DRAFT");
+        break;
       case "priceHidden":
         await setPriceHidden(b.id, !!b.payload?.hidden);
         break;
