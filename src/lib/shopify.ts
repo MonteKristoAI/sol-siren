@@ -249,6 +249,9 @@ export async function updateCartLine(
   return flattenCart(data.cartLinesUpdate.cart);
 }
 
+// Tags the admin portal puts on a piece when it is sold or retired from the shop.
+const ARCHIVE_TAGS = ["sold", "archive"];
+
 // Map Shopify productType to our internal category slug
 export function mapCategory(productType: string): string {
   const map: Record<string, string> = {
@@ -300,7 +303,11 @@ export function toUIProduct(s: ShopifyProduct): UIProduct {
     images: s.images.map((i) => i.url),
     slug: s.handle,
     category: mapCategory(s.productType),
-    sold: !s.availableForSale,
+    // Sold if Shopify says it cannot be bought, OR if the admin tagged it sold or
+    // archived. /shop and /archive already split on the tag; the product page used
+    // to read availability alone, so a tagged piece whose stock was wrong still
+    // showed Add to Cart. Honouring both keeps every surface in agreement.
+    sold: !s.availableForSale || s.tags.some((t) => ARCHIVE_TAGS.includes(t.toLowerCase())),
     description: s.description,
     descriptionHtml: s.descriptionHtml,
     sizes,

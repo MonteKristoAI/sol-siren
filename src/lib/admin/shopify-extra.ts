@@ -1,7 +1,14 @@
 // Extra Shopify Admin helpers for the v2 admin: archive lifecycle, metafields
 // (used for per-piece history-card status, care notes, and per-order packing
 // checklists — no separate database needed), collections and gift cards.
-import { adminGraphql, addTags, removeTags, setStatus } from "@/lib/admin/shopify-admin";
+import {
+  adminGraphql,
+  addTags,
+  removeTags,
+  setStatus,
+  setOnHand,
+  ensureSellable,
+} from "@/lib/admin/shopify-admin";
 
 export const MF_NAMESPACE = "ss_admin";
 
@@ -12,6 +19,9 @@ const LIVE_CHANNELS = ["Online Store", "Sol Siren Vintage Headless"];
 
 export async function makeProductLive(id: string): Promise<void> {
   await setStatus(id, "ACTIVE");
+  // A piece published with inventory tracking off, or with 0 on hand, reaches the
+  // site as either permanently buyable or permanently sold out. Fix it here.
+  await ensureSellable(id);
   const data: any = await adminGraphql(`{ publications(first: 30){ nodes{ id name } } }`);
   const input = (data.publications?.nodes || [])
     .filter((p: any) => LIVE_CHANNELS.includes(p.name))
@@ -35,11 +45,16 @@ export async function makeProductLive(id: string): Promise<void> {
 export async function moveToArchive(id: string) {
   await setStatus(id, "ACTIVE");
   await addTags(id, ["sold", "archive"]);
+  // The tags move the piece out of /shop and into /archive, but the product page
+  // reads Shopify availability, so without this the direct URL stayed buyable and
+  // a one-of-one could be sold twice. Zero stock is what makes it Sold Out.
+  await setOnHand(id, 0);
 }
 
 export async function restoreToLive(id: string) {
   await removeTags(id, ["sold", "archive", "price-hidden"]);
   await setStatus(id, "ACTIVE");
+  await setOnHand(id, 1);
 }
 
 export async function setPriceHidden(id: string, hidden: boolean) {

@@ -48,8 +48,16 @@ and cached in memory until it nears expiry — nothing to rotate manually.
 
 ## Notes
 
-- "Sold" = Shopify status `ARCHIVED` + tag `sold`. "On hold" = tag `reserved`.
-  The storefront can later read these tags to badge pieces if desired.
+- "Sold" = tags `sold` + `archive`, status stays `ACTIVE`, **and on-hand stock set
+  to 0**. "On hold" = tag `reserved`. The stock part is not optional: the product
+  page reads Shopify availability, so a piece that is only tagged stays buyable at
+  its direct URL. Order #1001 (FRANKIE, 3 Sep 2026) sold and the coat remained on
+  sale for four weeks because inventory tracking was off store-wide and the
+  quantity number was therefore ignored. Everything that changes whether a piece
+  is for sale goes through `setOnHand` in `shopify-admin.ts`, which turns tracking
+  on first; `ensureSellable` runs on every publish path, and new pieces are created
+  tracked with one in stock. The storefront treats the `sold`/`archive` tag as sold
+  as well, so the shop grid, the archive and the product page cannot disagree.
 - Chat transcripts are read live from Retell (`/list-chat`, `/get-chat`).
 - Admin pages render no storefront chrome (nav, cart, concierge widget); that is
   handled by `src/components/StorefrontChrome.tsx`.

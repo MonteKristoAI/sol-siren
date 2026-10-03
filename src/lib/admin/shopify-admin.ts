@@ -172,6 +172,128 @@ export async function setPrice(productId: string, variantId: string, price: numb
   await userErrors(data, "productVariantsBulkUpdate");
 }
 
+// ---- Inventory -------------------------------------------------------------
+// A one-of-one shop lives or dies on this. Shopify only reports a piece as
+// unavailable (availableForSale false, which is what the storefront reads as
+// "sold") when the variant has inventory TRACKING ON and its quantity reaches 0
+// under a DENY policy. With tracking off the quantity field is decorative:
+// Shopify keeps the piece buyable forever, an order never deducts it, and the
+// site never flips it to Sold Out. That is what let order #1001 (FRANKIE,
+// 3 Sep 2026) ship while the coat stayed on sale for another four weeks, and
+// why "Mark sold" looked like it did nothing. Every path that changes whether a
+// piece is for sale now goes through setOnHand, which turns tracking on first.
+
+// Shopify tightened inventorySetQuantities in 2025-10: each quantity entry must
+// carry changeFromQuantity, and the mutation needs the @idempotent directive,
+// which older versions do not define at all. Branch on the configured version
+// so the portal works whichever one this deployment is pinned to.
+const INVENTORY_NEEDS_IDEMPOTENT = API_VERSION >= "2025-10";
+
+const ARCHIVE_TAGS = ["sold", "archive"];
+
+let cachedLocationId: string | null = null;
+
+async function primaryLocationId(): Promise<string> {
+  if (cachedLocationId) return cachedLocationId;
+  const data: any = await adminGraphql(
+    `{ locations(first: 5, includeInactive: false){ nodes{ id shipsInventory } } }`
+  );
+  const nodes = data.locations?.nodes || [];
+  const id = (nodes.find((n: any) => n.shipsInventory) || nodes[0])?.id;
+  if (!id) throw new Error("no Shopify location found");
+  cachedLocationId = id;
+  return id;
+}
+
+type InventoryState = {
+  itemId: string;
+  locationId: string | null;
+  onHand: number;
+  tracked: boolean;
+  tags: string[];
+};
+
+async function readInventory(productId: string): Promise<InventoryState> {
+  const data: any = await adminGraphql(
+    `query($id: ID!){ product(id:$id){ tags variants(first:1){ edges{ node{
+       inventoryItem{ id tracked inventoryLevels(first:5){ edges{ node{
+         location{ id } quantities(names:["on_hand"]){ name quantity }
+       } } } }
+     } } } } }`,
+    { id: productId }
+  );
+  const item = data.product?.variants?.edges?.[0]?.node?.inventoryItem;
+  if (!item?.id) throw new Error("piece has no inventory item");
+  const level = item.inventoryLevels?.edges?.[0]?.node || null;
+  return {
+    itemId: item.id,
+    locationId: level?.location?.id || null,
+    onHand: level?.quantities?.find((q: any) => q.name === "on_hand")?.quantity ?? 0,
+    tracked: !!item.tracked,
+    tags: data.product?.tags || [],
+  };
+}
+
+// Set the piece's on-hand count, turning inventory tracking on so the number
+// actually governs availability. quantity 0 = Sold Out on the site, 1 = for sale.
+export async function setOnHand(productId: string, quantity: number): Promise<void> {
+  const inv = await readInventory(productId);
+
+  if (!inv.tracked) {
+    const upd: any = await adminGraphql(
+      `mutation($id: ID!){ inventoryItemUpdate(id:$id, input:{tracked:true}){
+         inventoryItem{ id tracked } userErrors{ field message } } }`,
+      { id: inv.itemId }
+    );
+    await userErrors(upd, "inventoryItemUpdate");
+  }
+
+  const locationId = inv.locationId || (await primaryLocationId());
+
+  // Not stocked at the location yet: activating it sets the count in one call.
+  if (!inv.locationId) {
+    const act: any = await adminGraphql(
+      `mutation($inventoryItemId: ID!, $locationId: ID!, $available: Int){
+         inventoryActivate(inventoryItemId:$inventoryItemId, locationId:$locationId, available:$available){
+           inventoryLevel{ id } userErrors{ field message } } }`,
+      { inventoryItemId: inv.itemId, locationId, available: quantity }
+    );
+    await userErrors(act, "inventoryActivate");
+    return;
+  }
+
+  if (inv.tracked && inv.onHand === quantity) return;
+
+  const entry: Record<string, unknown> = {
+    inventoryItemId: inv.itemId,
+    locationId,
+    quantity,
+  };
+  const vars: Record<string, unknown> = {
+    input: { name: "on_hand", reason: "correction", quantities: [entry] },
+  };
+  let mutation = `mutation($input: InventorySetQuantitiesInput!){
+      inventorySetQuantities(input:$input){ userErrors{ field message } } }`;
+  if (INVENTORY_NEEDS_IDEMPOTENT) {
+    entry.changeFromQuantity = inv.onHand;
+    vars.key = `ss-admin-${productId.split("/").pop()}-${inv.onHand}-to-${quantity}`;
+    mutation = `mutation($input: InventorySetQuantitiesInput!, $key: String!){
+      inventorySetQuantities(input:$input) @idempotent(key:$key){ userErrors{ field message } } }`;
+  }
+  const data: any = await adminGraphql(mutation, vars);
+  await userErrors(data, "inventorySetQuantities");
+}
+
+// Make sure a piece going live is actually purchasable. Never restocks a piece
+// that is tagged sold or archive, so this is safe to call on any publish path.
+export async function ensureSellable(productId: string): Promise<void> {
+  const inv = await readInventory(productId);
+  const archived = inv.tags.some((t) => ARCHIVE_TAGS.includes(t.toLowerCase()));
+  if (archived) return;
+  if (inv.tracked && inv.onHand > 0) return;
+  await setOnHand(productId, 1);
+}
+
 // Create a one-of-one piece as a DRAFT so Erin reviews before it goes live.
 export async function createDraftProduct(input: {
   title: string;
@@ -210,6 +332,18 @@ export async function createDraftProduct(input: {
     );
     const vid = pd.product?.variants?.edges?.[0]?.node?.id;
     if (vid) await setPrice(product.id, vid, input.price);
+  }
+  // Shopify creates the default variant with inventory tracking OFF, which would
+  // leave the new piece permanently buyable even after it sells. Track it and
+  // stock the single copy now, while the piece is still a draft.
+  if (product?.id) {
+    try {
+      await setOnHand(product.id, 1);
+    } catch (e) {
+      // Intake should not fail over this; the piece is still a reviewable draft
+      // and "Make live" calls ensureSellable, which fixes it.
+      console.error("createDraftProduct: inventory setup failed", e);
+    }
   }
   return product;
 }
