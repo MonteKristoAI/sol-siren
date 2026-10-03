@@ -276,7 +276,14 @@ export async function setOnHand(productId: string, quantity: number): Promise<vo
       inventorySetQuantities(input:$input){ userErrors{ field message } } }`;
   if (INVENTORY_NEEDS_IDEMPOTENT) {
     entry.changeFromQuantity = inv.onHand;
-    vars.key = `ss-admin-${productId.split("/").pop()}-${inv.onHand}-to-${quantity}`;
+    // The key must be unique per call, never per transition. Measured against the
+    // live store: reusing a key that already succeeded makes Shopify return no
+    // error and silently drop the write. A piece marked sold, restored, then
+    // marked sold again would reuse a 1-to-0 key and stay purchasable, which is
+    // the exact bug this function exists to prevent. Re-applying an absolute
+    // on_hand set is harmless, and changeFromQuantity already gives us the
+    // optimistic-concurrency check, so cross-call deduplication buys nothing.
+    vars.key = `ss-admin-${productId.split("/").pop()}-${inv.onHand}-to-${quantity}-${Date.now()}`;
     mutation = `mutation($input: InventorySetQuantitiesInput!, $key: String!){
       inventorySetQuantities(input:$input) @idempotent(key:$key){ userErrors{ field message } } }`;
   }
