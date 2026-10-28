@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { ShoppingBag, Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import { useCart } from "@/contexts/CartContext";
+import SearchOverlay from "@/components/SearchOverlay";
 
 const shopCategories = [
   { label: "Fur", to: "/shop?category=fur" },
@@ -23,6 +24,9 @@ const Navbar = () => {
   const { count, openCart } = useCart();
   const [shopOpen, setShopOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  // The button that opened search, so focus goes back to it on close.
+  const searchTrigger = useRef<HTMLButtonElement | null>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -45,6 +49,17 @@ const Navbar = () => {
 
   const mobileLinkClass =
     "block font-body text-sm tracking-ultra-wide uppercase text-foreground/80 hover:text-foreground transition-colors duration-300 py-3";
+
+  const openSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
+    searchTrigger.current = e.currentTarget;
+    setMobileOpen(false);
+    setSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+    searchTrigger.current?.focus();
+  };
 
   const handleHomeClick = (e: React.MouseEvent) => {
     if (isHome) {
@@ -138,6 +153,16 @@ const Navbar = () => {
             );
           })}
 
+          {/* p-2 with a matching negative margin gives thumbs a 34px target
+              while the icon stays exactly where it sits in the row. */}
+          <button
+            onClick={openSearch}
+            aria-label="Search the collection"
+            className="-m-2 p-2 text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
+            <Search size={18} />
+          </button>
+
           <button
             onClick={openCart}
             className="relative text-foreground/80 hover:text-foreground transition-colors duration-300"
@@ -164,6 +189,16 @@ const Navbar = () => {
             Shop
           </Link>
 
+          {/* p-2 with a matching negative margin gives thumbs a 34px target
+              while the icon stays exactly where it sits in the row. */}
+          <button
+            onClick={openSearch}
+            aria-label="Search the collection"
+            className="-m-2 p-2 text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
+            <Search size={18} />
+          </button>
+
           <button
             onClick={openCart}
             className="relative text-foreground/80 hover:text-foreground transition-colors duration-300"
@@ -188,6 +223,10 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+
+      <AnimatePresence>
+        {searchOpen && <SearchOverlay open onClose={closeSearch} />}
+      </AnimatePresence>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>

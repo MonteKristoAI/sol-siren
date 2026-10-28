@@ -296,7 +296,11 @@ export function toUIProduct(s: ShopifyProduct): UIProduct {
   return {
     id: s.id,
     variantId: firstVariant?.id || "",
-    name: s.title.toUpperCase().split(" — ")[0].split(" - ")[0].trim(),
+    // The piece's name is whatever sits before the dash in the listing title.
+    // Split on the dash itself rather than " — " with spaces around it: the
+    // jewelry titles are written "Necklace— 14K Gold-Filled…" with no space in
+    // front, which used to leave the whole title as the name.
+    name: s.title.toUpperCase().split(/\s*[\u2014\u2013]\s*| - /)[0].replace(/\s+/g, " ").trim(),
     variant: s.title,
     price: parseFloat(s.priceRange.minVariantPrice.amount),
     image: s.featuredImage?.url || s.images[0]?.url || "",
