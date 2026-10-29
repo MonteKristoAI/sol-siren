@@ -163,11 +163,39 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="flex flex-col justify-start md:sticky md:top-28"
     >
-      <h1 className="font-display text-3xl md:text-4xl font-light text-foreground">{product.name}</h1>
+      {/* The Sold mark belongs up here beside the name, not only on the button
+          further down. Search and the archive send people straight to sold
+          pieces on purpose, and the button sits below the fold, so a visitor
+          used to read the full title and the price with nothing telling them
+          the coat was gone. */}
+      <div className="flex items-start gap-3">
+        <h1 className="font-display text-3xl md:text-4xl font-light text-foreground">{product.name}</h1>
+        {product.sold && (
+          <span className="mt-2 shrink-0 bg-foreground text-primary-foreground font-body text-[10px] tracking-ultra-wide uppercase px-3 py-1.5">
+            Sold
+          </span>
+        )}
+      </div>
       {/* Full descriptive title as a real heading: keeps the look, but the words
           shoppers search are a heading rather than plain text. */}
       <h2 className="mt-2 font-body text-xs font-normal tracking-wide text-muted-foreground">{product.variant}</h2>
-      <p className="mt-4 font-body text-xl font-medium text-foreground">${product.price}.00</p>
+      {/* Three of the older archived pieces carry no price at all. Striking
+          through "$0.00" would read as though the coat once went for nothing,
+          so those pages simply show no price. */}
+      {product.price > 0 && (
+        <p
+          className={`mt-4 font-body text-xl font-medium ${
+            product.sold ? "text-muted-foreground line-through" : "text-foreground"
+          }`}
+        >
+          ${product.price}.00
+        </p>
+      )}
+      {product.sold && (
+        <p className="mt-2 font-body text-sm text-muted-foreground">
+          This one has found its next chapter. Kept here so you can still see it.
+        </p>
+      )}
 
       {product.descriptionHtml ? (
         <div
@@ -234,16 +262,15 @@ const ProductInfo = ({ product }: { product: UIProduct }) => {
 
       {/* Add to Cart */}
       {product.sold ? (
-        <div className="mt-8 space-y-2">
+        <div className="mt-8">
+          {/* The sentence that used to sit under this button now runs beside the
+              name, where someone arriving from search actually sees it. */}
           <button
             disabled
             className="w-full flex items-center justify-center gap-2 bg-muted text-muted-foreground py-4 font-body text-[10px] tracking-ultra-wide uppercase cursor-not-allowed border border-muted-foreground/30"
           >
             Sold Out
           </button>
-          <p className="font-body text-[11px] text-muted-foreground/70 text-center italic">
-            This piece has been sold and is no longer available.
-          </p>
         </div>
       ) : (
         <button

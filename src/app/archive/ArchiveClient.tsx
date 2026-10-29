@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Archive as ArchiveIcon } from "lucide-react";
 import products from "@/data/products";
@@ -28,11 +28,29 @@ const fadeUp: any = {
   }),
 };
 
-const Archive = ({ shopifyArchived = [] }: { shopifyArchived?: any[] }) => {
-  const searchParams = useSearchParams();
+const Archive = ({
+  shopifyArchived = [],
+  initialCategory = "all",
+}: {
+  shopifyArchived?: any[];
+  initialCategory?: string;
+}) => {
   const router = useRouter();
   const pathname = usePathname();
-  const activeCategory = (searchParams.get("category") as ProductCategory) || "all";
+  // Category lives in component state, seeded from the server via
+  // initialCategory, NOT from useSearchParams. Reading useSearchParams here
+  // forced the whole page to client-only rendering, so the server HTML held
+  // none of the sold pieces and a crawler saw an empty archive. Same fix the
+  // shop grid already carries.
+  const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
+
+  // Back and forward give the page a new category from the server, but the
+  // component instance survives, so state has to follow the prop or the URL
+  // ends up saying one thing while the grid shows another.
+  useEffect(() => {
+    setActiveCategory(initialCategory);
+  }, [initialCategory]);
+
 
   // Shopify pieces archived in the admin, plus the legacy static sold pieces.
   const soldItems = [...shopifyArchived, ...products.filter((p) => p.sold)];
@@ -41,13 +59,13 @@ const Archive = ({ shopifyArchived = [] }: { shopifyArchived?: any[] }) => {
     : soldItems.filter((p) => p.category === activeCategory);
 
   const setCategory = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+    setActiveCategory(value);
+    // Keep the URL shareable and back-button friendly without re-reading it.
     if (value === "all") {
-      params.delete("category");
+      router.push(pathname, { scroll: false });
     } else {
-      params.set("category", value);
+      router.push(`${pathname}?category=${value}`, { scroll: false });
     }
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (

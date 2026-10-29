@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,6 +26,14 @@ const Shop = ({ products, initialCategory = "all" }: { products: UIProduct[]; in
   // client-only rendering, which left the server HTML empty and made the store look
   // "parked" with no products to Google's crawler. State keeps the grid server-rendered.
   const [activeCategory, setActiveCategory] = useState(initialCategory);
+
+  // Back and forward give the page a new category from the server, but the
+  // component instance survives, so state has to follow the prop or the URL
+  // ends up saying one thing while the grid shows another.
+  useEffect(() => {
+    setActiveCategory(initialCategory);
+  }, [initialCategory]);
+
   const router = useRouter();
   const pathname = usePathname();
 

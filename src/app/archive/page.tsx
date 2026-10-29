@@ -1,12 +1,15 @@
-import { Suspense } from "react";
-import { getAllProducts, toUIProduct } from "@/lib/shopify";
+import { getAllProducts, toUIProduct, normalizeCategory } from "@/lib/shopify";
 import ArchiveClient from "./ArchiveClient";
 
 export const revalidate = 60;
 
 const ARCHIVE_TAGS = ["archive", "sold"];
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: { category?: string | string[] };
+}) {
   // Pieces archived in the admin (tagged) join the legacy static archive here,
   // so the brand archive stays complete and current.
   let shopifyArchived: ReturnType<typeof toUIProduct>[] = [];
@@ -19,8 +22,9 @@ export default async function Page() {
     shopifyArchived = [];
   }
   return (
-    <Suspense>
-      <ArchiveClient shopifyArchived={shopifyArchived} />
-    </Suspense>
+    <ArchiveClient
+      shopifyArchived={shopifyArchived}
+      initialCategory={normalizeCategory(searchParams.category)}
+    />
   );
 }

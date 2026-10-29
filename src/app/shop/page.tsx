@@ -1,4 +1,4 @@
-import { getAllProducts, toUIProduct } from "@/lib/shopify";
+import { getAllProducts, toUIProduct, normalizeCategory } from "@/lib/shopify";
 import ShopClient from "./ShopClient";
 
 export const revalidate = 60;
@@ -8,7 +8,7 @@ const ARCHIVE_TAGS = ["archive", "sold"];
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { category?: string };
+  searchParams: { category?: string | string[] };
 }) {
   let live = [] as ReturnType<typeof toUIProduct>[];
   try {
@@ -20,5 +20,5 @@ export default async function Page({
   } catch {
     live = [];
   }
-  return <ShopClient products={live} initialCategory={searchParams.category || "all"} />;
+  return <ShopClient products={live} initialCategory={normalizeCategory(searchParams.category)} />;
 }

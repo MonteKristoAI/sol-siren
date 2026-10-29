@@ -252,6 +252,26 @@ export async function updateCartLine(
 // Tags the admin portal puts on a piece when it is sold or retired from the shop.
 const ARCHIVE_TAGS = ["sold", "archive"];
 
+// The category slugs the shop and the archive filter on. A query string is
+// whatever a visitor or a stray link puts there: Next hands back an array when
+// a parameter repeats, and an unknown value used to leave the grid empty with
+// nothing to explain it. Both now fall back to showing everything.
+export const CATEGORY_SLUGS = [
+  "fur",
+  "leather",
+  "penny-lane-afghan",
+  "overcoat",
+  "apres-ski",
+  "jewelry",
+] as const;
+
+export function normalizeCategory(raw: string | string[] | undefined): string {
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  if (!value) return "all";
+  const slug = value.toLowerCase();
+  return (CATEGORY_SLUGS as readonly string[]).includes(slug) ? slug : "all";
+}
+
 // Map Shopify productType to our internal category slug
 export function mapCategory(productType: string): string {
   const map: Record<string, string> = {
