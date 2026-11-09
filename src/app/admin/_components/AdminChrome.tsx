@@ -84,7 +84,7 @@ export default function AdminChrome({
             return (
               <div key={href}>
                 {showGroup && (
-                  <div className="mb-1 mt-4 px-3 text-[10px] uppercase tracking-widest text-[#7d7058]">
+                  <div className="mb-1 mt-4 px-3 text-[10px] uppercase tracking-widest text-[#B8A48A]">
                     {group}
                   </div>
                 )}

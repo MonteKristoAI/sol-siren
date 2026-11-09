@@ -64,7 +64,9 @@ export async function PATCH(req: Request) {
   if (!b.id || !b.orderedIds?.length) return Response.json({ error: "id and orderedIds required" }, { status: 400 });
   try {
     await reorderProductMedia(b.id, b.orderedIds);
-    return Response.json({ ok: true });
+    // Hand back the order the store actually holds, so the screen shows what
+    // was saved rather than what was asked for.
+    return Response.json({ ok: true, media: await getProductMedia(b.id) });
   } catch (e) {
     return Response.json({ error: msg(e) }, { status: 502 });
   }

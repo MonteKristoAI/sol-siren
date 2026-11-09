@@ -114,7 +114,7 @@ const PRODUCT_FRAGMENT = `
     maxVariantPrice { amount currencyCode }
   }
   featuredImage { url altText width height }
-  images(first: 20) { edges { node { url altText width height } } }
+  images(first: 50) { edges { node { url altText width height } } }
   options { id name values }
   variants(first: 50) {
     edges {

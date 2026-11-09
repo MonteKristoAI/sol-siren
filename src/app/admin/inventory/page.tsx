@@ -3,10 +3,12 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Search, Plus, ExternalLink, Loader2, Star, Trash2, UploadCloud } from "lucide-react";
+import { Search, Plus, ExternalLink, Loader2, UploadCloud } from "lucide-react";
 import AdminChrome from "../_components/AdminChrome";
 import RichText from "../_components/RichText";
 import { uploadImages } from "../_components/uploadImages";
+import PhotoOrderGrid from "../_components/PhotoOrderGrid";
+import { applyOrder } from "@/lib/admin/photo-order";
 import { api, money } from "../_components/api";
 import { SIZE_FIT_FIELDS, stripSizeFit, type SizeFit } from "@/lib/admin/size-fit";
 
@@ -350,11 +352,20 @@ function EditDialog({ product, onClose, onSaved }: { product: Product; onClose: 
   );
 }
 
-function PhotoManager({ productId, media, setMedia }: { productId: string; media: Media[]; setMedia: (m: Media[]) => void }) {
+function PhotoManager({
+  productId,
+  media,
+  setMedia,
+}: {
+  productId: string;
+  media: Media[];
+  setMedia: React.Dispatch<React.SetStateAction<Media[]>>;
+}) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState("");
   const [err, setErr] = useState("");
+  const [orderNote, setOrderNote] = useState("");
 
   async function refetch() {
     try {
@@ -380,30 +391,49 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
     } catch (e: any) { setErr(e.message); }
     finally { setBusy(false); setProgress(""); if (fileRef.current) fileRef.current.value = ""; }
   }
+
   async function remove(mediaId: string) {
+    const at = media.findIndex((m) => m.id === mediaId);
+    if (!window.confirm(`Remove photo ${at + 1} from this piece? This deletes it from the listing.`)) return;
     setBusy(true); setErr("");
     try {
       await api("/product-media", { method: "DELETE", body: JSON.stringify({ id: productId, mediaIds: [mediaId] }) });
-      setMedia(media.filter((m) => m.id !== mediaId));
+      setMedia((cur) => cur.filter((m) => m.id !== mediaId));
     } catch (e: any) { setErr(e.message); }
     finally { setBusy(false); }
   }
-  async function makeCover(mediaId: string) {
-    const ordered = [mediaId, ...media.filter((m) => m.id !== mediaId).map((m) => m.id)];
-    setBusy(true); setErr("");
+
+  // The new order goes to the screen first, then to Shopify. If Shopify
+  // refuses it the grid is put back to what the store actually holds, so the
+  // screen never claims an order that was not saved.
+  async function reorder(orderedIds: string[]) {
+    const before = media;
+    setMedia((cur) => applyOrder(cur, orderedIds, (m) => m.id));
+    setErr(""); setOrderNote("Saving order…");
     try {
-      await api("/product-media", { method: "PATCH", body: JSON.stringify({ id: productId, orderedIds: ordered }) });
-      setMedia([media.find((m) => m.id === mediaId)!, ...media.filter((m) => m.id !== mediaId)]);
-    } catch (e: any) { setErr(e.message); }
-    finally { setBusy(false); }
+      const res = await api<{ media: Media[] }>("/product-media", {
+        method: "PATCH",
+        body: JSON.stringify({ id: productId, orderedIds }),
+      });
+      if (res.media?.length) setMedia(res.media);
+      setOrderNote("Order saved");
+      setTimeout(() => setOrderNote(""), 2000);
+    } catch (e: any) {
+      setMedia(before);
+      setOrderNote("");
+      setErr(`${e.message} — the order was put back.`);
+    }
   }
 
   return (
     <div>
       <div className="mb-1.5 flex items-center justify-between">
-        <span className="text-xs uppercase tracking-wider text-[#8a7d68]">Photos</span>
+        <span className="text-xs uppercase tracking-wider text-[#8a7d68]">
+          Photos{media.length ? ` (${media.length})` : ""}
+        </span>
         <div className="flex items-center gap-2">
           {busy && progress && <span className="text-xs text-[#8a7d68]">{progress}</span>}
+          {!busy && orderNote && <span className="text-xs text-[#8a7d68]">{orderNote}</span>}
           <button onClick={() => fileRef.current?.click()} disabled={busy}
             className="flex items-center gap-1.5 rounded border border-[#E4DAC9] px-2.5 py-1 text-xs hover:bg-[#F5EFE6] disabled:opacity-50">
             <UploadCloud size={13} /> Add photos
@@ -411,31 +441,13 @@ function PhotoManager({ productId, media, setMedia }: { productId: string; media
         </div>
         <input ref={fileRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => addFiles(e.target.files)} />
       </div>
-      {media.length === 0 ? (
-        <div className="rounded border border-dashed border-[#D8CBB4] bg-[#FAF7F1] px-4 py-6 text-center text-xs text-[#8a7d68]">
-          {busy ? (progress || "Working…") : "No photos yet. Click Add photos."}
-        </div>
-      ) : (
-        <div className="grid grid-cols-5 gap-2">
-          {media.map((m, i) => (
-            <div key={m.id} className="group relative aspect-[3/4] overflow-hidden rounded border border-[#E4DAC9] bg-[#F0E8D9]">
-              {m.url ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={m.url} alt="" className="h-full w-full object-cover" />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center"><Loader2 className="animate-spin text-[#b6a890]" size={16} /></div>
-              )}
-              {i === 0 && <span className="absolute left-1 top-1 rounded bg-[#1A1A1A]/80 px-1.5 py-0.5 text-[10px] text-[#F5EFE6]">cover</span>}
-              <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1 bg-black/40 py-1 opacity-0 transition-opacity group-hover:opacity-100">
-                {i !== 0 && (
-                  <button onClick={() => makeCover(m.id)} disabled={busy} title="Make cover" className="rounded p-1 text-white hover:bg-white/20"><Star size={13} /></button>
-                )}
-                <button onClick={() => remove(m.id)} disabled={busy} title="Remove" className="rounded p-1 text-white hover:bg-white/20"><Trash2 size={13} /></button>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <PhotoOrderGrid
+        items={media.map((m) => ({ key: m.id, url: m.url, ready: m.ready }))}
+        onReorder={reorder}
+        onRemove={remove}
+        disabled={busy}
+        emptyHint={busy ? progress || "Working…" : "No photos yet. Click Add photos."}
+      />
       {err && <p className="mt-1 text-xs text-[#5C1F1F]">{err}</p>}
     </div>
   );
